@@ -1,4 +1,45 @@
 /* 首页 */
+.index-product{
+	padding: 1.85rem 0;
+	background: #fff;
+}
+.index-product .index-product-item,.index-product .index-product-item2 {
+	background: #FAFAFA;
+	height: 3.7rem;
+	margin-right: 0.37rem;
+	
+}
+.index-product .index-product-item2:last-child{
+	margin-right: 0;
+}
+.index-product .index-product-item .title{
+	color: #101010;
+	font-size: 0.59rem;
+	padding-top: 1rem;
+	padding-left: 0.74rem;
+	margin-bottom: 0.74rem;
+}
+.index-product .index-product-item .text{
+	color: #999999;
+	padding-left: 0.74rem;
+	font-size: 0.25rem;
+}
+.index-product .index-product-item2 img{
+	width: 0.74rem;
+	height: 0.74rem;
+}
+.index-product .index-product-item2 .title{
+	color: #333333;
+	font-size: 0.37rem;
+	padding-top: 0.64rem;
+	padding-left: 0.55rem;
+	margin-bottom: 0.55rem;
+}
+.index-product .index-product-item2 .text{
+	color: #999999;
+	padding-left: 0.74rem;
+	font-size: 0.25rem;
+}
 .index-banner-box{
 	position: absolute;
 	top: 50%;
@@ -397,20 +438,23 @@
 	height: 8.15rem;
 }
 .solution-3-item{
-	margin: 0.18rem 0;
-	padding: 0.37rem 1.85rem;
+	width: 100%;
+	text-align: center;
+	margin: 0.92rem 0;
+	/* margin: 0.18rem 0;
+	padding: 0.37rem 1.85rem; */
 	border-right: solid 1px rgba(0,0,0,0.08);
 }
-.solution-3 .col-lg-4.col-md-4.col-sm-4.col-xs-4:last-child .solution-3-item{
+.solution-3 .col-lg-3.col-md-3.col-sm-3.col-xs-3:last-child .solution-3-item{
 	border-right:none;
 }
 .solution-3-item .solution-3-item-title{
-	color: #1D1D1F;
-	font-size: 0.29rem;
+	color: #FF5000;
+	font-size: 0.51rem;
 	margin-bottom: 0.37rem;
 }
 .solution-3-item .solution-3-item-text{
-	color: #666666;
+	color: #999999;
 	font-size: 0.25rem;
 }
 /* 产品服务大页面 */

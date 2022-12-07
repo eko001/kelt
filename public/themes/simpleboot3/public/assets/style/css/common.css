@@ -28,10 +28,14 @@ body{
 	color: #fff!important;
 }
 .col{
-	color: #00A096;
+	color: #FF5000;
 }
 .flex{
 	display: flex;
+}
+.flex-around{
+	display: flex;
+	justify-content: space-around;
 }
 .flex-box{
 	display: flex;
@@ -71,14 +75,14 @@ body{
 .header-box .img-logo{
 	display: inline-block;
 	width: 2.53rem;
-	height: 0.59rem;
+	height: 0.65rem;
 	background: url(../imgs/index/logo.svg) 0 0 no-repeat;
 	background-size: 100% 100%;
-	margin-top: 0.25rem;
+	margin-top: 0.4rem;
 }
 .header-box .header-icon-imgs img{
-	width: 0.59rem;
-	height: 0.59rem;
+	width: 0.29rem;
+	height: 0.29rem;
 }
 .xmHeader .img-logo{
 	display: inline-block;
@@ -90,7 +94,7 @@ body{
 	margin-left: 0.4rem;
 }
 .header-fixed-box{
-	background:#00A096;
+	background:#FF5000;
 }
 .header-fixed-box .img-logo{
 	background: url(../img/logo.svg) 0 0 no-repeat;
@@ -104,6 +108,8 @@ body{
 	text-align: center;
 }
 .header-box .nav.navbar-nav{
+	height: 80px;
+	overflow: hidden;
 	/* width: 80%;
 	margin: 0 10%;
 	position: static; */
@@ -121,10 +127,10 @@ body{
 	text-decoration: none;
 }
 .num-phone{
-	font-size: 0.33rem;
-	font-family: "Impact";
+	font-size: 0.29rem;
+	font-family: "HarmonyOS_Sans_SC-regular";
 	color: #fff;
-	line-height: 60px;
+	line-height: 80px;
 	text-align: right;
 	letter-spacing: 2px;
 }
@@ -192,10 +198,13 @@ body{
 }
 .index-banner-top{
 	width: 100%;
-	height: 8.15rem;
+	/* height: 12.96rem; */
 	overflow: hidden;
 	position: relative;
 	margin-top: 60px;
+}
+.index-banner-top img{
+	width: 100%;
 }
 .nav-item-title{
 	width: 3.8rem!important;
