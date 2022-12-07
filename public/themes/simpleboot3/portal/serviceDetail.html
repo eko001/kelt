@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<include file="public@head"/>
+</head>
+</body>
+    <div class="index-banner index-banner-top" style="width:100%;">
+        <img src="__TMPL__/public/assets/style/imgs/footerDetail.png" class="index-banner-img" />
+    </div>
+	<ol class="breadcrumb" style="max-width: 1200px;margin: 0 auto;margin-top: 42px;background-color: #FFFFFF">
+		<li><a  href="__ROOT__/">首页</a></li>
+		<li><a  href="{:cmf_url('portal/Service/index')}">服务&解决方案</a></li>
+		<li  class="active">{$serviceDetail.post_title}</li>
+	</ol>
+	<div class="newsTitle">{$serviceDetail.post_title}</div>
+	<div class="newsTime" >{$serviceDetail.user.user_nickname} 发表于:{:date('Y年m月d日',$serviceDetail.published_time)}</div>
+	<div class="inner" style="border:1px solid #e0e0e0"></div>
+    <div class="inner newsDetail marbot382" >
+		{$serviceDetail.post_content|htmlspecialchars_decode}
+	</div>
+	<include file="public@footer"/>
+</body>
+
+</html>

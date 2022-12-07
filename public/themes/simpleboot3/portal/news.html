@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<include file="public@head"/>
+</head>
+<body>
+	<div id="news">
+		<div class="index-banner index-banner-top" style="width:100%;">
+			<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/news/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+				<div class="index-banner-box2 text-center">
+					<div class="index-banner-title">新闻中心</div>
+				</div>
+			</div>
+			<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/news/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+				<div class="index-banner-box2 text-center">
+					<div class="index-banner-title">新闻中心</div>
+				</div>
+			</div>
+		</div>
+		<div class="bgf-inner">
+			<div class="inner">
+				<ul class="news-tab">
+					<li class="text-center" data-url="category=11"><a href="{:cmf_url('portal/News/index',array('category'=>'11'))}">全部</a></li>
+					<li class="text-center" data-url="category=20"><a href="{:cmf_url('portal/News/list',array('category'=>'20'))}">集团动态</a></li>
+					<li class="text-center" data-url="category=21"><a href="{:cmf_url('portal/News/branch',array('category'=>'21'))}">行业新闻</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="bg">
+			<div class="inner">
+				<ul class="news-list">
+					<volist name="list" id="vo">
+						<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}" >
+						<li class="flex-box news-list-item">
+							<div class="news-list-item-img">
+								<img src="{:cmf_get_image_url($vo.thumbnail)}" />
+							</div>
+							<div class="news-list-item-center">
+								<div class="news-list-item-title">{$vo.post_title}</div>
+								<div class="hidden-xs news-list-item-text">
+									{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}</div>
+								<div class="news-list-item-tabs text-center">{$vo.post_keywords}</div>
+							</div>
+							<div class="news-list-item-right">{:date('m-d',$vo.published_time)}</div>
+						</li>
+						</a>
+					</volist>
+				</ul>
+			</div>
+			<div class="pageLimitbox">
+				<ul class="pagination">{$page|default=''}</ul>
+				<ul id="pageLimit" class="pagination pagination-lg"></ul>
+			</div>
+		</div>
+	</div>
+<include file="public@footer"/>
+</body>
+<script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
+<script type="text/javascript">
+	$(function(){
+		activeNav();
+		function activeNav(){
+			$('.news-tab li').removeClass('active');
+			var location = window.location.search;
+			if(!location){
+				$(".news-tab li").eq(0).addClass("active")
+			}else{
+				location = location.replace("?","");
+				for(var i = 0;i<$('.header-box li').length;i++){
+					if($('.news-tab li').eq(i).data('url')==location){
+						$('.news-tab li').eq(i).addClass('active');
+						return true
+					}
+				}
+			}
+		};
+		// $(".news-tab li").eq(0).addClass("active")
+		// $(".news-tab li").click(function(){
+		// 	$(".news-tab li").removeClass("active");
+		// 	$(this).addClass("active")
+		// })
+	})
+	</script>
+</body>
+</html>

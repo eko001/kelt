@@ -1,0 +1,180 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" type="hidden" name="photo_urls[]" value="{filepath}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="photo_names[]" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:uploadOneImage('图片上传','#photo-{id}');">替换</a>
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+<script type="text/html" id="files-item-tpl">
+    <li id="saved-file{id}">
+        <input id="file-{id}" type="hidden" name="file_urls[]" value="{filepath}">
+        <input class="form-control" id="file-{id}-name" type="text" name="file_names[]" value="{name}"
+               style="width: 200px;" title="文件名称">
+        <a id="file-{id}-preview" href="{preview_url}" target="_blank">下载</a>
+        <a href="javascript:uploadOne('文件上传','#file-{id}','file');">替换</a>
+        <a href="javascript:(function(){$('#saved-file{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Resume/index')}">简历管理</a></li>
+        <li class="active"><a href="{:url('Resume/add')}">添加简历</a></li>
+    </ul>
+    <form action="{:url('Resume/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>姓名<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[name]"
+                                   id="name" required value="" placeholder="请输入姓名"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>手机号<span class="form-required">*</span></th>
+                        <td><input class="form-control" type="text" name="post[phone]" id="phone" value="" required
+                                   placeholder="请输入手机号"></td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>
+                            <input class="form-control" name="post[sex]"
+                                   type="text" placeholder="请填写性别"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>出生日期</th>
+                        <td>
+                            <input class="form-control" name="post[birthday]" type="text"
+                                   placeholder="请填写出生日期"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>学历</th>
+                        <td>
+                            <input class="form-control" name="post[edu]" type="text"
+                                   placeholder="请填写学历"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>工作经验</th>
+                        <td>
+                            <input class="form-control" name="post[experience]" type="text"
+                                   placeholder="请填写工作经验"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>求职地区</th>
+                        <td>
+                            <input class="form-control" name="post[area]" type="text"
+                                   placeholder="请填写求职地区"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>期望薪资</th>
+                        <td>
+                            <input class="form-control" name="post[salary]" type="text"
+                                   placeholder="请填写期望薪资"/>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <th>附件(文件、图片二选一)</th>
+                        <td>
+                            <ul id="file-a" class="pic-list list-unstyled form-inline">
+                            </ul>
+                            <a href="javascript:uploadOne('附件上传','#file-a','file');"
+                               class="btn btn-sm btn-default">选择文件</a>
+                            <ul id="thumbnail" class="pic-list list-unstyled form-inline">
+                            </ul>
+                            <a href="javascript:uploadOneImage('附件上传','#thumbnail');"
+                               class="btn btn-sm btn-default">选择图片</a>
+                        </td>
+                    </tr>-->
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('Resume/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <table class="table table-bordered">
+                    <tr>
+                        <th><b>发布时间</b></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control js-bootstrap-datetime" type="text" name="post[create_time]"
+                                   value="{:date('Y-m-d H:i:s',time())}">
+                        </td>
+                    </tr>
+
+                </table>
+
+               <!-- <hook name="portal_admin_article_edit_view_right_sidebar"/>-->
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('content');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+</script>
+</body>
+</html>

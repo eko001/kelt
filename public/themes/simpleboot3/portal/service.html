@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<include file="public@head"/>
+	</head>
+	<body>
+		<div id="services">
+			<if condition="$sid eq 1">
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/government/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">政府清洁</div>
+								<div class="index-banner-text"><span>改变以往各个政府机构“养人搞服务”的尴尬局面</span></div>
+								<div class="index-banner-text"><span>通过向市场购买服务的方式，以市场方式提供真正方便贴心的人性化服务</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/government/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">政府清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 2"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/hotel/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">酒店清洁</div>
+								<div class="index-banner-text"><span>酒店保洁具有一定的特殊性，主要是分为清洗保洁与深度消毒</span></div>
+								<div class="index-banner-text"><span>做到干净整洁才能保证每一个顾客住进去舒心</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/hotel/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">酒店清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 3"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/school/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">学校清洁</div>
+								<div class="index-banner-text"><span>为了给师生创造一个清洁、美观、舒适、安全的理想环境</span></div>
+								<div class="index-banner-text"><span>保洁工作在其中起到了非常重要的作用</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/school/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">学校清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 4"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/hospital/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">医院清洁</div>
+								<div class="index-banner-text"><span>依据现场具体情况及医院的具体要求，对不同区域，不同对象</span></div>
+								<div class="index-banner-text"><span>采用科学合理的清洁方案，以达到最佳的清洁效果</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/hospital/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">医院清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 5"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/office/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">写字楼清洁</div>
+								<div class="index-banner-text"><span>写字楼具有保洁内容复杂，人流量大等特点</span></div>
+								<div class="index-banner-text"><span>必须提高保洁的频率才能展示大堂的良好形象</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/office/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">写字楼清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 6"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/industrial/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">工业园区清洁</div>
+								<div class="index-banner-text"><span>工业园区的清洁因其建材、场所、使用者、用途的不同，其相应的清洁</span></div>
+								<div class="index-banner-text"><span>方法也不同，清洁固有“千变万化”之称</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/industrial/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">工业园区清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<elseif condition="$sid eq 7"/>
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/city/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">城市环境清洁</div>
+								<div class="index-banner-text"><span>人工清扫、人工+机械捡拾、机械清扫、机械清洗喷洒、垃圾收集、</span></div>
+								<div class="index-banner-text"><span>动态监管的“六位一体”新型道路保洁法，为城市创办省级卫生城市、国家级卫生城市提供坚强助力</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/city/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">城市环境清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<else />
+				<div class="index-banner index-banner-top" style="width:100%;">
+					<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/shop/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title">商场清洁</div>
+								<div class="index-banner-text"><span>按照合理、科学的管理方法和清洁、保养流程、技术要求</span></div>
+								<div class="index-banner-text"><span>对商场公共区域进行清洁和保养</span></div>
+								<div class="yuyue-btn">
+									<a href="{:cmf_url('portal/Form/index')}" title="预约方案">预约方案</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/service/shop/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
+						<div class="inner">
+							<div class="index-banner-box4">
+								<div class="index-banner-title  text-center">商场清洁</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</if>
+			
+			<div class="bg services">
+				<div class="inner">
+					<div class="inner-bigger-title">
+						<div class="p1">服务对象</div>
+					</div>
+					<if condition="$sid eq 1">
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/government/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">政府大楼</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/government/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">行政服务大厅</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/government/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">政府大院</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="services-client-content">中洁清洁在北京、德州、济南、青岛、潍坊、天津、成都、上海、南昌均设有分公司，项目遍及全国31个省。在多年的发展历程中，中洁清洁积累了丰富的政企办公楼、商业及写字楼、住宅小区、学校/医院/军区、工矿厂区的清洁服务经验，且管理经验成熟、可复制。同时，中洁清洁网络化、科技化、精细化的管理模式受到客户广泛好评。合同的续签率达到98%以上。目前，中洁清洁服务范围涵盖日常公共区域清洁、入室清洁、专项清洁、个性化定制、虫控消杀、垃圾分类清运等多种类型服务。</div>
+					<elseif condition="$sid eq 2"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hotel/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">酒店大堂</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hotel/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">客房</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hotel/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">宴会厅</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<elseif condition="$sid eq 3"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+										<div class="image-box text-center">
+											<img src="__TMPL__/public/assets/style/img/service/school/1.png" />
+										</div>
+										<div class="text-desc">
+											<p class="product-box-title">办公楼</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+										<div class="image-box text-center">
+											<img src="__TMPL__/public/assets/style/img/service/school/2.png" />
+										</div>
+										<div class="text-desc">
+											<p class="product-box-title">操场</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+										<div class="image-box text-center">
+											<img src="__TMPL__/public/assets/style/img/service/school/3.png" />
+										</div>
+										<div class="text-desc">
+											<p class="product-box-title">图书馆</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<elseif condition="$sid eq 4"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hospital/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">公共区域</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hospital/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">病房</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/hospital/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">手术室</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<elseif condition="$sid eq 5"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/office/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">写字楼</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/office/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">办公室</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/office/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">休息室</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<elseif condition="$sid eq 6"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/industrial/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">工业园区</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/industrial/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">工厂车间</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/industrial/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">办公区</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<elseif condition="$sid eq 7"/>
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/city/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">市政道路</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/city/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">垃圾分类</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/city/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">垃圾运输</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="services-client-content">       中洁清洁具有市政道路清洁、垃圾分类、垃圾运输许可证，在全国200多个城市开展市政道路清扫、垃圾分类、垃圾清运服务项目 。公司拥有大中型车辆、设备100余台套，参照各市《环卫作业规范》、《环卫清扫保洁检查考核标准》，以高于标准的服务为城市环境打造洁净生活空间。根据项目运输方式、距离、垃圾量的不同配备不同的运输车辆，做到专车专用、专业高质。通过大量实践，总结出人工清扫、人工+机械捡拾、机械清扫、机械清洗喷洒、垃圾收集、动态监管的“六位一体”新型道路保洁法，为城市创办省级卫生城市、国家级卫生城市提供坚强助力。</div>
+					<else />
+						<div class="row services-client">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/shop/1.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">百货商场</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/shop/2.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">购物超市</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="services-client-item">
+									<div class="port-1 effect-2">
+									    <div class="image-box text-center">
+									        <img src="__TMPL__/public/assets/style/img/service/shop/3.png" />
+									    </div>
+									    <div class="text-desc">
+											<p class="product-box-title">休闲娱乐中心</p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</if>
+					
+				</div>
+			</div>
+			<div class="bg services">
+				<div class="inner">
+					<div class="inner-bigger-title">
+						<div class="p1">解决痛点</div>
+					</div>
+					<div class="row services-problem">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="services-problem-item text-center">
+								<img src="__TMPL__/public/assets/style/img/government_cleaning/services-problem/1.png" class="service-product-item-img" />
+								<div class="services-problem-item-text">管理成本高</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="services-problem-item text-center">
+								<img src="__TMPL__/public/assets/style/img/government_cleaning/services-problem/2.png" class="service-product-item-img" />
+								<div class="services-problem-item-text">团队组建难</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="services-problem-item text-center">
+								<img src="__TMPL__/public/assets/style/img/government_cleaning/services-problem/3.png" class="service-product-item-img" />
+								<div class="services-problem-item-text">专业化水平较低</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="services-problem-item text-center">
+								<img src="__TMPL__/public/assets/style/img/government_cleaning/services-problem/4.png" class="service-product-item-img" />
+								<div class="services-problem-item-text">员工素质不一</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bg services">
+				<div class="inner">
+					<div class="inner-bigger-title">
+						<div class="p1">服务价值</div>
+					</div>
+					<div class="hidden-xs services-value">
+						<div class="services-value-item active">
+							<div class="port-1 effect-2">
+								<div class="image-box text-center">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/1.png" class="services-value-item-img" />
+									<div class="services-value-item-normal">效率</div>
+								</div>
+								<div class="text-desc">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/1-1.png" class="services-value-item-img-big" />
+									<p class="services-value-item-title">效率</p>
+									<p class="services-value-item-text">解放企业非核心事务的时间和精力的占用，节省管理成本提升企业管理效率</p>
+								</div>
+							</div>
+						</div>
+						<div class="services-value-item">
+							<div class="port-1 effect-2">
+								<div class="image-box text-center">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/2.png" class="services-value-item-img" />
+									<div class="services-value-item-normal">规范</div>
+								</div>
+								<div class="text-desc">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/2-1.png" class="services-value-item-img-big" />
+									<p class="services-value-item-title">规范</p>
+									<p class="services-value-item-text">详细的清洁规范，标准高、专业性强，提供真正方便贴心的人性化服务</p>
+								</div>
+							</div>
+						</div>
+						<div class="services-value-item">
+							<div class="port-1 effect-2">
+								<div class="image-box text-center">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/3.png" class="services-value-item-img" />
+									<div class="services-value-item-normal">标准</div>
+								</div>
+								<div class="text-desc">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/3-1.png" class="services-value-item-img-big" />
+									<p class="services-value-item-title">标准</p>
+									<p class="services-value-item-text">依据企业的具体需求及经营计划，制订和优化招聘流程及后续服务</p>
+								</div>
+							</div>
+						</div>
+						<div class="services-value-item">
+							<div class="port-1 effect-2">
+								<div class="image-box text-center">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/4.png" class="services-value-item-img" />
+									<div class="services-value-item-normal">评估</div>
+								</div>
+								<div class="text-desc">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/4-1.png" class="services-value-item-img-big" />
+									<p class="services-value-item-title">评估</p>
+									<p class="services-value-item-text">服务质量可量化评估，根据评估结果分析和处理问题，精确提升服务质量</p>
+								</div>
+							</div>
+						</div>
+						<div class="services-value-item">
+							<div class="port-1 effect-2">
+								<div class="image-box text-center">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/5.png" class="services-value-item-img" />
+									<div class="services-value-item-normal">保密</div>
+								</div>
+								<div class="text-desc">
+									<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/5-1.png" class="services-value-item-img-big" />
+									<p class="services-value-item-title">保密</p>
+									<p class="services-value-item-text">员工全部接受岗前培训、接受保密教育，遵守协议规定防止泄密事件的发生</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-lg hidden-md hidden-sm services-value">
+						<div class="swiper" id="services-value">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="services-value-item">
+										<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/1-1.png" class="services-value-item-img-big" />
+										<p class="services-value-item-title">效率</p>
+										<p class="services-value-item-text">解放企业非核心事务的时间和精力的占用，节省管理成本提升企业管理效率</p>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="services-value-item">
+										<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/2-1.png" class="services-value-item-img-big" />
+										<p class="services-value-item-title">规范</p>
+										<p class="services-value-item-text">详细的清洁规范，标准高、专业性强，提供真正方便贴心的人性化服务</p>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="services-value-item">
+										<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/3-1.png" class="services-value-item-img-big" />
+										<p class="services-value-item-title">标准</p>
+										<p class="services-value-item-text">依据企业的具体需求及经营计划，制订和优化招聘流程及后续服务</p>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="services-value-item">
+										<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/4-1.png" class="services-value-item-img-big" />
+										<p class="services-value-item-title">评估</p>
+										<p class="services-value-item-text">服务质量可量化评估，根据评估结果分析和处理问题，精确提升服务质量</p>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="services-value-item">
+										<img src="__TMPL__/public/assets/style/img/government_cleaning/services-value/5-1.png" class="services-value-item-img-big" />
+										<p class="services-value-item-title">保密</p>
+										<p class="services-value-item-text">员工全部接受岗前培训、接受保密教育，遵守协议规定防止泄密事件的发生</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+			<div class="bg solutions">
+				<div class="inner">
+					<div class="inner-bigger-title">
+						<div class="p1">我们的优势</div>
+					</div>
+					<div class="row solution-advantage">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/1.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">员工素质高</div>
+									<div class="solution-advantage-item-right-text">教育和培训员工素质，消除保洁人员专业水平低的难点</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/2.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">专业水平高</div>
+									<div class="solution-advantage-item-right-text">针对不同保洁工作的难点，采取有效应对措施</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/3.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">管理风险小</div>
+									<div class="solution-advantage-item-right-text">转移了因保洁员工伤、社保而带来的成本，专业由此带来的法律责任</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/4.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">节省设备购置费用</div>
+									<div class="solution-advantage-item-right-text">减少保洁工作需要的设备采购成本、管理成本、维护成本等</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/5.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">突击工作的机动性强</div>
+									<div class="solution-advantage-item-right-text">外包保洁公司考核更严格，组织结构更紧密，执行力较强</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="solution-advantage-item flex-box">
+								<img src="__TMPL__/public/assets/style/img/solution/advantage/6.png" class="solution-advantage-item-img" />
+								<div class="solution-advantage-item-right">
+									<div class="solution-advantage-item-right-title">经验丰富</div>
+									<div class="solution-advantage-item-right-text">公司管理经验丰富、员工工作经验丰富，让客户无忧</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="bg solutions">
+				<div class="inner">
+					<div class="inner-bigger-title">
+						<div class="p1">成功案例</div>
+					</div>
+					<div class="row solution-example">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<img src="__TMPL__/public/assets/style/img/solutions/example_1.png" class="solution-example-left-img" />
+						</div>
+						<div class="hidden-xs col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<div class="solution-example-text"> XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。</div>
+							<ul class="solution-example-imgs">
+								<li class="active" data-url="__TMPL__/public/assets/style/img/solutions/example_1.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_1.png" />
+									<div class="posbox"></div>
+								</li>
+								<li data-url="__TMPL__/public/assets/style/img/solutions/example_2.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_2.png" />
+									<div class="posbox"></div>
+								</li>
+								<li data-url="__TMPL__/public/assets/style/img/solutions/example_3.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_3.png" />
+									<div class="posbox"></div>
+								</li>
+							</ul>
+						</div>
+						<div class="hidden-lg hidden-md hidden-sm col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<ul class="solution-example-imgs" style="margin-top: 10px;">
+								<li class="active" data-url="__TMPL__/public/assets/style/img/solutions/example_1.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_1.png" />
+									<div class="posbox"></div>
+								</li>
+								<li data-url="__TMPL__/public/assets/style/img/solutions/example_2.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_2.png" />
+									<div class="posbox"></div>
+								</li>
+								<li data-url="__TMPL__/public/assets/style/img/solutions/example_3.png">
+									<img src="__TMPL__/public/assets/style/img/solutions/example_3.png" />
+									<div class="posbox"></div>
+								</li>
+							</ul>
+							<div class="solution-example-text"> XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。XX政府大楼保洁外包合作。</div>
+							
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		
+
+		<!-- <div class="inner martop80 " style="margin-bottom: 43px;">
+			<ul class="service-items">
+				<volist name="list" id="vo" key="k" mod="2">
+					<eq name="mod" value="0">
+						<a href="{:cmf_url('portal/Service/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}">
+						<li class="row">
+							<div  class="service-item-left" >
+								<div class="port-1 effect-2">
+									<div class="image-box">
+										<img src="{:cmf_get_image_url($vo.more.thumbnail)}" class="part1-img" />
+										<div class="image-box-name">
+											<p>{$vo.post_title}</p>
+											<p>{$vo.post_keywords}</p>
+										</div>
+									</div>
+									<div class="service-desc">
+										<h2>{$vo.post_title}</h2>
+										<div>{$vo.post_keywords}</div>
+									</div>
+								</div>
+							</div>
+							<div class="service-item-right">
+								<span class="service-name">{$vo.post_title}</span>
+								<div class="service-text">{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}</div>
+								<div class="service-form-btn  hidden-xs"><a href="{:cmf_url('portal/Form/index')}" target="_blank">预约方案</a></div>
+							</div>
+						</li>
+						</a>
+					</eq>
+					<eq name="mod" value="1">
+						<a href="{:cmf_url('portal/Service/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}">
+						<li class="row">
+							<div class="service-item-right">
+								<span class="service-name">{$vo.post_title}</span>
+								<div class="service-text">{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}</div>
+								<div class="service-form-btn  hidden-xs"><a href="{:cmf_url('portal/Form/index')}" target="_blank">预约方案</a></div>
+							</div>
+							<div  class="service-item-left" >
+								<div class="port-1 effect-2">
+									<div class="image-box">
+										<img src="{:cmf_get_image_url($vo.more.thumbnail)}" class="part1-img" />
+										<div class="image-box-name">
+											<p>{$vo.post_title}</p>
+											<p>{$vo.post_keywords}</p>
+										</div>
+									</div>
+									<div class="service-desc">
+										<h2>{$vo.post_title}</h2>
+										<div>{$vo.post_keywords}</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						</a>
+					</eq>
+				</volist>
+			</ul>
+		</div> -->
+
+		<include file="public@footer"/>
+	</body>
+	<!-- Swiper -->
+	<link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/style/css/swiper-bundle.css">
+	<script type="text/javascript" src="__TMPL__/public/assets/style/js/swiper-bundle.min.js"></script>
+	<script>
+	$(function(){
+		$(".services-value .services-value-item").mouseover(function(){
+			$(".services-value .services-value-item").removeClass("active");
+			$(this).addClass("active");
+		})
+		$(".solution-example .solution-example-imgs li").mouseover(function(){
+			$(".solution-example-left-img").attr("src",$(this).data("url"));
+			$(".solution-example .solution-example-imgs li").removeClass("active");
+			$(this).addClass("active");
+		})
+		var swiper = new Swiper("#services-value", {
+		  pagination: {
+		    el: ".swiper-pagination",
+		    dynamicBullets: true,
+		  },
+		  loop: true,
+		  speed:300,
+		  autoplay : {
+			  delay:3000
+			},
+		});
+	})
+	</script>
+</html>

@@ -1,0 +1,69 @@
+<div class="row about2 text-center">
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		<div class="about2-item">
+			<div class="about-num"><span id="serviceTeam">1000</span>+</div>
+			<div class="about-text">服务团队</div>
+		</div>
+		
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		<div class="about2-item">
+			<div class="about-num"><span id="serviceCity">400</span>+</div>
+			<div class="about-text">服务城市</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		<div class="about2-item">
+			<div class="about-num"><span id="serviceCompany">300</span>+</div>
+			<div class="about-text">服务企业</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 ">
+		<div class="about2-item">
+			<div class="about-num"><span id="serviceSatisfaction">99.8</span>%</div>
+			<div class="about-text">客户满意度</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	readyNumScroll();
+	$(window).scroll(function () {
+		// console.log('$(window).scrollTop()====='+$(window).scrollTop())
+		if(parseInt($(window).scrollTop())>1800 && parseInt($(window).scrollTop())<2000){
+			readyNumScroll();
+		}
+		
+	});
+	function readyNumScroll(){
+		numScroll('#serviceTeam', 1000, 100);
+		numScroll('#serviceCity', 400, 100);
+		numScroll('#serviceCompany', 300, 100);
+		numScroll('#serviceSatisfaction', 99.8, 100);
+	};
+	function numScroll(id, maxNum, time) {
+		var a, b, c, d;
+		var numInit = 0;
+		var addNum = maxNum / (time / 10);
+		var minTime = time / maxNum;
+		var t;
+		d = $(id).offset().top;
+		a = eval(d + 120);
+		b = $(window).scrollTop();
+		c = $(window).height();
+		if (b + c > a) {
+		    t = setInterval(function() {
+		        if (numInit >= maxNum) {
+		            clearInterval(t)
+		            $(id).text(maxNum);
+		        } else {
+		            numInit += addNum
+		    		$(id).text(Math.round(numInit));
+		        }
+		    }, 50)
+		}else{
+			clearInterval(t)
+		}
+	}
+})
+</script>

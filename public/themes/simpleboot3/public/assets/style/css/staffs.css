@@ -1,0 +1,67 @@
+.staffsContainer .userInfo{
+	width: 60%;
+	padding: 20px;
+	display: flex;
+}
+.userInfo img{
+	width: 150px;
+	height: 200px;
+}
+.userInfo .userInfo_right{
+	margin-left: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.userInfo_right_name{
+	text-align: left;
+}
+.userInfo_right_sex{
+	text-align: left;
+}
+.staffsContainer .inner{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.staffsContainer{
+	position: relative;
+	background-color: #FFFFFF;
+	padding: 20px 0;
+}
+.staffsContainer .content{
+	width: 80%;
+	text-align: left;
+	font-size: 16px;
+	margin-top: 40px;
+}
+.staffsContainer .tag{
+	width: 90%;
+	text-align: left;
+	font-size: 16px;
+	margin-top: 20px;
+}
+.staffsContainer .text{
+	font-size: 36px;
+	color: #121212; 
+	text-align: center;
+	line-height: 48px;
+	margin-bottom: 20px;
+}
+.staffsContainer .input{
+	font-size: 14px; 
+	color: #121212; 
+	font-weight: bold;
+}
+.form-control{
+	border: solid 1px rgba(18,18,18,0.4);
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.staffsContainer .input input{
+	margin-right: 20px; 
+	border:0;
+	padding-left:30px;
+}

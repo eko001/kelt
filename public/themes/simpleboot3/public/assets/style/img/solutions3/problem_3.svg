@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.24" y1="0.071" x2="0.738" y2="0.946" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#04c2b6"/>
+      <stop offset="1" stop-color="#00a096"/>
+    </linearGradient>
+  </defs>
+  <g id="成本高" transform="translate(-5606 11605)">
+    <circle id="椭圆_39" data-name="椭圆 39" cx="50" cy="50" r="50" transform="translate(5606 -11605)" fill="url(#linear-gradient)"/>
+    <g id="无额外隐形费用" transform="translate(5570.765 -11640.235)">
+      <path id="路径_2650" data-name="路径 2650" d="M85.235,110.235a25,25,0,1,1,25-25,25,25,0,0,1-25,25Zm0-45a20,20,0,1,0,20,20,20.022,20.022,0,0,0-20-20Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="路径_2651" data-name="路径 2651" d="M322.736,312.565h-6.862v2.272h6.765a2.272,2.272,0,0,1,0,4.542h-6.765v4.542a2.272,2.272,0,0,1-4.542,0v-4.54h-6.765a2.271,2.271,0,1,1,0-4.542h6.765v-2.272H304.47a2.272,2.272,0,0,1,0-4.542h3.651l-2.936-2.936a2.271,2.271,0,1,1,3.211-3.211l4.885,4.885a1.88,1.88,0,0,1,.326.476,2.286,2.286,0,0,1,.318-.476l4.885-4.885a2.273,2.273,0,0,1,3.211,3.211l-2.936,2.936h3.651a2.272,2.272,0,0,1,0,4.542Z" transform="translate(-228.623 -227.632)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

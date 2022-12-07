@@ -1,0 +1,455 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+	.input-group{
+		display: flex;
+	}
+	#search{
+		width: 200px;
+	}
+	.input-group-text{
+		line-height: 2.3;
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+	#list-group,
+	#list-group2,
+	.searchEnd {
+	    display: none;
+	}
+	 
+	#closeBtn {
+	    position: absolute;
+	    top: -10px;
+	    right: -14px;
+	}
+	 
+	.dropdown-menu .list-group-item.active {
+	    color: #fff;
+	    background-color: #007bff;
+	    border-color: #007bff;
+	}
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('Recruit/index')}">招聘管理</a></li>
+        <li>
+            <a href="{:url('Recruit/add')}">添加招聘</a>
+        </li>
+        <li class="active"><a href="#">编辑招聘</a></li>
+    </ul>
+    <form action="{:url('Recruit/editPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="100">职位名称<span class="form-required">*</span></th>
+                        <td>
+                            <input id="post-id" type="hidden" name="post[id]" value="{$post.id}">
+                            <input class="form-control" type="text" name="post[name]"
+                                   required value="{$post.name}" placeholder="请填写职位名称"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>年龄要求<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[age]" value="{$post.age}" required
+                                   required placeholder="请填写年龄要求">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>学历要求<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" name="post[edu]" type="text" value="{$post.edu}" required
+                                   placeholder="请填写学历要求"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>工作经验<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" name="post[experience]" type="text" value="{$post.experience}" required
+                                   placeholder="请填写工作经验"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>工作地区<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" name="post[area]" type="text" value="{$post.area}" required id="city"
+                                   placeholder="请填写工作城市名称(例如：北京)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>薪资<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" name="post[salary]" type="text" value="{$post.salary}" required
+                                   placeholder="请填写薪资"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>职位描述<span class="form-required">*</span></th>
+                        <td>
+                            <script type="text/plain" id="content" name="post[content]" >{$post.content|htmlspecialchars_decode}</script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>详细地址<span class="form-required">*</span></th>
+                        <td class="searchStart">
+                           <!-- <input name="post[address]" id="address"  type="text" value="{$post.address}" /> -->
+						   <div class="input-group mb-3">
+							  <input type="text" autocomplete="off" id="search" class="form-control strtSiteIpt" placeholder="请输入地点"  aria-describedby="basic-addon1"
+							  value="{$post.address}"  name="post[address]" />
+							 <!-- <div class="input-group-append">
+							  	<span class="input-group-text" id="basic-addon1">搜索</span>
+							  </div> -->
+						   </div>
+							<ul class="list-group" id="list-group">
+							    <li class="list-group-item"></li>
+							</ul>
+                            <div id="container">
+                            </div>
+
+                            <input name="post[lat]" id="lat" hidden type="text" value="{$post.lat}" />
+                            <input name="post[lng]" id="lng" hidden type="text" value="{$post.lng}" />
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="col-md-3">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>发布时间</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control js-bootstrap-datetime" type="text" name="post[published_time]"
+                                   value="{:date('Y-m-d H:i',$post['create_time'])}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>状态</th>
+                        <php>
+                            $is_top_yes=$post['is_top']==1?"checked":"";
+                        </php>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="is-top-checkbox" name="post[is_top]" value="1"
+                                              {$is_top_yes}>置顶</label>
+                                <span id="is-top-error" style="color: red;display: none"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <hook name="portal_admin_article_edit_view_right_sidebar"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script src="https://map.qq.com/api/gljs?v=1.exp&key=AVGBZ-4ZKKD-D4H4U-HKC4G-PYTX5-FXF5G"></script>
+<script type="text/javascript">
+    var marker;
+    var map;
+    //地图初始化函数，本例取名为init，开发者可根据实际情况定义
+	let searchEndVal = null
+	let searchEndArr = [] 
+    $(function () {
+        function initMap() {
+            //定义地图中心点坐标
+            
+            var center;
+            var latQ=$('#lat').val();
+            var lngQ=$('#lng').val();
+            if(latQ==null||lngQ==null){
+                center = new TMap.LatLng(39.729833,116.14253)
+            }else {
+                center = new TMap.LatLng(latQ, lngQ)
+            }
+            //定义map变量，调用 TMap.Map() 构造函数创建地图
+            map = new TMap.Map(document.getElementById('container'), {
+                center: center,//设置地图中心点坐标
+                zoom: 17.2,   //设置地图缩放级别
+                pitch: 43.5,  //设置俯仰角
+                rotation: 45    //设置地图旋转角度
+            });
+            map.on("click", function (evt) {
+                var lat = evt.latLng.getLat().toFixed(6);
+                var lng = evt.latLng.getLng().toFixed(6);
+                $('#lat').val(lat);
+                $('#lng').val(lng);
+                createMarker(lat,lng);
+                console.log(lat+"  "+lng)
+                console.log(evt.poi)
+            });
+
+        }
+        //创建marker事件
+        function createMarker(lat,lng) {
+			if(marker){
+				removeMarker();
+			}
+			marker = new TMap.MultiMarker({
+				id: 'marker-layer',
+				map: map,
+				styles: {
+					"marker": new TMap.MarkerStyle({
+						"width": 25,
+						"height": 35,
+						"anchor": { x: 16, y: 32 },
+						"src": 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/markerDefault.png'
+					})
+				},
+				geometries: [{
+					"id": 'demo',
+					"styleId": 'marker',
+					"position": new TMap.LatLng(lat, lng),
+					"properties": {
+						"title": "marker"
+					}
+				}]
+			});
+			 map.setCenter(new TMap.LatLng(lat,lng));
+        }
+        //移除marker事件
+        function removeMarker() {
+            if (marker) {
+                marker.setMap(null);
+                marker = null;
+            }
+        }
+        initMap();
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('content');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+        $('#more-template-select').val("{$post.more.template|default=''}");
+// 搜索开始点
+        $('body').on('input', '#search',
+            function (e) {
+                let search = $('#search').val()
+                clearTimeout(window.setTimeOutSearch1)
+                window.setTimeOutSearch1 = setTimeout(() => {
+                    searchStartArr = []
+                    if (search === "") {
+                        $('#list-group').hide()
+                    } else {
+                        $('#list-group').show()
+                    }
+                    $('#list-group').html(`<li class="list-group-item" id="0">
+                            <span class="lleft">正在努力查找中<span>
+                            <span class="lright"><span>
+                        </li>`)
+                    $.ajax({
+                        type: "get",
+                        url: "https://apis.map.qq.com/ws/place/v1/suggestion",
+                        data: {
+                            'keyword': search,
+                            'key': 'AVGBZ-4ZKKD-D4H4U-HKC4G-PYTX5-FXF5G',
+                            'output': 'jsonp'
+                        },
+                        //key换成自己的
+                        dataType: "jsonp",
+                        jsonp: "callback",
+                        jsonpCallback: "TXmap",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        success: function (response) {
+                            if (response.status !== 0) {
+                                console.log('请求失败')
+                                return
+                            }
+                            searchStartArr = response.data
+                            let html = ''
+                            response.data.forEach(item => {
+                                html += `
+                        <li class="list-group-item" id="${item.id}">
+                            <span class="lleft">${item.title}<span>
+                            <span class="lright">${item.address}<span>
+                        </li>
+                        `
+                            });
+                            $('#list-group').html(html)
+                        }
+                    });
+                }, 200)
+            }
+        )
+		$('.searchStart').on('click', '.list-group-item', function (e) {
+		    let target = null
+		    if ($(e.target).attr('class') === "list-group-item") {
+		        target = $(e.target)
+		    } else {
+		        target = $(e.target).parents('.list-group-item')
+		    }
+		    searchStartVal = searchStartArr.find(item => {
+		        return item.id == target.attr('id')
+		    })
+			console.log(searchStartVal)
+		    $('#search').val(searchStartVal.title)
+		    $('#list-group').hide()
+			createMarker(searchStartVal.location.lat,searchStartVal.location.lng)
+			$('#lat').val(searchStartVal.location.lat);
+			$('#lng').val(searchStartVal.location.lng);
+			$("#city").val(searchStartVal.city)
+		})
+		
+		});
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+</script>
+
+<script>
+
+    var publishYesUrl   = "{:url('AdminArticle/publish',array('yes'=>1))}";
+    var publishNoUrl    = "{:url('AdminArticle/publish',array('no'=>1))}";
+    var topYesUrl       = "{:url('AdminArticle/top',array('yes'=>1))}";
+    var topNoUrl        = "{:url('AdminArticle/top',array('no'=>1))}";
+    var recommendYesUrl = "{:url('AdminArticle/recommend',array('yes'=>1))}";
+    var recommendNoUrl  = "{:url('AdminArticle/recommend',array('no'=>1))}";
+
+    var postId = $('#post-id').val();
+
+    //发布操作
+    $("#post-status-checkbox").change(function () {
+        if ($('#post-status-checkbox').is(':checked')) {
+            //发布
+            $.ajax({
+                url: publishYesUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#post-status-checkbox').removeAttr("checked");
+                        $('#post-status-error').html(data.msg).show();
+
+                    } else {
+                        $('#post-status-error').hide();
+                    }
+                }
+            });
+        } else {
+            //取消发布
+            $.ajax({
+                url: publishNoUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#post-status-checkbox').prop("checked", 'true');
+                        $('#post-status-error').html(data.msg).show();
+                    } else {
+                        $('#post-status-error').hide();
+                    }
+                }
+            });
+        }
+    });
+
+    //置顶操作
+    $("#is-top-checkbox").change(function () {
+        if ($('#is-top-checkbox').is(':checked')) {
+            //置顶
+            $.ajax({
+                url: topYesUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#is-top-checkbox').removeAttr("checked");
+                        $('#is-top-error').html(data.msg).show();
+
+                    } else {
+                        $('#is-top-error').hide();
+                    }
+                }
+            });
+        } else {
+            //取消置顶
+            $.ajax({
+                url: topNoUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#is-top-checkbox').prop("checked", 'true');
+                        $('#is-top-error').html(data.msg).show();
+                    } else {
+                        $('#is-top-error').hide();
+                    }
+                }
+            });
+        }
+    });
+    //推荐操作
+    $("#recommended-checkbox").change(function () {
+        if ($('#recommended-checkbox').is(':checked')) {
+            //推荐
+            $.ajax({
+                url: recommendYesUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#recommended-checkbox').removeAttr("checked");
+                        $('#recommended-error').html(data.msg).show();
+
+                    } else {
+                        $('#recommended-error').hide();
+                    }
+                }
+            });
+        } else {
+            //取消推荐
+            $.ajax({
+                url: recommendNoUrl, type: "post", dataType: "json", data: {ids: postId}, success: function (data) {
+                    if (data.code != 1) {
+                        $('#recommended-checkbox').prop("checked", 'true');
+                        $('#recommended-error').html(data.msg).show();
+                    } else {
+                        $('#recommended-error').hide();
+                    }
+                }
+            });
+        }
+    });
+
+
+</script>
+
+
+</body>
+</html>

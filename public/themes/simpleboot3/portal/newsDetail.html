@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<include file="public@head"/>
+	<style>
+		#newsDetail img{
+			width: 80%!important;
+			height: auto!important;
+			margin: 0.5rem auto;
+		}
+	</style>
+</head>
+</body>
+    <div class="index-banner index-banner-top" style="width:100%;">
+        <img src="__TMPL__/public/assets/style/img/news/moble_banner.png" class="index-banner-img" />
+    </div>
+	<div class="bg">
+		<div class="inner">
+	<ol class="breadcrumb" style="max-width: 1200px;margin: 0 auto;margin-top: 42px;">
+		<li><a style="color: black"  href="__ROOT__/">首页</a></li>
+		<li><a style="color: black"  href="{:cmf_url('portal/News/index')}">新闻中心</a></li>
+		<li  class="active">{$newsDetail.post_title}</li>
+	</ol>
+	<div class="newsTitle">{$newsDetail.post_title}</div>
+	<div class="newsTime" >{$newsDetail.user.user_nickname} 发表于:{:date('Y年m月d日',$newsDetail.published_time)}</div>
+	<div class="inner" style="border:1px solid #e0e0e0"></div>
+    <div class="inner newsDetail marbot382" id="newsDetail">
+		{$newsDetail.post_content|htmlspecialchars_decode}
+	</div>
+	</div>
+	</div>
+	<include file="public@footer"/>
+</body>
+<!--	<script type="text/javascript">
+		/*window.onload = function () {
+			var str1 = '<div>今年的政府工作报告，为全国招商人带来了一个非常重要的消息：能耗强度目标在“十四五”规划期内统筹考核，并留有适当弹性，新增可再生能源和原料用能不纳入能源消费总量控制。推动能耗“双控”向碳排放总量和强度“双控”转变。“稳增长”背景下，能耗政策迎来悄然转变。让招商人头疼的能耗指标“铁门槛”有望落实更精细化的计算方法，项目审批也有了更多可能性。</div><div>能耗政策生“变”，有何影响？</div><div>事实上，2021年12月8日的中央经济工作会议就已经提出：要科学考核，新增可再生能源和原料用能不纳入能源消费总量控制，创造条件尽早实现能耗“双控”向碳排放总量和强度“双控”转变，加快形成减污降碳的激励约束机制，防止简单层层分解。紧接着，1月21日，河南省发改委就发布了《关于加强能耗和煤炭指标保障支持重大项目建设的通知》，率先拿出了落实细则：</div><div>一、优化能耗强度和总量双控管理。省内各地方完成省定能耗强度降低目标的不再考核能源消费总量，各地方不得以完成能耗总量控制目标为由限制新建符合要求的项目。</div><div>二、新增可再生能源和原料用能不纳入控制范围。以2020年可再生能源电力消费为基数，“十四五”期间每年较上一年新增的可再生能源电力不纳入能源消费总量控制。生产烯烃、芳烃、化肥、农药、醇类等产品过程中的原料用能，不纳入能耗双控考核，原料用煤不纳入煤炭消费总量控制考核。</div><div>内统筹考核，并留有适当弹性”，则意味着将优化能耗强度考核的频次，企业可以避免因短期能耗指标超标而遭到用能限制。<img src="static/imgs/qrcode.png" />这样的统筹考核对煤电、石化、化工、钢铁、有色金属冶炼、建材等行业都是利好，更富弹性的能耗管理方式，有助于其有序开展生产经营。'
+			  $('#newsDetail').html(str1)
+		}*/
+
+	</script>-->
+</html>
