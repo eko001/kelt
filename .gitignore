@@ -7,7 +7,7 @@
 .git
 /build
 /public/assets/dist
-/data/runtime/cache
+/data/runtime
 /node_modules
 Vagrantfile
 .vagrant
