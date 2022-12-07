@@ -1,4 +1,4 @@
-<?php /*a:3:{s:38:"themes/simpleboot3/portal\\staffs.html";i:1670404231;s:35:"themes/simpleboot3/public\head.html";i:1670402422;s:39:"themes/simpleboot3/public\function.html";i:1670291596;}*/ ?>
+<?php /*a:3:{s:38:"themes/simpleboot3/portal\\staffs.html";i:1670406762;s:35:"themes/simpleboot3/public\head.html";i:1670402422;s:39:"themes/simpleboot3/public\function.html";i:1670291596;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -350,41 +350,6 @@
                 console.log(result);//打印服务端返回的数据(调试用)
                 if (result.code == 1) {
                     alert("提交成功")
-                };
-            },
-            error : function() {
-                alert("提交失败");
-            }
-        })
-    };
-    //其他屏幕提交
-    document.getElementById("button1").onclick = function() {
-        var sMobile1 = document.getElementById("phone1").value;
-        var sName1 = document.getElementById("name1").value;
-        var sMessage1 = document.getElementById("message1").value;
-        // if(sName1 == ''){
-        // 	alert("请填写姓名");
-        // 	return false;
-        // }
-        if(!(/^1[3|5|7|8][0-9]\d{4,8}$/.test(sMobile1))){
-            alert("请填写正确的手机号");
-            return false;
-        }
-        // if(sMessage1 == ''){
-        // 	alert("请填写留言");
-        // 	return false;
-        // }
-        // 设置在此处单击#button时要发生的事件
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "<?php echo url('Contacts/addPost'); ?>" ,
-            data: $('#form1').serialize(),
-            success: function (result) {
-                console.log(result);//打印服务端返回的数据(调试用)
-                if (result.code == 1) {
-                    alert("提交成功")
-                    document.getElementById("form1").reset();
                 };
             },
             error : function() {

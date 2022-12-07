@@ -20,7 +20,7 @@ class AppController extends RestBaseController
             ->where('name','=',$content)
             ->where('phone','=',$content)
             ->find();
-        echo $detail;
+        echo 'hahaha';
         $this->success('请求成功!', $detail);
     }
 

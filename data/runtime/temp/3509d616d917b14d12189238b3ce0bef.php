@@ -1,4 +1,4 @@
-<?php /*a:4:{s:39:"themes/simpleboot3/portal\\contact.html";i:1670291596;s:35:"themes/simpleboot3/public\head.html";i:1670401747;s:39:"themes/simpleboot3/public\function.html";i:1670291596;s:37:"themes/simpleboot3/public\footer.html";i:1670291596;}*/ ?>
+<?php /*a:4:{s:39:"themes/simpleboot3/portal\\contact.html";i:1670291596;s:35:"themes/simpleboot3/public\head.html";i:1670402422;s:39:"themes/simpleboot3/public\function.html";i:1670291596;s:37:"themes/simpleboot3/public\footer.html";i:1670291596;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -53,6 +53,7 @@
 	<link href="/themes/simpleboot3/public/assets/style/font/iconfont.css" rel="stylesheet">
     <link rel="shortcut icon" href="/themes/simpleboot3/public/assets/style/img/favicon.ico">
     <link href="/themes/simpleboot3/public/assets/style/css/contact.css" rel="stylesheet">
+    <link href="/themes/simpleboot3/public/assets/style/css/staffs.css" rel="stylesheet">
     <link href="/themes/simpleboot3/public/assets/style/css/map.css" rel="stylesheet">
     <link href="/themes/simpleboot3/public/assets/style/css/news.css" rel="stylesheet">
 	<script src="/themes/simpleboot3/public/assets/style/js/jquery.min.js"></script>
