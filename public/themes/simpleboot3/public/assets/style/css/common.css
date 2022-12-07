@@ -30,6 +30,9 @@ body{
 .col{
 	color: #00A096;
 }
+.flex{
+	display: flex;
+}
 .flex-box{
 	display: flex;
 	justify-content: space-between;
@@ -56,12 +59,12 @@ body{
     transform: rotate(180deg);
 }
 .inner{
-	width: 1200px;
+	width: 1430px;
 	margin: 0 auto;
 }
 .header-box {
-	width: 1200px;
-	line-height: 60px;
+	width: 100%;
+	line-height: 80px;
 	/* overflow: hidden; */
 	margin: 0 auto;
 }
@@ -69,9 +72,13 @@ body{
 	display: inline-block;
 	width: 2.53rem;
 	height: 0.59rem;
-	background: url(../img/logo.svg) 0 0 no-repeat;
+	background: url(../imgs/index/logo.svg) 0 0 no-repeat;
 	background-size: 100% 100%;
 	margin-top: 0.25rem;
+}
+.header-box .header-icon-imgs img{
+	width: 0.59rem;
+	height: 0.59rem;
 }
 .xmHeader .img-logo{
 	display: inline-block;
@@ -92,14 +99,14 @@ body{
 
 .header-box .nav li{
 	padding: 0 20px;
-	font-size: 0.26rem;
-	line-height: 60px;
+	font-size: 0.29rem;
+	line-height: 80px;
 	text-align: center;
 }
 .header-box .nav.navbar-nav{
-	width: 80%;
+	/* width: 80%;
 	margin: 0 10%;
-	position: static;
+	position: static; */
 }
 .header-box .nav li a{
 	color: #fff;

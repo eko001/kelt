@@ -9,8 +9,8 @@
 
 .nav-header {
     width: 100%;
-    background: #00A096;
-    height: 60px;
+    background: #FF5000;
+    height: 80px;
     /* position: relative; */
 }
 
@@ -20,7 +20,7 @@
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #00A096;
+    border-color: transparent;
 }
 
 .navbar-brand {
