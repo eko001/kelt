@@ -19,8 +19,8 @@ class AppController extends RestBaseController
         $data = $this->request->param();
         $content = $data['content'];
         $detail = Db::name('staff')->field('*')
-            ->where('name','like',$content)
-            ->whereOr('phone','like',$content)
+            ->where('name','=',$content)
+            ->whereOr('phone','=',$content)
             ->find();
         $this->success('请求成功!', $detail);
     }
