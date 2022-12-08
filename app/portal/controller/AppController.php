@@ -14,11 +14,13 @@ class AppController extends RestBaseController
      * 获取员工信息
      * @return false|string
      */
-    public function getStaff($content)
+    public function getStaff()
     {
+        $data = $this->request->param();
+        $content = $data['content'];
         $detail = Db::name('staff')->field('*')
-            ->where('name','=',$content)
-            ->where('phone','=',$content)
+            ->where('name','like',$content)
+            ->whereOr('phone','like',$content)
             ->find();
         $this->success('请求成功!', $detail);
     }

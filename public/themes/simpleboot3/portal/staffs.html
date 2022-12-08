@@ -17,13 +17,13 @@
                 <button  type="button" class="btn btn-default input-lg colbg" style=" width: 10%; font-weight: bold; padding: 10px 32px; font-size: 14px; color: #009e96; background-color: #FFFFFF; border: solid 1px;" id="button">立即查询</button>
             </div>
             <div class="userInfo">
-                <img src="" alt="">
+                <img src="" alt="" id="avatar">
                 <div class="userInfo_right">
-                    <div class="userInfo_right_name">姓名:</div>
-                    <div class="userInfo_right_sex">性别:</div>
-                    <div class="userInfo_right_sex">工号:</div>
-                    <div class="userInfo_right_sex">状态:</div>
-                    <div class="userInfo_right_sex">电话:</div>
+                    <div class="userInfo_right_name">姓名:<span id="name"></span></div>
+                    <div class="userInfo_right_sex">性别:<span id="sex"></span></div>
+                    <div class="userInfo_right_sex">工号:<span id="number"></span></div>
+                    <div class="userInfo_right_sex">状态:<span id="status"></span></div>
+                    <div class="userInfo_right_sex">电话:<span id="phone"></span></div>
                 </div>
 
             </div>
@@ -64,17 +64,29 @@
     document.getElementById("button").onclick = function() {
         var content = document.getElementById("content").value;
         $.ajax({
-            type: "GET",
+            type: "post",
             url: "{:url('App/getStaff')}" ,
-            data: content,
+            data: {content},
+            dataType: "json",
             success: function (result) {
                 console.log(result);//打印服务端返回的数据(调试用)
                 if (result.code == 1) {
-                    alert("提交成功")
+                    //alert("提交成功")
+                    if(result.data!=null){
+                        $("#name").html(result.data.name)
+                        $("#sex").html(result.data.sex)
+                        $("#phone").html(result.data.phone)
+                        $("#status").html(result.data.status)
+                        $("#number").html(result.data.number)
+                        $("#avatar").attr('src',result.data.avatar);
+                    }else {
+                        alert("未查询到该员工！");
+                    }
+
                 };
             },
             error : function() {
-                alert("提交失败");
+                alert("未查询到该员工！");
             }
         })
     };
