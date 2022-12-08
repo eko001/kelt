@@ -32,6 +32,7 @@ body{
 }
 .flex{
 	display: flex;
+	flex-wrap: wrap;
 }
 .flex-around{
 	display: flex;
@@ -63,7 +64,7 @@ body{
     transform: rotate(180deg);
 }
 .inner{
-	width: 1430px;
+	max-width: 1430px;
 	margin: 0 auto;
 }
 .header-box {
@@ -97,7 +98,7 @@ body{
 	background:#FF5000;
 }
 .header-fixed-box .img-logo{
-	background: url(../img/logo.svg) 0 0 no-repeat;
+	background: url(../imgs/index/logo.svg) 0 0 no-repeat;
 	background-size: 100% 100%;
 }
 
