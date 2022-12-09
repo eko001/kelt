@@ -6,7 +6,7 @@
 }
 .index-product .index-product-item{
 	background: #FAFAFA;
-	/* height: 3.7rem; */
+	height: 3.7rem;
 	margin-right: 0.37rem;
 	margin-bottom: 0.37rem;
 	width: calc(20% - 0.4rem);
@@ -32,6 +32,7 @@
 }
 .index-product .index-product-item .index-product-item-innerbox2{
 	padding: 0.62rem 0.35rem;
+	height: 3.7rem;
 }
 .index-product .index-product-item .index-product-item-innerbox2 .title{
 	color: #333333;
@@ -369,22 +370,183 @@
 	color: #333333;
 	font-size: 0.35rem;
 	line-height: 0.35rem;
+	font-weight: bolder;
 	display: flex;
 	justify-content: space-around;
+	margin-bottom: 0.53rem;
 }
 .index-advantage .index-advantage-box .index-advantage-box-top .item{
 	background: #FFFFFF;
 	width: calc(25% - 20px);
 	padding: 0.53rem 0;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 }
 .index-advantage .index-advantage-box .index-advantage-box-top .item img{
 	display: block;
 	width: 1.07rem;
 	height: 1.07rem;
+	margin-right: 0.7rem;
 }
+.index-advantage .index-advantage-bottom{
+	border-top: solid 1px #FF5000;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box{
+	display: flex;
+	justify-content: space-around;
+	padding-top: 0.71rem;
+	padding-bottom: 7.67rem;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item{
+	background: #FFFFFF;
+	width: calc(25% - 20px);
+	padding: 0.53rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	color: #999999;
+	font-size: 0.28rem;
+	line-height: 0.5rem;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item img{
+	display: block;
+	height: 0.6rem;
+	margin-right: 0.35rem;
+	filter:brightness(0);
+	opacity: 50%;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item:hover{
+	color: #FF5000;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item:hover img{
+	filter:brightness(100%);
+	opacity: 1;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item .icon-img{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: -0.96rem;
+	left: calc(50% - 8px);
+	background: url(../imgs/index/icon-up.svg) 0 0 no-repeat;
+	background-size: 100% 100%;
+	z-index: 2;
+	display: none;
+}
+.index-advantage .index-advantage-bottom .index-advantage-bottom-box .item:hover .icon-img{
+	display: block;
+}
+/* 华劳动态 */
+.index-news{
+	padding: 1.78rem 0;
+	background: #FFFFFF;
+}
+.index-news .index-news-box{
+	display: flex;
+	justify-content: space-around;
+	padding-top: 1.07rem;
+}
+.index-news .index-news-box .item{
+	background: #FAFAFA;
+	flex: 1;
+	margin-right: 0.17rem;
+	padding-bottom: 0.53rem;
+}
+.index-news .index-news-box .item:last-child{
+	margin-right: 0;
+}
+.index-news .index-news-box .item .title{
+	color: #333333;
+	font-size: 0.28rem;
+	line-height: 0.42rem;
+	height: 1.46rem;
+	text-align: justify;
+	margin-bottom: 0.53rem;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+	padding: 0.62rem 0.44rem 0;
+	display: block;
+}
+.index-news .index-news-box .item .title-bigger{
+	display: none;
+	height: 2.85rem;
+}
+.index-news .index-news-box .item .title-bigger .inner-box{
+	padding: 1.48rem 0.44rem 0.53rem;
+	background: linear-gradient(180deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
+	border-radius: 5px 5px 0px 0px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+	/* height: 2.85rem; */
+}
+.index-news .index-news-box .item .title-bigger .inner-box .content{
+	color: #FFFFFF;
+	font-size: 0.28rem;
+	line-height: 0.42rem;
+}
+.index-news .index-news-box .item .time{
+	border-top: solid 1px #EEEEEE;
+	line-height: 1.17rem;
+	font-size: 0.25rem;
+	color: #D1D1D1;
+	padding: 0 0.44rem;
+}
+.index-news .index-news-box .item .text{
+	line-height: 0.42rem;
+	font-size: 0.25rem;
+	color: #666666;
+	padding: 0 0.44rem;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3; 
+	margin-bottom: 0.42rem;
+}
+.index-news .index-news-box .item .more-btn{
+	width: 0.71rem;
+	height: 0.71rem;
+	line-height: 0.71rem;
+	text-align: center;
+	color: #FF5000;
+	font-size: 0.28rem;
+	margin-left: 0.44rem;
+	font-weight: bolder;
+}
+.index-news .index-news-box .item:hover .title{
+	display: none;
+}
+.index-news .index-news-box .item:hover .title-bigger{
+	display: block;
+}
+.index-news .index-news-box .item:hover .more-btn{
+	background: #FF5000;
+	color: #FFFFFF;
+	border-radius: 2px;
+} 
+.index-news .more{
+	color: #FF5000;
+	font-size: 0.25rem;
+	text-align: center;
+	margin-top: 0.71rem;
+}
+/* 合作客户 */
+.index-customer{
+	padding: 1.78rem 0;
+	background: #FAFAFA;
+}
+
+
+
+
 
 
 
