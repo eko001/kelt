@@ -15,7 +15,7 @@
 }
 
 .navbar-default {
-    /* background-color: #00A096; */
+    /* background-color: #ff5000; */
     border: none;
 }
 
@@ -29,11 +29,11 @@
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-    background: #00A096;
+    background: #ff5000;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #00A096;
+    background-color: #ff5000;
 }
 
 .header-fixed-box .navbar-toggle {
