@@ -5,6 +5,10 @@
 	font-weight: bolder;
 	margin-bottom: 0.36rem;
 }
+.inner-small-title{
+	color: #999;
+	font-size: 0.25rem;
+}
 /* 首页 */
 .index .index-banner-top{
 	width: 100%;
@@ -595,6 +599,13 @@
 	margin: 1.07rem auto 0;
 }
 @media (max-width: 768px) {
+	.inner-bigger-title p:first-child, .inner-bigger-title .p1{
+		font-size: 1.2rem;
+		margin-bottom:1rem;
+	}
+	.inner-small-title{
+		font-size: 0.8rem;
+	}
 	.index .index-banner-top {
 		padding-top: 2.66rem;
 		padding-bottom: 6.53rem;
@@ -610,18 +621,59 @@
 		font-size: 1.2rem;
 	}
 	.index-number .item{
+		margin:2rem 0;
 		border-right: none;
 	}
 	.index-number .item .title{
-		
+		font-size: 1.33rem;
+		margin-bottom: 1.33rem;
 	}
-	
-	
-	
-	
-	
-	
-	
+	.index-number .item .text{
+		font-size: 0.86rem;
+	}
+	.index-product .flex{
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.index-product .index-product-item{
+		width: calc(50% - 5px);
+		height: 10rem;
+		margin-right: 0;
+		margin-bottom: 0.66rem;
+	}
+	.index-product .index-product-item.index-product-item-bigger{
+		width: 100%;
+	}
+	.index-product .index-product-item .index-product-item-innerbox{
+		padding: 3.2rem 1rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox .title{
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox .text{
+		font-size: 0.8rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox2{
+		padding: 1.33rem 1rem;
+		height: 10rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox2 .img{
+		width: 2rem;
+		height: 2rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox2 .title{
+		font-size: 1.06rem;
+		line-height: 2rem;
+		margin-bottom:1rem;
+	}
+	.index-product .index-product-item .index-product-item-innerbox2 .text{
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+	}
+	.index-solution{
+		padding: 2rem 1rem;
+	}
 }
 
 
