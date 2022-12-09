@@ -8,16 +8,18 @@
 }
 
 .nav-header {
-    width: 100%;
-    background: #FF5000;
+	padding: 0 1rem;
+    /* width: 100%; */
+    background: #FF5000!important;
     height: 80px;
     /* position: relative; */
 }
 
 .navbar-default {
-    /* background-color: #ff5000; */
+    background-color: #ff5000;
     border: none;
 }
+
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
@@ -33,11 +35,11 @@
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #ff5000;
+    background-color: #FFFFFF;
 }
 
 .header-fixed-box .navbar-toggle {
-    border-color: #fff;
+    border-color: transparent;
 }
 
 .header-fixed-box .navbar-toggle .icon-bar {
@@ -90,7 +92,7 @@ p {
 
 .row {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1430px;
     margin-left: -10px;
     margin-right: -10px;
 }

@@ -87,12 +87,11 @@ body{
 }
 .xmHeader .img-logo{
 	display: inline-block;
-	width: 3.65rem;
-	height: 0.85rem;
-	background: url(../img/logo2.svg) 0 0 no-repeat;
+	width: 5.33rem;
+	height: 3.33rem;
+	background: url(../imgs/index/logo.svg) 0 0 no-repeat;
 	background-size: 100% 100%;
-	margin-top: 0.27rem;
-	margin-left: 0.4rem;
+	margin-left: 1rem;
 }
 .header-fixed-box{
 	background:#FF5000;
@@ -197,13 +196,14 @@ body{
 	object-fit:cover;
 	position: relative;
 }
-.index-banner-top{
+/* .index-banner-top{
 	width: 100%;
-	/* height: 12.96rem; */
 	overflow: hidden;
 	position: relative;
 	margin-top: 60px;
-}
+	background: url(../imgs/index/banner.png) center center no-repeat;
+	background-size: 100% 100%;
+} */
 .index-banner-top img{
 	width: 100%;
 }
@@ -487,12 +487,6 @@ body{
 	.foot_d,.foot_d a {
 	    font-size: 0.44rem;
 	    line-height: 0.85rem;
-	}
-	.index-banner-top{
-		margin-top: 50px;
-	}
-	.index-banner-top,.index-banner-img,.index-banner .banner-img{
-		height: 6.4rem;
 	}
 	.pagination>li>a, .pagination>li>span{
 		padding: 10px 10px;
