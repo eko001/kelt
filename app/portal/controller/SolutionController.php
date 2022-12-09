@@ -20,7 +20,6 @@ class SolutionController extends HomeBaseController
         if (empty($article)) {
             abort(404, '文章不存在!');
         }
-
         $this->assign("solutionDetail",$article);
         return $this->fetch(':solutionDetail');
     }
