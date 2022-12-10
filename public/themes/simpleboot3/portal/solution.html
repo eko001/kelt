@@ -97,6 +97,106 @@
 			</div>
 		</div>
 	</div>
+	<!-- 我们的优势 -->
+	<div class="solution_advantage">
+		<div class="title">我们的优势</div>
+		<div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+		<div class="list">
+			<div class="content">
+				<div class="content_left">
+					15
+				</div>
+				<div class="content_right">
+					<div class="content_right_top">
+						年
+					</div>
+					<div class="content_right_bottom">
+						深耕人力资源服务业
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content_left">
+					83
+				</div>
+				<div class="content_right">
+					<div class="content_right_top">
+						家
+					</div>
+					<div class="content_right_bottom">
+						服务超千人企业和上市公司83家
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content_left">
+					3000
+				</div>
+				<div class="content_right">
+					<div class="content_right_top">
+						家
+					</div>
+					<div class="content_right_bottom">
+						服务客户3000余家
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content_left">
+					170
+				</div>
+				<div class="content_right">
+					<div class="content_right_top">
+						+
+					</div>
+					<div class="content_right_bottom">
+						全国170+家直营分/子公司
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 解决方案 -->
+	<div class="resolve">
+		<div class="resolve_left">
+			<div class="resolve_left_title">制造业外包服务一站式解决方案</div>
+			<div class="resolve_left_tag">高效便捷的服务，快速推进合作实施</div>
+			<button>获取定制解决方案</button>
+		</div>
+		<div class="resolve_right">
+			<div class="resolve_right_item active">
+				<div class="resolve_right_content">
+					<div class="text">全流程技术支持</div>
+				</div>
+			</div>
+			<div class="resolve_right_item">
+				<div class="resolve_right_content">
+					<div class="text">全方案咨询</div>
+				</div>
+			</div>
+			<div class="resolve_right_item">
+				<div class="resolve_right_content">
+					<div class="text">全地域服务</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 客户信赖 -->
+	<div class="solution_customer">
+		<div class="title">1600+家企业的信赖</div>
+		<div class="tag">深耕人力资源服务业，为企业提供更优质的服务</div>
+		<div class="list">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+		</div>
+		<div class="next">
+			查看所有客户案例
+		</div>
+	</div>
 </div>
 
 
@@ -107,7 +207,16 @@
         $(".solution-product-item li").mouseover(function () {
             $(".solution-product-item li").removeClass("active");
             $(this).addClass("active");
-        })
+        });
+		$(".resolve .resolve_right .resolve_right_item").mouseover(function(){
+			$(".resolve .resolve_right .resolve_right_item").removeClass('active');
+			$(this).addClass("active");
+		});
+		$(".resolve .resolve_right .resolve_right_item").mouseout(function(){
+			$(".resolve .resolve_right .resolve_right_item").removeClass('active');
+			$(".resolve .resolve_right .resolve_right_item").eq(0).addClass("active");
+		});
+		
     })
 </script>
 </html>
