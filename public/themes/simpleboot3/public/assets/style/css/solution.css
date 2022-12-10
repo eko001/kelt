@@ -335,3 +335,8 @@
 	text-align: center;
 	display: none;
 }
+
+/* 手机 */
+@media (max-width : 425px) {
+	
+}
