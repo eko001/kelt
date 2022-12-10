@@ -362,7 +362,7 @@
 	background: #FFFFFF;
 }
 .index-history .index-history-box .index-history-box-left .history-box li .name{
-	color: #FFFFFF;
+	color: rgba(255, 255, 255, 0.8);;
 	font-size: 0.25rem;
 	line-height: 2;
 	margin-left: 0.35rem;
