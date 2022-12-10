@@ -500,6 +500,48 @@ body{
 	.h2{
 		margin-top: 0.4rem;
 	}
+	.footer{
+		padding: 0;
+	}
+	.footer .foot-phone-top{
+		display: flex;
+		justify-content: space-between;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.93rem;
+		padding: 2rem 0.66rem;
+		border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+	}
+	.footer .foot-phone-center{
+		
+		font-size: 0.93rem;
+		padding: 1.34rem 0.66rem;
+	}
+	.footer .foot-phone-center .item{
+		margin: 0.33rem 0;
+		text-align: center;
+	}
+	.footer .foot-phone-top a,.footer .foot-phone-center a{
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.footer .foot-phone-center .erweima{
+		text-align: center;
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 0.93rem;
+		font-weight: bolder;
+	}
+	.footer .foot-phone-center .erweima img{
+		display: block;
+		margin: 4rem auto 2.66rem;
+		width: 10.66rem;
+		height: 10.66rem;
+	}
+	.footer .foot-phone-bottom{
+		text-align: center;
+		padding-bottom: 2.66rem;
+	}
+	.footer .foot-phone-bottom a{
+		color: rgba(255, 255, 255, 0.4);
+	}
 }
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-aspect-ratio: 1.5){
     .border-1px:after{
