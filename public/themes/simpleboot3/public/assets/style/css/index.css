@@ -2,11 +2,16 @@
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	margin-top: 60px;
-	padding-top: 3.21rem;
-	padding-bottom: 5.67rem;
+	margin-top: 80px;
 	text-align: center;
 	color: #FFFFFF;
+}
+.index-banner-box{
+	height: 12.5rem;
+	background: linear-gradient(180deg, rgba(255,80,0,1) 0%,rgba(255,80,0,0.1) 63%,rgba(255,80,0,0.1) 100%);
+}
+.index-banner-box .title{
+	padding-top: 5.1rem;
 }
 .inner-bigger-title p:first-child,.inner-bigger-title .p1{
 	font-size: 0.57rem;
@@ -616,8 +621,60 @@
 	background: #FF5000;
 	margin: 1.07rem auto 0;
 }
-
-
+/* 联系我们页面 */
+.contact .index-banner-top{
+	background: url(../imgs/contact/banner-phone.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.contact .index-banner-top{
+	font-size: 0.85rem;
+}
+.contact .contact-part{
+	padding: 1.78rem 0;
+}
+.contact .contact-part-box{
+	display: flex;
+	justify-content: space-between;
+}
+.contact .contact-part-box .contact-part-box-left{
+	width: 33%;
+	height: 11.78rem;
+	background: #FFFFFF;
+	overflow-y: scroll;
+}
+.contact .contact-part-box .contact-part-box-left li{
+	background: #FFFFFF;
+	border-radius: 5px;
+	padding: 0.44rem 0.53rem;
+	margin-bottom: 0.26rem;
+}
+.contact .contact-part-box .contact-part-box-left li.active{
+	background: #FF5000;
+}
+.contact .contact-part-box .contact-part-box-left li .title{
+	color: #333333;
+	font-size: 0.32rem;
+	margin-bottom: 0.35rem;
+}
+.contact .contact-part-box .contact-part-box-left li.active .title{
+	color: #FFFFFF;
+}
+.contact .contact-part-box .contact-part-box-left li .text{
+	color: #666666;
+	font-size: 0.25rem;
+	line-height: 0.42rem;
+}
+.contact .contact-part-box .contact-part-box-left li.active .text{
+	color: #FFFFFF;
+}
+.contact .contact-part-box .contact-part-box-right{
+	width: calc(67% - 10px);
+	height: 11.78rem;
+}
+.contact .map{
+	width: 100%;
+	height: 11.78rem;
+}
 /* 合作客户页面 */
 .customer .index-banner-top{
 	background: url(../imgs/customer/banner.png) center center no-repeat;
@@ -651,16 +708,20 @@
 	.inner-small-title{
 		font-size: 0.8rem;
 	}
+	.index-banner-box{
+		height: 13.34rem;
+	}
 	.index .index-banner-top {
-		padding-top: 2.66rem;
-		padding-bottom: 6.53rem;
+		/* padding-top: 2.66rem;
+		padding-bottom: 6.53rem; */
 		margin-top: 50px;
 		background: url(../imgs/index/banner-phone.png) center center no-repeat;
 		background-size: 100% 100%;
 	}
 	.index .index-banner-top .title{
 		font-size: 1.6rem;
-		margin-bottom: 1.33rem;
+		margin-bottom: 1rem;
+		padding-top: 2.67rem;
 	}
 	.index .index-banner-top .text{
 		font-size: 1.2rem;
@@ -963,13 +1024,23 @@
 		line-height: 3.6rem;
 		font-size: 0.93rem;
 	}
+	
+	/* 联系我们页面 */
+	.contact .index-banner-top{
+		margin-top: 50px;
+		background: url(../imgs/contact/banner-phone.png) center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.contact .index-banner-top .title{
+		font-size: 1.6rem;
+	}
+	
 	/* 合作客户页面 */
 	.customer .index-banner-top{
 		margin-top: 50px;
 		background: url(../imgs/customer/banner-phone.png) center center no-repeat;
 		background-size: 100% 100%;
 	}
-	
 	.customer .index-banner-top .title{
 		font-size: 1.6rem;
 	}

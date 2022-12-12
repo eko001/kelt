@@ -1,14 +1,14 @@
 /* 一般浏览器的不要太小，容易看不见 */
-.time-line::-webkit-scrollbar {
+.time-line::-webkit-scrollbar,.contact-part-box-left::-webkit-scrollbar {
     width: 4px;
   }
-.time-line::-webkit-scrollbar-thumb {
+.time-line::-webkit-scrollbar-thumb,.contact-part-box-left::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     opacity: 0.2;
     background: fade(@primary-color, 60%);
   }
-.time-line::-webkit-scrollbar-track {
+.time-line::-webkit-scrollbar-track,.contact-part-box-left::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 0;
     background: fade(@primary-color, 30%);
