@@ -337,5 +337,24 @@
 
 /* 手机 */
 @media (max-width : 425px) {
-	
+/* 	.solution .banner{
+		width: 100%;
+		height: 10rem;
+		background-image: url(../imgs/solution/banner.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+	}
+	.solution_banner_text_one{
+		color: rgba(255, 255, 255, 1);
+		font-size: 0.857143rem;
+		text-align: left;
+		font-weight: bold;
+	}
+	.solution_banner_text_two{
+		color: rgba(255, 255, 255, 1);
+		font-size: 0.428571rem;
+	} */
 }
