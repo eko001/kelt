@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<include file="public@head"/>
+    <include file="public@head"/>
 </head>
 <body>
-	<div id="news">
-		<div class="index-banner index-banner-top" style="width:100%;">
-			<div class="hidden-xs index-banner-img" style="background: url('__TMPL__/public/assets/style/img/news/banner.png') 0 0 no-repeat;background-size:  100% 100%;">
-				<div class="index-banner-box2 text-center">
-					<div class="index-banner-title">新闻中心</div>
-				</div>
-			</div>
-			<div class="hidden-lg hidden-md hidden-sm index-banner-img" style="background: url('__TMPL__/public/assets/style/img/news/moble_banner.png') 0 0 no-repeat;background-size:  100% 100%;">
-				<div class="index-banner-box2 text-center">
-					<div class="index-banner-title">新闻中心</div>
-				</div>
-			</div>
+<div id="news" class="news">
+    <div class="banner">
+        <div class="news_banner_text">了解最新的资讯与动态</div>
+    </div>
+    <div class="typelist">
+        <ul class="type">
+            <volist name="typeList" id="vo">
+                <li data-url="category=$vo.id"><a href="{:cmf_url('portal/News/list',array('category'=>$vo.id))}">{$vo.name}</a>
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <div class="list">
+        <div class="item">
+            <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+            <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
+            <div class="content">
+                为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
+            </div>
+        </div>
+		<div class="item">
+		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
+		    <div class="content">
+		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
+		    </div>
 		</div>
-		<div class="bgf-inner">
-			<div class="inner">
-				<ul class="news-tab">
-					<li class="text-center" data-url="category=11"><a href="{:cmf_url('portal/News/index',array('category'=>'11'))}">全部</a></li>
-					<li class="text-center" data-url="category=20"><a href="{:cmf_url('portal/News/list',array('category'=>'20'))}">集团动态</a></li>
-					<li class="text-center" data-url="category=21"><a href="{:cmf_url('portal/News/branch',array('category'=>'21'))}">行业新闻</a></li>
-				</ul>
-			</div>
+		<div class="item">
+		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
+		    <div class="content">
+		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
+		    </div>
 		</div>
-		<div class="bg">
-			<div class="inner">
-				<ul class="news-list">
-					<volist name="list" id="vo">
-						<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}" >
-						<li class="flex-box news-list-item">
-							<div class="news-list-item-img">
-								<img src="{:cmf_get_image_url($vo.thumbnail)}" />
-							</div>
-							<div class="news-list-item-center">
-								<div class="news-list-item-title">{$vo.post_title}</div>
-								<div class="hidden-xs news-list-item-text">
-									{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}</div>
-								<div class="news-list-item-tabs text-center">{$vo.post_keywords}</div>
-							</div>
-							<div class="news-list-item-right">{:date('m-d',$vo.published_time)}</div>
-						</li>
-						</a>
-					</volist>
-				</ul>
-			</div>
-			<div class="pageLimitbox">
-				<ul class="pagination">{$page|default=''}</ul>
-				<ul id="pageLimit" class="pagination pagination-lg"></ul>
-			</div>
+		<div class="item">
+		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
+		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
+		    <div class="content">
+		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
+		    </div>
 		</div>
+    </div>
+	<div class="pageLimitbox">
+	    <ul class="pagination">{$page|default=''}</ul>
+	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
 	</div>
+</div>
 <include file="public@footer"/>
 </body>
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
-	$(function(){
-		activeNav();
-		function activeNav(){
-			$('.news-tab li').removeClass('active');
-			var location = window.location.search;
-			if(!location){
-				$(".news-tab li").eq(0).addClass("active")
-			}else{
-				location = location.replace("?","");
-				for(var i = 0;i<$('.header-box li').length;i++){
-					if($('.news-tab li').eq(i).data('url')==location){
-						$('.news-tab li').eq(i).addClass('active');
-						return true
-					}
-				}
-			}
-		};
-		// $(".news-tab li").eq(0).addClass("active")
-		// $(".news-tab li").click(function(){
-		// 	$(".news-tab li").removeClass("active");
-		// 	$(this).addClass("active")
-		// })
-	})
-	</script>
+    $(function () {
+        activeNav();
+
+        function activeNav() {
+            $('.news-tab li').removeClass('active');
+            var location = window.location.search;
+            if (!location) {
+                $(".news-tab li").eq(0).addClass("active")
+            } else {
+                location = location.replace("?", "");
+                for (var i = 0; i < $('.header-box li').length; i++) {
+                    if ($('.news-tab li').eq(i).data('url') == location) {
+                        $('.news-tab li').eq(i).addClass('active');
+                        return true
+                    }
+                }
+            }
+        };
+        // $(".news-tab li").eq(0).addClass("active")
+        // $(".news-tab li").click(function(){
+        // 	$(".news-tab li").removeClass("active");
+        // 	$(this).addClass("active")
+        // })
+    })
+</script>
 </body>
 </html>
