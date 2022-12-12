@@ -1,3 +1,13 @@
+.index-banner-top{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	margin-top: 60px;
+	padding-top: 3.21rem;
+	padding-bottom: 5.67rem;
+	text-align: center;
+	color: #FFFFFF;
+}
 .inner-bigger-title p:first-child,.inner-bigger-title .p1{
 	font-size: 0.57rem;
 	color: #121212;
@@ -11,16 +21,8 @@
 }
 /* 首页 */
 .index .index-banner-top{
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	margin-top: 60px;
 	background: url(../imgs/index/banner.png) center center no-repeat;
 	background-size: 100% 100%;
-	padding-top: 3.21rem;
-	padding-bottom: 5.67rem;
-	text-align: center;
-	color: #FFFFFF;
 }
 .index .index-banner-top .title{
 	margin-bottom: 0.89rem;
@@ -334,7 +336,7 @@
 }
 .index-history .index-history-box .index-history-box-left .time-line{
 	background: #ff5000;
-	overflow: auto;
+	overflow-y: scroll;
 	height: 4.64rem;
 }
 .index-history .index-history-box .index-history-box-left .history-box{
@@ -362,7 +364,7 @@
 	background: #FFFFFF;
 }
 .index-history .index-history-box .index-history-box-left .history-box li .name{
-	color: rgba(255, 255, 255, 0.8);;
+	color: rgba(255, 255, 255, 0.8);
 	font-size: 0.25rem;
 	line-height: 2;
 	margin-left: 0.35rem;
@@ -613,6 +615,33 @@
 	text-align: center;
 	background: #FF5000;
 	margin: 1.07rem auto 0;
+}
+
+
+/* 合作客户页面 */
+.customer .index-banner-top{
+	background: url(../imgs/customer/banner.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.customer .index-banner-top{
+	font-size: 0.85rem;
+}
+.customer .customer-list{
+	padding: 1.78rem 0;
+	background: #F5F5F5;
+}
+.customer .customer-list .customer-list-box{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 1.42rem;
+}
+.customer .customer-list .customer-list-box div{
+	width: calc(16.66% - 9px);
+	margin-bottom: 0.19rem;
+}
+.customer .customer-list .customer-list-box div img{
+	width: 100%;
 }
 @media (max-width: 768px) {
 	.inner-bigger-title p:first-child, .inner-bigger-title .p1{
@@ -933,6 +962,17 @@
 		height: 3.6rem;
 		line-height: 3.6rem;
 		font-size: 0.93rem;
+	}
+	/* 合作客户页面 */
+	.customer .index-banner-top{
+		margin-top: 50px;
+	}
+	.customer .index-banner-top .title{
+		font-size: 1.6rem;
+	}
+	.customer .customer-list .customer-list-box div{
+		width: calc(50% - 4px);
+		margin-bottom: 0.6rem;
 	}
 }
 
