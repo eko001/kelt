@@ -298,4 +298,35 @@
 	text-align: justify;
 	line-height: 0.5rem;
 }
-
+/* 以人为本 */
+.getresolve{
+	padding: 1.79rem 11.0rem 1.79rem 11.0rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #FFFFFF
+}
+.getresolve .title {
+    color: rgba(16, 16, 16, 1);
+    font-size: 0.571429rem;
+    text-align: center;
+    font-weight: bold;
+}
+.getresolve .tag {
+    margin-top: 0.357143rem;
+    color: rgba(153, 153, 153, 1);
+    font-size: 0.25rem;
+    text-align: center;
+}
+.getresolve button{
+	margin-top: 1.43rem;
+	width: 3.8rem;
+	height: 0.96rem;
+	line-height: 0.96rem;
+	border-radius: 0.09rem;
+	background-color: rgba(255, 80, 0, 1);
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	font-size: 0.25rem;
+	border: 0;
+}
