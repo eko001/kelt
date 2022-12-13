@@ -11,12 +11,24 @@ use think\facade\Db;
 class NewsController extends HomeBaseController
 {
     public function index(){
-       $typeList=Db::name('portal_category')->field('*')->where('parent_id','=',22)->select();
+		$typeList=Db::name('portal_category')->field('*')->where('parent_id','=',22)->select();
         $this->assign("typeList", $typeList);
+		
+		$param = $this->request->param();
+		if(!isset($param["category"])){
+            $param["category"] = $typeList[0]['id'];
+        }
+		$postService = new PostService();
+		$data        = $postService->adminArticleList($param);
+		$page = $data->render();
+		$this->assign("list", $data);
+		$this->assign("page", $page);
         return $this->fetch(':news');
     }
 
     public function list(){
+		$typeList=Db::name('portal_category')->field('*')->where('parent_id','=',22)->select();
+		$this->assign("typeList", $typeList);
         $param = $this->request->param();
         $postService = new PostService();
         $data        = $postService->adminArticleList($param);
@@ -25,6 +37,7 @@ class NewsController extends HomeBaseController
         $this->assign("page", $page);
         return $this->fetch(':news');
     }
+
 
 	public function detail(){
       /*  $postService         = new PostService();

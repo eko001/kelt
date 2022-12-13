@@ -17,36 +17,18 @@
         </ul>
     </div>
     <div class="list">
-        <div class="item">
-			<a href="{:cmf_url('portal/News/detail')}">
-				<img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
-				<div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
-				<div class="content">
-					为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
-				</div>
-			</a>
-        </div>
-		<div class="item">
-		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
-		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
-		    <div class="content">
-		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
+		<volist name="list" id="vo">
+		    <div class="item">
+		    	<a href="{:cmf_url('portal/News/detail')}">
+		    		<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+		    		<div class="title">{$vo.post_title}</div>
+		    		<div class="content">
+		    			{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}
+		    		</div>
+		    	</a>
 		    </div>
-		</div>
-		<div class="item">
-		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
-		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
-		    <div class="content">
-		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
-		    </div>
-		</div>
-		<div class="item">
-		    <img src="__TMPL__/public/assets/style/imgs/solution/resolve3.png" alt="">
-		    <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机...</div>
-		    <div class="content">
-		        为贯彻党中央、国务院关于稳就业、保居民就业决策部署，充分发挥人力资源服务机构匹配供需、专业高效优势，人力资源社会保障部决定开展人力资源服务机构稳就业促就业行动。现就有关工作通知...
-		    </div>
-		</div>
+		</volist>
+        
     </div>
 	<div class="pageLimitbox">
 	    <ul class="pagination">{$page|default=''}</ul>
@@ -59,7 +41,8 @@
 <script type="text/javascript">
     $(function () {
         activeNav();
-
+		let arr = <?php echo $typeList ?> ;
+		
         function activeNav() {
             $('.news-tab li').removeClass('active');
             var location = window.location.search;
@@ -75,11 +58,28 @@
                 }
             }
         };
-        // $(".news-tab li").eq(0).addClass("active")
-        // $(".news-tab li").click(function(){
-        // 	$(".news-tab li").removeClass("active");
-        // 	$(this).addClass("active")
-        // })
+		/* $.ajax({
+            type: "post",
+            url: "{:url('portal/News/list')}" ,
+            data: {category: parseInt(arr[0].id) },
+            dataType: "json",
+            success: function (result) {
+                console.log(result);//打印服务端返回的数据(调试用)
+                if (result.code == 1) {
+                    //alert("提交成功")
+                    if(result.data!=null){
+						alert(result.data)
+                    }else {
+                        alert("");
+                    }
+
+                };
+            },
+            error : function() {
+                alert("未查询到该员工！");
+            }
+        }) */
+       
     })
 </script>
 </body>
