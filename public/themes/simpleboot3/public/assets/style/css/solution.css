@@ -72,6 +72,7 @@
 }
 /* 服务目标 */
 .solution .target{
+	padding: 1.785714rem 4.375rem 1.446429rem 4.375rem;
 	background-color: #FAFAFA ;
 	display: flex;
 	align-items: center;
