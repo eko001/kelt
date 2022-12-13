@@ -48,9 +48,9 @@
 	justify-content: space-between;
 	background-color: #ffffff;
 }
-.news .item{
+.news .list .item{
 	margin-bottom: 0.89rem;
-	width: 8.10rem;
+	width: 32%;
 	height: 7.82rem;
 	display: flex;
 	flex-direction: column;
