@@ -11,25 +11,12 @@
     <div class="typelist">
         <ul class="type">
             <volist name="typeList" id="vo">
-                <li data-url="category=$vo.id"><a href="{:cmf_url('portal/News/list',array('category'=>$vo.id))}">{$vo.name}</a>
-                </li>
+                <li data-url="{$vo.id}">{$vo.name}</li>
             </volist>
         </ul>
     </div>
-    <div class="list">
-		<volist name="list" id="vo">
-		    <div class="item">
-		    	<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}">
-		    		<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-		    		<div class="title">{$vo.post_title}</div>
-		    		<div class="content">
-		    			{$vo.post_content|htmlspecialchars_decode|strip_tags|mb_substr=0,100}
-		    		</div>
-		    	</a>
-		    </div>
-		</volist>
-        
-    </div>
+	<div id="newsList"></div>
+	
 	<div class="pageLimitbox">
 	    <ul class="pagination">{$page|default=''}</ul>
 	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
@@ -40,46 +27,53 @@
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
     $(function () {
-        activeNav();
-		let arr = <?php echo $typeList ?> ;
 		
-        function activeNav() {
-            $('.news-tab li').removeClass('active');
-            var location = window.location.search;
-            if (!location) {
-                $(".news-tab li").eq(0).addClass("active")
-            } else {
-                location = location.replace("?", "");
-                for (var i = 0; i < $('.header-box li').length; i++) {
-                    if ($('.news-tab li').eq(i).data('url') == location) {
-                        $('.news-tab li').eq(i).addClass('active');
-                        return true
-                    }
-                }
-            }
-        };
-		/* $.ajax({
-            type: "post",
-            url: "{:url('portal/News/list')}" ,
-            data: {category: parseInt(arr[0].id) },
-            dataType: "json",
-            success: function (result) {
-                console.log(result);//打印服务端返回的数据(调试用)
-                if (result.code == 1) {
-                    //alert("提交成功")
-                    if(result.data!=null){
-						alert(result.data)
-                    }else {
-                        alert("");
-                    }
-
-                };
-            },
-            error : function() {
-                alert("未查询到该员工！");
-            }
-        }) */
-       
+		$(".typelist ul li").removeClass("active");
+		$(".typelist ul li").eq(0).addClass("active");
+		$(".typelist ul li").on("click",function(){
+			$(".typelist ul li").removeClass("active");
+			$(this).addClass("active");
+			var category = $(this).attr("data-url");
+			console.log(category);
+			$.ajax({
+			    type: "post",
+			    url: "{:url('App/getNewsList')}" ,
+			    data: {category},
+			    dataType: "json",
+			    success: function (result) {
+			        console.log(result);//打印服务端返回的数据(调试用)
+			        if (result.code == 1) {
+						console.log(result.data);	
+			            var arr = result.data.list.data;
+                        if(arr.length!=0){
+                            var html = "";
+                            html += '<div class="list">';
+                            for(var i = 0;i<arr.length;i++){
+                                html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
+                                html += '<img src="' + arr[i].thumbnail +'" alt="">';
+                                html += '<div class="title">'+ arr[i].post_title + '</div>'
+                                html += '<div class="content">'+ arr[i].post_content + '</div>';
+                                // html += '</a>';
+                                html += '</div>';
+                            }
+                            html += '</div>';
+                            $("#newsList").html(html);
+                        }
+			        }
+			    },
+			    error : function() {
+			        alert("未查询到该员工！");
+			    }
+			})
+		})
+		$("#newsList").on("click",".item",function(){
+			var id = $(this).attr("data-id");
+			var cid = $(this).attr("data-cid");
+			var location = window.location.href;
+			console.log(location);
+			var newLocation= location.substring(0, location.length-10);
+			window.open(newLocation+'detail.html?id='+id+"&cid="+cid)
+		})
     })
 </script>
 </body>

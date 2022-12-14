@@ -4,6 +4,7 @@ namespace app\portal\controller;
 
 use app\portal\model\PortalPostModel;
 use app\portal\model\ResumeModel;
+use app\portal\service\PostService;
 use cmf\controller\RestBaseController;
 use think\facade\Db;
 
@@ -25,6 +26,23 @@ class AppController extends RestBaseController
 		$avatar=cmf_get_image_url($detail['avatar']);
 		 $detail['avatar']=$avatar;
         $this->success('请求成功!', $detail);
+    }
+
+	/**
+	 * 获取list
+	 */
+	public function getNewsList(){
+        $param = $this->request->param();
+        $postService = new PostService();
+        $data        = $postService->adminArticleList($param);
+        for($index=0;$index<count($data);$index++){
+            $data[$index]['thumbnail'] = cmf_get_image_url($data[$index]['thumbnail']);
+        }
+        $page = $data->render();
+		$arr['list']=$data;
+
+		$arr['page']=$page;
+        $this->success('请求成功!', $arr);
     }
 
     /**

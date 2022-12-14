@@ -36,6 +36,9 @@
 .news .type li{
 	margin: 0 auto;
 }
+.news .type li.active{
+	border-bottom: solid 4px #FF5000;
+}
 .news .type a{
 	color: #222326;
 	font-size: 0.29rem;
@@ -67,11 +70,15 @@
 	border-radius: 0.09rem 0.09rem 0 0;
 }
 .news .item .title{
+	width: 100%;
 	margin-top: 0.54rem;
 	color: #000000;
 	font-size: 0.32rem;
 	text-align: left;
 	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .news .item .content{
 	margin-top: 0.36rem;
@@ -81,6 +88,11 @@
 	font-size: 0.23rem;
 	text-align: justify;
 	line-height: 0.54rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;/*想省略几行就写几*/
+	-webkit-box-orient: vertical;
 }
 
 .newsDetail{
