@@ -178,20 +178,26 @@
 	    font-weight: bold;
 	}
 	.news .typelist{
-		height: 2rem;
-		line-height: 2rem;
+		width: 100%;
+		height: 3.33rem;
+		overflow-x: auto;
+		overflow-y: hidden;
+		line-height: 3.33rem;
 		background-color: rgba(250, 250, 250, 1);
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: center; */
 	}
 	.news .type{
-		width: 100%;
-		height: 100%;
+		width: auto;
 		display: flex;
+		flex-wrap: nowrap;
 		text-align: center;
+		font-size: 0.93rem;
+		margin-bottom: 0;
 	}
 	.news .type li{
+		width: 7rem;
 		margin: 0 auto;
 	}
 	.news .type li.active{
