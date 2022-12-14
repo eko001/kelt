@@ -348,7 +348,9 @@
 			                    $("#phone").html("手机号："+result.data.phone)
 			                    $("#status").html(result.data.status)
 			                    $("#number").html("工号："+result.data.number)
+								console.log('result.data.avatar',result.data.avatar)
 								let avatar=result.data.avatar.replace('portal/about','upload');
+								console.log('avatar',avatar)
 			                    $("#avatar").attr('src',avatar);
 			                }else {
 			                    alert("未查询到该员工！");

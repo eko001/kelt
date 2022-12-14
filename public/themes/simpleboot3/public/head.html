@@ -59,7 +59,7 @@
 				    <li data-url = "about"><p><a href="{:cmf_url('portal/About/index')}" title="关于我们">关于我们</a></p></li>
 				    <li data-url = "contacts"><p><a href="{:cmf_url('portal/Contacts/index')}" title="联系我们">联系我们</a></p></li>
 				    <li data-url = "customer"><p><a href="{:cmf_url('portal/Customer/index')}" title="合作客户">合作客户</a></p></li>
-				    <li data-url = "form"><p><a href="{:cmf_url('portal/Form/index')}" title="企业应用" target="_blank">企业应用</a></p></li>
+				    <li data-url = "application"><p><a href="{:cmf_url('portal/Application/index')}" title="企业应用">企业应用</a></p></li>
 				</ul>
 			</div>
 			<div class="header-icon-imgs">
@@ -106,16 +106,16 @@
 				<a href="{:cmf_url('portal/News/index')}" class="menu-splitL-item" title="新闻咨询">新闻咨询</a>
 			</li>
 			<li class="menu-splitL-li border-1px-rgba animate">
-				<a href="{:cmf_url('portal/About/index')}" class="menu-splitL-item" title="关于中洁">关于中洁</a>
-			</li>
-			<li class="menu-splitL-li border-1px-rgba animate">
-				<a href="{:cmf_url('portal/Customer/index')}" class="menu-splitL-item" title="合作客户">合作客户</a>
+				<a href="{:cmf_url('portal/About/index')}" class="menu-splitL-item" title="关于我们">关于我们</a>
 			</li>
 			<li class="menu-splitL-li border-1px-rgba animate">
 				<a href="{:cmf_url('portal/Contacts/index')}" class="menu-splitL-item" title="联系我们">联系我们</a>
 			</li>
 			<li class="menu-splitL-li border-1px-rgba animate">
-				<a href="{:cmf_url('portal/Form/index')}" class="menu-splitL-item" title="预约方案">预约方案</a>
+				<a href="{:cmf_url('portal/Customer/index')}" class="menu-splitL-item" title="合作客户">合作客户</a>
+			</li>
+			<li class="menu-splitL-li border-1px-rgba animate">
+				<a href="{:cmf_url('portal/Application/index')}" class="menu-splitL-item" title="企业应用">企业应用</a>
 			</li>
 		</ul>
     </div>
@@ -170,22 +170,22 @@
 			$(this).children(".menu-icon").toggleClass("menu-icon-route");
 		});
 		//头部固定
-		$(window).scroll(function() {
-		    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-		    if(scrollTop > 50) {
-		        $('.header').addClass('header-fixed-box');
-		    } else {
-		        $('.header').removeClass('header-fixed-box');
-		    }
-		});
+		// $(window).scroll(function() {
+		//     var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+		//     if(scrollTop > 50) {
+		//         $('.header').addClass('header-fixed-box');
+		//     } else {
+		//         $('.header').removeClass('header-fixed-box');
+		//     }
+		// });
 		
-		$(window).scroll(function () {
-		    if ($(window).scrollTop() >= 30) {
-		        $("#xmHeader").addClass("header-fixed-box");
-		    } else {
-		        $("#xmHeader").removeClass("header-fixed-box");
-		    }
-		});
+		// $(window).scroll(function () {
+		//     if ($(window).scrollTop() >= 30) {
+		//         $("#xmHeader").addClass("header-fixed-box");
+		//     } else {
+		//         $("#xmHeader").removeClass("header-fixed-box");
+		//     }
+		// });
 	})
 </script>
 </html>

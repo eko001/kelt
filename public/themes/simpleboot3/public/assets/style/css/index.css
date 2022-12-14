@@ -913,7 +913,7 @@
 	text-align: justify;
 }
 .about .about-search .about-search-box-right{
-	width: 33%;
+	width: 7.14rem;
 }
 .about .about-search .about-search-box-right .flex{
 	width: 100%;
@@ -1022,6 +1022,42 @@
 .customer .customer-list .customer-list-box div img{
 	width: 100%;
 }
+
+/* 企业应用页面 */
+.application .index-banner-top{
+	background: url(../imgs/application/banner.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.application .application-box{
+	padding: 1.78rem 0;
+	background: #FFFFFF;
+}
+.application .application-box .box-1{
+	width: 8.39rem;
+	height: 8.75rem;
+	background: #3DB52C;
+}
+.application .application-box .box-1 img{
+	display: block;
+	padding: 0.35rem;
+}
+.application .application-box .box-1 div{
+	/* padding: 0 0.35rem; */
+	color: #FFFFFF;
+	font-size: 0.32rem;
+	line-height: 0.85rem;
+	font-weight: bolder;
+}
+.application .application-box .box-1 a{
+	font-size: 0.25rem;
+	font-weight: normal;
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
 	.inner-bigger-title p:first-child, .inner-bigger-title .p1{
 		font-size: 1.2rem;
