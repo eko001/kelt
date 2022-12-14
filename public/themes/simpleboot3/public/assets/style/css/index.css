@@ -935,6 +935,9 @@
 	font-size: 0.26rem;
 	margin-bottom: 0.44rem;
 }
+.about .about-search .about-search-box-right .text:last-child{
+	margin-bottom: 0;
+}
 .about .about-search .about-search-box-right .text img{
 	display: inline-block;
 	width: 0.28rem;
@@ -1463,7 +1466,194 @@
 	.about .index-banner-top .title{
 		font-size: 1.6rem;
 	}
-	
+	.about .about-tabs{
+		line-height: 3.33rem;
+	}
+	.about .about-tabs ul li{
+		font-size: 0.93rem;
+		margin: 0 2rem;
+	}
+	.about .about-show{
+		padding-bottom: 0;
+	}
+	.about .about-show .about-show-box{
+		margin-top: 2rem;
+		background: #FFFFFF;
+	}
+	.about .about-show .about-show-box>.flex-box{
+		flex-direction: column;
+	}
+	.about .about-show .about-show-box .about-show-box-left{
+		width: 100%;
+		color: #2E2E2E;
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+		margin-bottom: 1.33rem;
+	}
+	.about .about-show .about-show-box .about-show-box-left .text{
+		padding: 0;
+	}
+	.about .about-show .about-show-box .about-show-box-right{
+		width: 100%;
+	}
+	.about .about-show-box .index-number{
+		background: url(../imgs/index/number-bg.png) center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.about .about-bigger{
+		flex-direction: column;
+		height: auto;
+	}
+	.about .about-bigger .about-bigger-left{
+		width: 100%;
+	}
+	.about .about-bigger .about-bigger-left img{
+		height: auto;
+	}
+	.about .about-bigger .about-bigger-right{
+		width: 100%;
+		background: url(../imgs/about/1.png) center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.about .about-bigger .about-bigger-right ul{
+		padding: 2.66rem 10px;
+	}
+	.about .about-bigger .about-bigger-right ul li .title{
+		font-size: 1.06rem;
+		margin-bottom: 1rem;
+		font-weight: bolder;
+	}
+	.about .about-bigger .about-bigger-right ul li .text{
+		font-size: 0.86rem;
+	}
+	.about .about-bigger .about-bigger-right ul li:not(:last-child){
+		margin-bottom: 1.33rem;
+	}
+	.about .about-history .about-history-box{
+		margin-top: 2rem;
+	}
+	.about .about-history .about-history-box .year{
+		font-size: 1.2rem;
+		margin-right: 4rem;
+		width: 3.2rem;
+	}
+	.about .about-history .about-history-box .year .bar{
+		width: 2rem;
+		left: 3.73rem;
+	}
+	.about .about-history .about-history-box .list{
+		margin-top: 2rem;
+	}
+	.about .about-history .about-history-box .list .time-line{
+		width: 100%;
+		margin-right: 0;
+		height: 20rem;
+	}
+	.about .about-history .about-history-box .list .time-line .history-box{
+		margin-left: 1rem;
+		padding: 2rem 0;
+	}
+	.about .about-history .about-history-box .list .time-line .history-box li:not(:last-child){
+		margin-bottom: 2rem;
+	}
+	.about .about-history .about-history-box .list .time-line .history-box li.title{
+		font-size: 1.6rem;
+		line-height: 1.6rem;
+	}
+	.about .about-history .about-history-box .list .time-line .history-box li .circular{
+		width: 0.93rem;
+		height: 0.93rem;
+		margin-left: -0.46rem;
+	}
+	.about .about-history .about-history-box .list .time-line .history-box li.name{
+		font-size: 0.86rem;
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.33rem;
+	}
+	.about .about-message{
+		background: #FEEBC4;
+	}
+	.about .about-message .about-message-right{
+		width: 100%;
+		padding: 2rem 0 1rem;
+	}
+	.about .about-message .about-message-right .title{
+		font-size: 1.2rem;
+		font-weight: bolder;
+		text-align: center;
+	}
+	.about .about-message .about-message-right .text{
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+	}
+/* 	.about .about-qualifications{
+		background: #FFFFFF;
+	} */
+	.about .about-qualifications .about-qualifications-box{
+		/* background: #FAFAFA; */
+		padding-top: 1rem;
+	}
+	.about .about-qualifications .about-qualifications-box img{
+		width: calc(50% - 4px);
+		margin-bottom: 0.66rem;
+	}
+	.about .about-honor .about-honor-box{
+		padding-top: 1rem;
+	}
+	.about .about-honor .about-honor-box img{
+		width: calc(50% - 4px);
+		margin-bottom: 0.66rem;
+	}
+	.about .about-search .about-search-box{
+		flex-direction: column;
+		padding: 2rem 1rem;
+	}
+	.about .about-search .about-search-box-left{
+		width: 100%;
+	}
+	.about .about-search .about-search-box-left .search-box{
+		margin-bottom: 2rem;
+	}
+	.about .about-search .about-search-box-left .search-box input{
+		height: 3.46rem;
+		line-height: 3.46rem;
+		padding-left: 1rem;
+		font-size: 1rem;
+	}
+	.about .about-search .about-search-box-left .search-box .search-btn{
+		width: 8.26rem;
+		height: 3.46rem;
+		line-height: 3.46rem;
+		font-size: 1.06rem;
+	}
+	.about .about-search .about-search-box-left .title{
+		font-size: 0.93rem;
+		margin-bottom: 1rem;
+	}
+	.about .about-search .about-search-box-left .text{
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+	}
+	.about .about-search .about-search-box-right{
+		width: 100%;
+		margin-top: 2rem;
+	}
+	.about .about-search .about-search-box-right img{
+		width: 10rem;
+		height: 15rem;
+	}
+	.about .about-search .about-search-box-right .name{
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+	}
+	.about .about-search .about-search-box-right .text{
+		font-size: 1rem;
+		margin-bottom: 1.66rem;
+	}
+	.about .about-search .about-search-box-right .text img{
+		width: 1.06rem;
+		height: 1.06rem;
+	}
 	/* 联系我们页面 */
 	.contact .index-banner-top{
 		margin-top: 50px;
