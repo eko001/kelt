@@ -648,6 +648,9 @@
 .about .about-tabs ul li.active{
 	border-bottom: solid 4px #FF5000;
 }
+.about .about-tabboxs{
+	margin-bottom: 0;
+}
 .about .about-show{
 	padding: 1.78rem 0;
 	background: #FFFFFF;
@@ -863,8 +866,81 @@
 .about .about-search .about-search-box{
 	padding: 1.42rem 2.14rem;
 	background: #FAFAFA;
+	display: flex;
+	justify-content: space-around;
 } 
-
+.about .about-search .about-search-box-left{
+	width: 34.6%;
+}
+.about .about-search .about-search-box-left .search-box{
+	width: 100%;
+	position: relative;
+	margin-bottom: 0.71rem;
+}
+.about .about-search .about-search-box-left .search-box input{
+	color: #333333;
+	font-size: 0.26rem;
+	height: 0.92rem;
+	line-height: 0.92rem;
+	padding-left: 0.26rem;
+	width: 100%;
+	border-radius: 0px 5px 5px 0px;
+	border: none;
+	background: #FFFFFF;
+	outline: none;
+}
+.about .about-search .about-search-box-left .search-box .search-btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2.21rem;
+	height: 0.92rem;
+	line-height: 0.92rem;
+	color: #FFFFFF;
+	font-size: 0.28rem;
+	background: #FF5000;
+	text-align: center;
+	border-radius: 0px 5px 5px 0px;
+}
+.about .about-search .about-search-box-left .title{
+	color: #FF5000;
+	font-size: 0.26rem;
+	margin-bottom: 0.35rem;
+}
+.about .about-search .about-search-box-left .text{
+	color: #333333;
+	line-height: 0.53rem;
+	text-align: justify;
+}
+.about .about-search .about-search-box-right{
+	width: 33%;
+}
+.about .about-search .about-search-box-right .flex{
+	width: 100%;
+}
+.about .about-search .about-search-box-right img{
+	display: block;
+	width: 2.85rem;
+	height: 4.28rem;
+	margin-right: 1.42rem;
+}
+.about .about-search .about-search-box-right .name{
+	color: #333333;
+	font-size: 0.42rem;
+	margin-top: 0.17rem;
+	margin-bottom: 0.53rem;
+}
+.about .about-search .about-search-box-right .text{
+	color: #666666;
+	font-size: 0.26rem;
+	margin-bottom: 0.44rem;
+}
+.about .about-search .about-search-box-right .text img{
+	display: inline-block;
+	width: 0.28rem;
+	height: 0.28rem;
+	margin-right: 0.17rem;
+}
 
 /* 联系我们页面 */
 .contact .index-banner-top{

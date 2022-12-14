@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<ul class="about-tabboxs">
-			<li style="display: none;">
+			<li class="about-tabbox">
 				<div class="about-show">
 					<div class="inner">
 						<div class="inner-bigger-title text-center">
@@ -248,7 +248,7 @@
 					</div>
 				</div>
 			</li>
-			<li style="display: none;">
+			<li class="about-tabbox">
 				<div class="about-qualifications">
 					<div class="inner">
 						<div class="inner-bigger-title text-center">
@@ -279,22 +279,41 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="about-tabbox">
 				<div class="about-search">
-					<div class="about-search-box">
-						<div class="about-search-box-left">
-							<div class="search-box">
-								<input type="text" id="userName" />
+					<div class="inner">
+						<div class="about-search-box">
+							<div class="about-search-box-left">
+								<div class="search-box">
+									<input type="text" id="userName" placeholder="请输入姓名/手机号" />
+									<div class="search-btn">立即查询</div>
+								</div>
+								<div class="title">
+									<img src="__TMPL__/public/assets/style/imgs/tips.svg" />
+									<span>友情提示：</span>
+								</div>
+								<div class="text">输入姓名或工号即可验证查询人员是否为华劳集团及关联公司员工。</div>
+								<div class="text">可查询华劳集团及关联公司的员工基本信息和“在/离职”状态。</div>
+								<div class="text">如果已离职员工或其他公司员工以华劳集团名义与您合作，可以向我们举报。</div>
+								<div class="text">举报电话：400-871-8711。</div>
+							</div>
+							<div class="about-search-box-right">
+								<div class="flex">
+									<img src="__TMPL__/public/assets/style/imgs/touxiang.png" />
+									<div>
+										<div class="name">李永欣</div>
+										<div class="text">性别：男</div>
+										<div class="text">工号：5340001</div>
+										<div class="text">状态：<img src="__TMPL__/public/assets/style/imgs/on_job.svg" />在职</div>
+										<div class="text">手机号：188****8711</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</li>
 		</ul>
-		
-		
-		
-		
     </div>
     <include file="public@footer" />
 	
@@ -304,7 +323,13 @@
 	<script src="__TMPL__/public/assets/style/js/about.js"></script>
     <script type="text/javascript">
         window.onload = function () {
-            
+            $(".about-tabs ul li").on("click",function(){
+				$(".about-tabs ul li").removeClass("active");
+				$(this).addClass("active");
+				var n = $(this).index();
+				 $(".about-tabboxs .about-tabbox").hide();
+				 $(".about-tabboxs .about-tabbox").eq(n).show();
+			})
         }
 
        
