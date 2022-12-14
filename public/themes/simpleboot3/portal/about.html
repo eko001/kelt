@@ -286,7 +286,7 @@
 							<div class="about-search-box-left">
 								<div class="search-box">
 									<input type="text" id="userName" placeholder="请输入姓名/手机号" />
-									<div class="search-btn">立即查询</div>
+									<div class="search-btn" id="searchBtn">立即查询</div>
 								</div>
 								<div class="title">
 									<img src="__TMPL__/public/assets/style/imgs/tips.svg" />
@@ -299,13 +299,13 @@
 							</div>
 							<div class="about-search-box-right">
 								<div class="flex">
-									<img src="__TMPL__/public/assets/style/imgs/touxiang.png" />
+									<img id="avatar" src="__TMPL__/public/assets/style/imgs/touxiang.png" />
 									<div>
-										<div class="name">李永欣</div>
-										<div class="text">性别：男</div>
-										<div class="text">工号：5340001</div>
-										<div class="text">状态：<img src="__TMPL__/public/assets/style/imgs/on_job.svg" />在职</div>
-										<div class="text">手机号：188****8711</div>
+										<div class="name" id="name"></div>
+										<div class="text" id="sex">性别：</div>
+										<div class="text" id="number">工号：</div>
+										<div class="text" id="status">状态：<img src="__TMPL__/public/assets/style/imgs/on_job.svg" /></div>
+										<div class="text" id="phone">手机号：</div>
 									</div>
 								</div>
 							</div>
@@ -330,6 +330,37 @@
 				 $(".about-tabboxs .about-tabbox").hide();
 				 $(".about-tabboxs .about-tabbox").eq(n).show();
 			})
+			
+			document.getElementById("searchBtn").onclick = function() {
+			    var content = document.getElementById("userName").value;
+			    $.ajax({
+			        type: "post",
+			        url: "{:url('App/getStaff')}" ,
+			        data: {content},
+			        dataType: "json",
+			        success: function (result) {
+			            console.log(result);//打印服务端返回的数据(调试用)
+			            if (result.code == 1) {
+			                //alert("提交成功")
+			                if(result.data!=null){
+			                    $("#name").html(result.data.name)
+			                    $("#sex").html("性别："+result.data.sex)
+			                    $("#phone").html("手机号："+result.data.phone)
+			                    $("#status").html(result.data.status)
+			                    $("#number").html("工号："+result.data.number)
+								let avatar=result.data.avatar.replace('portal/about','upload');
+			                    $("#avatar").attr('src',avatar);
+			                }else {
+			                    alert("未查询到该员工！");
+			                }
+			
+			            };
+			        },
+			        error : function() {
+			            alert("未查询到该员工！");
+			        }
+			    })
+			};
         }
 
        

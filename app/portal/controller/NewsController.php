@@ -40,14 +40,21 @@ class NewsController extends HomeBaseController
 
 
 	public function detail(){
-      /*  $postService         = new PostService();
+        $postService         = new PostService();
         $articleId  = $this->request->param('id', 0, 'intval');
         $categoryId = $this->request->param('cid', 0, 'intval');
         $article    = $postService->publishedArticle($articleId, $categoryId);
         if (empty($article)) {
             abort(404, '文章不存在!');
         }
-        $this->assign("newsDetail",$article);*/
+        $this->assign("newsDetail",$article);
+		
+		 $content["category"] = $categoryId;
+		$postService = new PostService();
+		$data= $postService->adminArticleList($content);
+		//$data = array_diff((array)$data, [$article]);
+		$this->assign("list", $data);
+		
 	    return $this->fetch(':newsDetail');
 	}
 }

@@ -6,26 +6,24 @@
 <div class="newsDetail">
     <ol class="breadcrumb">
         <li><a style="color: black" href="__ROOT__/">首页</a></li>
-        <li><a style="color: black" href="{:cmf_url('portal/News/index')}">新闻中心</a></li>
+        <li><a style="color: black" href="{:cmf_url('portal/News/index')}">新闻咨询</a></li>
         <li class="active">正文</li>
     </ol>
 	<div class="newsDetail_content">
-		<div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-		<div class="time">admin 发表于:2022年04月19日</div>
+		 <div class="title">{$newsDetail.post_title}</div>
+		<div class="time">{$newsDetail.user.user_nickname} 发表于:{:date('Y年m月d日',$newsDetail.published_time)}</div>
 		<div class="content">
-		    人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知
+		   {$newsDetail.post_content|htmlspecialchars_decode}
 		</div>
 		<div style="width: 100%;height: 0.02rem;background-color: rgba(238, 238, 238, 1);text-align: center;margin-top: 1.43rem;margin-bottom: 1.07rem;"></div>
 		<div class="tag">相关文章</div>
-		<div class="other">
-		    <div class="other_item">
-		        <div class="item_time">12-03</div>
-		        <div class="item_title">一线城市员工主动离职率下降</div>
-		    </div>
-		    <div class="other_item">
-		        <div class="item_time">12-03</div>
-		        <div class="item_title">一线城市员工主动离职率下降</div>
-		    </div>
+		 <div class="other">
+			<volist name="list" id="vo">
+			   <div class="other_item">
+			       <div class="item_time">{:date('m-d',$vo.published_time)}</div>
+			       <div class="item_title">{$vo.post_title}</div>
+			   </div>
+			</volist>
 		</div>
 	</div>
     

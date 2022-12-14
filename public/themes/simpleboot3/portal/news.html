@@ -19,7 +19,7 @@
     <div class="list">
 		<volist name="list" id="vo">
 		    <div class="item">
-		    	<a href="{:cmf_url('portal/News/detail')}">
+		    	<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}">
 		    		<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
 		    		<div class="title">{$vo.post_title}</div>
 		    		<div class="content">
