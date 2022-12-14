@@ -22,6 +22,8 @@ class AppController extends RestBaseController
             ->where('name','=',$content)
             ->whereOr('phone','=',$content)
             ->find();
+		$avatar=cmf_get_image_url($detail['avatar']);
+		 $detail['avatar']=$avatar;
         $this->success('请求成功!', $detail);
     }
 
