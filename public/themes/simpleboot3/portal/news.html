@@ -27,8 +27,44 @@
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
     $(function () {
-		
-		$(".typelist ul li").removeClass("active");
+        let typeList =  <?php echo $typeList; ?> ;
+		if(typeList.length>0){
+			let firstId= typeList[0].id;
+			$.ajax({
+			    type: "post",
+			    url: "{:url('App/getNewsList')}" ,
+			    data: {category:firstId},
+			    dataType: "json",
+			    success: function (result) {
+			        console.log(result);//打印服务端返回的数据(调试用)
+			        if (result.code == 1) {
+						console.log(result.data);	
+			            var arr = result.data.list.data;
+			            if(arr.length!=0){
+			                var html = "";
+			                html += '<div class="list">';
+			                for(var i = 0;i<arr.length;i++){
+			                    html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
+			                    html += '<img src="' + arr[i].thumbnail +'" alt="">';
+			                    html += '<div class="title">'+ arr[i].post_title + '</div>'
+			                    html += '<div class="content">'+ arr[i].post_content + '</div>';
+			                    // html += '</a>';
+			                    html += '</div>';
+			                }
+			                html += '</div>';
+			                $("#newsList").html(html);
+			            }else{
+							$("#newsList").html('');
+						}
+			        }
+			    },
+			    error : function() {
+			        alert("该文章未发布！");
+			    }
+			})
+		}
+		console.log(typeList);
+        $(".typelist ul li").removeClass("active");
 		$(".typelist ul li").eq(0).addClass("active");
 		$(".typelist ul li").on("click",function(){
 			$(".typelist ul li").removeClass("active");
@@ -58,11 +94,13 @@
                             }
                             html += '</div>';
                             $("#newsList").html(html);
-                        }
+                        }else{
+							$("#newsList").html('');
+						}
 			        }
 			    },
 			    error : function() {
-			        alert("未查询到该员工！");
+			        alert("该文章未发布！");
 			    }
 			})
 		})
