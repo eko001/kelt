@@ -323,6 +323,8 @@
 	<script src="__TMPL__/public/assets/style/js/about.js"></script>
     <script type="text/javascript">
         window.onload = function () {
+			$(".about-tabboxs .about-tabbox").hide();
+			$(".about-tabboxs .about-tabbox").eq(0).show();
             $(".about-tabs ul li").on("click",function(){
 				$(".about-tabs ul li").removeClass("active");
 				$(this).addClass("active");
