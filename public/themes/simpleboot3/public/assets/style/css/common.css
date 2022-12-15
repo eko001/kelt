@@ -30,6 +30,9 @@ body{
 .col{
 	color: #FF5000;
 }
+.col-green{
+	color: #00B38B;
+}
 .flex{
 	display: flex;
 	flex-wrap: wrap;

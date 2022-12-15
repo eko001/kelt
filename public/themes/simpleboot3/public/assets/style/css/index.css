@@ -623,6 +623,247 @@
 	background: #FF5000;
 	margin: 1.07rem auto 0;
 }
+/* 合伙人计划页面 */
+.partner .index-banner-top{
+	background: url(../imgs/partner/banner.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.partner .index-banner-top{
+	font-size: 0.85rem;
+}
+.partner .index-banner-top .title-top{
+	display: flex;
+	align-items: center;
+	padding-top: 4.6rem;
+}
+.partner .index-banner-top .title-top .line{
+	width: 1.2rem;
+	height: 1px;
+	border-bottom: 1px #FFFFFF solid;
+	transform: rotate(-60deg);
+}
+.partner .index-banner-top .title-top .text{
+	margin: 0 0.62rem;
+	font-size: 0.53rem;
+	line-height: 0.71rem;
+}
+.partner .index-banner-top .title-bottom{
+	color: #FFFFFF;
+	font-size: 0.85rem;
+	line-height: 1.53rem;
+	margin-top: 1.8rem;
+	text-align: left;
+}
+.partner .partner-plan{
+	padding: 1.78rem 0;
+	background: #FFFFFF;
+}
+.partner .partner-plan .partner-plan-box{
+	margin-top: 1.07rem;
+	background: url(../imgs/partner/bg_1.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-left{
+	width: 10.71rem;
+}
+.partner .partner-plan .partner-plan-box .title{
+	color: #FF5000;
+	font-size: 0.35rem;
+	margin-bottom: 0.71rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-left .text{
+	color: #666666;
+	font-size: 0.25rem;
+	margin-bottom: 0.35rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box{
+	margin-top: 0.71rem;
+	padding: 0.71rem 1.07rem;
+	background: #FAFAFA;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box .name{
+	color: #333333;
+	font-size: 0.28rem;
+	margin-bottom: 0.89rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box .title{
+	margin-bottom: 0.35rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-right{
+	width: 8.92rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-right ul{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-right ul li{
+	width: 50%;
+	display: flex;
+	color: #333333;
+	font-size: 0.25rem;
+	margin-bottom: 0.35rem;
+}
+.partner .partner-plan .partner-plan-box .partner-plan-box-right ul li div{
+	width: 0.25rem;
+	height: 0.25rem;
+	border-radius: 50%;
+	border: solid 1px #E0E0E0;
+	margin-right: 0.17rem;
+	margin-top: 0.06rem;
+}
+.partner .partner-benefit{
+	padding: 1.78rem 0 1.07rem;
+	background: #FAFAFA;
+}
+.partner .partner-benefit .partner-benefit-box{
+	margin-top: 1.07rem;
+	display: flex;
+	justify-content: space-between;
+}
+.partner .partner-benefit .partner-benefit-box .item{
+	padding: 0.53rem 0.35rem;
+	background: #FFFFFF;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(25% - 7.5px);
+}
+.partner .partner-benefit .partner-benefit-box .item .title{
+	color: #333333;
+	font-size: 0.35rem;
+	font-weight: bolder;
+	margin-bottom: 0.35rem;
+}
+.partner .partner-benefit .partner-benefit-box .item .text{
+	color: #999999;
+	font-size: 0.25rem;
+	margin-bottom: 0.3rem;
+}
+.partner .partner-benefit .partner-benefit-box .item .text:last-child{
+	margin-bottom: 0;
+}
+.partner .partner-benefit .partner-benefit-box .item .right-box{
+	width: 2.32rem;
+	height: 2.32rem;
+}
+.partner .partner-benefit .partner-benefit-box .item .right-box img{
+	width: 100%;
+}
+.partner .partner-benefit .example{
+	color: #666666;
+	font-size: 0.23rem;
+	line-height: 0.42rem;
+	margin: 0.71rem 0 1.42rem;
+}
+.partner .partner-benefit .zhushi{
+	color: #BDBDBD;
+	font-size: 0.21rem;
+}
+.partner .partner-process{
+	padding: 1.78rem 0;
+	background: #FFFFFF;
+}
+.partner .partner-process .partner-process-box{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.44rem;
+}
+.partner .partner-process .partner-process-box .item{
+	background: #FAFAFA;
+	padding: 0.53rem 0.35rem;
+	width: calc(20% - 8px);
+}
+.partner .partner-process .partner-process-box .item img{
+	width: 0.71rem;
+	height: 0.71rem;
+}
+.partner .partner-process .partner-process-box .item .name{
+	color: #333333;
+	font-size: 0.35rem;
+	line-height: 0.71rem;
+	padding-left: 0.35rem;
+	font-weight: bolder;
+}
+.partner .partner-process .partner-process-box .item .text{
+	color: #999999;
+	font-size: 0.25rem;
+	line-height: 1;
+	margin-top: 0.53rem;
+}
+.partner .partner-prospect{
+	padding: 1.78rem 0;
+	background: url(../imgs/partner/bg_2.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+.partner .partner-prospect .partner-prospect-box{
+	margin-top: 1.78rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left{
+	width: calc(50% - 5px);
+	text-align: center;
+	display: flex;
+	flex-direction:column;
+	align-items: flex-end;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .title{
+	color: #999999;
+	font-size: 0.35rem;
+	margin-bottom: 0.17rem;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .text{
+	color: #FF5000;
+	font-size: 0.25rem;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item{
+	background: #FFFFFF;
+	margin-bottom: 0.71rem;
+	padding: 0.32rem 0;
+	border-radius: 5px;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item:last-child{
+	margin-bottom: 0;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item1{
+	width: 4.1rem;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item2{
+	width: 8.39rem;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item3{
+	width: 100%;
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-right{
+	width: calc(50% - 45px);
+}
+.partner .partner-prospect .partner-prospect-box .partner-prospect-box-right img{
+	display: block;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 关于我们页面 */
 .about .index-banner-top{
 	background: url(../imgs/about/banner.png) center center no-repeat;
@@ -1456,6 +1697,160 @@
 		height: 3.6rem;
 		line-height: 3.6rem;
 		font-size: 0.93rem;
+	}
+	/* 合伙人计划页面 */
+	.partner .index-banner-top{
+		margin-top: 50px;
+		background: url(../imgs/partner/banner-phone.png) center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.partner .index-banner-top .title{
+		font-size: 1.6rem;
+	}
+	.partner .partner-plan{
+		background: url(../imgs/partner/bg_3.png) center center no-repeat;
+		background-size: 100% 100%;
+		padding: 2rem 0;
+	}
+	.partner .partner-plan .partner-plan-box .inner>.flex-box{
+		flex-direction: column;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left{
+		width: 100%;
+	}
+	.partner .partner-plan .partner-plan-box .title{
+		font-size: 1.06rem;
+		margin-bottom: 1rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left .text{
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+		margin-bottom: 0;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box{
+		margin-top: 2rem;
+		padding: 2rem 1rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box .name{
+		font-size: 0.93rem;
+		margin-bottom: 2rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box .title{
+		margin-bottom: 1rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-left .bottom-box .text:not(:last-child){
+		margin-bottom: 2rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-right{
+		width: 100%;
+		margin-top: 2rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-right ul li{
+		font-size: 0.86rem;
+		margin-bottom:2rem;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-right ul li div{
+		display: none;
+	}
+	.partner .partner-plan .partner-plan-box .partner-plan-box-right ul li:last-child{
+		margin-bottom: 0;
+	}
+	.partner .partner-plan-outbox{
+		background: #FFFFFF;
+		padding-bottom: 2rem;
+	}
+	.partner .partner-benefit .partner-benefit-box{
+		flex-direction: column;
+	}
+	.partner .partner-benefit .partner-benefit-box .item{
+		padding: 2rem 1.33rem;
+		width: 100%;
+		margin-bottom: 0.66rem;
+	}
+	.partner .partner-benefit .partner-benefit-box .item .title{
+		font-size: 1.06rem;
+		margin-bottom: 1.33rem;
+	}
+	.partner .partner-benefit .partner-benefit-box .item .text{
+		font-size: 0.86rem;
+		margin-bottom: 1rem;
+	}
+	.partner .partner-benefit .partner-benefit-box .item .right-box{
+		width: 8rem;
+		height: 8rem;
+	}
+	.partner .partner-benefit .example{
+		font-size: 0.8rem;
+		line-height: 1.6rem;
+		margin: 2rem 0;
+	}
+	.partner .partner-benefit .zhushi{
+		font-size: 0.8rem;
+	}
+	.partner .partner-benefit{
+		padding: 2rem 0;
+	}
+	.partner .partner-process{
+		padding: 2rem 0;
+	}
+	.partner .partner-process .partner-process-box{
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+	.partner .partner-process .partner-process-box .item{
+		width: calc(50% - 4.5px);
+		padding: 1.66rem 1rem;
+		margin-bottom: 0.66rem;
+	}
+	.partner .partner-process .partner-process-box .item img{
+		width: 2rem;
+		height: 2rem;
+	}
+	.partner .partner-process .partner-process-box .item .name{
+		font-size: 1.06rem;
+		line-height: 2rem;
+		padding-left: 1.33rem;
+	}
+	.partner .partner-process .partner-process-box .item .text{
+		margin-top: 1rem;
+		font-size: 0.86rem;
+		line-height: 1.33rem;
+	}
+	.partner .partner-process .partner-process-box .item:last-child{
+		width: 100%;
+	}
+	.partner .partner-prospect{
+		padding: 2rem 0;
+		background: url(../imgs/partner/bg_4.png) center center no-repeat;
+		background-size: 100% 100%;
+	}
+	.partner .partner-prospect .partner-prospect-box{
+		margin-top: 4rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left{
+		width: 100%;
+		align-items:center;
+		padding-bottom: 6rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item{
+		padding: 1.33rem 2.66rem;
+		margin-bottom: 1.33rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item1{
+		width: 15rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item2{
+		width: 17rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item3{
+		width: 20rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .title{
+		font-size: 1.06rem;
+		margin-bottom: 1rem;
+	}
+	.partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .text{
+		font-size: 0.86rem;
 	}
 	/* 关于我们页面 */
 	.about .index-banner-top{
