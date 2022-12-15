@@ -1197,9 +1197,13 @@
 .contact .contact-part{
 	padding: 1.78rem 0;
 }
+.contact .contact-part2{
+	background: #FFFFFF;
+}
 .contact .contact-part-box{
 	display: flex;
 	justify-content: space-between;
+	margin-top: 1.07rem;
 }
 .contact .contact-part-box .contact-part-box-left{
 	width: 33%;
@@ -1240,7 +1244,41 @@
 	width: 100%;
 	height: 11.78rem;
 }
-
+.contact .tabs-part{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1.07rem;
+	margin-bottom: 0.89rem;
+}
+.contact .tabs-part .tabs{
+	display: flex;
+	margin-bottom: 0;
+}
+.contact .tabs-part .tabs li{
+	color: #666666;
+	font-size: 0.28rem;
+	line-height: 0.53rem;
+	margin-right: 0.53rem;
+}
+.contact .tabs-part .tabs li.active{
+	color: #333333;
+	font-size: 0.35rem;
+	border-bottom: solid 2px #ff5000;
+}
+.contact .search-company{
+	background: rgba(245, 245, 245, 0.8);
+}
+.contact .company{
+	width: 4.1rem;
+	height: 50px;
+	line-height: 0.89rem;
+	background: url(../imgs/about/search.svg) 0.35rem 0.3rem no-repeat;
+	background-size: 0.28rem 0.28rem;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	padding-left: 0.7rem;
+}
 /* 合作客户页面 */
 .customer .index-banner-top{
 	background: url(../imgs/customer/banner.png) center center no-repeat;
@@ -2058,6 +2096,70 @@
 	.contact .index-banner-top .title{
 		font-size: 1.6rem;
 	}
+	.contact .contact-part-box .contact-part-box-left{
+		width: 100%;
+		height: auto;
+		overflow-y: auto;
+	}
+	.contact .contact-part-box .contact-part-box-left li{
+		padding: 1.33rem 1rem;
+		margin-bottom: 0.66rem;
+		background: #FAFAFA;
+	}
+	.contact .contact-part-box .contact-part-box-left li:last-child{
+		margin-bottom: 0;
+	}
+	.contact .contact-part-box .contact-part-box-left li .title{
+		font-size: 1.06rem;
+		margin-bottom: 1.33rem;
+	}
+	.contact .contact-part-box .contact-part-box-left li .text{
+		font-size: 0.86rem;
+		line-height: 1.6rem;
+		margin-bottom: 0.8rem;
+	}
+	.contact .contact-part-box .contact-part-box-left li .text:last-child{
+		margin-bottom: 0;
+	}
+	.contact .contact-part{
+		padding: 2rem 0 0;
+		background: #FFFFFF;
+	}
+	.contact .tabs-part{
+		flex-direction: column;
+		margin-top:2rem;
+		overflow: hidden;
+	}
+	.contact .tabs-part .tabs{
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		width: auto;
+		flex-direction: row;
+	}
+	.contact .tabs-part .tabs li.active{
+		font-size: 1.06rem;
+	}
+	.contact .tabs-part .tabs li{
+		font-size: 0.93rem;
+		line-height: 2rem;
+		margin-right: 2rem;
+		width: 5rem;
+		text-align: center;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/* 合作客户页面 */
 	.customer .index-banner-top{
