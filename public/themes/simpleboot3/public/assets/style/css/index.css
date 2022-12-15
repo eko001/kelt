@@ -2130,11 +2130,16 @@
 		margin-top:2rem;
 		overflow: hidden;
 	}
+	.contact .tabs-box{
+		display: flex;
+		flex-direction: row;
+		overflow-x: auto;
+	}
 	.contact .tabs-part .tabs{
 		flex-wrap: nowrap;
-		overflow-x: auto;
 		width: auto;
 		flex-direction: row;
+		margin-bottom: 1.33rem;
 	}
 	.contact .tabs-part .tabs li.active{
 		font-size: 1.06rem;
@@ -2146,7 +2151,12 @@
 		width: 5rem;
 		text-align: center;
 	}
-	
+	.contact .company{
+		width: 100%;
+		background: url(../imgs/about/search.svg) 1rem 1.13rem no-repeat;
+		background-size:1.06rem 1.06rem;
+		padding-left: 2.6rem;
+	}
 	
 	
 	
