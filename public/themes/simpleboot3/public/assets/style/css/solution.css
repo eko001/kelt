@@ -299,40 +299,40 @@
 /* 合作客户 */
 .solution_customer{
 	background-color: #FAFAFA;
-	padding: 1.785714rem 4.375rem 1.428571rem 4.375rem;
+	padding: 2rem 1rem 2.67rem 1rem;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
 .solution_customer .title{
 	color: rgba(16, 16, 16, 1);
-	font-size: 0.571429rem;
+	font-size: 1.2rem;
 	text-align: center;
 	font-weight: bold;
 }
 .solution_customer .tag{
-	margin-top: 0.357143rem;
+	margin-top: 1rem;
 	color: rgba(153, 153, 153, 1);
-	font-size: 0.25rem;
+	font-size: 0.8rem;
 	text-align: center;
-	margin-bottom: 0.714286rem;
 }
 .solution_customer .list{
+	margin-top: 1rem;
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-between;
 }
 .solution_customer .list img{
-	width: 4.107143rem;
-	height: 1.785714rem;
-	margin-bottom: 0.09rem;
+	width: 7.33rem;
+	height: 3.73rem;
+	margin-bottom: 0.33rem;
 }
 .solution_customer .next{
 	color: rgba(255, 80, 0, 1);
-	font-size: 0.25rem;
+	font-size: 0.93rem;
 	text-align: center;
-	margin-top: 1.071429rem;
+	margin-top: 1.47rem;
 }
 .resolve_right .span{
 	width: 6.25rem;
