@@ -32,6 +32,7 @@
 	height: 100%;
 	display: flex;
 	text-align: center;
+	margin: 0 auto;
 }
 .news .type li{
 	margin: 0 auto;
