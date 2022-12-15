@@ -1,36 +1,33 @@
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/4.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/5.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/6.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/7.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/8.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/9.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/10.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/11.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/12.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/4.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/5.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/6.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/7.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/8.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/9.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/10.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/11.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/12.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/4.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/5.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/6.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/7.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/8.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/9.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/10.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/11.png" /></div>
-<div><img src="__TMPL__/public/assets/style/imgs/index/customer/12.png" /></div>
+<div id="customerList" class="index-customer-box">
+
+</div>
+<script src="__TMPL__/public/assets/style/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+		$.ajax({
+			    type: "post",
+			    url: "{:url('App/getCustomerList')}" ,
+			    data: {category:29},
+			    dataType: "json",
+			    success: function (result) {
+			        console.log(result);//打印服务端返回的数据(调试用)
+			        if (result.code == 1) {
+						console.log(result.data);	
+			            var arr = result.data.data;
+			            if(arr.length!=0){
+			                var html = "";
+			                for(var i = 0;i<arr.length;i++){
+								html += '<div><img src="' + arr[i].thumbnail +'" alt=""></div>';
+			                }
+			                $("#customerList").html(html);
+			            }else{
+							$("#customerList").html('');
+						}
+			        }
+			    },
+			    error : function() {
+			        
+			    }
+		})
+	})
+</script>

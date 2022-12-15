@@ -29,7 +29,7 @@ class AppController extends RestBaseController
     }
 
 	/**
-	 * 获取list
+	 * 获取新闻列表
 	 */
 	public function getNewsList(){
         $param = $this->request->param();
@@ -45,6 +45,18 @@ class AppController extends RestBaseController
         $this->success('请求成功!', $arr);
     }
 
+/**
+	 * 获取合作客户列表
+	 */
+	public function getCustomerList(){
+        $param = $this->request->param();
+        $postService = new PostService();
+        $list        = $postService->adminArticleList($param);
+		for($index=0;$index<count($list);$index++){
+		    $list[$index]['thumbnail'] = cmf_get_image_url($list[$index]['thumbnail']);
+		}
+        $this->success('请求成功!', $list);
+    }
     /**
      * 职位列表
      * @return false|string
