@@ -60,19 +60,21 @@
 	flex-direction: column;
 	align-items: center;
 }
-.news .item a{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
 .news .item img{
 	width: 100%;
 	height: 5rem;
 	border-radius: 0.09rem 0.09rem 0 0;
 }
-.news .item .title{
+.news .list .item .item_right{
 	width: 100%;
-	margin-top: 0.54rem;
+	padding: 0.54rem 0 0 0;
+	border-radius: 0.09rem 0.09rem 0 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.news .list .item .item_right .title{
+	width: 100%;
 	color: #000000;
 	font-size: 0.32rem;
 	text-align: left;
@@ -81,10 +83,9 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.news .item .content{
+.news .list .item .item_right .content{
 	margin-top: 0.36rem;
 	width: 100%;
-	height: 1.61rem;
 	color: rgba(114, 116, 118, 1);
 	font-size: 0.23rem;
 	text-align: justify;
@@ -95,6 +96,7 @@
 	-webkit-line-clamp: 3;/*想省略几行就写几*/
 	-webkit-box-orient: vertical;
 }
+
 
 .newsDetail{
 	padding: 2.32rem 6.52rem 2.68rem 6.52rem;
@@ -211,45 +213,55 @@
 	}
 	.news .list{
 		width: 100%;
-	    padding: 1.33rem 0.67rem 1.33rem 0.67rem;
+		padding: 2rem 1rem 2rem 1rem;
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
 		background-color: #ffffff;
+		align-items: center;
+		flex-direction: column;
 	}
 	.news .list .item{
-		margin-bottom: 0.67rem;
-		width: 47%;
-		height: 7rem;
+		width: 100%;
+		height: 5.87rem;
+		margin-bottom: 1rem;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
 	}
-	.news .item a{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	.news .list .item img{
+		width: 9.33rem;
+		height: 5.87rem;
+		border-radius: 0.33rem;
 	}
-	.news .item img{
-		width: 100%;
-		height: 5rem;
-		border-radius: 0.09rem 0.09rem 0 0;
+	.news .list .item .item_right{
+		padding: 0;
+		width: 13rem;
+		height: 5.87rem;
+		margin-left: 0.67rem;
+		border-radius: 0.33rem;
 	}
-	.news .item .title{
+	.news .list .item .item_right .title{
 		width: 100%;
-		margin-top: 0.54rem;
+		height: 4rem;
 		color: #000000;
-		font-size: 0.93rem;
-		text-align: left;
-		font-weight: bold;
+		font-size: 1.07rem;
+		line-height: 1.7rem;
+		text-align: justify;
 		overflow: hidden;
-		white-space: nowrap;
 		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;/*想省略几行就写几*/
+		-webkit-box-orient: vertical;
 	}
-	.news .item .content{
+	.news .list .item .item_right .content{
 		display: none;
 	}
-	
+	.news .list .item .item_right .date{
+		margin-top: 1.5rem;
+		width: 100%;
+		color: rgba(46, 46, 46, 1);
+		font-size: 0.87rem;
+		text-align: justify;
+	}
 	.newsDetail{
 		padding: 1.33rem 0.67rem 1.33rem 0.67rem;
 	}

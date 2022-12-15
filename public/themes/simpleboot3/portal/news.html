@@ -15,8 +15,9 @@
             </volist>
         </ul>
     </div>
-	<div id="newsList"></div>
-	
+	<div id="newsList">
+		
+	</div>
 	<div class="pageLimitbox">
 	    <ul class="pagination"> <span class="pageSpan"></span></ul>
 	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
@@ -27,6 +28,13 @@
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
     $(function () {
+		function timestampToTime(timestamp) {
+		        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+		        var Y = date.getFullYear() + '-';
+		        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+		        var D = date.getDate() + ' ';
+		        return Y+M+D;
+		}
         let typeList =  <?php echo $typeList; ?> ;
 		if(typeList.length>0){
 			let firstId= typeList[0].id;
@@ -45,10 +53,12 @@
 			                html += '<div class="list">';
 			                for(var i = 0;i<arr.length;i++){
 			                    html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
-			                    html += '<img src="' + arr[i].thumbnail +'" alt="">';
-			                    html += '<div class="title">'+ arr[i].post_title + '</div>'
-			                    html += '<div class="content">'+ arr[i].post_content + '</div>';
-			                    // html += '</a>';
+									html += '<img src="' + arr[i].thumbnail +'" alt="">';
+									html += '<div class="item_right">';
+										html += '<div class="title">'+ arr[i].post_title + '</div>'
+										html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
+										html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
+									html += '</div>';
 			                    html += '</div>';
 			                }
 			                html += '</div>';
@@ -92,9 +102,11 @@
                             for(var i = 0;i<arr.length;i++){
                                 html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
                                 html += '<img src="' + arr[i].thumbnail +'" alt="">';
-                                html += '<div class="title">'+ arr[i].post_title + '</div>'
-                                html += '<div class="content">'+ arr[i].post_content + '</div>';
-                                // html += '</a>';
+									html += '<div class="item_right">';
+										html += '<div class="title">'+ arr[i].post_title + '</div>'
+										html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
+										html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
+									html += '</div>';
                                 html += '</div>';
                             }
                             html += '</div>';
