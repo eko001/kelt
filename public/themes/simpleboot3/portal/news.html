@@ -18,7 +18,7 @@
 	<div id="newsList"></div>
 	
 	<div class="pageLimitbox">
-	    <ul class="pagination">{$page|default=''}</ul>
+	    <ul class="pagination"> <span class="pageSpan"></span></ul>
 	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
 	</div>
 </div>
@@ -55,6 +55,11 @@
 			                $("#newsList").html(html);
 			            }else{
 							$("#newsList").html('');
+						}
+						if(result.data.page!=null){
+							$(".pageSpan").html(result.data.page);
+						}else{
+							$(".pageSpan").html('');
 						}
 			        }
 			    },
@@ -96,6 +101,11 @@
                             $("#newsList").html(html);
                         }else{
 							$("#newsList").html('');
+						}
+						if(result.data.page!=null){
+							$(".pageSpan").html(result.data.page);
+						}else{
+							$(".pageSpan").html('');
 						}
 			        }
 			    },
