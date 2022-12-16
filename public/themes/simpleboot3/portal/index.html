@@ -909,6 +909,21 @@
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
         })
+
+        // 新闻
+        $(".index-news .index-news-box .item").mouseover(function () {
+            $(".index-news .index-news-box .item .title").css("display", "block");
+            $(this).children(".index-news .index-news-box .item .title").css("display", "none");
+
+            $(".index-news .index-news-box .item .title-bigger").css("display", "none");
+            $(this).children(".index-news .index-news-box .item .title-bigger").css("display", "block");
+
+            $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
+            $(this).children(".index-news .index-news-box .item .time").css({ "font-weight": "600", "color": "#ff5000" });
+
+            $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA", "color": "#ff5000" });
+            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000", "color": "#fff" });
+        })
     })
 </script>
 

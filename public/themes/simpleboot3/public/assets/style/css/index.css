@@ -764,18 +764,26 @@ body {
     font-weight: bolder;
 }
 
-.index-news .index-news-box .item:hover .title {
+.index-news .index-news-box .more-btn {
+    border-radius: 2px;
+}
+
+.index-news .index-news-box .item:first-child .title {
     display: none;
 }
 
-.index-news .index-news-box .item:hover .title-bigger {
+.index-news .index-news-box .item:first-child .time {
+    color: #FF5000;
+    font-weight: 600;
+}
+
+.index-news .index-news-box .item:first-child .title-bigger {
     display: block;
 }
 
-.index-news .index-news-box .item:hover .more-btn {
+.index-news .index-news-box .item:first-child .more-btn {
     background: #FF5000;
     color: #FFFFFF;
-    border-radius: 2px;
 }
 
 .index-news .more {
@@ -806,10 +814,11 @@ body {
     height: 2.66rem;
     overflow: hidden;
     background: #FFFFFF;
-	margin-right: 0.17rem;
+    margin-right: 0.17rem;
 }
-.index-customer .index-customer-box div:nth-child(6n+6){
-	margin-right: 0;
+
+.index-customer .index-customer-box div:nth-child(6n+6) {
+    margin-right: 0;
 }
 
 .index-customer .index-customer-box div img {
@@ -1555,24 +1564,29 @@ body {
     background: #FFFFFF;
     overflow-y: scroll;
 }
-.contact .contact-part2 .contact-part-box  .contact-part-box-left{
-	width: 100%;
-	height: auto;
-	overflow-y: auto;
+
+.contact .contact-part2 .contact-part-box .contact-part-box-left {
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
 }
-.contact .contact-part2 .contact-part-box  .contact-part-box-left ul{
-	display: flex;
-	flex-wrap: wrap;
+
+.contact .contact-part2 .contact-part-box .contact-part-box-left ul {
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .contact .contact-part-box .contact-part-box-left li {
     background: #FFFFFF;
     border-radius: 5px;
     padding: 0.44rem 0.53rem;
     margin-bottom: 0.26rem;
 }
-.contact .contact-part2 .contact-part-box  .contact-part-box-left ul li{
-	width: 33.33%;
+
+.contact .contact-part2 .contact-part-box .contact-part-box-left ul li {
+    width: 33.33%;
 }
+
 .contact .contact-part-box .contact-part-box-left li.active {
     background: #FF5000;
 }
@@ -2751,9 +2765,11 @@ body {
         margin-bottom: 0.66rem;
         background: #FAFAFA;
     }
-	.contact .contact-part2 .contact-part-box .contact-part-box-left ul li{
-		width: 100%;
-	}
+
+    .contact .contact-part2 .contact-part-box .contact-part-box-left ul li {
+        width: 100%;
+    }
+
     .contact .contact-part-box .contact-part-box-left li:last-child {
         margin-bottom: 0;
     }
