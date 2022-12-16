@@ -77,8 +77,8 @@
 					</div>
 					<div class="inner-small-title text-center">170+家直营分/子公司，覆盖全国各大城市</div>
 					<div class="tabs-part">
-						<div class="tabs-box">
-							<ul class="tabs">
+						<div class="tabs-box" id="tabs">
+							<!-- <ul class="tabs">
 								<li class="active">全部</li>
 								<li>东北地区</li>
 								<li>华北地区</li>
@@ -87,15 +87,15 @@
 								<li>华南地区</li>
 								<li>西北地区</li>
 								<li>西南地区</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="search-company">
 							<input class="company" id="company" placeholder="搜索分公司及分支机构" />
 						</div>
 					</div>
 					<div class="contact-part-box">
-						<div class="contact-part-box-left">
-							<ul>
+						<div class="contact-part-box-left" id="companyList">
+							<!-- <ul>
 								<li class="active">
 									<div class="title">华劳集团总部</div>
 									<div class="text">地址：德州市经济技术开发区康博大厦1701室</div>
@@ -114,7 +114,7 @@
 									<div class="text">电话：0534-2668711</div>
 									<div class="text">邮箱：hualaohr@126.com</div>
 								</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="contact-part-box-right  hidden-xs">
 							<div class="map" id="map2"></div>
@@ -133,13 +133,18 @@
 		<include file="public@footer"/>
 		<script type="text/javascript">
 		window.onload = function () {
-			 var map = new AMap.Map('map', {
-				 zoom: 18, //初始地图级别
-			      center: [116.365035, 37.434357], //初始地图中心点
-			    });
+			let iconImg = "https://shuahuo-oss.oss-cn-beijing.aliyuncs.com/pos.gif";
+			var map = new AMap.Map('map', {
+			  zoom: 18, //初始地图级别
+			  center: [116.365035, 37.434357], //初始地图中心点
+			});
 			let position = [116.365035, 37.434357];
 			var marker = new AMap.Marker({
-			    icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+			   icon:new AMap.Icon({            
+			   	     image: iconImg,
+			   	     size: new AMap.Size(32, 38),  //图标所处区域大小
+			   	     imageSize: new AMap.Size(32, 38) //图标大小
+			   	 }), 
 			    position: position,
 			    anchor:'bottom-center'
 			});
@@ -155,13 +160,104 @@
 				position[0] = lng;
 				position[1] = lat;
 				marker = new AMap.Marker({
-				    icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+				    icon:new AMap.Icon({
+						 image: iconImg,
+						 size: new AMap.Size(32, 38),  //图标所处区域大小
+						 imageSize: new AMap.Size(32, 38) //图标大小
+					}), 
 				    position: position,
 				    anchor:'bottom-center'
 				});
 				map.setCenter(position); 
 				map.add(marker);
 			})
+			let position2 = [116.365035, 37.434357];
+			var marker2 = new AMap.Marker({
+			    icon:new AMap.Icon({
+					 image: iconImg,
+					 size: new AMap.Size(32, 38),  //图标所处区域大小
+					 imageSize: new AMap.Size(32,38) //图标大小
+				}), 
+			    position: position,
+			    anchor:'bottom-center'
+			});
+			var mapTwo = new AMap.Map('map2', {
+			  zoom: 18, //初始地图级别
+			  center: [116.365035, 37.434357], //初始地图中心点
+			});
+			
+			mapTwo.add(marker2);
+			
+			function getTabs(){
+				$.ajax({
+					    type: "post",
+					    url: "{:cmf_url('api/portal/area/getAreaList')}" ,
+					    data: {},
+					    dataType: "json",
+					    success: function (result) {
+					        console.log(result);//打印服务端返回的数据(调试用)
+					        if (result.code == 1) {
+								console.log(result.data);	
+					            var arr = result.data.data;
+					            if(arr.length!=0){
+					                var html = '<ul class="tabs">';
+					                for(var i = 0;i<arr.length;i++){
+										html += '<li data-id="'+ arr[i].type +'">' + arr[i].thumbnail +'</li>';
+					                }
+									html += '</li>';
+					                $("#tabs").html(html);
+									$("#tabs ul li").eq(0).addClass("active");
+					            }else{
+									$("#tabs").html('');
+								}
+					        }
+					    },
+					    error : function() {
+					        
+					    }
+				})
+			}
+			getTabs();
+			$("#tabs").on("click","li",function(){
+				$("#tabs li").removeClass("active");
+				$(this).addClass("active");
+				let id = $(this).attr("data-id");
+				$.ajax({
+					type: "post",
+					url: "{:url('App/getCustomerList')}" ,
+					data: {category:id},
+					dataType: "json",
+					success: function (result) {
+						console.log(result);//打印服务端返回的数据(调试用)
+						if (result.code == 1) {
+							console.log(result.data);	
+							var arr = result.data.data;
+							if(arr.length!=0){
+								var html = '<ul class="tabs">';
+								for(var i = 0;i<arr.length;i++){
+									html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
+									html += '<div class="title">'+ arr[i].name +'</div>';
+									html += '<div class="text">地址：'+ arr[i].address +'</div>';
+									html += '<div class="text">电话：400-871-8711</div>';
+									html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
+									html += '</li>';
+								}
+								html += '</li>';
+								$("#companyList").html(html);
+								$("#companyList ul li").eq(0).addClass("active");
+							}else{
+								$("#companyList").html('');
+							}
+						}
+					},
+					error : function() {
+						
+					}
+				})
+				
+			})
+			
+			
 		}
 		</script>
 	</body>
