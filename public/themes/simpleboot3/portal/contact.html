@@ -89,9 +89,9 @@
 								<li>西南地区</li>
 							</ul> -->
 						</div>
-						<div class="search-company">
+						<!-- <div class="search-company">
 							<input class="company" id="company" placeholder="搜索分公司及分支机构" />
-						</div>
+						</div> -->
 					</div>
 					<div class="contact-part-box">
 						<div class="contact-part-box-left" id="companyList">
@@ -201,12 +201,12 @@
 					            var arr = result.data.data;
 					            if(arr.length!=0){
 					                var html = '<ul class="tabs">';
+									html += '<li data-id="0" class="active">全部</li>';
 					                for(var i = 0;i<arr.length;i++){
-										html += '<li data-id="'+ arr[i].type +'">' + arr[i].thumbnail +'</li>';
+										html += '<li data-id="'+ arr[i].id +'">' + arr[i].name +'</li>';
 					                }
 									html += '</li>';
 					                $("#tabs").html(html);
-									$("#tabs ul li").eq(0).addClass("active");
 					            }else{
 									$("#tabs").html('');
 								}
@@ -222,39 +222,73 @@
 				$("#tabs li").removeClass("active");
 				$(this).addClass("active");
 				let id = $(this).attr("data-id");
-				$.ajax({
-					type: "post",
-					url: "{:url('App/getCustomerList')}" ,
-					data: {category:id},
-					dataType: "json",
-					success: function (result) {
-						console.log(result);//打印服务端返回的数据(调试用)
-						if (result.code == 1) {
-							console.log(result.data);	
-							var arr = result.data.data;
-							if(arr.length!=0){
-								var html = '<ul class="tabs">';
-								for(var i = 0;i<arr.length;i++){
-									html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
-									html += '<div class="title">'+ arr[i].name +'</div>';
-									html += '<div class="text">地址：'+ arr[i].address +'</div>';
-									html += '<div class="text">电话：400-871-8711</div>';
-									html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
+				if(id === '0'){
+					$.ajax({
+						type: "post",
+						url: "{:url('App/getCustomerList')}" ,
+						data: {category:id},
+						dataType: "json",
+						success: function (result) {
+							console.log(result);//打印服务端返回的数据(调试用)
+							if (result.code == 1) {
+								console.log(result.data);	
+								var arr = result.data.data;
+								if(arr.length!=0){
+									var html = '<ul class="tabs">';
+									for(var i = 0;i<arr.length;i++){
+										html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
+										html += '<div class="title">'+ arr[i].name +'</div>';
+										html += '<div class="text">地址：'+ arr[i].address +'</div>';
+										html += '<div class="text">电话：400-871-8711</div>';
+										html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
+										html += '</li>';
+									}
 									html += '</li>';
+									$("#companyList").html(html);
+									$("#companyList ul li").eq(0).addClass("active");
+								}else{
+									$("#companyList").html('');
 								}
-								html += '</li>';
-								$("#companyList").html(html);
-								$("#companyList ul li").eq(0).addClass("active");
-							}else{
-								$("#companyList").html('');
 							}
+						},
+						error : function() {
+							
 						}
-					},
-					error : function() {
-						
-					}
-				})
-				
+					})
+				}else{
+					$.ajax({
+						type: "post",
+						url: "{:url('App/getCustomerList')}" ,
+						data: {category:id},
+						dataType: "json",
+						success: function (result) {
+							console.log(result);//打印服务端返回的数据(调试用)
+							if (result.code == 1) {
+								console.log(result.data);	
+								var arr = result.data.data;
+								if(arr.length!=0){
+									var html = '<ul class="tabs">';
+									for(var i = 0;i<arr.length;i++){
+										html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
+										html += '<div class="title">'+ arr[i].name +'</div>';
+										html += '<div class="text">地址：'+ arr[i].address +'</div>';
+										html += '<div class="text">电话：400-871-8711</div>';
+										html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
+										html += '</li>';
+									}
+									html += '</li>';
+									$("#companyList").html(html);
+									$("#companyList ul li").eq(0).addClass("active");
+								}else{
+									$("#companyList").html('');
+								}
+							}
+						},
+						error : function() {
+							
+						}
+					})
+				}
 			})
 			
 			
