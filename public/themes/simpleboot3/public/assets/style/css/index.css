@@ -794,24 +794,28 @@ body {
 .index-customer .index-customer-box {
     margin-top: 1.42rem;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-wrap: wrap;
-    height: 3.79rem;
+    height: 5.32rem;
     overflow: hidden;
 }
 
 .index-customer .index-customer-box div {
-    width: calc(16.667% - 10px);
+    width: calc(16.667% - 8px);
     margin-bottom: 0.17rem;
-    height: 1.78rem;
+    height: 2.66rem;
     overflow: hidden;
     background: #FFFFFF;
+	margin-right: 0.17rem;
+}
+.index-customer .index-customer-box div:nth-child(6n+6){
+	margin-right: 0;
 }
 
 .index-customer .index-customer-box div img {
     display: block;
     width: 100%;
-    height: 1.78rem;
+    height: 2.66rem;
     filter: grayscale(100%);
     opacity: 50%;
 }
