@@ -198,7 +198,7 @@
 					        console.log(result);//打印服务端返回的数据(调试用)
 					        if (result.code == 1) {
 								console.log(result.data);	
-					            var arr = result.data.data;
+					            var arr = result.data;
 					            if(arr.length!=0){
 					                var html = '<ul class="tabs">';
 									html += '<li data-id="0" class="active">全部</li>';
@@ -207,6 +207,7 @@
 					                }
 									html += '</li>';
 					                $("#tabs").html(html);
+									getAllList();
 					            }else{
 									$("#tabs").html('');
 								}
@@ -218,58 +219,61 @@
 				})
 			}
 			getTabs();
+			function getAllList(){
+				$.ajax({
+					type: "get",
+					url: "{:cmf_url('/api/portal/company/getAllCompany')}" ,
+					data: {},
+					dataType: "json",
+					success: function (result) {
+						console.log(result);//打印服务端返回的数据(调试用)
+						if (result.code == 1) {
+							console.log(result.data);	
+							var arr = result.data;
+							if(arr.length!=0){
+								var html = '<ul class="tabs">';
+								for(var i = 0;i<arr.length;i++){
+									html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
+									html += '<div class="title">'+ arr[i].name +'</div>';
+									html += '<div class="text">地址：'+ arr[i].address +'</div>';
+									html += '<div class="text">电话：'+ arr[i].phone +'</div>';
+									html += '<div class="text">邮箱：'+ arr[i].email +'</div>';
+									html += '</li>';
+								}
+								html += '</li>';
+								$("#companyList").html(html);
+								$("#companyList ul li").eq(0).addClass("active");
+							}else{
+								$("#companyList").html('');
+							}
+						}
+					},
+					error : function() {
+						
+					}
+				})
+			}
 			$("#tabs").on("click","li",function(){
 				$("#tabs li").removeClass("active");
 				$(this).addClass("active");
 				let id = $(this).attr("data-id");
 				if(id === '0'){
-					$.ajax({
-						type: "post",
-						url: "{:url('App/getCustomerList')}" ,
-						data: {category:id},
-						dataType: "json",
-						success: function (result) {
-							console.log(result);//打印服务端返回的数据(调试用)
-							if (result.code == 1) {
-								console.log(result.data);	
-								var arr = result.data.data;
-								if(arr.length!=0){
-									var html = '<ul class="tabs">';
-									for(var i = 0;i<arr.length;i++){
-										html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
-										html += '<div class="title">'+ arr[i].name +'</div>';
-										html += '<div class="text">地址：'+ arr[i].address +'</div>';
-										html += '<div class="text">电话：400-871-8711</div>';
-										html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
-										html += '</li>';
-									}
-									html += '</li>';
-									$("#companyList").html(html);
-									$("#companyList ul li").eq(0).addClass("active");
-								}else{
-									$("#companyList").html('');
-								}
-							}
-						},
-						error : function() {
-							
-						}
-					})
+					getAllList()
 				}else{
 					$.ajax({
-						type: "post",
-						url: "{:url('App/getCustomerList')}" ,
-						data: {category:id},
+						type: "get",
+						url: "{:cmf_url('/api/portal/company/getCompanyById')}" ,
+						data: {id:id},
 						dataType: "json",
 						success: function (result) {
 							console.log(result);//打印服务端返回的数据(调试用)
 							if (result.code == 1) {
 								console.log(result.data);	
-								var arr = result.data.data;
+								var arr = result.data;
 								if(arr.length!=0){
 									var html = '<ul class="tabs">';
 									for(var i = 0;i<arr.length;i++){
-										html += '<li data-lng="'+ arr[i].lng +'" data-lat="'+ arr[i].lat +'">';
+										html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
 										html += '<div class="title">'+ arr[i].name +'</div>';
 										html += '<div class="text">地址：'+ arr[i].address +'</div>';
 										html += '<div class="text">电话：400-871-8711</div>';
@@ -279,6 +283,24 @@
 									html += '</li>';
 									$("#companyList").html(html);
 									$("#companyList ul li").eq(0).addClass("active");
+									if(marker2){
+										mapTwo.remove(marker2);
+									}
+									let lng =$("#companyList ul li").eq(0).attr("data-lng");
+									let lat = $("#companyList ul li").eq(0).attr("data-lat");
+									position2[0] = lng;
+									position2[1] = lat;
+									marker2 = new AMap.Marker({
+									    icon:new AMap.Icon({
+											 image: iconImg,
+											 size: new AMap.Size(32, 38),  //图标所处区域大小
+											 imageSize: new AMap.Size(32, 38) //图标大小
+										}), 
+									    position: position2,
+									    anchor:'bottom-center'
+									});
+									mapTwo.setCenter(position2); 
+									mapTwo.add(marker2);
 								}else{
 									$("#companyList").html('');
 								}
@@ -291,7 +313,28 @@
 				}
 			})
 			
-			
+			$("#companyList").on("click","li",function(){
+				$("#companyList ul li").removeClass("active");
+				$(this).addClass("active");
+				if(marker2){
+					mapTwo.remove(marker2);
+				}
+				let lng = $(this).attr("data-lng");
+				let lat = $(this).attr("data-lat");
+				position2[0] = lng;
+				position2[1] = lat;
+				marker2 = new AMap.Marker({
+				    icon:new AMap.Icon({
+						 image: iconImg,
+						 size: new AMap.Size(32, 38),  //图标所处区域大小
+						 imageSize: new AMap.Size(32, 38) //图标大小
+					}), 
+				    position: position2,
+				    anchor:'bottom-center'
+				});
+				mapTwo.setCenter(position2); 
+				mapTwo.add(marker2);
+			})
 		}
 		</script>
 	</body>
