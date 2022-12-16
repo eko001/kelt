@@ -303,6 +303,9 @@
 									mapTwo.add(marker2);
 								}else{
 									$("#companyList").html('');
+									if(marker2){
+										mapTwo.remove(marker2);
+									}
 								}
 							}
 						},
