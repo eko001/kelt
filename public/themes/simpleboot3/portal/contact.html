@@ -190,8 +190,8 @@
 			
 			function getTabs(){
 				$.ajax({
-					    type: "post",
-					    url: "{:cmf_url('api/portal/area/getAreaList')}" ,
+					    type: "get",
+					    url: "{:cmf_url('/api/portal/area/getAreaList')}" ,
 					    data: {},
 					    dataType: "json",
 					    success: function (result) {
