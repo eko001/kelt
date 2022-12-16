@@ -1551,14 +1551,24 @@ body {
     background: #FFFFFF;
     overflow-y: scroll;
 }
-
+.contact .contact-part2 .contact-part-box  .contact-part-box-left{
+	width: 100%;
+	height: auto;
+	overflow-y: auto;
+}
+.contact .contact-part2 .contact-part-box  .contact-part-box-left ul{
+	display: flex;
+	flex-wrap: wrap;
+}
 .contact .contact-part-box .contact-part-box-left li {
     background: #FFFFFF;
     border-radius: 5px;
     padding: 0.44rem 0.53rem;
     margin-bottom: 0.26rem;
 }
-
+.contact .contact-part2 .contact-part-box  .contact-part-box-left ul li{
+	width: 33.33%;
+}
 .contact .contact-part-box .contact-part-box-left li.active {
     background: #FF5000;
 }
@@ -2737,7 +2747,9 @@ body {
         margin-bottom: 0.66rem;
         background: #FAFAFA;
     }
-
+	.contact .contact-part2 .contact-part-box .contact-part-box-left ul li{
+		width: 100%;
+	}
     .contact .contact-part-box .contact-part-box-left li:last-child {
         margin-bottom: 0;
     }
