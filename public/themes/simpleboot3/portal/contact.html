@@ -19,43 +19,43 @@
 					<div class="contact-part-box">
 						<div class="contact-part-box-left">
 							<ul>
-								<li class="active">
+								<li class="active" data-lng="116.365035" data-lat="37.434357">
 									<div class="title">华劳集团总部</div>
 									<div class="text">地址：德州市经济技术开发区康博大厦1701室</div>
 									<div class="text">电话：400-8718711、0534-2228711</div>
 									<div class="text">邮箱：hualao@hualaogroup.com</div>
 								</li>
-								<li>
+								<li data-lng="117.146475" data-lat="36.656260">
 									<div class="title">山东中政服务外包有限公司</div>
 									<div class="text">地址：山东省济南市高新区经十路7000号汉峪金融商务中心三区5号楼36层3609房间</div>
 									<div class="text">电话：0534-2668711</div>
 									<div class="text">邮箱：hualaohr@126.com</div>
 								</li>
-								<li>
+								<li  data-lng="116.365035" data-lat="37.434357">
 									<div class="title">山东金伞保险代理股份有限公司</div>
 									<div class="text">地址：山东省德州市经济技术开发区宋官屯街道办事处东风东路1888号康博公馆1号楼A单元18层1803号B室</div>
 									<div class="text">电话：0534-2668711</div>
 									<div class="text">邮箱：baoxian@hualao.cc</div>
 								</li>
-								<li>
+								<li data-lng="117.385823" data-lat="37.775238">
 									<div class="title">山东中劳劳务分包有限公司</div>
 									<div class="text">地址：山东省德州市庆云县光明路985号庆云县有机农业发展中心213-7</div>
 									<div class="text">电话：18561148711</div>
 									<div class="text">邮箱：hualaorenli@126.com</div>
 								</li>
-								<li>
+								<li data-lng="116.666538" data-lat="39.908794">
 									<div class="title">中洁清洁服务有限公司</div>
 									<div class="text">地址：中国北京人力资源产业园（通州园）</div>
 									<div class="text">电话：186 0111 8711</div>
 									<div class="text">邮箱：zhongjie@hualaogroup.com</div>
 								</li>
-								<li>
+								<li data-lng="116.668261" data-lat="39.909045">
 									<div class="title">华劳人力资源有限公司</div>
 									<div class="text">地址：北京市通州区新华东街11号院1号楼2层2005室</div>
 									<div class="text">电话：400-8718711</div>
 									<div class="text">邮箱：hualao@hualaogroup.com</div>
 								</li>
-								<li>
+								<li data-lng="116.463953" data-lat="39.958742">
 									<div class="title">中朗（北京）国际保安服务有限公司</div>
 									<div class="text">地址：北京市朝阳区霄云路32号2号楼7层745室</div>
 									<div class="text">电话：15313151059</div>
@@ -77,8 +77,8 @@
 					</div>
 					<div class="inner-small-title text-center">170+家直营分/子公司，覆盖全国各大城市</div>
 					<div class="tabs-part">
-						<div class="tabs-box">
-							<ul class="tabs">
+						<div class="tabs-box" id="tabs">
+							<!-- <ul class="tabs">
 								<li class="active">全部</li>
 								<li>东北地区</li>
 								<li>华北地区</li>
@@ -87,15 +87,15 @@
 								<li>华南地区</li>
 								<li>西北地区</li>
 								<li>西南地区</li>
-							</ul>
+							</ul> -->
 						</div>
-						<div class="search-company">
+						<!-- <div class="search-company">
 							<input class="company" id="company" placeholder="搜索分公司及分支机构" />
-						</div>
+						</div> -->
 					</div>
 					<div class="contact-part-box">
-						<div class="contact-part-box-left">
-							<ul>
+						<div class="contact-part-box-left" id="companyList">
+							<!-- <ul>
 								<li class="active">
 									<div class="title">华劳集团总部</div>
 									<div class="text">地址：德州市经济技术开发区康博大厦1701室</div>
@@ -114,7 +114,7 @@
 									<div class="text">电话：0534-2668711</div>
 									<div class="text">邮箱：hualaohr@126.com</div>
 								</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="contact-part-box-right  hidden-xs">
 							<div class="map" id="map2"></div>
@@ -133,18 +133,213 @@
 		<include file="public@footer"/>
 		<script type="text/javascript">
 		window.onload = function () {
-			var map = new AMap.Map(document.getElementById("map"));
+			let iconImg = "https://shuahuo-oss.oss-cn-beijing.aliyuncs.com/pos.gif";
+			var map = new AMap.Map('map', {
+			  zoom: 18, //初始地图级别
+			  center: [116.365035, 37.434357], //初始地图中心点
+			});
+			let position = [116.365035, 37.434357];
+			var marker = new AMap.Marker({
+			   icon:new AMap.Icon({            
+			   	     image: iconImg,
+			   	     size: new AMap.Size(32, 38),  //图标所处区域大小
+			   	     imageSize: new AMap.Size(32, 38) //图标大小
+			   	 }), 
+			    position: position,
+			    anchor:'bottom-center'
+			});
+			map.add(marker);
+			$(".contact-part-box .contact-part-box-left li").on("click",function(){
+				$(".contact-part-box .contact-part-box-left li").removeClass("active");
+				$(this).addClass("active");
+				if(marker){
+					map.remove(marker)
+				}
+				let lng = $(this).attr('data-lng');
+				let lat = $(this).attr('data-lat');
+				position[0] = lng;
+				position[1] = lat;
+				marker = new AMap.Marker({
+				    icon:new AMap.Icon({
+						 image: iconImg,
+						 size: new AMap.Size(32, 38),  //图标所处区域大小
+						 imageSize: new AMap.Size(32, 38) //图标大小
+					}), 
+				    position: position,
+				    anchor:'bottom-center'
+				});
+				map.setCenter(position); 
+				map.add(marker);
+			})
+			let position2 = [116.365035, 37.434357];
+			var marker2 = new AMap.Marker({
+			    icon:new AMap.Icon({
+					 image: iconImg,
+					 size: new AMap.Size(32, 38),  //图标所处区域大小
+					 imageSize: new AMap.Size(32,38) //图标大小
+				}), 
+			    position: position,
+			    anchor:'bottom-center'
+			});
+			var mapTwo = new AMap.Map('map2', {
+			  zoom: 18, //初始地图级别
+			  center: [116.365035, 37.434357], //初始地图中心点
+			});
+			
+			mapTwo.add(marker2);
+			
+			function getTabs(){
+				$.ajax({
+					    type: "get",
+					    url: "{:cmf_url('/api/portal/area/getAreaList')}" ,
+					    data: {},
+					    dataType: "json",
+					    success: function (result) {
+					        console.log(result);//打印服务端返回的数据(调试用)
+					        if (result.code == 1) {
+								console.log(result.data);	
+					            var arr = result.data;
+					            if(arr.length!=0){
+					                var html = '<ul class="tabs">';
+									html += '<li data-id="0" class="active">全部</li>';
+					                for(var i = 0;i<arr.length;i++){
+										html += '<li data-id="'+ arr[i].id +'">' + arr[i].name +'</li>';
+					                }
+									html += '</li>';
+					                $("#tabs").html(html);
+									getAllList();
+					            }else{
+									$("#tabs").html('');
+								}
+					        }
+					    },
+					    error : function() {
+					        
+					    }
+				})
+			}
+			getTabs();
+			function getAllList(){
+				$.ajax({
+					type: "get",
+					url: "{:cmf_url('/api/portal/company/getAllCompany')}" ,
+					data: {},
+					dataType: "json",
+					success: function (result) {
+						console.log(result);//打印服务端返回的数据(调试用)
+						if (result.code == 1) {
+							console.log(result.data);	
+							var arr = result.data;
+							if(arr.length!=0){
+								var html = '<ul class="tabs">';
+								for(var i = 0;i<arr.length;i++){
+									html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
+									html += '<div class="title">'+ arr[i].name +'</div>';
+									html += '<div class="text">地址：'+ arr[i].address +'</div>';
+									html += '<div class="text">电话：'+ arr[i].phone +'</div>';
+									html += '<div class="text">邮箱：'+ arr[i].email +'</div>';
+									html += '</li>';
+								}
+								html += '</li>';
+								$("#companyList").html(html);
+								$("#companyList ul li").eq(0).addClass("active");
+							}else{
+								$("#companyList").html('');
+							}
+						}
+					},
+					error : function() {
+						
+					}
+				})
+			}
+			$("#tabs").on("click","li",function(){
+				$("#tabs li").removeClass("active");
+				$(this).addClass("active");
+				let id = $(this).attr("data-id");
+				if(id === '0'){
+					getAllList()
+				}else{
+					$.ajax({
+						type: "get",
+						url: "{:cmf_url('/api/portal/company/getCompanyById')}" ,
+						data: {id:id},
+						dataType: "json",
+						success: function (result) {
+							console.log(result);//打印服务端返回的数据(调试用)
+							if (result.code == 1) {
+								console.log(result.data);	
+								var arr = result.data;
+								if(arr.length!=0){
+									var html = '<ul class="tabs">';
+									for(var i = 0;i<arr.length;i++){
+										html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
+										html += '<div class="title">'+ arr[i].name +'</div>';
+										html += '<div class="text">地址：'+ arr[i].address +'</div>';
+										html += '<div class="text">电话：400-871-8711</div>';
+										html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
+										html += '</li>';
+									}
+									html += '</li>';
+									$("#companyList").html(html);
+									$("#companyList ul li").eq(0).addClass("active");
+									if(marker2){
+										mapTwo.remove(marker2);
+									}
+									let lng =$("#companyList ul li").eq(0).attr("data-lng");
+									let lat = $("#companyList ul li").eq(0).attr("data-lat");
+									position2[0] = lng;
+									position2[1] = lat;
+									marker2 = new AMap.Marker({
+									    icon:new AMap.Icon({
+											 image: iconImg,
+											 size: new AMap.Size(32, 38),  //图标所处区域大小
+											 imageSize: new AMap.Size(32, 38) //图标大小
+										}), 
+									    position: position2,
+									    anchor:'bottom-center'
+									});
+									mapTwo.setCenter(position2); 
+									mapTwo.add(marker2);
+								}else{
+									$("#companyList").html('');
+									if(marker2){
+										mapTwo.remove(marker2);
+									}
+								}
+							}
+						},
+						error : function() {
+							
+						}
+					})
+				}
+			})
+			
+			$("#companyList").on("click","li",function(){
+				$("#companyList ul li").removeClass("active");
+				$(this).addClass("active");
+				if(marker2){
+					mapTwo.remove(marker2);
+				}
+				let lng = $(this).attr("data-lng");
+				let lat = $(this).attr("data-lat");
+				position2[0] = lng;
+				position2[1] = lat;
+				marker2 = new AMap.Marker({
+				    icon:new AMap.Icon({
+						 image: iconImg,
+						 size: new AMap.Size(32, 38),  //图标所处区域大小
+						 imageSize: new AMap.Size(32, 38) //图标大小
+					}), 
+				    position: position2,
+				    anchor:'bottom-center'
+				});
+				mapTwo.setCenter(position2); 
+				mapTwo.add(marker2);
+			})
 		}
 		</script>
 	</body>
-	<style>
-		input::-webkit-input-placeholder {
-			/* placeholder颜色 */
-			color: rgba(18, 18, 18, 0.4);
-			/* placeholder字体大小 */
-			font-size: 14px;
-			position: relative;
-			/* left:20px; */
-		}
-	</style>
+	
 </html>
