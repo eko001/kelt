@@ -861,8 +861,8 @@ body {
 
 /* 合伙人计划页面 */
 .partner .index-banner-top {
-    background: url(../imgs/partner/banner.png) center center no-repeat;
-    background-size: 100% 100%;
+    background: url(../imgs/partner/banner.png) center bottom no-repeat;
+    background-size: cover;
 }
 
 .partner .index-banner-top {
@@ -891,6 +891,7 @@ body {
 .partner .index-banner-top .title-bottom {
     color: #FFFFFF;
     font-size: 0.85rem;
+    font-weight: 900;
     line-height: 1.53rem;
     margin-top: 1.8rem;
     text-align: left;
@@ -903,8 +904,8 @@ body {
 
 .partner .partner-plan .partner-plan-box {
     margin-top: 1.07rem;
-    background: url(../imgs/partner/bg_1.png) center center no-repeat;
-    background-size: 100% 100%;
+    background: url(../imgs/partner/bg_1.png) center no-repeat;
+    background-size: cover;
 }
 
 .partner .partner-plan .partner-plan-box .partner-plan-box-left {
@@ -914,6 +915,7 @@ body {
 .partner .partner-plan .partner-plan-box .title {
     color: #FF5000;
     font-size: 0.35rem;
+    font-weight: 800;
     margin-bottom: 0.71rem;
 }
 
@@ -941,6 +943,10 @@ body {
 
 .partner .partner-plan .partner-plan-box .partner-plan-box-right {
     width: 8.92rem;
+}
+
+.partner .partner-plan .partner-plan-box .partner-plan-box-right .title {
+    margin-left: .4643rem;
 }
 
 .partner .partner-plan .partner-plan-box .partner-plan-box-right ul {
@@ -1063,8 +1069,8 @@ body {
 
 .partner .partner-prospect {
     padding: 1.78rem 0;
-    background: url(../imgs/partner/bg_2.png) center center no-repeat;
-    background-size: 100% 100%;
+    background: url(../imgs/partner/bg_2.png) center bottom no-repeat;
+    background-size: cover;
 }
 
 .partner .partner-prospect .partner-prospect-box {
@@ -1091,6 +1097,7 @@ body {
 .partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .text {
     color: #FF5000;
     font-size: 0.25rem;
+    font-weight: 800;
 }
 
 .partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .item {
@@ -1147,8 +1154,8 @@ body {
 
 /* 关于我们页面 */
 .about .index-banner-top {
-    background: url(../imgs/about/banner.png) center center no-repeat;
-    background-size: 100% 100%;
+    background: url(../imgs/about/banner.png) center bottom no-repeat;
+    background-size: cover;
 }
 
 .about .index-banner-top {
@@ -1222,6 +1229,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: url(../imgs/about/about1.png) center bottom no-repeat;
+    background-size: cover;
 }
 
 .about .about-bigger .about-bigger-left {
@@ -1369,8 +1378,8 @@ body {
 
 .about .about-message {
     padding: 1.78rem 0;
-    background: url(../imgs/1.png) center center no-repeat;
-    background-size: 100% 100%;
+    background: url(../imgs/1.png) left bottom no-repeat;
+    background-size: cover;
 }
 
 .about .about-message .inner {
@@ -2286,11 +2295,13 @@ body {
         width: calc(33.33% - 7.5px);
         height: 4.8rem;
         margin-bottom: 0.66rem;
-		margin-right: 0.66rem;
+        margin-right: 0.66rem;
     }
-	.index-customer .index-customer-box div:nth-child(3n+3){
-		margin-right: 0;
-	}
+
+    .index-customer .index-customer-box div:nth-child(3n+3) {
+        margin-right: 0;
+    }
+
     .index-customer .index-customer-box div img {
         height: 4.8rem;
     }
@@ -2318,8 +2329,8 @@ body {
     }
 
     .partner .partner-plan {
-        background: url(../imgs/partner/bg_3.png) center center no-repeat;
-        background-size: 100% 100%;
+        background: url(../imgs/partner/bg_3.png) center no-repeat;
+        background-size: cover;
         padding: 2rem 0;
     }
 
@@ -2363,6 +2374,10 @@ body {
     .partner .partner-plan .partner-plan-box .partner-plan-box-right {
         width: 100%;
         margin-top: 2rem;
+    }
+
+    .partner .partner-plan .partner-plan-box .partner-plan-box-right .title {
+        margin-left: 0;
     }
 
     .partner .partner-plan .partner-plan-box .partner-plan-box-right ul li {
@@ -2644,6 +2659,7 @@ body {
 
     .about .about-message {
         background: #FEEBC4;
+        padding-bottom: 0;
     }
 
     .about .about-message .about-message-right {
