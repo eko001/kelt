@@ -831,7 +831,7 @@
                             <div class="title">{$vo.post_title}</div>
                             <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
                             <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
-                            <div class="more-btn"> › </div>
+                            <div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}" >›</a> </div>
                         </div>
                     </volist>
                 </div>
