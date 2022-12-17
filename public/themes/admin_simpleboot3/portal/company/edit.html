@@ -30,7 +30,7 @@
                     <tr>
                         <th>所在地区<span class="form-required">*</span></th>
                         <td>
-                            <select class="form-control" name="parent_id" id="input-parent">
+                            <select class="form-control" name="post[area_id]" id="input-parent">
                                 <volist name="areaList" id="vo">
                                     <option value="{$vo.id}">{$vo.name}</option>
                                 </volist>
@@ -93,7 +93,8 @@
 <script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        $('#selectd1').val('3');
+        let companyArea =  <?php echo $post; ?> ;
+        $('#input-parent').val(companyArea.id);
         editorcontent = new baidu.editor.ui.Editor();
         editorcontent.render('content');
         try {
