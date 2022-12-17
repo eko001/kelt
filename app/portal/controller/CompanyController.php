@@ -10,6 +10,10 @@ class CompanyController extends AdminBaseController
         $param = $this->request->param();
         $companyModel = new CompanyModel();
         $data = $companyModel->getCompanyList($param);
+        for($index=0;$index<count($data);$index++){
+
+            $data[$index]['area'] = cmf_get_image_url($data[$index]['thumbnail']);
+        }
         $this->assign('list', $data->items());
         $this->assign('page', $data->render());
         return $this->fetch();
