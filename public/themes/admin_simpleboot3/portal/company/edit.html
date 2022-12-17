@@ -94,6 +94,7 @@
 <script type="text/javascript">
     $(function () {
         let companyArea =  <?php echo $post; ?> ;
+        console.log(companyArea)
         $('#input-parent').val(companyArea.id);
         editorcontent = new baidu.editor.ui.Editor();
         editorcontent.render('content');
