@@ -95,20 +95,8 @@
     $(function () {
         let companyArea =  <?php echo $post; ?> ;
         console.log(companyArea)
-        $('#input-parent').val(companyArea.id);
-        editorcontent = new baidu.editor.ui.Editor();
-        editorcontent.render('content');
-        try {
-            editorcontent.sync();
-        } catch (err) {
-        }
-
-        $('.btn-cancel-thumbnail').click(function () {
-            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
-            $('#thumbnail').val('');
-        });
-
-        $('#more-template-select').val("{$post.more.template|default=''}");
+        $('#input-parent').val(companyArea.area_id);
+     
     });
 
     function doSelectCategory() {
