@@ -11,18 +11,18 @@ class CompanyModel extends Model
     public function getCompanyList($param){
         if($param){
             if(!empty($param['name'])){
-                $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company a','a.id=m.area_id')
+                $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company_area a','a.id=m.area_id')
                     ->field('a.name as a_name' )
                     ->where('m.name','like',$param['name'])->order('m.id', 'DESC')
                     ->paginate(10);
             }else{
-                $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company a','a.id=m.area_id')
+                $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company_area a','a.id=m.area_id')
                     ->field('a.name as a_name' )->order('id', 'DESC')
                     ->paginate(10);
             }
 
         }else{
-            $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company a','a.id=m.area_id')
+            $list = Db::name('company')->alias('m')->field('m.id as mid,m.*' )->leftJoin('company_area a','a.id=m.area_id')
                 ->field('a.name as a_name' )->order('id', 'DESC')
                 ->paginate(10);
         }
