@@ -72,7 +72,7 @@
 }
 /* 服务目标 */
 .solution .target{
-	padding: 1.785714rem 4.375rem 1.446429rem 4.375rem;
+	padding: 1.78rem 0;
 	background-color: #FAFAFA ;
 	display: flex;
 	align-items: center;
@@ -131,11 +131,11 @@
 }
 /* 服务内容 */
 .solution .substance{
-	padding: 1.785714rem 4.375rem 1.446429rem 4.375rem;
+	padding: 1.78rem 0;
 	background-color: #FFFFFF ;
-	display: flex;
+	/* display: flex;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column; */
 }
 .substance .title{
 	color: rgba(16, 16, 16, 1);
@@ -156,17 +156,19 @@
 	width: 100%;
 }
 .substance_list .item{
-	width: 31%;
+	width: calc(33.33% - 7px);
 	height: 3.214286rem;
 	display: flex;
 	align-items: center;
-	margin-left: 1%;
-	margin-right: 1%;
-	margin-top: 0.357143rem;
+	margin-right: 0.17rem;
+	margin-top: 0.17rem;
 	background: #FAFAFA;
 	text-align: center;
 	border-radius: 0.089286rem;
 	justify-content: center;
+}
+.substance_list .item:nth-child(3n+3){
+	margin-right: 0;
 }
 .substance_list .item img{
 	/* margin-left: 2.142857rem; */
@@ -186,10 +188,10 @@
 	background-size: cover;
 }
 .solution .solution_advantage{
-	padding: 1.785714rem 4.375rem 1.517857rem 4.375rem;
-	display: flex;
+	padding: 1.78rem 0;
+	/* display: flex;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column; */
 }
 .solution_advantage .title{
 	color: rgba(16, 16, 16, 1);
@@ -235,7 +237,9 @@
 /* 解决方案 */
 .solution .resolve{
 	background-color: #FFFFFF;
-	padding: 2.142857rem 4.375rem 2.142857rem 4.375rem;
+	padding: 1.78rem 0;
+}
+.solution .resolve .inner{
 	display: flex;
 	align-items: center;
 }
@@ -249,18 +253,18 @@
 }
 .resolve_left_title{
 	color: rgba(26, 26, 26, 1);
-	font-size: 0.571429rem;
+	font-size: 0.57rem;
 	text-align: left;
 	font-weight: bold;
 }
 .resolve_left_tag{
-	margin-top: 0.357143rem;
+	margin-top: 0.35rem;
 	color: rgba(153, 153, 153, 1);
 	font-size: 0.25rem;
 	text-align: left;
 }
 .resolve_left button{
-	margin-top: 1.071429rem;
+	margin-top: 0.65rem;
 	width: 3.803571rem;
 	height: 0.964286rem;
 	line-height: 0.964286rem;
@@ -386,7 +390,7 @@
 	}
 	/* 方案定位 */
 	.solution .plan{
-		padding: 2rem 1rem 2rem 1rem;
+		padding: 2rem 0;
 		background-color: #FFFFFF;
 		display: flex;
 		align-items: center;
@@ -404,11 +408,11 @@
 		font-size: 0.8rem;
 		text-align: center;
 	}
-	.plan .inner{
+	/* .plan .inner{
 		width: 23rem;
-	}
+	} */
 	.plan .content{
-		width:23rem;
+		/* width:23rem; */
 		margin-top: 2rem;
 		display: flex;
 		align-items: center;
@@ -434,7 +438,7 @@
 	}
 	/* 服务目标 */
 	.solution .target{
-		padding: 2rem 1rem 2.67rem 1rem;
+		padding: 2rem 0;
 		background-color: #FAFAFA ;
 		display: flex;
 		align-items: center;
@@ -468,6 +472,7 @@
 	.target_list .item .item_target_item_left{
 		width: 100%;
 		height: 12.93rem;
+		margin-right: 0;
 	}
 	.target_list .item .item_target_item_left img{
 		width: 100%;
@@ -494,7 +499,7 @@
 	}
 	/* 服务内容 */
 	.solution .substance{
-		padding: 2rem 1rem 2rem 1rem;
+		padding: 2rem 0;
 		background-color: #FFFFFF ;
 		display: flex;
 		align-items: center;
@@ -523,13 +528,13 @@
 		height: 6.67rem;
 		display: flex;
 		align-items: center;
-		margin-bottom: 0.67rem;
+		margin: 0 0 0.67rem 0;
 		background: #FAFAFA;
 		text-align: center;
 		border-radius: 0.33rem;
 	}
 	.substance_list .item img{
-		margin-left: 6.4rem;
+		/* margin-left: 6.4rem; */
 		width: 2.67rem;
 		height: 2.67rem;
 	}
@@ -542,7 +547,7 @@
 	}
 	/* 我们的优势 */
 	.solution .solution_advantage{
-		padding: 2rem 1rem 2rem 1rem;
+		padding: 2rem 0;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -565,6 +570,7 @@
 		justify-content: space-between;
 		flex-wrap: wrap;
 		width: 100%;
+		margin-top: 2rem;
 	}
 	.solution_advantage .list .content{
 		display: none;
@@ -594,10 +600,13 @@
 	/* 解决方案 */
 	.solution .resolve{
 		background-color: #FFFFFF;
-		padding: 2rem 1rem 2rem 1rem;
+		padding: 2rem 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	.solution .resolve .inner{
+		display: block;
 	}
 	.resolve_left{
 		display: flex;
@@ -668,7 +677,7 @@
 	.resolve_btn{
 		display: block;
 		margin-top: 1.33rem;
-		width: 23rem;
+		width: 100%;
 		height: 3.6rem;
 		line-height: 3.6rem;
 		border-radius: 0.33rem;
