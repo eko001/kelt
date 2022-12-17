@@ -20,11 +20,42 @@
             <div class="col-md-9">
                 <table class="table table-bordered">
                     <tr>
-                        <th>地区名称<span class="form-required">*</span></th>
+                        <th>公司名称<span class="form-required">*</span></th>
                         <td>
                             <input id="post-id" type="hidden" name="post[id]" value="{$post.id}">
                             <input class="form-control" type="text" name="post[name]"
-                                   required value="{$post.name}" placeholder="请输入地区名称"/>
+                                   required value="{$post.name}" placeholder="请输入公司名称"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>所在地区<span class="form-required">*</span></th>
+                        <td>
+                            <select class="form-control" name="parent_id" id="input-parent">
+                                <volist name="areaList" id="vo">
+                                    <option value="{$vo.id}">{$vo.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>地址<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[address]"
+                                   id="address" required value="{$post.address}" placeholder="请输入地址"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>手机号<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[phone]"
+                                   id="phone" required value="{$post.phone}" placeholder="请输入手机号"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>邮箱<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[email]"
+                                   id="email" required value="{$post.email}" placeholder="请输入邮箱"/>
                         </td>
                     </tr>
                 </table>

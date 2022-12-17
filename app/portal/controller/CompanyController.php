@@ -3,6 +3,7 @@
 namespace app\portal\controller;
 use app\portal\model\CompanyModel;
 use cmf\controller\AdminBaseController;
+use think\facade\Db;
 
 class CompanyController extends AdminBaseController
 {
@@ -16,6 +17,8 @@ class CompanyController extends AdminBaseController
     }
 
     public function add(){
+        $list = Db::name('company_area')->field('*' )->select()->toArray();
+        $this->assign('areaList', $list);
         return $this->fetch();
     }
 
@@ -40,6 +43,8 @@ class CompanyController extends AdminBaseController
         $companyModel = new CompanyModel();
         $post = $companyModel->where('id', $id)->find();
         $this->assign('post', $post);
+        $list = Db::name('company_area')->field('*' )->select()->toArray();
+        $this->assign('areaList', $list);
         return $this->fetch();
     }
 
