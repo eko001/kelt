@@ -821,50 +821,19 @@
                 </div>
                 <div class="inner-small-title text-center">华劳集团公司新闻、人力资源行业动态</div>
                 <div class="index-news-box">
-                    <div class="item">
-                        <div class="title-bigger" style="background: url(__TMPL__/public/assets/style/imgs/index/news/1.png) center center no-repeat;background-size: 100% 100%;">
-                            <div class="inner-box">
-                                <div class="content">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
+                    <volist name="newsList" id="vo">
+                        <div class="item">
+                            <div class="title-bigger" style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
+                                <div class="inner-box">
+                                    <div class="content">{$vo.post_title}</div>
+                                </div>
                             </div>
+                            <div class="title">{$vo.post_title}</div>
+                            <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
+                            <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
+                            <div class="more-btn"> › </div>
                         </div>
-                        <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                        <div class="time">2022/11/05</div>
-                        <div class="text hidden-xs">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就...</div>
-                        <div class="more-btn"> › </div>
-                    </div>
-                    <div class="item">
-                        <div class="title-bigger" style="background: url(__TMPL__/public/assets/style/imgs/index/news/1.png) center center no-repeat;background-size: 100% 100%;">
-                            <div class="inner-box">
-                                <div class="content">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                            </div>
-                        </div>
-                        <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                        <div class="time">2022/11/05</div>
-                        <div class="text hidden-xs">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就...</div>
-                        <div class="more-btn"> › </div>
-                    </div>
-                    <div class="item">
-                        <div class="title-bigger" style="background: url(__TMPL__/public/assets/style/imgs/index/news/1.png) center center no-repeat;background-size: 100% 100%;">
-                            <div class="inner-box">
-                                <div class="content">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                            </div>
-                        </div>
-                        <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                        <div class="time">2022/11/05</div>
-                        <div class="text hidden-xs">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就...</div>
-                        <div class="more-btn"> › </div>
-                    </div>
-                    <div class="item">
-                        <div class="title-bigger" style="background: url(__TMPL__/public/assets/style/imgs/index/news/1.png) center center no-repeat;background-size: 100% 100%;">
-                            <div class="inner-box">
-                                <div class="content">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                            </div>
-                        </div>
-                        <div class="title">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知</div>
-                        <div class="time">2022/11/05</div>
-                        <div class="text hidden-xs">人力资源社会保障部办公厅 关于开展人力资源服务机构稳就业促就业行动的通知人力资源社会保障部办公厅 关于开展人力资源服务机构稳就...</div>
-                        <div class="more-btn"> › </div>
-                    </div>
+                    </volist>
                 </div>
                 <div class="more hidden-xs">更多新闻</div>
             </div>
