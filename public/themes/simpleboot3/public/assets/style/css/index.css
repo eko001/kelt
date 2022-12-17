@@ -3001,7 +3001,7 @@ label {
     }
 
     .customer .customer-list .customer-list-box .index-customer-box div {
-        width: calc(50% - 5px);
+        width: calc(50% - 5.5px);
         margin-bottom: 0.6rem;
         margin-right: 0.66rem;
     }
