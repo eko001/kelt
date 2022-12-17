@@ -51,7 +51,7 @@
                 <div class="">
                     <a href="javascript:void(0)" class="img-logo"></a>
                 </div>
-                <div>
+                <div class="nav-box">
                     <ul class="nav navbar-nav">
                         <li data-url="index">
                             <p><a href="{:cmf_url('portal/Index/index')}" title="首页">首页</a></p>
@@ -81,6 +81,9 @@
                             <p><a href="{:cmf_url('portal/Application/index')}" title="企业应用">企业应用</a></p>
                         </li>
                     </ul>
+                    <div class="gengduo">
+                        123
+                    </div>
                 </div>
                 <div class="header-icon-imgs">
                     <img src="__TMPL__/public/assets/style/imgs/index/language.svg">
@@ -209,6 +212,19 @@
         //         $("#xmHeader").removeClass("header-fixed-box");
         //     }
         // });
+
+
+        // 头部隐藏
+        $(window).resize(function () {
+            var left = $(".header-icon-imgs").offset().left - ($(".navbar-nav").offset().left + $(".navbar-nav").width())
+            if (left < 50) {
+                var $li = $(".navbar-nav li").last()
+                $(".navbar-nav li").last().remove()
+                $(".navbar-nav").append($li)
+                $(".gengduo").append($li)
+            }
+        })
+        // 
     })
 </script>
 
