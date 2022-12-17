@@ -1827,6 +1827,88 @@ body {
 }
 
 
+/* 预约方案 */
+
+.form-box {
+    margin: 3.5714rem auto;
+}
+
+.container {
+    width: 14.2857rem;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #f6f6fa;
+    box-sizing: border-box;
+    padding: 1.0714rem 0;
+    padding-top: .5357rem;
+}
+
+.container .tableTitle {
+    text-align: center;
+    font-size: 0.42rem;
+    font-weight: bolder;
+    padding: 0.71rem 0;
+    color: #121212;
+}
+
+.container .contbox {
+    padding: 0 10%;
+}
+
+.formbox {
+    width: 10.7143rem;
+    margin: 0 auto;
+    line-height: 0.67rem;
+}
+
+.formbox .form-group {
+    margin-bottom: .3571rem;
+}
+
+.form-control {
+    width: 100%;
+    height: 0.67rem;
+    color: #121212;
+    font-size: 0.32rem;
+}
+
+label {
+    font-size: .25rem;
+    font-weight: 500;
+    width: 1.5rem;
+    /* text-align: right; */
+    line-height: .75rem;
+}
+
+.container .form-control {
+    background-color: #F1F3F5;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    height: .75rem;
+    font-size: .25rem;
+}
+
+.poscode {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    width: 140px;
+    bottom: 0;
+    z-index: 2;
+}
+
+.poscode .btn {
+    width: 100%;
+}
+
+.btn-danger {
+    width: 3rem;
+    height: .75rem;
+    background: #FF5000;
+    border: solid 1px #FF5000;
+}
+
 
 
 
@@ -2992,5 +3074,87 @@ body {
         height: 3.33rem;
         line-height: 3.33rem;
         font-size: 0.93rem;
+    }
+
+
+    /* 预约方案 */
+    .form-box {
+        margin: 6.6667rem auto;
+    }
+
+    .container {
+        width: 23rem;
+        background: #fff;
+        border-radius: .3333rem;
+        border: 1px solid #f6f6fa;
+        box-sizing: border-box;
+        padding: 2rem 0;
+    }
+
+    .container .tableTitle {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bolder;
+        padding: 0;
+        color: #121212;
+        margin-bottom: 2rem;
+    }
+
+    .container .contbox {
+        padding: 0 10%;
+    }
+
+    .formbox {
+        width: 21rem;
+        margin: 0 auto;
+        line-height: 0.67rem;
+    }
+
+    .formbox .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-control {
+        width: 80%;
+        color: #121212;
+        font-size: 0.32rem;
+    }
+
+    label {
+        font-size: .8667rem;
+        font-weight: 500;
+        width: 4rem;
+        /* text-align: right; */
+        line-height: 3rem;
+    }
+
+    .container .form-control {
+        background-color: #F1F3F5;
+        border: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        height: 3rem;
+        font-size: .9333rem;
+    }
+
+    .poscode {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        width: 140px;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .poscode .btn {
+        width: 100%;
+    }
+
+    .btn-danger {
+        width: 21rem;
+        height: 3rem;
+        font-size: 1rem;
+        background: #FF5000;
+        border: solid 1px #FF5000;
     }
 }
