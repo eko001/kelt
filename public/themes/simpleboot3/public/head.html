@@ -81,11 +81,11 @@
                             <p><a href="{:cmf_url('portal/Application/index')}" title="企业应用">企业应用</a></p>
                         </li>
                     </ul>
-                    <div class="gengduo">
+                    <!-- <div class="gengduo">
                         123
-                    </div>
+                    </div> -->
                 </div>
-               <!-- <div class="header-icon-imgs">
+                <!-- <div class="header-icon-imgs">
                     <img src="__TMPL__/public/assets/style/imgs/index/language.svg">
                     <span style="color: #fff;padding: 0 10px;">|</span>
                     <img src="__TMPL__/public/assets/style/imgs/index/search.svg">
@@ -215,16 +215,15 @@
 
 
         // 头部隐藏
-        $(window).resize(function () {
-            var left = $(".header-icon-imgs").offset().left - ($(".navbar-nav").offset().left + $(".navbar-nav").width())
-            if (left < 50) {
-                var $li = $(".navbar-nav li").last()
-                $(".navbar-nav li").last().remove()
-                $(".navbar-nav").append($li)
-                $(".gengduo").append($li)
-            }
-        })
-        // 
+        // $(window).resize(function () {
+        //     var left = $(".header-icon-imgs").offset().left - ($(".navbar-nav").offset().left + $(".navbar-nav").width())
+        //     if (left < 50) {
+        //         var $li = $(".navbar-nav li").last()
+        //         $(".navbar-nav li").last().remove()
+        //         $(".navbar-nav").append($li)
+        //         $(".gengduo").append($li)
+        //     }
+        // })
     })
 </script>
 

@@ -139,6 +139,7 @@ body {
     text-align: center;
 }
 
+/* 顶部隐藏 */
 .nav-box {
     position: relative;
 }
@@ -151,6 +152,9 @@ body {
     background-color: rgba(0, 0, 0, .8);
     color: #FFF;
 }
+
+/* 顶部隐藏 */
+
 
 .header-box .nav.navbar-nav {
     height: 1.42rem;
