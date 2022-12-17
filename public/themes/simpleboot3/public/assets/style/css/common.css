@@ -139,6 +139,19 @@ body {
     text-align: center;
 }
 
+.nav-box {
+    position: relative;
+}
+
+.nav-box .gengduo {
+    position: absolute;
+    right: 0;
+    bottom: -2.4286rem;
+    padding: .5357rem;
+    background-color: rgba(0, 0, 0, .8);
+    color: #FFF;
+}
+
 .header-box .nav.navbar-nav {
     height: 1.42rem;
     overflow: hidden;
