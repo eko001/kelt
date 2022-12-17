@@ -156,6 +156,8 @@ return array (
   'PORTAL_ADMINTAG_UPSTATUS' => '更新标签状态',
   'PORTAL_BOOK_DEFAULT' => '预约管理',
   'PORTAL_BOOK_INDEX' => '预约列表',
+  'PORTAL_COMPANY_DEFAULT' => '分公司管理',
+  'PORTAL_COMPANY_INDEX' => '分公司列表',
   'PORTAL_COMPANYAREA_DEFAULT' => '分公司地区管理',
   'PORTAL_COMPANYAREA_INDEX' => '分公司地区列表',
   'PORTAL_CONTACT_DEFAULT' => '留言管理',

@@ -758,12 +758,13 @@ body {
     height: 0.71rem;
     line-height: 0.71rem;
     text-align: center;
-    color: #FF5000;
     font-size: 0.28rem;
     margin-left: 0.44rem;
     font-weight: bolder;
 }
-
+.index-news .index-news-box .item .more-btn a{
+	color: #FF5000;
+}
 .index-news .index-news-box .more-btn {
     border-radius: 2px;
 }
