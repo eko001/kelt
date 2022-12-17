@@ -788,12 +788,13 @@ body {
 }
 
 .index-news .more {
-    color: #FF5000;
-    font-size: 0.25rem;
     text-align: center;
     margin-top: 0.71rem;
 }
-
+.index-news .more a{
+	color: #FF5000;
+	font-size: 0.25rem;
+}
 /* 合作客户 */
 .index-customer {
     padding: 1.78rem 0;
@@ -836,12 +837,13 @@ body {
 }
 
 .index-customer .more {
-    color: #FF5000;
-    font-size: 0.25rem;
     text-align: center;
     margin-top: 0.71rem;
 }
-
+.index-customer .more a{
+    color: #FF5000;
+    font-size: 0.25rem;
+}
 /* 解决方案按钮 */
 .index-bottom {
     padding: 1.78rem 0;
