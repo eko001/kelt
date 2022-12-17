@@ -831,11 +831,11 @@
                             <div class="title">{$vo.post_title}</div>
                             <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
                             <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
-                            <div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}" >›</a> </div>
+                            <div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">›</a> </div>
                         </div>
                     </volist>
                 </div>
-                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}"  style="display: block;">更多新闻</a></div>
+                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" style="display: block;">更多新闻</a></div>
             </div>
         </div>
         <div class="index-customer">
@@ -853,7 +853,7 @@
                 <div class="inner-bigger-title text-center">
                     <p>以人为本，创造价值，多方共赢，长期发展</p>
                 </div>
-                <div class="text-center" style="color: #999;font-size: 0.25rem;">全国170+家直营分/子公司，量身定制，满足多个行业广泛业务需求</div>
+                <div class="text-center" style="color: #999;">全国170+家直营分/子公司，量身定制，满足多个行业广泛业务需求</div>
                 <div class="solution-btn"><a href="{:cmf_url('portal/Form/index')}">获取定制解决方案</a></div>
             </div>
         </div>
@@ -878,7 +878,7 @@
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
         })
-		$(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
+        $(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
         // 新闻
         $(".index-news .index-news-box .item").mouseover(function () {
             $(".index-news .index-news-box .item .title").css("display", "block");
@@ -891,9 +891,9 @@
             $(this).children(".index-news .index-news-box .item .time").css({ "font-weight": "600", "color": "#ff5000" });
 
             $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA" });
-			$(".index-news .index-news-box .item .more-btn a").css({ "color": "#ff5000" });
-            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000"}).children('a').css({ "color": "#fff" });
-			// $(this).children(".index-news .index-news-box .item .more-btn a");
+            $(".index-news .index-news-box .item .more-btn a").css({ "color": "#ff5000" });
+            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000" }).children('a').css({ "color": "#fff" });
+            // $(this).children(".index-news .index-news-box .item .more-btn a");
         })
     })
 </script>
