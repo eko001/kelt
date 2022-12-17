@@ -2374,6 +2374,7 @@ label {
     }
 
     .index-news .index-news-box .item {
+		width: 100%;
         position: relative;
         margin-right: 0;
         padding-bottom: 0;
