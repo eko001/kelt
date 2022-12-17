@@ -765,6 +765,9 @@ body {
 .index-news .index-news-box .item .more-btn a{
 	color: #FF5000;
 }
+.index-news .index-news-box .item:hover a{
+	color: #FFFFFF;
+}
 .index-news .index-news-box .more-btn {
     border-radius: 2px;
 }
@@ -784,9 +787,11 @@ body {
 
 .index-news .index-news-box .item:first-child .more-btn {
     background: #FF5000;
-    color: #FFFFFF;
+    
 }
-
+.index-news .index-news-box .item:first-child .more-btn a{
+	color: #FFFFFF;
+}
 .index-news .more {
     text-align: center;
     margin-top: 0.71rem;
@@ -1731,6 +1736,7 @@ body {
 .application .application-box .box-1 img {
     display: block;
     padding: 0.35rem;
+	width: 100%;
 }
 
 .application .application-box .box-1 .flex-box {
@@ -1796,6 +1802,7 @@ body {
 .application .application-box .box-3 img {
     display: block;
     padding: 0.35rem;
+	width: 100%;
 }
 
 .application .application-box .box-3 .flex-box {

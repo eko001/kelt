@@ -835,7 +835,7 @@
                         </div>
                     </volist>
                 </div>
-                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" >更多新闻</a></div>
+                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}"  style="display: block;">更多新闻</a></div>
             </div>
         </div>
         <div class="index-customer">
@@ -878,7 +878,7 @@
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
         })
-
+		$(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
         // 新闻
         $(".index-news .index-news-box .item").mouseover(function () {
             $(".index-news .index-news-box .item .title").css("display", "block");
@@ -890,8 +890,10 @@
             $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
             $(this).children(".index-news .index-news-box .item .time").css({ "font-weight": "600", "color": "#ff5000" });
 
-            $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA", "color": "#ff5000" });
-            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000", "color": "#fff" });
+            $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA" });
+			$(".index-news .index-news-box .item .more-btn a").css({ "color": "#ff5000" });
+            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000"}).children('a').css({ "color": "#fff" });
+			// $(this).children(".index-news .index-news-box .item .more-btn a");
         })
     })
 </script>
