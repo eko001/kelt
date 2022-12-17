@@ -1720,7 +1720,9 @@ body {
     background: url(../imgs/application/banner.png) center center no-repeat;
     background-size: 100% 100%;
 }
-
+.application .index-banner-top {
+    font-size: 0.85rem;
+}
 .application .application-box {
     padding: 1.78rem 0;
     background: #FFFFFF;
@@ -2983,7 +2985,9 @@ label {
         background: url(../imgs/application/banner-phone.png) center center no-repeat;
         background-size: 100% 100%;
     }
-
+	.application .index-banner-top {
+		font-size: 1.6rem;
+	}
     .application .application-box {
         padding: 0;
     }
