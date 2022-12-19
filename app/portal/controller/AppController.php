@@ -2,7 +2,6 @@
 
 namespace app\portal\controller;
 
-use app\portal\model\NewsModel;
 use app\portal\model\PortalCategoryPostModel;
 use app\portal\model\PortalPostModel;
 use app\portal\model\ResumeModel;
