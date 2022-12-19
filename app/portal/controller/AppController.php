@@ -7,7 +7,6 @@ use app\portal\model\PortalCategoryPostModel;
 use app\portal\model\PortalPostModel;
 use app\portal\model\ResumeModel;
 use app\portal\service\PostService;
-use Cassandra\Date;
 use cmf\controller\RestBaseController;
 use think\facade\Db;
 
@@ -44,7 +43,7 @@ class AppController extends RestBaseController
             $resultA = $portalPostModel->addData($news);
             if ($resultA) {
                 //发布
-                $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => time()]);
+                $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => $resultA['create_time']]);
                 //插入中间表
                 $portalCategoryPostModel = new PortalCategoryPostModel();
                 $newsC['post_id']=$resultA['id'];
