@@ -51,7 +51,7 @@ class AppController extends RestBaseController
 	public function getCustomerList(){
         $param = $this->request->param();
         $postService = new PostService();
-        $list        = $postService->adminArticleList($param);
+        $list        = $postService->adminArticleListNotPage($param);
 		for($index=0;$index<count($list);$index++){
 		    $list[$index]['thumbnail'] = cmf_get_image_url($list[$index]['thumbnail']);
 		}
