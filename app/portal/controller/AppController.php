@@ -30,17 +30,16 @@ class AppController extends RestBaseController
         for($index=0;$index<count($list);$index++){
             $portalPostModel = new PortalPostModel();
             $news['post_title']=$list[$index]['title'];
-            $news['post_content']=$list[$index]['content'];
             $news['post_status']=0;
-            if($news['post_content']!=""){
-                str_replace("Upload/images","upload/portal",$news['post_content']);
-            }
+            $news['post_content']=$list[$index]['content'];
             $news['create_time']=$list[$index]['updatetime'];
             $news['user_id']=1;
             $thumb=$list[$index]['thumb'];
             if($thumb!=""){
                 $str = substr($thumb, 14);
                 $news['thumbnail']="portal".$str;
+            }else{
+                $news['thumbnail']="portal/default_news.png";
             }
             $resultA = $portalPostModel->addData($news);
             if ($resultA) {
@@ -65,7 +64,7 @@ class AppController extends RestBaseController
                 $resultB = $portalCategoryPostModel->addData($newsC);
             }
         }
-        $this->success('请求成功!',$list);
+        $this->success('请求成功!');
     }
 
 
