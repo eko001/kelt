@@ -20,4 +20,8 @@ class PortalCategoryPostModel extends Model
      */
     protected $name = 'portal_category_post';
 
+    public function addData($data){
+        $result=$this->save($data);
+        return $result;
+    }
 }

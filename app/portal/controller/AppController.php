@@ -2,14 +2,72 @@
 
 namespace app\portal\controller;
 
+use app\portal\model\NewsModel;
+use app\portal\model\PortalCategoryPostModel;
 use app\portal\model\PortalPostModel;
 use app\portal\model\ResumeModel;
 use app\portal\service\PostService;
+use Cassandra\Date;
 use cmf\controller\RestBaseController;
 use think\facade\Db;
 
 class AppController extends RestBaseController
 {
+
+
+    /**
+     * 添加新闻
+     * @return false|string
+     */
+    public function addNews()
+    {
+        //查询new表内容
+        $param = $this->request->param();
+        $category_id = $param['cid'];
+        $list = Db::name('news')->field('*')
+            ->where('category_id','=',$category_id)
+            ->order('updatetime', 'desc')->select()->toArray();
+        for($index=0;$index<count($list);$index++){
+            $portalPostModel = new PortalPostModel();
+            $news['post_title']=$list[$index]['title'];
+            $news['post_content']=$list[$index]['content'];
+            $news['post_status']=0;
+            if($news['post_content']!=""){
+                str_replace("Upload/images","upload/portal",$news['post_content']);
+            }
+            $news['create_time']=$list[$index]['updatetime'];
+            $news['user_id']=1;
+            $thumb=$list[$index]['thumb'];
+            if($thumb!=""){
+                $str = substr($thumb, 14);
+                $news['thumbnail']="portal".$str;
+            }
+            $resultA = $portalPostModel->addData($news);
+            if ($resultA) {
+                //发布
+                $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => time()]);
+                //插入中间表
+                $portalCategoryPostModel = new PortalCategoryPostModel();
+                $newsC['post_id']=$resultA['id'];
+                if($category_id==11){
+                    $newsC['category_id']=23;
+                }else if($category_id==12){
+                    $newsC['category_id']=24;
+                }else if($category_id==13){
+                    $newsC['category_id']=25;
+                }else if($category_id==14){
+                    $newsC['category_id']=26;
+                }else if($category_id==15){
+                    $newsC['category_id']=27;
+                }else if($category_id==16){
+                    $newsC['category_id']=28;
+                }
+                $resultB = $portalCategoryPostModel->addData($newsC);
+            }
+        }
+        $this->success('请求成功!',$list);
+    }
+
 
     /**
      * 获取员工信息

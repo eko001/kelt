@@ -18,6 +18,12 @@ use think\Model;
  */
 class PortalPostModel extends Model
 {
+
+    public function addData($data){
+        $this->save($data);
+        return $this;
+    }
+
     /**
      * 模型名称
      * @var string
