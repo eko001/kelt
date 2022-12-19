@@ -366,6 +366,7 @@
 									$("#status").html("状态："+"<img id='statusImg' src='__TMPL__/public/assets/style/imgs/on_job.svg' />"+"在职")
 								}else{
 									$("#status").html("状态："+"<img id='statusImg' src='__TMPL__/public/assets/style/imgs/leave_job.svg' />"+"离职")
+									$("#phone").css("display","none");
 								}
 			                    $("#number").html("工号："+result.data.number)
 								console.log(result.data.avatar);
