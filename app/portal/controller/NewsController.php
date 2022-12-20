@@ -20,6 +20,9 @@ class NewsController extends HomeBaseController
         }
 		$postService = new PostService();
 		$data        = $postService->adminArticleList($param);
+        for($index=0;$index<count($data);$index++){
+            $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));
+        }
 		$page = $data->render();
 		$this->assign("list", $data);
 		$this->assign("page", $page);
