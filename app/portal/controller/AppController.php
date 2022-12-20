@@ -2,12 +2,10 @@
 
 namespace app\portal\controller;
 
-use app\portal\model\NewsModel;
 use app\portal\model\PortalCategoryPostModel;
 use app\portal\model\PortalPostModel;
 use app\portal\model\ResumeModel;
 use app\portal\service\PostService;
-use Cassandra\Date;
 use cmf\controller\RestBaseController;
 use think\facade\Db;
 
@@ -30,22 +28,21 @@ class AppController extends RestBaseController
         for($index=0;$index<count($list);$index++){
             $portalPostModel = new PortalPostModel();
             $news['post_title']=$list[$index]['title'];
-            $news['post_content']=$list[$index]['content'];
             $news['post_status']=0;
-            if($news['post_content']!=""){
-                str_replace("Upload/images","upload/portal",$news['post_content']);
-            }
+            $news['post_content']=$list[$index]['content'];
             $news['create_time']=$list[$index]['updatetime'];
             $news['user_id']=1;
             $thumb=$list[$index]['thumb'];
             if($thumb!=""){
                 $str = substr($thumb, 14);
                 $news['thumbnail']="portal".$str;
+            }else{
+                $news['thumbnail']="portal/default_news.png";
             }
             $resultA = $portalPostModel->addData($news);
             if ($resultA) {
                 //发布
-                $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => time()]);
+                $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => $resultA['create_time']]);
                 //插入中间表
                 $portalCategoryPostModel = new PortalCategoryPostModel();
                 $newsC['post_id']=$resultA['id'];
@@ -65,7 +62,7 @@ class AppController extends RestBaseController
                 $resultB = $portalCategoryPostModel->addData($newsC);
             }
         }
-        $this->success('请求成功!',$list);
+        $this->success('请求成功!');
     }
 
 
@@ -76,7 +73,7 @@ class AppController extends RestBaseController
     public function getStaff()
     {
         $data = $this->request->param();
-        $content = $data['content'];
+        $content = trim($data['content']);
         $detail = Db::name('staff')->field('*')
             ->where('name','=',$content)
             ->whereOr('phone','=',$content)
