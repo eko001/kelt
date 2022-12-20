@@ -18,8 +18,10 @@
 	<div id="newsList">
 		
 	</div>
+	<!-- <ul class="pagination" id="pagination">
+	    
+	</ul> -->
 	<div class="pageLimitbox">
-	    <!-- <ul class="pagination"> <span class="pageSpan"></span></ul> -->
 	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
 	</div>
 </div>
@@ -28,7 +30,7 @@
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
     $(function () {
-		let pageCount = 20;
+		var category = null;
 		function timestampToTime(timestamp) {
 		        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
 		        var Y = date.getFullYear() + '-';
@@ -39,6 +41,7 @@
         let typeList =  <?php echo $typeList; ?> ;
 		if(typeList.length>0){
 			let firstId= typeList[0].id;
+			category = firstId;
 			$.ajax({
 			    type: "post",
 			    url: "{:url('App/getNewsList')}" ,
@@ -46,10 +49,8 @@
 			    dataType: "json",
 			    success: function (result) {
 			        console.log(result);//打印服务端返回的数据(调试用)
-			        if (result.code == 1) {
-						console.log(result.data);	
+			        if (result.code == 1) {	
 			            var arr = result.data.list.data;
-						pageCount =  result.data.list.total;
 			            if(arr.length!=0){
 			                var html = "";
 			                html += '<div class="list">';
@@ -73,7 +74,7 @@
 						}else{
 							$(".pageSpan").html('');
 						}
-						initPage(result.data.list.total)
+						initPage(result.data.list.total,result.data.list.current_page)
 			        }
 			    },
 			    error : function() {
@@ -87,7 +88,7 @@
 		$(".typelist ul li").on("click",function(){
 			$(".typelist ul li").removeClass("active");
 			$(this).addClass("active");
-			var category = $(this).attr("data-url");
+			category = $(this).attr("data-url");
 			console.log(category);
 			$.ajax({
 			    type: "post",
@@ -114,6 +115,7 @@
                             }
                             html += '</div>';
                             $("#newsList").html(html);
+							initPage(result.data.list.total,result.data.list.current_page)
                         }else{
 							$("#newsList").html('');
 						}
@@ -138,10 +140,10 @@
 			window.open(newLocation+'detail.html?id='+id+"&cid="+cid)
 		})
 		
-		function initPage(pageCount){
+		function initPage(pageCount,currentPage){
 			$('#pageLimit').bootstrapPaginator({
-				currentPage: 1, //当前页
-				totalPages: (pageCount % 10) == 0 ? (pageCount / 10) : (pageCount / 10) + 1, //总页
+				currentPage: currentPage, //当前页
+				totalPages: (pageCount % 9) == 0 ? (pageCount / 9) : (pageCount / 9) + 1, //总页
 				size: "normal",
 				bootstrapMajorVersion: 3,
 				alignment: "right",
@@ -165,10 +167,36 @@
 					$.ajax({
 					    type: "post",
 					    url: "{:url('App/getNewsList')}" ,
-					    data: {},
+					    data: {category:category,page:page},
 					    dataType: "json",
 					    success: function (res) {
-							
+							if (res.code == 1) {
+							    var arr = res.data.list.data;
+							    if(arr.length!=0){
+							        var html = "";
+							        html += '<div class="list">';
+							        for(var i = 0;i<arr.length;i++){
+							            html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
+											html += '<img src="' + arr[i].thumbnail +'" alt="">';
+											html += '<div class="item_right">';
+												html += '<div class="title">'+ arr[i].post_title + '</div>'
+												html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
+												html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
+											html += '</div>';
+							            html += '</div>';
+							        }
+							        html += '</div>';
+							        $("#newsList").html(html);
+							    }else{
+									$("#newsList").html('');
+								}
+								if(res.data.page!=null){
+									$(".pageSpan").html(res.data.page);
+								}else{
+									$(".pageSpan").html('');
+								}
+								initPage(res.data.list.total,res.data.list.current_page)
+							}
 						},
 						error : function() {
 						    alert("该文章未发布！");

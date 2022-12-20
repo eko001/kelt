@@ -49,16 +49,20 @@
     padding: 1.79rem 4.38rem 2.68rem 4.38rem;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	background-color: #ffffff;
 }
 .news .list .item{
 	margin-bottom: 0.89rem;
-	width: 32%;
+	width: calc(33.33% - 17px);
 	height: 7.82rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-right: 0.44rem;
+}
+.news .list .item:nth-of-type(3n+3){
+	margin-right: 0;
 }
 .news .item img{
 	width: 100%;
