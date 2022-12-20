@@ -73,7 +73,7 @@ class AppController extends RestBaseController
     public function getStaff()
     {
         $data = $this->request->param();
-        $content = $data['content'];
+        $content = trim($data['content']);
         $detail = Db::name('staff')->field('*')
             ->where('name','=',$content)
             ->whereOr('phone','=',$content)
