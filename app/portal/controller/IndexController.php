@@ -25,6 +25,8 @@ class IndexController extends HomeBaseController
         $newsList = Db::name('portal_post')->alias('p')->field('p.id as pid,p.*' )->leftJoin('portal_category_post c','c.post_id=p.id')->leftJoin('portal_category pc','c.category_id=pc.id')->field('c.*')->where("pc.parent_id",22)->where("p.post_status",1)->where("c.status",1)->limit(0,4)->order('p.published_time','desc')->select()->toArray();
         for($index=0;$index<count($newsList);$index++){
             $newsList[$index]["post_content"] = strip_tags(htmlspecialchars_decode($newsList[$index]["post_content"]));
+            $newsList[$index]["post_content"] =  preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', '', $newsList[$index]["post_content"]);
+
         }
         $this->assign("newsList", $newsList);
         return $this->fetch(':index');
