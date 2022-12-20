@@ -89,7 +89,7 @@ class AppController extends RestBaseController
 	public function getNewsList(){
         $param = $this->request->param();
         $postService = new PostService();
-        $data        = $postService->adminArticleList($param);
+        $data        = $postService->adminArticleListNew($param);
         for($index=0;$index<count($data);$index++){
             $data[$index]['thumbnail'] = cmf_get_image_url($data[$index]['thumbnail']);
             $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));

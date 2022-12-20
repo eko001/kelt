@@ -19,7 +19,7 @@ class NewsController extends HomeBaseController
             $param["category"] = $typeList[0]['id'];
         }
 		$postService = new PostService();
-		$data        = $postService->adminArticleList($param);
+		$data        = $postService->adminArticleListNew($param);
         for($index=0;$index<count($data);$index++){
             $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));
             $data[$index]["post_content"] = substr($data[$index]["post_content"],0,200);
