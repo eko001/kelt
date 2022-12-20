@@ -5,10 +5,10 @@ namespace app\portal\controller;
 use app\portal\service\PostService;
 use cmf\controller\HomeBaseController;
 
-class SolutionesController extends HomeBaseController
+class SolutionController extends HomeBaseController
 {
     public function index(){
-		return $this->fetch(':solutiones');
+		return $this->fetch(':solution');
     }
 
     public function detail(){
