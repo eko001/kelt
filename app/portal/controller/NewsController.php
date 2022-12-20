@@ -22,7 +22,8 @@ class NewsController extends HomeBaseController
 		$data        = $postService->adminArticleList($param);
         for($index=0;$index<count($data);$index++){
             $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));
-            $data[$index]["post_content"] =  preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', '', $data[$index]["post_content"]);
+            $data[$index]["post_content"] = substr($data[$index]["post_content"],0,200);
+            //$data[$index]["post_content"] = str_replace("img","",$data[$index]["post_content"]);
         }
 		$page = $data->render();
 		$this->assign("list", $data);

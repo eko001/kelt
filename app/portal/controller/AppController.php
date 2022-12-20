@@ -92,6 +92,10 @@ class AppController extends RestBaseController
         $data        = $postService->adminArticleList($param);
         for($index=0;$index<count($data);$index++){
             $data[$index]['thumbnail'] = cmf_get_image_url($data[$index]['thumbnail']);
+            $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));
+            $data[$index]["post_content"] = substr($data[$index]["post_content"],0,200);
+            $data[$index]["post_content"] = str_replace("img","",$data[$index]["post_content"]);
+
         }
         $page = $data->render();
 		$arr['list']=$data;
