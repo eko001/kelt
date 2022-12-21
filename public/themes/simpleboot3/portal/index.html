@@ -173,14 +173,49 @@
                             </ul>
                         </div>
                         <div class="index-solution-box-right">
-                            <div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
-                            <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
-                            <div class="company-name">合作客户</div>
-                            <div class="flex-box">
-                                <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-                                <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-                                <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-                            </div>
+							<ul>
+								<li class="active">
+									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
+									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
+									<div class="company-name">合作客户</div>
+									<div class="flex-box">
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+									</div>
+								</li>
+								<li>
+									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
+									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
+									<div class="company-name">合作客户</div>
+									<div class="flex-box">
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+									</div>
+								</li>
+								<li>
+									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
+									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
+									<div class="company-name">合作客户</div>
+									<div class="flex-box">
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+									</div>
+								</li>
+								<li>
+									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
+									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
+									<div class="company-name">合作客户</div>
+									<div class="flex-box">
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+									</div>
+								</li>
+							</ul>
+                            
                         </div>
                     </div>
                     <div class="index-solution-box-left-bottom">
@@ -873,10 +908,15 @@
         $(".index-solution .index-solution-box-left li").mouseover(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(this).addClass("active");
+			var n = $(this).index();
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
         })
         $(".index-solution .index-solution-box-left li").mouseout(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
         })
         $(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
         // 新闻

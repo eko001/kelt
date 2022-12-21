@@ -332,7 +332,15 @@ body {
 .index-solution .index-solution-box .index-solution-box-right {
     width: calc(50% + 30px);
 }
-
+.index-solution .index-solution-box .index-solution-box-right ul{
+	margin: 0;
+}
+.index-solution .index-solution-box .index-solution-box-right ul li{
+	display: none;
+}
+.index-solution .index-solution-box .index-solution-box-right ul li.active{
+	display: block;
+}
 .index-solution .index-solution-box .index-solution-box-right .text {
     color: #2E2E2E;
     font-size: 0.25rem;
