@@ -22,7 +22,7 @@ class IndexController extends HomeBaseController
     public function index()
     {
 		// 产品服务
-		$productList = Db::name('cmf_portal_category')->alias('p')->field('p.id as pid,p.*' )->where("pc.parent_id",30)->where("p.status",1)->limit(0,7)->order('p.published_time','desc')->select()->toArray();
+		$productList = Db::name('portal_category')->alias('p')->field('p.id as pid,p.*' )->where("pc.parent_id",30)->where("p.status",1)->limit(0,7)->order('p.published_time','desc')->select()->toArray();
 		
         //新闻中心
         $newsList = Db::name('portal_post')->alias('p')->field('p.id as pid,p.*' )->leftJoin('portal_category_post c','c.post_id=p.id')->leftJoin('portal_category pc','c.category_id=pc.id')->field('c.*')->where("pc.parent_id",22)->where("p.post_status",1)->where("c.status",1)->limit(0,4)->order('p.published_time','desc')->select()->toArray();
