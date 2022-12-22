@@ -9,22 +9,49 @@
     <div id="solution" class="solution">
         <!-- 头部图片 -->
         <div class="banner">
-            <div class="solution_banner_text_one">制造业外包服务解决方案</div>
-            <div class="solution_banner_text_two">不招人不管人通过商务合作完成生产订单</div>
+            <div class="solution_banner_text_one">{$category.name}</div>
+            <div class="solution_banner_text_two">{$category.description}</div>
         </div>
+		<php>
+			$category_id=$category['id'];
+			$subCategories =\app\portal\service\ApiService::subCategories($category_id);
+		
+			$subCategoryIds=[];
+			foreach($subCategories as $mCategory){
+			array_push($subCategoryIds,$mCategory['id']);
+			}
+		
+			$where =function ($query){
+			$query->where('post.create_time','>=',0);
+			};
+		
+		</php>
         <!-- 方案定位 -->
         <div class="plan">
             <div class="title">方案定位</div>
             <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
             <div class="inner">
-                <div class="content">
-                    <div class="content_left">
-                        <div class="content_left_text">企业与其人力公司建立合作关系，把岗位或产线部分或全部外包。人力公司自行招募劳动者、培训上岗并自主经营管理，从而降低企业成本，提高效能，降低用工风险，增强企业自身竞争力。企业与其人力公司建立合作关系，把岗位或产线部分或全部外包。人力公司自行招募劳动者、培训上岗并自主经营管理，从而降低企业成本，提高效能，降低用工风险，增强企业自身竞争力。企业与其人力公司建立合作关系，把岗位或产线部分或全部外包。人力公司自行招募劳动者、培训上岗并自主经营管理，从而降低企业成本，提高效能，降低用工风险，增强企业自身竞争力。</div>
-                    </div>
-                    <div class="content_right">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/plan.png" alt="">
-                    </div>
-                </div>
+				<php>
+					$index = 1;
+				</php>
+				<notempty name="$subCategoryIds">
+					<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
+						categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
+						<div class="content">
+						    <div class="content_left">
+						        <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
+						    </div>
+						    <div class="content_right">
+						        <img src="__TMPL__/public/assets/style/imgs/solution/plan.png" alt="">
+						    </div>
+						</div>
+						<php>
+							$index++;
+						</php>
+					</portal:articles>
+				
+				</notempty>
+                
             </div>
         </div>
         <!-- 服务目标 -->
@@ -33,42 +60,24 @@
             <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
             <div class="inner">
                 <div class="target_list">
-                    <div class="item">
-                        <div class="item_target_item_left">
-                            <img src="__TMPL__/public/assets/style/imgs/solution/target/1.png" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="content_top">安心无忧全托管</div>
-                            <div class="content_des">将企业非核心业务交给专业的外包服务商，由外包服务商提供专业的人事管理与生产制造服务，从而降低成本、提高效率、增强自身的竞争力。</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item_target_item_left">
-                            <img src="__TMPL__/public/assets/style/imgs/solution/target/2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="content_top">业务扩张快速响应</div>
-                            <div class="content_des">在需求快速变化的今天，制造业企业最重要的一项能力是快速响应市场，而非生产成本。把客户从库存积压和断货停产的风险中解放出来，及时把握市场销售机会。</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item_target_item_left">
-                            <img src="__TMPL__/public/assets/style/imgs/solution/target/3.png" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="content_top">灵活便捷</div>
-                            <div class="content_des">降低客制流程所需的周转时间，转移“潮汐式”用工带来的经营风险。对季节性生产实现灵活用工，实现成本的最小化。</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item_target_item_left">
-                            <img src="__TMPL__/public/assets/style/imgs/solution/target/4.png" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="content_top">提高生产能力</div>
-                            <div class="content_des">避免了因企业人才浪费的现象导致的人工成本的增加，有效降低了企业人工成本，提高了企业的工作效率。缩短招聘周期，节省闲置工人的用工成本，缓解季节性企业人力不足的问题。</div>
-                        </div>
-                    </div>
+					<notempty name="$subCategoryIds">
+						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"
+							categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+							<div class="item">
+							    <div class="item_target_item_left">
+							        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+							    </div>
+							    <div class="content">
+							        <div class="content_top">{$vo.post_title}</div>
+							        <div class="content_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
+							    </div>
+							</div>
+							<php>
+								$index++;
+							</php>
+						</portal:articles>
+					
+					</notempty>
                 </div>
             </div>
         </div>
@@ -78,42 +87,19 @@
             <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
             <div class="inner">
                 <div class="substance_list">
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance1.png" alt="">
-                        <div class="content">
-                            生产流程外包
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance2.png" alt="">
-                        <div class="content">
-                            检测检验外包
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance3.png" alt="">
-                        <div class="content">
-                            仓储物流外包
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance4.png" alt="">
-                        <div class="content">
-                            技术蓝领外包
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance5.png" alt="">
-                        <div class="content">
-                            辅助部门外包
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__TMPL__/public/assets/style/imgs/solution/substance6.png" alt="">
-                        <div class="content">
-                            制造整体外包
-                        </div>
-                    </div>
+					<notempty name="$subCategoryIds">
+						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories"
+							categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
+							<div class="item">
+								<img src="_{:cmf_get_image_url($vo.thumbnail)}" alt="">
+								<div class="content">{$vo.post_title}</div>
+							</div>
+							<php>
+								$index++;
+							</php>
+						</portal:articles>
+					
+					</notempty>
                 </div>
             </div>
         </div>
@@ -218,7 +204,7 @@
         <div class="resolve">
             <div class="inner">
                 <div class="resolve_left">
-                    <div class="resolve_left_title">制造业外包服务一站式解决方案</div>
+                    <div class="resolve_left_title">{$category.name}</div>
                     <div class="resolve_left_tag">高效便捷的服务，快速推进合作实施</div>
                     <button>获取定制解决方案</button>
                 </div>
