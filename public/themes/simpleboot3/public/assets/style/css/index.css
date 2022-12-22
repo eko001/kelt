@@ -792,31 +792,33 @@ body {
     border-radius: 2px;
 }
 
-.index-news .index-news-box .item:first-child .title {
+.index-news .index-news-box .item.active .title {
     display: none;
 }
 
-.index-news .index-news-box .item:first-child .time {
+.index-news .index-news-box .item.active .time {
     color: #FF5000;
     font-weight: 600;
 }
 
-.index-news .index-news-box .item:first-child .title-bigger {
+.index-news .index-news-box .item.active .title-bigger {
     display: block;
 }
 
-.index-news .index-news-box .item:first-child .more-btn {
+.index-news .index-news-box .item.active .more-btn {
     background: #FF5000;
 
 }
 
-.index-news .index-news-box .item:first-child .more-btn a {
+.index-news .index-news-box .item.active .more-btn a {
     color: #FFFFFF;
 }
 
 .index-news .more {
     text-align: center;
     margin-top: 0.71rem;
+	color: #FF5000;
+	font-size: 0.25rem;
 }
 
 .index-news .more a {

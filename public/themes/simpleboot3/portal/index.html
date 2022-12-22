@@ -804,17 +804,20 @@
                 <div class="inner-small-title text-center">华劳集团公司新闻、人力资源行业动态</div>
                 <div class="index-news-box">
                     <volist name="newsList" id="vo">
-                        <div class="item">
-                            <div class="title-bigger" style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
-                                <div class="inner-box">
-                                    <div class="content">{$vo.post_title}</div>
-                                </div>
-                            </div>
-                            <div class="title">{$vo.post_title}</div>
-                            <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
-                            <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
-                            <div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">›</a> </div>
-                        </div>
+						<div class="item"> 
+							<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">
+								<div class="title-bigger" style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
+									<div class="inner-box">
+										<div class="content">{$vo.post_title}</div>
+									</div>
+								</div>
+								<div class="title">{$vo.post_title}</div>
+								<div class="time">{:date('Y/m/d',$vo.published_time)}</div>
+								<div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
+								<div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">› </div>
+							</a>
+						</div>
+						
                     </volist>
                 </div>
                 <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" style="display: block;">更多新闻</a></div>
@@ -866,23 +869,36 @@
 			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
 			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
         })
-        $(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
+        $(".index-news .index-news-box .item").eq(0).addClass("active");
+		$(".index-news .index-news-box .item").mouseover(function () {
+			$(".index-news .index-news-box .item").removeClass("active");
+			$(this).addClass("active");
+		});
+		$(".index-news .index-news-box .item").mouseout(function () {
+			$(".index-news .index-news-box .item").removeClass("active");
+			$(".index-news .index-news-box .item").eq(0).addClass("active");
+		})
         // 新闻
-        $(".index-news .index-news-box .item").mouseover(function () {
-            $(".index-news .index-news-box .item .title").css("display", "block");
-            $(this).children(".index-news .index-news-box .item .title").css("display", "none");
+  //       $(".index-news .index-news-box .item").mouseover(function () {
+  //           $(".index-news .index-news-box .item .title").css("display", "block");
+  //           $(this).children(".title").css("display", "none");
 
-            $(".index-news .index-news-box .item .title-bigger").css("display", "none");
-            $(this).children(".index-news .index-news-box .item .title-bigger").css("display", "block");
+  //           $(".index-news .index-news-box .item .title-bigger").css("display", "none");
+  //           $(this).children(".title-bigger").css("display", "block");
 
-            $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
-            $(this).children(".index-news .index-news-box .item .time").css({ "font-weight": "600", "color": "#ff5000" });
+  //           $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
+  //           $(this).children(".time").css({ "font-weight": "600", "color": "#ff5000" });
 
-            $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA" });
-            $(".index-news .index-news-box .item .more-btn a").css({ "color": "#ff5000" });
-            $(this).children(".index-news .index-news-box .item .more-btn").css({ "background": "#FF5000" }).children('a').css({ "color": "#fff" });
-            // $(this).children(".index-news .index-news-box .item .more-btn a");
-        })
+  //           $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA","color": "#ff5000" });
+  //           $(this).children(".more-btn").css({ "background": "#FF5000","color": "#fff" });
+  //           // $(this).children(".index-news .index-news-box .item .more-btn a");
+  //       })
+		// $(".index-news .index-news-box .item").mouseout(function(){
+		// 	$(".index-news .index-news-box .item").eq(0).children(".title").css("display", "none");
+		// 	$(".index-news .index-news-box .item").eq(0).children(".title-bigger").css("display", "block");
+		// 	$(".index-news .index-news-box .item").eq(0).children(".time").css({"font-weight": "600", "color": "#ff5000"});
+		// 	$(".index-news .index-news-box .item").eq(0).children(".more-btn").css({"background": "#FF5000","color": "#fff"});
+		// })
     })
 </script>
 
