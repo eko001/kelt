@@ -28,8 +28,8 @@
 		</php>
         <!-- 方案定位 -->
         <div class="plan">
-            <div class="title">方案定位</div>
-            <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+            <div class="title">{$subCategories[0]['name']}</div>
+            <div class="tag">{$subCategories[0]['description']}</div>
             <div class="inner">
 				<php>
 					$index = 1;
@@ -56,8 +56,8 @@
         </div>
         <!-- 服务目标 -->
         <div class="target">
-            <div class="title">服务目标</div>
-            <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+            <div class="title">{$subCategories[1]['name']}</div>
+            <div class="tag">{$subCategories[1]['description']}</div>
             <div class="inner">
                 <div class="target_list">
 					<notempty name="$subCategoryIds">
@@ -83,8 +83,8 @@
         </div>
         <!-- 服务内容 -->
         <div class="substance">
-            <div class="title">服务内容</div>
-            <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+            <div class="title">{$subCategories[2]['name']}</div>
+            <div class="tag">{$subCategories[2]['description']}</div>
             <div class="inner">
                 <div class="substance_list">
 					<notempty name="$subCategoryIds">

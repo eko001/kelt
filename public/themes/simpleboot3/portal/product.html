@@ -16,7 +16,6 @@
 		<php>
 			$category_id=$category['id'];
 			$subCategories =\app\portal\service\ApiService::subCategories($category_id);
-
 			$subCategoryIds=[];
 			foreach($subCategories as $mCategory){
 			array_push($subCategoryIds,$mCategory['id']);
@@ -29,8 +28,8 @@
 		</php>
 		<!-- 客户的难题 -->
 		<div class="problem">
-			<div class="title">客户的难题</div>
-			<div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+			<div class="title">{$subCategories[0]['name']}</div>
+			<div class="tag">{$subCategories[0]['description']}</div>
 			<div class="inner">
 				<div class="list">
 					<php>
@@ -60,12 +59,13 @@
 		<div class="ourproduct">
 			<div class="inner">
 				<div class="ourproduct_left">
-					<div class="ourproduct_left_title">我们的产品</div>
+					<div class="ourproduct_left_title">{$subCategories[1]['name']}</div>
+					<div class="ourproduct_left_tag">{$subCategories[1]['description']}</div>
 					<notempty name="$subCategoryIds">
 						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
 							categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
 
-							<div class="ourproduct_left_tag">{$vo.post_excerpt}</div>
+							
 							<div class="ourproduct_left_text">
 								{$vo.post_content|mb_substr=0,200,'utf-8'}
 							</div>
@@ -85,8 +85,8 @@
 		<!-- 我们的优势 -->
 		<div class="ouradvantage">
 			<div class="ouradvantage_content">
-				<div class="title">我们的优势</div>
-				<div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+				<div class="title">{$subCategories[2]['name']}</div>
+				<div class="tag">{$subCategories[2]['description']}</div>
 
 				<div class="inner">
 					<div class="list">
@@ -119,8 +119,8 @@
 		<!-- 我们的价值 -->
 		<div class="ourvalue">
 			<div class="inner">
-				<div class="title">我们的价值</div>
-				<div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+				<div class="title">{$subCategories[3]['name']}</div>
+				<div class="tag">{$subCategories[3]['description']}</div>
 				<div class="list">
 					<notempty name="$subCategoryIds">
 						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"

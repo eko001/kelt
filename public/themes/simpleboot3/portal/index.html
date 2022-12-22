@@ -45,7 +45,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="index-product">
             <div class="inner">
@@ -142,7 +141,16 @@
                     <div class="flex-box">
                         <div class="index-solution-box-left">
                             <ul>
-                                <li class="active">
+								<portal:subCategories categoryId="68" item="vo">
+									<li>
+									    <div class="icon"></div>
+									    <div class="content">
+									        <div class="title">{$vo.name}</div>
+									        <div class="text">{$vo.description}</div>
+									    </div>
+									</li>
+								</portal:subCategories>
+                                <!-- <li class="active">
                                     <div class="icon"></div>
                                     <div class="content">
                                         <div class="title">政务编外派遣服务解决方案</div>
@@ -169,7 +177,7 @@
                                         <div class="title">员工工伤和意外伤害全面保障方案</div>
                                         <div class="text">提高行政效率、降低行政成本、规避劳务风险、更省心、更便捷</div>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="index-solution-box-right">
@@ -905,18 +913,19 @@
 </body>
 <script type="text/javascript">
     $(function () {
+		$(".index-solution .index-solution-box-left li").eq(0).addClass("active");
         $(".index-solution .index-solution-box-left li").mouseover(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(this).addClass("active");
-			var n = $(this).index();
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
+			// var n = $(this).index();
+			// $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			// $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
         })
         $(".index-solution .index-solution-box-left li").mouseout(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
+			// $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			// $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
         })
         $(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
         // 新闻
