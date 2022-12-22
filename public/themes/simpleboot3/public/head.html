@@ -166,10 +166,10 @@
                                             <ul class="nav-item-text" style="height:100%;">
                                                 <li class="nav-item-text-list text-active">
                                                     <ul class="nav-item-text-item flex-box">
-														<portal:subCategories categoryId="68" item="vo">
-														    <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-														            title="{$vo.name}">{$vo.name}</a></li>
-														</portal:subCategories>
+                                                        <portal:subCategories categoryId="68" item="vo">
+                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
+                                                                    title="{$vo.name}">{$vo.name}</a></li>
+                                                        </portal:subCategories>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -240,106 +240,40 @@
                 </li>
                 <li class="menu-splitL-li border-1px-rgba animate">
                     <a href="javascript:void(0)" class="menu-splitL-item" title="产品服务">产品服务</a>
-					<img class="menu-icon" src="__TMPL__/public/assets/style/imgs/menu-icon.png" alt="">
+                    <img class="menu-icon" src="__TMPL__/public/assets/style/imgs/menu-icon.png" alt="">
                 </li>
-				<ul class="menu-product-ul" style="display: none;">
-					<li class="menu-product-ul-li menu-product-estate-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item">华劳人力</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="">                                    
-					</li>
-					<ul class="menu-estate-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="31" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>	
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="中政外包">中政外包</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="38" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="中洁清洁">中洁清洁</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="41" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="金伞保险">金伞保险</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="47" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="中劳劳务">中劳劳务</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="52" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="中朗安服">中朗安服</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="55" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-					<li class="menu-product-ul-li menu-product-government-li border-1px-rgba animate">
-						<a href="javascript:void(0)" class="menu-splitL-item" title="和谐调解">和谐调解</a>
-						<img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="产品服务">                                    
-					</li>
-					<ul class="menu-government-ul menu-product-ul-style border-1px-rgba" style="display: none;">
-						<portal:subCategories categoryId="61" item="vo">
-						    <li class="menu-estate-ul-li animate">
-								<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-						            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-							</li>
-						</portal:subCategories>
-					</ul>
-				</ul>
+                <ul class="menu-product-ul" style="display: none;">
+
+                    <portal:subCategories categoryId="30" item="vo">
+                        <li class="menu-product-ul-li menu-product-estate-li border-1px-rgba animate">
+                            <a href="javascript:void(0)" class="menu-splitL-item">{$vo.name}</a>
+                            <img class="menu-icon" src="__TMPL__/public/assets/style/img/menu-icon.png" alt="">
+                        </li>
+                        <ul class="menu-estate-ul menu-product-ul-style border-1px-rgba" style="display: none;">
+                            <portal:subCategories categoryId="$vo.id" item="item">
+                                <li class="menu-estate-ul-li animate">
+                                    <a href="{:cmf_url('portal/List/index',array('id'=>$item.id))}" title="{$item.name}"
+                                        class="menu-splitL-item menu-product-ul-li-style">{$item.name}</a>
+                                </li>
+                            </portal:subCategories>
+                        </ul>
+                    </portal:subCategories>
+
+
+
+                </ul>
                 <li class="menu-splitL-li border-1px-rgba animate">
                     <a href="javascript:void(0)" class="menu-splitL-item" title="解决方案">解决方案</a>
-					<img class="menu-icon" src="__TMPL__/public/assets/style/imgs/menu-icon.png" alt="">
+                    <img class="menu-icon" src="__TMPL__/public/assets/style/imgs/menu-icon.png" alt="">
                 </li>
-				<ul class="menu-product-ul" style="display: none;">
-					<portal:subCategories categoryId="68" item="vo">
-					    <li class="menu-estate-ul-li animate">
-							<a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-					            title="{$vo.name}" class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
-						</li>
-					</portal:subCategories>
-				</ul>
+                <ul class="menu-product-ul" style="display: none;">
+                    <portal:subCategories categoryId="68" item="vo">
+                        <li class="menu-estate-ul-li animate">
+                            <a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}" title="{$vo.name}"
+                                class="menu-splitL-item menu-product-ul-li-style">{$vo.name}</a>
+                        </li>
+                    </portal:subCategories>
+                </ul>
                 <li class="menu-splitL-li border-1px-rgba animate">
                     <a href="{:cmf_url('portal/News/index')}" class="menu-splitL-item" title="新闻咨询">新闻咨询</a>
                 </li>
