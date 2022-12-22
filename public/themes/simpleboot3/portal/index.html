@@ -919,15 +919,15 @@
         $(".index-solution .index-solution-box-left li").mouseover(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(this).addClass("active");
-			// var n = $(this).index();
-			// $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			// $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
+			var n = $(this).index();
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
         })
         $(".index-solution .index-solution-box-left li").mouseout(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
-			// $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			// $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
         })
         $(".index-news .index-news-box .item").eq(0).children('a').css({ "color": "#fff" });
         // 新闻

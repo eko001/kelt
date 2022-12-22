@@ -393,6 +393,8 @@ body {
     /* Firefox  */
     -o-transition: all .2s linear;
     /* Opera  */
+	height: calc(100vh - 60px);
+	overflow-y: auto;
 }
 
 .menu-splitL a,
@@ -442,8 +444,8 @@ a:visited {
 }
 
 .menu-icon {
-    width: 0.28rem;
-    height: 0.16rem;
+    width: 0.93rem;
+    height: 0.53rem;
     /* float: right; */
     transform: rotate(180deg);
 }
