@@ -166,12 +166,10 @@
                                             <ul class="nav-item-text" style="height:100%;">
                                                 <li class="nav-item-text-list text-active">
                                                     <ul class="nav-item-text-item flex-box">
-                                                        <li><a href="{:cmf_url('portal/Solution/index',array('id'=>1))}"
-                                                                title="企业规模用工解决方案">企业规模用工解决方案</a></li>
-                                                        <li><a href="{:cmf_url('portal/Solution/index',array('id'=>2))}"
-                                                                title="企业用工风险解决方案">企业用工风险解决方案</a></li>
-                                                        <li><a href="{:cmf_url('portal/Solution/index',array('id'=>3))}"
-                                                                title="全国人事社保解决方案">全国人事社保解决方案</a></li>
+														<portal:subCategories categoryId="68" item="vo">
+														    <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
+														            title="{$vo.name}">{$vo.name}</a></li>
+														</portal:subCategories>
                                                     </ul>
                                                 </li>
                                             </ul>

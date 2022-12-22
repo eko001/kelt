@@ -26,6 +26,7 @@
 			};
 
 		</php>
+		<notempty name="$subCategories[0]">
 		<!-- 客户的难题 -->
 		<div class="problem">
 			<div class="title">{$subCategories[0]['name']}</div>
@@ -55,6 +56,8 @@
 				</div>
 			</div>
 		</div>
+		</notempty>
+		<notempty name="$subCategories[1]">
 		<!-- 我们的产品 -->
 		<div class="ourproduct">
 			<div class="inner">
@@ -82,6 +85,8 @@
 			</div>
 		</div>
 		<img class="product_img" src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt="">
+		</notempty>
+		<notempty name="$subCategories[2]">
 		<!-- 我们的优势 -->
 		<div class="ouradvantage">
 			<div class="ouradvantage_content">
@@ -116,6 +121,8 @@
 				</div>
 			</div>
 		</div>
+		</notempty>
+		<notempty name="$subCategories[3]">
 		<!-- 我们的价值 -->
 		<div class="ourvalue">
 			<div class="inner">
@@ -142,6 +149,7 @@
 				</div>
 			</div>
 		</div>
+		</notempty>
 		<!-- 客户信赖 -->
 		<div class="index-customer">
 			<div class="inner">

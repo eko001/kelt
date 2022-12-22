@@ -27,38 +27,41 @@
 		
 		</php>
         <!-- 方案定位 -->
-        <div class="plan">
-            <div class="title">{$subCategories[0]['name']}</div>
-            <div class="tag">{$subCategories[0]['description']}</div>
-            <div class="inner">
-				<php>
-					$index = 1;
-				</php>
-				<notempty name="$subCategoryIds">
-					<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
-						categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
-						<div class="content">
-						    <div class="content_left">
-						        <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
-						    </div>
-						    <div class="content_right">
-						        <img src="__TMPL__/public/assets/style/imgs/solution/plan.png" alt="">
-						    </div>
-						</div>
-						<php>
-							$index++;
-						</php>
-					</portal:articles>
-				
-				</notempty>
-                
-            </div>
-        </div>
-        <!-- 服务目标 -->
-        <div class="target">
-            <div class="title">{$subCategories[1]['name']}</div>
-            <div class="tag">{$subCategories[1]['description']}</div>
-            <div class="inner">
+		<notempty name="$subCategories[0]">
+			<div class="plan">
+				<div class="title">{$subCategories[0]['name']}</div>
+				<div class="tag">{$subCategories[0]['description']}</div>
+				<div class="inner">
+					<php>
+						$index = 1;
+					</php>
+					<notempty name="$subCategoryIds">
+						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
+							categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
+							<div class="content">
+								<div class="content_left">
+									<div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
+								</div>
+								<div class="content_right">
+									<img src="__TMPL__/public/assets/style/imgs/solution/plan.png" alt="">
+								</div>
+							</div>
+							<php>
+								$index++;
+							</php>
+						</portal:articles>
+					
+					</notempty>
+					
+				</div>
+			</div>
+		</notempty>
+		<notempty name="$subCategories[1]">
+			<!-- 服务目标 -->
+			<div class="target">
+				<div class="title">{$subCategories[1]['name']}</div>
+				<div class="tag">{$subCategories[1]['description']}</div>
+				<div class="inner">
                 <div class="target_list">
 					<notempty name="$subCategoryIds">
 						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"
@@ -81,28 +84,31 @@
                 </div>
             </div>
         </div>
-        <!-- 服务内容 -->
-        <div class="substance">
-            <div class="title">{$subCategories[2]['name']}</div>
-            <div class="tag">{$subCategories[2]['description']}</div>
-            <div class="inner">
-                <div class="substance_list">
-					<notempty name="$subCategoryIds">
-						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories"
-							categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
-							<div class="item">
-								<img src="_{:cmf_get_image_url($vo.thumbnail)}" alt="">
-								<div class="content">{$vo.post_title}</div>
-							</div>
-							<php>
-								$index++;
-							</php>
-						</portal:articles>
-					
-					</notempty>
-                </div>
-            </div>
-        </div>
+		</notempty>
+		<notempty name="$subCategories[2]">
+			<!-- 服务内容 -->
+			<div class="substance">
+				<div class="title">{$subCategories[2]['name']}</div>
+				<div class="tag">{$subCategories[2]['description']}</div>
+				<div class="inner">
+					<div class="substance_list">
+						<notempty name="$subCategoryIds">
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories"
+								categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
+								<div class="item">
+									<img src="_{:cmf_get_image_url($vo.thumbnail)}" alt="">
+									<div class="content">{$vo.post_title}</div>
+								</div>
+								<php>
+									$index++;
+								</php>
+							</portal:articles>
+						
+						</notempty>
+					</div>
+				</div>
+			</div>
+		</notempty>
         <!-- 我们的优势 -->
         <div class="solution-advantage-box">
             <div class="solution_advantage">
