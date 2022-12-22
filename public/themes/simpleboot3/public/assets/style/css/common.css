@@ -307,6 +307,7 @@ body {
     line-height: 0.7rem !important;
 	padding: 0 0 !important;
 	width: 25%;
+	text-align: left !important;
 }
 
 .menu-dropdown-wrapper ul {
