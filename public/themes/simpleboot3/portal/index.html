@@ -838,7 +838,8 @@
                                         </div>
                                         <div class="title">{$vo.post_title}</div>
                                         <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
-                                        <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
+                                        <div class="text hidden-xs">
+                                            {$vo.post_content|htmlspecialchars_decode}</div>
                                         <div class="more-btn"> <a
                                                 href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">›
                                         </div>
