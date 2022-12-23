@@ -825,25 +825,27 @@
                     <portal:articles item="vo" order="post.create_time DESC" page="4" categoryIds="23"
                         returnVarName="articles_data">
                         <notempty name="$vo.thumbnail">
-                            <div class="item">
+                            <notempty name="$vo.post_content">
+                                <div class="item">
 
-                                <a
-                                    href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">
-                                    <div class="title-bigger"
-                                        style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
-                                        <div class="inner-box">
-                                            <div class="content">{$vo.post_title}</div>
+                                    <a
+                                        href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">
+                                        <div class="title-bigger"
+                                            style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
+                                            <div class="inner-box">
+                                                <div class="content">{$vo.post_title}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="title">{$vo.post_title}</div>
-                                    <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
-                                    <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
-                                    <div class="more-btn"> <a
-                                            href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">›
-                                    </div>
-                                </a>
+                                        <div class="title">{$vo.post_title}</div>
+                                        <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
+                                        <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
+                                        <div class="more-btn"> <a
+                                                href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">›
+                                        </div>
+                                    </a>
 
-                            </div>
+                                </div>
+                            </notempty>
                         </notempty>
 
                     </portal:articles>
