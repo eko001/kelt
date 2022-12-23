@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="130.006" height="130.003" viewBox="0 0 130.006 130.003">
-  <g id="Ring_Chart6" data-name="Ring Chart6" transform="translate(9280 -5029)">
+  <g id="_4" data-name="4" transform="translate(9280 -5029)">
     <path id="路径_11126" data-name="路径 11126" d="M0-65A65,65,0,0,1,63.2-15.174,65,65,0,0,1,29.509,57.915a65,65,0,0,1-78.936-15.7,65,65,0,0,1-3.16-80.42l14.562,10.58a47,47,0,0,0,2.285,58.15A47,47,0,0,0,21.338,41.877,47,47,0,0,0,45.7-10.972,47,47,0,0,0,0-47Z" transform="translate(-9215 5094)" fill="#00b38b"/>
-    <path id="路径_11127" data-name="路径 11127" d="M-52.586-38.206A65,65,0,0,1,0-65v18A47,47,0,0,0-38.024-27.626Z" transform="translate(-9215 5094)" fill="#ff5000"/>
+    <path id="路径_11127" data-name="路径 11127" d="M-52.586-38.206A65,65,0,0,1,0-65v18A47,47,0,0,0-38.024-27.626Z" transform="translate(-9215 5094)" fill="orange"/>
   </g>
 </svg>
