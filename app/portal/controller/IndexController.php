@@ -21,22 +21,23 @@ class IndexController extends HomeBaseController
 {
     public function index()
     {
-		// 产品服务
-        $productList = Db::name('portal_category')->alias('c')->field('c.*' )->leftJoin('portal_category p','p.id=c.parent_id')->where("p.parent_id",30)->where("c.status",1)->limit(0,8)->order('c.id','des')->select()->toArray();
+        // 产品服务
+        $productList = Db::name('portal_category')->alias('c')->field('c.*')->leftJoin('portal_category p', 'p.id=c.parent_id')->where("p.parent_id", 30)->where("c.status", 1)->limit(0, 8)->order('c.id', 'des')->select()->toArray();
 
-		//新闻中心
-        $newsList = Db::name('portal_post')->alias('p')->field('p.id as pid,p.*' )->leftJoin('portal_category_post c','c.post_id=p.id')->leftJoin('portal_category pc','c.category_id=pc.id')->field('c.*')->where("pc.parent_id",22)->where("p.post_status",1)->where("c.status",1)->limit(0,4)->order('p.published_time','desc')->select()->toArray();
-        for($index=0;$index<count($newsList);$index++){
+        //新闻中心
+        $newsList = Db::name('portal_post')->alias('p')->field('p.id as pid,p.*')->leftJoin('portal_category_post c', 'c.post_id=p.id')->leftJoin('portal_category pc', 'c.category_id=pc.id')->field('c.*')->where("pc.parent_id", 22)->where("p.post_status", 1)->where("c.status", 1)->limit(0, 4)->order('p.published_time', 'desc')->select()->toArray();
+        for ($index = 0; $index < count($newsList); $index++) {
             $newsList[$index]["post_content"] = strip_tags(htmlspecialchars_decode($newsList[$index]["post_content"]));
-            $newsList[$index]["post_content"] =  preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', '', $newsList[$index]["post_content"]);
+            //$newsList[$index]["post_content"] =  preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', '', $newsList[$index]["post_content"]);
 
         }
-		$this->assign("productList", $productList);
+        $this->assign("productList", $productList);
         $this->assign("newsList", $newsList);
         return $this->fetch(':index');
     }
 
-    function getArtitle($param){
+    function getArtitle($param)
+    {
         $postService = new PostService();
         $data = $postService->adminArticleList($param);
         return $data;

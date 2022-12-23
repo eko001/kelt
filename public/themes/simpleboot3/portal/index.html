@@ -55,17 +55,17 @@
                             <div class="text">持续不断为客户提供具有价值的产品和服务</div>
                         </div>
                     </div>
-					<volist name="productList" id="vo">
-						<div class="index-product-item">
-							<div class="index-product-item-innerbox2">
-								<div class="flex-box">
-									<div class="img"></div>
-									<div class="title">{$vo.name}</div>
-								</div>
-								<div class="text">{$vo.description}</div>
-							</div>
-						</div>
-					</volist>
+                    <volist name="productList" id="vo">
+                        <div class="index-product-item">
+                            <div class="index-product-item-innerbox2">
+                                <div class="flex-box">
+                                    <div class="img"></div>
+                                    <div class="title">{$vo.name}</div>
+                                </div>
+                                <div class="text">{$vo.description}</div>
+                            </div>
+                        </div>
+                    </volist>
                 </div>
             </div>
 
@@ -80,15 +80,15 @@
                     <div class="flex-box">
                         <div class="index-solution-box-left">
                             <ul>
-								<portal:subCategories categoryId="68" item="vo">
-									<li>
-									    <div class="icon"></div>
-									    <div class="content">
-									        <div class="title">{$vo.name}</div>
-									        <div class="text">{$vo.description}</div>
-									    </div>
-									</li>
-								</portal:subCategories>
+                                <portal:subCategories categoryId="68" item="vo">
+                                    <li>
+                                        <div class="icon"></div>
+                                        <div class="content">
+                                            <div class="title">{$vo.name}</div>
+                                            <div class="text">{$vo.description}</div>
+                                        </div>
+                                    </li>
+                                </portal:subCategories>
                                 <!-- <li class="active">
                                     <div class="icon"></div>
                                     <div class="content">
@@ -120,49 +120,61 @@
                             </ul>
                         </div>
                         <div class="index-solution-box-right">
-							<ul>
-								<li class="active">
-									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
-									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
-									<div class="company-name">合作客户</div>
-									<div class="flex-box">
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-									</div>
-								</li>
-								<li>
-									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
-									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
-									<div class="company-name">合作客户</div>
-									<div class="flex-box">
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-									</div>
-								</li>
-								<li>
-									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
-									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
-									<div class="company-name">合作客户</div>
-									<div class="flex-box">
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-									</div>
-								</li>
-								<li>
-									<div class="text">华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。</div>
-									<div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。</div>
-									<div class="company-name">合作客户</div>
-									<div class="flex-box">
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-									    <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-									</div>
-								</li>
-							</ul>
-                            
+                            <ul>
+                                <li class="active">
+                                    <div class="text">
+                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
+                                    </div>
+                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
+                                    </div>
+                                    <div class="company-name">合作客户</div>
+                                    <div class="flex-box">
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text">
+                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
+                                    </div>
+                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
+                                    </div>
+                                    <div class="company-name">合作客户</div>
+                                    <div class="flex-box">
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text">
+                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
+                                    </div>
+                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
+                                    </div>
+                                    <div class="company-name">合作客户</div>
+                                    <div class="flex-box">
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text">
+                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
+                                    </div>
+                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
+                                    </div>
+                                    <div class="company-name">合作客户</div>
+                                    <div class="flex-box">
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
+                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
+                                    </div>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                     <div class="index-solution-box-left-bottom">
@@ -223,7 +235,9 @@
                     <div class="inner-small-title text-center">持续不断为客户提供具有价值的产品和服务</div>
                     <div class="flex-around hidden-xs">
                         <div class="index-history-box-left">
-                            <div class="text">华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。</div>
+                            <div class="text">
+                                华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。
+                            </div>
                             <div class="time-line">
                                 <ul class="history-box">
                                     <li class="active">
@@ -457,15 +471,19 @@
                             </div>
                         </div>
                         <div class="index-history-box-right">
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" /></div>
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/2.png" /></div>
+                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" />
+                            </div>
+                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/2.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="hidden-lg hidden-md hidden-sm">
                     <div class="flex-around">
                         <div class="index-history-box-left">
-                            <div class="text">华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。</div>
+                            <div class="text">
+                                华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。
+                            </div>
                             <div class="time-line">
                                 <ul class="history-box">
                                     <li class="active">
@@ -699,7 +717,8 @@
                             </div>
                         </div>
                         <div class="index-history-box-right">
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" /></div>
+                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -803,24 +822,34 @@
                 </div>
                 <div class="inner-small-title text-center">华劳集团公司新闻、人力资源行业动态</div>
                 <div class="index-news-box">
-                    <volist name="newsList" id="vo">
-						<div class="item"> 
-							<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">
-								<div class="title-bigger" style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
-									<div class="inner-box">
-										<div class="content">{$vo.post_title}</div>
-									</div>
-								</div>
-								<div class="title">{$vo.post_title}</div>
-								<div class="time">{:date('Y/m/d',$vo.published_time)}</div>
-								<div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
-								<div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['pid'],'cid'=>$vo['category_id']))}">› </div>
-							</a>
-						</div>
-						
-                    </volist>
+                    <portal:articles item="vo" order="post.create_time DESC" page="4" categoryIds="23"
+                        returnVarName="articles_data">
+                        <notempty name="$vo.thumbnail">
+                            <div class="item">
+
+                                <a
+                                    href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">
+                                    <div class="title-bigger"
+                                        style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
+                                        <div class="inner-box">
+                                            <div class="content">{$vo.post_title}</div>
+                                        </div>
+                                    </div>
+                                    <div class="title">{$vo.post_title}</div>
+                                    <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
+                                    <div class="text hidden-xs">{$vo.post_content|htmlspecialchars_decode}</div>
+                                    <div class="more-btn"> <a
+                                            href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">›
+                                    </div>
+                                </a>
+
+                            </div>
+                        </notempty>
+
+                    </portal:articles>
                 </div>
-                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" style="display: block;">更多新闻</a></div>
+                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" style="display: block;">更多新闻</a>
+                </div>
             </div>
         </div>
         <div class="index-customer">
@@ -855,50 +884,50 @@
 </body>
 <script type="text/javascript">
     $(function () {
-		$(".index-solution .index-solution-box-left li").eq(0).addClass("active");
+        $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
         $(".index-solution .index-solution-box-left li").mouseover(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(this).addClass("active");
-			var n = $(this).index();
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
+            var n = $(this).index();
+            $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+            $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
         })
         $(".index-solution .index-solution-box-left li").mouseout(function () {
             $(".index-solution .index-solution-box-left li").removeClass("active");
             $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-			$(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
+            $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
+            $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
         })
         $(".index-news .index-news-box .item").eq(0).addClass("active");
-		$(".index-news .index-news-box .item").mouseover(function () {
-			$(".index-news .index-news-box .item").removeClass("active");
-			$(this).addClass("active");
-		});
-		$(".index-news .index-news-box .item").mouseout(function () {
-			$(".index-news .index-news-box .item").removeClass("active");
-			$(".index-news .index-news-box .item").eq(0).addClass("active");
-		})
+        $(".index-news .index-news-box .item").mouseover(function () {
+            $(".index-news .index-news-box .item").removeClass("active");
+            $(this).addClass("active");
+        });
+        $(".index-news .index-news-box .item").mouseout(function () {
+            $(".index-news .index-news-box .item").removeClass("active");
+            $(".index-news .index-news-box .item").eq(0).addClass("active");
+        })
         // 新闻
-  //       $(".index-news .index-news-box .item").mouseover(function () {
-  //           $(".index-news .index-news-box .item .title").css("display", "block");
-  //           $(this).children(".title").css("display", "none");
+        //       $(".index-news .index-news-box .item").mouseover(function () {
+        //           $(".index-news .index-news-box .item .title").css("display", "block");
+        //           $(this).children(".title").css("display", "none");
 
-  //           $(".index-news .index-news-box .item .title-bigger").css("display", "none");
-  //           $(this).children(".title-bigger").css("display", "block");
+        //           $(".index-news .index-news-box .item .title-bigger").css("display", "none");
+        //           $(this).children(".title-bigger").css("display", "block");
 
-  //           $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
-  //           $(this).children(".time").css({ "font-weight": "600", "color": "#ff5000" });
+        //           $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
+        //           $(this).children(".time").css({ "font-weight": "600", "color": "#ff5000" });
 
-  //           $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA","color": "#ff5000" });
-  //           $(this).children(".more-btn").css({ "background": "#FF5000","color": "#fff" });
-  //           // $(this).children(".index-news .index-news-box .item .more-btn a");
-  //       })
-		// $(".index-news .index-news-box .item").mouseout(function(){
-		// 	$(".index-news .index-news-box .item").eq(0).children(".title").css("display", "none");
-		// 	$(".index-news .index-news-box .item").eq(0).children(".title-bigger").css("display", "block");
-		// 	$(".index-news .index-news-box .item").eq(0).children(".time").css({"font-weight": "600", "color": "#ff5000"});
-		// 	$(".index-news .index-news-box .item").eq(0).children(".more-btn").css({"background": "#FF5000","color": "#fff"});
-		// })
+        //           $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA","color": "#ff5000" });
+        //           $(this).children(".more-btn").css({ "background": "#FF5000","color": "#fff" });
+        //           // $(this).children(".index-news .index-news-box .item .more-btn a");
+        //       })
+        // $(".index-news .index-news-box .item").mouseout(function(){
+        // 	$(".index-news .index-news-box .item").eq(0).children(".title").css("display", "none");
+        // 	$(".index-news .index-news-box .item").eq(0).children(".title-bigger").css("display", "block");
+        // 	$(".index-news .index-news-box .item").eq(0).children(".time").css({"font-weight": "600", "color": "#ff5000"});
+        // 	$(".index-news .index-news-box .item").eq(0).children(".more-btn").css({"background": "#FF5000","color": "#fff"});
+        // })
     })
 </script>
 
