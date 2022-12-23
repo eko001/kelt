@@ -2454,6 +2454,8 @@ label {
 
     .index-customer .index-customer-box div img {
         height: 4.8rem;
+		filter: grayscale(0);
+		opacity: 1;
     }
 
     .index-customer .more a{

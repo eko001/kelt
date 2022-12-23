@@ -19,10 +19,12 @@
 		<div class="tag">相关文章</div>
 		 <div class="other">
 			<volist name="list" id="vo">
-			   <div class="other_item">
-			       <div class="item_time">{:date('m-d',$vo.published_time)}</div>
-			       <div class="item_title">{$vo.post_title}</div>
-			   </div>
+				<a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}" >
+				   <div class="other_item">
+					   <div class="item_time">{:date('m-d',$vo.published_time)}</div>
+					   <div class="item_title">{$vo.post_title}</div>
+				   </div>
+			   </a>
 			</volist>
 		</div>
 	</div>
