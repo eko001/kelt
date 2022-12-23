@@ -302,7 +302,7 @@ overflow-x: hidden;
 	opacity: 0.9;
 }
 .resolve_right_item .resolve_right_content .text{
-	color: #ff5000;
+	color: var(--color-primary);
 	font-size: 0.28rem;
 	font-weight: bolder;
 	text-align: center;
@@ -660,7 +660,7 @@ overflow-x: hidden;
 		margin-bottom: 0.67rem;
 	}
 	.resolve_right_item .resolve_right_content .text{
-		color: #ff5000;
+		color: var(--color-primary);
 		font-size: 1.07rem;
 		text-align: center;
 		line-height: 8rem;
@@ -668,7 +668,7 @@ overflow-x: hidden;
 		display: block;
 	}
 	.resolve_right_item.active .resolve_right_content .text{
-		color: #ff5000;
+		color: var(--color-primary);
 		font-size: 1.07rem;
 		text-align: center;
 		line-height: 8rem;
