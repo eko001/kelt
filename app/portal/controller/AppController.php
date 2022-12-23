@@ -23,21 +23,21 @@ class AppController extends RestBaseController
         $param = $this->request->param();
         $category_id = $param['cid'];
         $list = Db::name('news')->field('*')
-            ->where('category_id','=',$category_id)
+            ->where('category_id', '=', $category_id)
             ->order('updatetime', 'desc')->select()->toArray();
-        for($index=0;$index<count($list);$index++){
+        for ($index = 0; $index < count($list); $index++) {
             $portalPostModel = new PortalPostModel();
-            $news['post_title']=$list[$index]['title'];
-            $news['post_status']=0;
-            $news['post_content']=$list[$index]['content'];
-            $news['create_time']=$list[$index]['updatetime'];
-            $news['user_id']=1;
-            $thumb=$list[$index]['thumb'];
-            if($thumb!=""){
+            $news['post_title'] = $list[$index]['title'];
+            $news['post_status'] = 0;
+            $news['post_content'] = $list[$index]['content'];
+            $news['create_time'] = $list[$index]['updatetime'];
+            $news['user_id'] = 1;
+            $thumb = $list[$index]['thumb'];
+            if ($thumb != "") {
                 $str = substr($thumb, 14);
-                $news['thumbnail']="portal".$str;
-            }else{
-                $news['thumbnail']="portal/default_news.png";
+                $news['thumbnail'] = "portal" . $str;
+            } else {
+                $news['thumbnail'] = "portal/default_news.png";
             }
             $resultA = $portalPostModel->addData($news);
             if ($resultA) {
@@ -45,19 +45,19 @@ class AppController extends RestBaseController
                 $portalPostModel->where('id', 'in', $resultA['id'])->update(['post_status' => 1, 'published_time' => $resultA['create_time']]);
                 //插入中间表
                 $portalCategoryPostModel = new PortalCategoryPostModel();
-                $newsC['post_id']=$resultA['id'];
-                if($category_id==11){
-                    $newsC['category_id']=23;
-                }else if($category_id==12){
-                    $newsC['category_id']=24;
-                }else if($category_id==13){
-                    $newsC['category_id']=25;
-                }else if($category_id==14){
-                    $newsC['category_id']=26;
-                }else if($category_id==15){
-                    $newsC['category_id']=27;
-                }else if($category_id==16){
-                    $newsC['category_id']=28;
+                $newsC['post_id'] = $resultA['id'];
+                if ($category_id == 11) {
+                    $newsC['category_id'] = 23;
+                } else if ($category_id == 12) {
+                    $newsC['category_id'] = 24;
+                } else if ($category_id == 13) {
+                    $newsC['category_id'] = 25;
+                } else if ($category_id == 14) {
+                    $newsC['category_id'] = 26;
+                } else if ($category_id == 15) {
+                    $newsC['category_id'] = 27;
+                } else if ($category_id == 16) {
+                    $newsC['category_id'] = 28;
                 }
                 $resultB = $portalCategoryPostModel->addData($newsC);
             }
@@ -75,45 +75,47 @@ class AppController extends RestBaseController
         $data = $this->request->param();
         $content = trim($data['content']);
         $detail = Db::name('staff')->field('*')
-            ->where('name','=',$content)
-            ->whereOr('phone','=',$content)
+            ->where('name', '=', $content)
+            ->whereOr('phone', '=', $content)
             ->find();
-		$avatar=cmf_get_image_url($detail['avatar']);
-		 $detail['avatar']=$avatar;
+        $avatar = cmf_get_image_url($detail['avatar']);
+        $detail['avatar'] = $avatar;
         $this->success('请求成功!', $detail);
     }
 
-	/**
-	 * 获取新闻列表
-	 */
-	public function getNewsList(){
+    /**
+     * 获取新闻列表
+     */
+    public function getNewsList()
+    {
         $param = $this->request->param();
         $postService = new PostService();
-        $data        = $postService->adminArticleListNew($param);
-        for($index=0;$index<count($data);$index++){
+        $data = $postService->adminArticleListNew($param);
+        for ($index = 0; $index < count($data); $index++) {
             $data[$index]['thumbnail'] = cmf_get_image_url($data[$index]['thumbnail']);
             $data[$index]["post_content"] = strip_tags(htmlspecialchars_decode($data[$index]["post_content"]));
-            $data[$index]["post_content"] = substr($data[$index]["post_content"],0,200);
-           // $data[$index]["post_content"] = str_replace("img","",$data[$index]["post_content"]);
+            // $data[$index]["post_content"] = substr($data[$index]["post_content"],0,200);
+            // $data[$index]["post_content"] = str_replace("img","",$data[$index]["post_content"]);
 
         }
         $page = $data->render();
-		$arr['list']=$data;
+        $arr['list'] = $data;
 
-		$arr['page']=$page;
+        $arr['page'] = $page;
         $this->success('请求成功!', $arr);
     }
 
-/**
-	 * 获取合作客户列表
-	 */
-	public function getCustomerList(){
+    /**
+     * 获取合作客户列表
+     */
+    public function getCustomerList()
+    {
         $param = $this->request->param();
         $postService = new PostService();
-        $list        = $postService->adminArticleListNotPage($param);
-		for($index=0;$index<count($list);$index++){
-		    $list[$index]['thumbnail'] = cmf_get_image_url($list[$index]['thumbnail']);
-		}
+        $list = $postService->adminArticleListNotPage($param);
+        for ($index = 0; $index < count($list); $index++) {
+            $list[$index]['thumbnail'] = cmf_get_image_url($list[$index]['thumbnail']);
+        }
         $this->success('请求成功!', $list);
     }
     /**
@@ -205,9 +207,9 @@ class AppController extends RestBaseController
         $wxres = json_decode($res, true);
         $token = $wxres['access_token'];
         if ($token) {
-            $this->success('请求成功!',$token);
+            $this->success('请求成功!', $token);
         } else {
-            $this->error("请求失败！",$token);
+            $this->error("请求失败！", $token);
         }
     }
 
@@ -219,19 +221,20 @@ class AppController extends RestBaseController
         $post_data = array(
             'code' => $code,
         );
-        $Url = "https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token=".$accessToken;
+        $Url = "https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token=" . $accessToken;
         $data = json_encode($post_data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $Url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json; charset=utf-8',
             'Content-Length:' . strlen($data),
             'Cache-Control: no-cache',
             'Pragma: no-cache'
-        ));
+        )
+        );
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
@@ -239,11 +242,11 @@ class AppController extends RestBaseController
         curl_close($ch);
         $wxres = json_decode($res, true);
 
-         if($wxres){
-             $this->success('请求成功!',$wxres);
-         }else{
-             $this->error("请求失败！");
-         }
+        if ($wxres) {
+            $this->success('请求成功!', $wxres);
+        } else {
+            $this->error("请求失败！");
+        }
     }
 
     /**
@@ -251,7 +254,7 @@ class AppController extends RestBaseController
      */
     public function customer()
     {
-        $artList= Db::name('portal_post')->alias('p')->leftJoin('portal_category_post c','c.post_id=p.id')->where("p.post_status",1)->where("c.status",1)->where('c.category_id',22)->order('p.id','desc')->select();
+        $artList = Db::name('portal_post')->alias('p')->leftJoin('portal_category_post c', 'c.post_id=p.id')->where("p.post_status", 1)->where("c.status", 1)->where('c.category_id', 22)->order('p.id', 'desc')->select();
         $webSite = json_encode($artList, 320);
         $this->success('请求成功!', $artList);
     }
