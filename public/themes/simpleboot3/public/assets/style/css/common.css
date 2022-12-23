@@ -347,8 +347,8 @@ body {
 .pagination>.active>span,
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
-    background-color: #00A0A0;
-    border-color: #00A0A0;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .pagination>li>a,

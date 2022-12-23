@@ -406,8 +406,8 @@ body {
 
 .index-solution .index-solution-box .index-solution-box-left-bottom .item .img-logo img {
     display: block;
-    filter: grayscale(100%);
-    opacity: 50%;
+    /* filter: grayscale(100%);
+    opacity: 50%; */
 }
 
 .index-solution .index-solution-box .index-solution-box-left-bottom .item .text {
@@ -422,27 +422,27 @@ body {
     opacity: 1;
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(1) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(1) .text {
     color: #EC1B23;
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(2) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(2) .text {
     color: var(--color-primary);
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(3) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(3) .text {
     color: #76AF42;
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(4) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(4) .text {
     color: #0066B2;
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(5) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(5) .text {
     color: #008689;
 }
 
-.index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(6) .text {
+.index-solution .index-solution-box .index-solution-box-left-bottom .item:nth-child(6) .text {
     color: #1D2088;
 }
 
@@ -2427,10 +2427,10 @@ label {
 
     .index-news .index-news-box .item .more-btn {
         position: absolute;
-        bottom: 1.6rem;
+        bottom: 1.2rem;
         right: 1.33rem;
-        width: 0.93rem;
-        height: 0.93rem;
+        width: 1rem;
+        height: 1rem;
         line-height: 0.93rem;
         font-size: 0.93rem;
     }
