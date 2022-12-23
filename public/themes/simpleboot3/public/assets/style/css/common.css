@@ -247,11 +247,11 @@ body {
     font-family: "Microsoft YaHei", å¾®è½¯é›…é»‘ !important;
 }
 
-.nav-item-text .nav-item-text-list li a {
+.nav-item-text .nav-item-text-list li a,.nav-item-text .nav-item-text-list2 li a {
     color: #333 !important;
 }
 
-.nav-item-text .nav-item-text-list li.col a {
+.nav-item-text .nav-item-text-list li.col a,.nav-item-text .nav-item-text-list2 li.col a {
     color: var(--color-primary) !important;
 }
 
@@ -295,14 +295,15 @@ body {
     display: none;
 }
 
-.nav-item-text .text-active {
+.nav-item-text .text-active,.nav-item-text .nav-item-text-list2 {
     display: block !important;
 }
-
 .nav-item-text {
     padding: 0.5rem 0;
 }
-
+/* .nav-item-text2 a{
+	color: #333333!important;
+} */
 .nav-item-text-item li {
     line-height: 0.7rem !important;
 	padding: 0 0 !important;

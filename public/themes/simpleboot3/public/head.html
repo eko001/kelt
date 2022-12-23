@@ -68,11 +68,11 @@
                         </li>
                         <li data-url="product">
                             <p><a href="javascript:void(0)" title="产品服务">产品服务</a></p>
-                            <div class="menu-dropdown" id="menu-dropdown-1">
-                                <div id="menu-dropdown-wrapper" class="menu-dropdown-wrapper">
-                                    <div id="menu-dropdown-content-wrapper" class="menu-dropdown-content-wrapper"
+                            <div class="menu-dropdown">
+                                <div class="menu-dropdown-wrapper">
+                                    <div class="menu-dropdown-content-wrapper"
                                         style="border:none;height:100%">
-                                        <div class="menu-dropdown-content-2 flex-box" id="menu-dropdown-content"
+                                        <div class="menu-dropdown-content-2 flex-box"
                                             style="height:100%">
                                             <ul class="nav-item-title">
                                                 <li class="title-active">华劳人力</li>
@@ -160,17 +160,16 @@
                         </li>
                         <li data-url="solution">
                             <p><a href="javascript:void(0)" title="解决方案">解决方案</a></p>
-                            <div class="menu-dropdown" id="menu-dropdown-1">
-                                <div id="menu-dropdown-wrapper" class="menu-dropdown-wrapper">
-                                    <div id="menu-dropdown-content-wrapper" class="menu-dropdown-content-wrapper"
+                            <div class="menu-dropdown">
+                                <div class="menu-dropdown-wrapper">
+                                    <div class="menu-dropdown-content-wrapper"
                                         style="border:none;height:100%">
-                                        <div class="menu-dropdown-content-2 flex-box" id="menu-dropdown-content"
-                                            style="height:100%">
+                                        <div class="menu-dropdown-content-2 flex-box"  style="height:100%">
                                             <!-- <ul class="nav-item-title">
 												<li class="title-active">解决方案</li>
 											</ul> -->
                                             <ul class="nav-item-text" style="height:100%;">
-                                                <li class="nav-item-text-list text-active">
+                                                <li class="nav-item-text-list2 text-active">
                                                     <ul class="nav-item-text-item flex-box">
                                                         <portal:subCategories categoryId="68" item="vo">
                                                             <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
@@ -325,6 +324,10 @@
             $('.nav-item-text li.nav-item-text-list li').removeClass('col');
             $(this).addClass('col');
         });
+		$(".nav-item-text .nav-item-text-list2 li").mouseover(function () {
+		    $('.nav-item-text li.nav-item-text-list2 li').removeClass('col');
+		    $(this).addClass('col');
+		});
         $('.header-box').mouseout(function () {
             activeNav();
         });
@@ -332,6 +335,7 @@
             $('.header-box li').removeClass('active');
             var location = window.location.pathname;
             var arr = location.split("/");
+			console.log(arr)
             if (location == '/') {
                 $('.header-box li').eq(0).addClass('active');
             } else if (arr[2] === "product") {
