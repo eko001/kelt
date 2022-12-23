@@ -13,7 +13,7 @@ body {
 
 .index-banner-box {
     height: 12.5rem;
-    background: linear-gradient(180deg, rgba(255, 80, 0, 1) 0%, rgba(255, 80, 0, 0.1) 63%, rgba(255, 80, 0, 0.1) 100%);
+    background: linear-gradient(180deg, var(--color-primary) 0%, rgba(255,165,0,0) 100%);
 }
 
 .index-banner-box .title {
@@ -70,7 +70,7 @@ body {
 }
 
 .index-number .item .title {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.51rem;
     margin-bottom: 0.37rem;
     font-weight: 900;
@@ -105,7 +105,7 @@ body {
     display: block;
     width: .3571rem;
     height: .0714rem;
-    background-color: orange;
+    background-color: var(--color-primary);
     position: absolute;
     top: 0;
     left: .7143rem;
@@ -154,7 +154,7 @@ body {
 
 .index-product .index-product-item .index-product-item-innerbox2 .title {
     color: #333333;
-    font-size: 0.35rem;
+    font-size: 0.3rem;
     line-height: 0.7rem;
     margin-bottom: 0.53rem;
     font-weight: 600;
@@ -223,7 +223,7 @@ body {
 
 .index-product .index-product-item .index-product-item-innerbox2:hover {
     cursor: pointer;
-    background: orange;
+    background: var(--color-primary);
 }
 
 .index-product .index-product-item .index-product-item-innerbox2:hover .title,
@@ -322,7 +322,7 @@ body {
 }
 
 .index-solution .index-solution-box .index-solution-box-left li.active .icon {
-    border-left: solid 2px orange;
+    border-left: solid 2px var(--color-primary);
     width: 2px;
     height: 1.33rem;
     background: none;
@@ -369,7 +369,7 @@ body {
 .index-solution .index-solution-box .index-solution-box-right .flex-box div {
     width: calc(33.33% - 0.17rem);
     height: 1.78rem;
-    border: solid 1px orange;
+    border: solid 1px var(--color-primary);
     margin-top: 0.35rem;
     background: #FFFFFF;
 }
@@ -427,7 +427,7 @@ body {
 }
 
 .index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(2) .text {
-    color: orange;
+    color: var(--color-primary);
 }
 
 .index-solution .index-solution-box .index-solution-box-left-bottom .item:hover:nth-child(3) .text {
@@ -474,7 +474,7 @@ body {
 }
 
 .index-history .index-history-box .index-history-box-left .time-line {
-    background: orange;
+    background: var(--color-primary);
     overflow-y: scroll;
     height: 4.64rem;
 }
@@ -503,7 +503,7 @@ body {
     border: dashed 1px #FFFFFF;
     border-radius: 50%;
     margin-left: -0.12rem;
-    background: orange;
+    background: var(--color-primary);
 }
 
 .index-history .index-history-box .index-history-box-left .history-box li.active .circular {
@@ -573,7 +573,7 @@ body {
 }
 
 .index-advantage .index-advantage-bottom {
-    border-top: solid 1px orange;
+    border-top: solid 1px var(--color-primary);
 }
 
 .index-advantage .index-advantage-bottom .index-advantage-bottom-box {
@@ -605,7 +605,7 @@ body {
 }
 
 .index-advantage .index-advantage-bottom .index-advantage-bottom-box .item:hover {
-    color: orange;
+    color: var(--color-primary);
 }
 
 .index-advantage .index-advantage-bottom .index-advantage-bottom-box .item:hover img {
@@ -654,7 +654,7 @@ body {
     width: .4286rem;
     height: .4286rem;
     border-radius: 50%;
-    border: 1px solid orange;
+    border: 1px solid var(--color-primary);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -666,7 +666,7 @@ body {
     width: .2143rem;
     height: .2143rem;
     border-radius: 50%;
-    background-color: orange;
+    background-color: var(--color-primary);
 }
 
 .index-advantage .index-advantage-bottom-box2 .item-gradient {
@@ -781,7 +781,7 @@ body {
 }
 
 .index-news .index-news-box .item .more-btn a {
-    color: orange;
+    color: var(--color-primary);
 }
 
 .index-news .index-news-box .item:hover a {
@@ -797,7 +797,7 @@ body {
 }
 
 .index-news .index-news-box .item.active .time {
-    color: orange;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -806,7 +806,7 @@ body {
 }
 
 .index-news .index-news-box .item.active .more-btn {
-    background: orange;
+    background: var(--color-primary);
 
 }
 
@@ -817,12 +817,12 @@ body {
 .index-news .more {
     text-align: center;
     margin-top: 0.71rem;
-	color: orange;
+	color: var(--color-primary);
 	font-size: 0.25rem;
 }
 
 .index-news .more a {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.25rem;
 }
 
@@ -873,7 +873,7 @@ body {
 }
 
 .index-customer .more a {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.25rem;
 }
 
@@ -891,7 +891,7 @@ body {
     color: #FFFFFF;
     font-size: 0.25rem;
     text-align: center;
-    background: orange;
+    background: var(--color-primary);
     margin: 1.07rem auto 0;
 }
 
@@ -949,7 +949,7 @@ body {
 }
 
 .partner .partner-plan .partner-plan-box .title {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.35rem;
     font-weight: 800;
     margin-bottom: 0.71rem;
@@ -1131,7 +1131,7 @@ body {
 }
 
 .partner .partner-prospect .partner-prospect-box .partner-prospect-box-left .text {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.25rem;
     font-weight: 800;
 }
@@ -1216,7 +1216,7 @@ body {
 }
 
 .about .about-tabs ul li.active {
-    border-bottom: solid 4px orange;
+    border-bottom: solid 4px var(--color-primary);
 }
 
 .about .about-tabboxs {
@@ -1334,7 +1334,7 @@ body {
 }
 
 .about .about-history .about-history-box .year.active {
-    color: orange;
+    color: var(--color-primary);
 }
 
 .about .about-history .about-history-box .list {
@@ -1353,7 +1353,7 @@ body {
 }
 
 .about .about-history .about-history-box .list .time-line.swiper-slide-active {
-    background: orange;
+    background: var(--color-primary);
 }
 
 .about .about-history .about-history-box .list .time-line .history-box {
@@ -1381,7 +1381,7 @@ body {
 .about .about-history .about-history-box .list .time-line .history-box li .circular {
     width: 0.25rem;
     height: 0.25rem;
-    border: solid 1px orange;
+    border: solid 1px var(--color-primary);
     border-radius: 50%;
     margin-left: -0.12rem;
     background: #FFFFFF;
@@ -1523,13 +1523,13 @@ body {
     line-height: 0.92rem;
     color: #FFFFFF;
     font-size: 0.28rem;
-    background: orange;
+    background: var(--color-primary);
     text-align: center;
     border-radius: 0px 5px 5px 0px;
 }
 
 .about .about-search .about-search-box-left .title {
-    color: orange;
+    color: var(--color-primary);
     font-size: 0.26rem;
     margin-bottom: 0.35rem;
 }
@@ -1633,7 +1633,7 @@ body {
 }
 
 .contact .contact-part-box .contact-part-box-left li.active {
-    background: orange;
+    background: var(--color-primary);
 }
 
 .contact .contact-part-box .contact-part-box-left li .title {
@@ -1688,7 +1688,7 @@ body {
 .contact .tabs-part .tabs li.active {
     color: #333333;
     font-size: 0.35rem;
-    border-bottom: solid 2px orange;
+    border-bottom: solid 2px var(--color-primary);
 }
 
 .contact .search-company {
@@ -1964,8 +1964,8 @@ label {
 .btn-danger {
     width: 3rem;
     height: .75rem;
-    background: orange;
-    border: solid 1px orange;
+    background: var(--color-primary);
+    border: solid 1px var(--color-primary);
 }
 
 
@@ -2301,7 +2301,7 @@ label {
         padding-top: 0;
         padding-bottom: 0;
         margin-top: 2rem;
-        border-left: solid 1px orange;
+        border-left: solid 1px var(--color-primary);
     }
 
     .index-advantage .index-advantage-bottom .index-advantage-bottom-box .item {
@@ -2362,7 +2362,7 @@ label {
         width: 1.6rem;
         height: 1.6rem;
         border-radius: 50%;
-        border: 1px solid orange;
+        border: 1px solid var(--color-primary);
         box-sizing: border-box;
         display: flex;
         justify-content: center;
@@ -2374,7 +2374,7 @@ label {
         width: .8rem;
         height: .8rem;
         border-radius: 50%;
-        background-color: orange;
+        background-color: var(--color-primary);
     }
 
     .index-advantage .index-advantage-bottom-box2 .item-gradient {
@@ -3227,7 +3227,7 @@ label {
         width: 21rem;
         height: 3rem;
         font-size: 1rem;
-        background: orange;
-        border: solid 1px orange;
+        background: var(--color-primary);
+        border: solid 1px var(--color-primary);
     }
 }
