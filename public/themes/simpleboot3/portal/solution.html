@@ -96,7 +96,7 @@
 							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories"
 								categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
 								<div class="item">
-									<img src="_{:cmf_get_image_url($vo.thumbnail)}" alt="">
+									<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
 									<div class="content">{$vo.post_title}</div>
 								</div>
 								<php>

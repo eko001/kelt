@@ -449,13 +449,13 @@ body {
 /* 发展历程 */
 .index-history {
     background: #FFFFFF;
-    padding-top: 0.89rem;
+    /* padding-top: 0.89rem; */
 }
 
 .index-history .index-history-box {
     padding: 1.85rem 0;
-    background: url(../imgs/index/history-bg.png) center 0.89rem no-repeat;
-    background-size: 25.83rem 2.67rem;
+    /* background: url(../imgs/index/history-bg.png) center 0.89rem no-repeat;
+    background-size: 25.83rem 2.67rem; */
 }
 
 .index-history .index-history-box .flex-around {
@@ -672,7 +672,7 @@ body {
 .index-advantage .index-advantage-bottom-box2 .item-gradient {
     width: .4286rem;
     height: 2.1429rem;
-    background: linear-gradient(180deg, rgba(255, 80, 0, 1) 0%, rgba(255, 80, 0, 0.1) 72.3%, rgba(255, 80, 0, 0) 100%);
+    background: linear-gradient(180deg, var(--color-primary) 0%, rgba(255, 80, 0, 0.1) 72.3%, rgba(255, 80, 0, 0) 100%);
     ;
 }
 
@@ -740,7 +740,7 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    /* height: 2.85rem; */
+    height: 2.85rem;
 }
 
 .index-news .index-news-box .item .title-bigger .inner-box .content {
@@ -2079,9 +2079,10 @@ label {
     }
 
     .index-product .index-product-item .index-product-item-innerbox2 .title {
-        font-size: 1.06rem;
+        font-size: 0.93rem;
         line-height: 2rem;
         margin-bottom: 1rem;
+		text-align: right;
     }
 
     .index-product .index-product-item .index-product-item-innerbox2 .text {
@@ -2380,7 +2381,7 @@ label {
     .index-advantage .index-advantage-bottom-box2 .item-gradient {
         width: .8rem;
         height: 8rem;
-        background: linear-gradient(180deg, rgba(255, 80, 0, 1) 0%, rgba(255, 80, 0, 0.1) 72.3%, rgba(255, 80, 0, 0) 100%);
+        background: linear-gradient(180deg, var(--color-primary) 0%, rgba(255, 80, 0, 0.1) 72.3%, rgba(255, 80, 0, 0) 100%);
         ;
     }
 
