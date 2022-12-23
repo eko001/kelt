@@ -9,8 +9,10 @@
 	<div id="product" class="product">
 		<!-- 头部图片 -->
 		<div class="banner">
-			<div class="product_banner_text_one">{$category.name}</div>
-			<div class="product_banner_text_two">{$category.description}</div>
+			<div class="banner-box">
+				<div class="product_banner_text_one">{$category.name}</div>
+				<div class="product_banner_text_two">{$category.description}</div>
+			</div>
 		</div>
 
 		<php>
@@ -27,140 +29,143 @@
 
 		</php>
 		<notempty name="$subCategories[0]">
-		<!-- 客户的难题 -->
-		<div class="problem">
-			<div class="title">{$subCategories[0]['name']}</div>
-			<div class="tag">{$subCategories[0]['description']}</div>
-			<div class="inner">
-				<div class="list">
-					<php>
-						$index = 1;
-					</php>
-					<notempty name="$subCategoryIds">
-						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"
-							categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
-							<div class="item"
-								style="background-image: url(__TMPL__/public/assets/style/imgs/product/problem/{$index}.png);">
-								<div class="item_content">
-									<div class="item_title">{$vo.post_title}</div>
-									<div class="item_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
-								</div>
-							</div>
-							<php>
-								$index++;
-							</php>
-						</portal:articles>
-
-					</notempty>
-
-				</div>
-			</div>
-		</div>
-		</notempty>
-		<notempty name="$subCategories[1]">
-		<!-- 我们的产品 -->
-		<div class="ourproduct">
-			<div class="inner">
-				<div class="ourproduct_left">
-					<div class="ourproduct_left_title">{$subCategories[1]['name']}</div>
-					<div class="ourproduct_left_tag">{$subCategories[1]['description']}</div>
-					<notempty name="$subCategoryIds">
-						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
-							categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
-
-							
-							<div class="ourproduct_left_text">
-								{$vo.post_content|mb_substr=0,200,'utf-8'}
-							</div>
-
-						</portal:articles>
-					</notempty>
-
-					<button><a href="{:cmf_url('portal/Form/index')}"><img
-								src="__TMPL__/public/assets/style/imgs/product/ourproduct-yuyue.png" alt="">预约咨询</a></button>
-				</div>
-				
-				<div class="ourproduct_right">
-					<notempty name="$subCategoryIds">
-						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
-							categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
-							<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-						</portal:articles>
-					</notempty>
-				</div>
-			</div>
-		</div>
-		<notempty name="$subCategoryIds">
-			<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
-				categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
-				<img class="product_img" src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-			</portal:articles>
-		</notempty>
-		<!-- <img class="product_img" src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt=""> -->
-		</notempty>
-		<notempty name="$subCategories[2]">
-		<!-- 我们的优势 -->
-		<div class="ouradvantage">
-			<div class="ouradvantage_content">
-				<div class="title">{$subCategories[2]['name']}</div>
-				<div class="tag">{$subCategories[2]['description']}</div>
-
+			<!-- 客户的难题 -->
+			<div class="problem">
+				<div class="title">{$subCategories[0]['name']}</div>
+				<div class="tag">{$subCategories[0]['description']}</div>
 				<div class="inner">
 					<div class="list">
-
 						<php>
-							$indexa = 1;
+							$index = 1;
 						</php>
 						<notempty name="$subCategoryIds">
-							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"
-								categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
-								<div class="item">
-									<div class="item_first">
-										<div class="item_first_content">
-											<img src="__TMPL__/public/assets/style/imgs/product/ouradvantage{$indexa}.png" alt="">
-										</div>
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+								relation="categories" categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
+								<div class="item"
+									style="background-image: url(__TMPL__/public/assets/style/imgs/product/problem/{$index}.png);">
+									<div class="item_content">
+										<div class="item_title">{$vo.post_title}</div>
+										<div class="item_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
 									</div>
-									<div class="item_title">{$vo.post_title}</div>
-									<div class="item_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
 								</div>
 								<php>
-									$indexa++;
+									$index++;
 								</php>
 							</portal:articles>
+
 						</notempty>
 
 					</div>
 				</div>
 			</div>
-		</div>
 		</notempty>
-		<notempty name="$subCategories[3]">
-		<!-- 我们的价值 -->
-		<div class="ourvalue">
-			<div class="inner">
-				<div class="title">{$subCategories[3]['name']}</div>
-				<div class="tag">{$subCategories[3]['description']}</div>
-				<div class="list">
-					<notempty name="$subCategoryIds">
-						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories"
-							categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
-							<div class="item">
-								<div class="item_first">
-									<div class="item_first_content">
-										<div class="item_first_content_text">
-											{$vo.post_title}
-										</div>
-									</div>
+		<notempty name="$subCategories[1]">
+			<!-- 我们的产品 -->
+			<div class="ourproduct">
+				<div class="inner">
+					<div class="ourproduct_left">
+						<div class="ourproduct_left_title">{$subCategories[1]['name']}</div>
+						<div class="ourproduct_left_tag">{$subCategories[1]['description']}</div>
+						<notempty name="$subCategoryIds">
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1"
+								relation="categories" categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+
+
+								<div class="ourproduct_left_text">
+									{$vo.post_content|mb_substr=0,200,'utf-8'}
 								</div>
-								<div class="item_des">{$vo.post_content|mb_substr=0,150,'utf-8'}</div>
-							</div>
-						</portal:articles>
-					</notempty>
 
+							</portal:articles>
+						</notempty>
 
+						<button><a href="{:cmf_url('portal/Form/index')}"><img
+									src="__TMPL__/public/assets/style/imgs/product/ourproduct-yuyue.png"
+									alt="">预约咨询</a></button>
+					</div>
+
+					<div class="ourproduct_right">
+						<notempty name="$subCategoryIds">
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1"
+								relation="categories" categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+								<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+							</portal:articles>
+						</notempty>
+					</div>
 				</div>
 			</div>
-		</div>
+			<notempty name="$subCategoryIds">
+				<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
+					categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+					<img class="product_img" src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+				</portal:articles>
+			</notempty>
+			<!-- <img class="product_img" src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt=""> -->
+		</notempty>
+		<notempty name="$subCategories[2]">
+			<!-- 我们的优势 -->
+			<div class="ouradvantage">
+				<div class="ouradvantage_content">
+					<div class="title">{$subCategories[2]['name']}</div>
+					<div class="tag">{$subCategories[2]['description']}</div>
+
+					<div class="inner">
+						<div class="list">
+
+							<php>
+								$indexa = 1;
+							</php>
+							<notempty name="$subCategoryIds">
+								<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+									relation="categories" categoryIds="$subCategoryIds[2]"
+									returnVarName="articles_data">
+									<div class="item">
+										<div class="item_first">
+											<div class="item_first_content">
+												<img src="__TMPL__/public/assets/style/imgs/product/ouradvantage{$indexa}.png"
+													alt="">
+											</div>
+										</div>
+										<div class="item_title">{$vo.post_title}</div>
+										<div class="item_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
+									</div>
+									<php>
+										$indexa++;
+									</php>
+								</portal:articles>
+							</notempty>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</notempty>
+		<notempty name="$subCategories[3]">
+			<!-- 我们的价值 -->
+			<div class="ourvalue">
+				<div class="inner">
+					<div class="title">{$subCategories[3]['name']}</div>
+					<div class="tag">{$subCategories[3]['description']}</div>
+					<div class="list">
+						<notempty name="$subCategoryIds">
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+								relation="categories" categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
+								<div class="item">
+									<div class="item_first">
+										<div class="item_first_content">
+											<div class="item_first_content_text">
+												{$vo.post_title}
+											</div>
+										</div>
+									</div>
+									<div class="item_des">{$vo.post_content|mb_substr=0,150,'utf-8'}</div>
+								</div>
+							</portal:articles>
+						</notempty>
+
+
+					</div>
+				</div>
+			</div>
 		</notempty>
 		<!-- 客户信赖 -->
 		<div class="index-customer">

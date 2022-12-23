@@ -3,122 +3,133 @@
 }
 
 .product .banner {
-    width: 100%;
-    height: 8.928571rem;
-    background-image: url(../imgs/product/banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+	width: 100%;
+	background: url(../imgs/product/banner.png) center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.product .banner-box {
+	width: 100%;
+	height: 8.928571rem;
+	background: linear-gradient(177.97deg, rgba(255, 165, 0, 1) 30.5%, rgba(255, 80, 0, 0.1) 115.11%);
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 .product_banner_text_one {
-    margin-top: 3.928571rem;
-    margin-left: 4.375rem;
-    color: rgba(255, 255, 255, 1);
-    font-size: 0.857143rem;
-    text-align: left;
-    font-weight: bold;
+	margin-top: 3.928571rem;
+	margin-left: 4.375rem;
+	color: rgba(255, 255, 255, 1);
+	font-size: 0.857143rem;
+	text-align: left;
+	font-weight: bold;
 }
 
 .product_banner_text_two {
-    margin-top: 0.892857rem;
-    margin-left: 4.375rem;
-    width: 10.54rem;
-    line-height: 0.71rem;
-    color: rgba(255, 255, 255, 1);
-    font-size: 0.428571rem;
+	margin-top: 0.892857rem;
+	margin-left: 4.375rem;
+	width: 10.54rem;
+	line-height: 0.71rem;
+	color: rgba(255, 255, 255, 1);
+	font-size: 0.428571rem;
 }
 
 /* 客户的难题 */
 .product .problem {
 	padding: 1.78rem 0;
-   /* padding: 1.785714rem 4.375rem 1.785714rem 4.375rem; */
-    background-color: #FAFAFA;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+	/* padding: 1.785714rem 4.375rem 1.785714rem 4.375rem; */
+	background-color: #FAFAFA;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .problem .title {
-    color: rgba(16, 16, 16, 1);
-    font-size: 0.571429rem;
-    text-align: center;
-    font-weight: bold;
+	color: rgba(16, 16, 16, 1);
+	font-size: 0.571429rem;
+	text-align: center;
+	font-weight: bold;
 }
 
 .problem .tag {
-    margin-top: 0.357143rem;
-    color: rgba(153, 153, 153, 1);
-    font-size: 0.25rem;
-    text-align: center;
+	margin-top: 0.357143rem;
+	color: rgba(153, 153, 153, 1);
+	font-size: 0.25rem;
+	text-align: center;
 }
 
 .problem .list {
 	width: 100%;
-    margin-top: 1.428571rem;
-    display: flex;
-    justify-content: space-between;
+	margin-top: 1.428571rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 .problem .list .item {
-    display: flex;
-    width: 24%;
-    border-radius: 0.09rem;
-    background-repeat: no-repeat;
-    background-size: cover;
+	display: flex;
+	width: 24%;
+	border-radius: 0.09rem;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .problem .list .item .item_content {
-    /* width: 100%;
+	/* width: 100%;
     opacity: 0.9;
     border-radius: 0.09rem;
     display: flex;
     flex-direction: column;
     background-color: rgba(250, 250, 250, 1); */
-    padding: 0.89rem 0.54rem 0.71rem 0.54rem;
+	padding: 0.89rem 0.54rem 0.71rem 0.54rem;
 }
 
 .problem .list .item_title {
-    color: var(--color-primary);
-    font-size: 0.36rem;
-    text-align: left;
-    font-weight: bold;
+	color: var(--color-primary);
+	font-size: 0.36rem;
+	text-align: left;
+	font-weight: bold;
 }
 
 .problem .list .item_des {
-    width: 100%;
-    margin-top: 1.07rem;
-    line-height: 0.54rem;
-    color: rgba(51, 51, 51, 1);
-    font-size: 0.29rem;
-    text-align: justify;
+	width: 100%;
+	margin-top: 1.07rem;
+	line-height: 0.54rem;
+	color: rgba(51, 51, 51, 1);
+	font-size: 0.29rem;
+	text-align: justify;
 }
+
 /* 我们的产品 */
-.ourproduct{
+.ourproduct {
 	padding: 1.78rem 0;
 	/* padding: 1.785714rem 4.375rem 1.785714rem 4.375rem; */
 	background-color: #FFFFFF;
-	
+
 }
-.ourproduct .inner{
+
+.ourproduct .inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.ourproduct_left{
+
+.ourproduct_left {
 	width: 45%;
 }
-.ourproduct_right{
+
+.ourproduct_right {
 	width: 52%;
 	height: 12.14rem;
 }
-.ourproduct_right img{
+
+.ourproduct_right img {
 	width: 100%;
 }
-.ourproduct_left_text{
+
+.ourproduct_left_text {
 	margin-top: 0.89rem;
 	width: 100%;
 	line-height: 0.54rem;
@@ -126,20 +137,22 @@
 	font-size: 0.25rem;
 	text-align: justify;
 }
+
 .ourproduct_left_title {
-    color: rgba(16, 16, 16, 1);
-    font-size: 0.57rem;
-    text-align: left;
-    font-weight: bold;
+	color: rgba(16, 16, 16, 1);
+	font-size: 0.57rem;
+	text-align: left;
+	font-weight: bold;
 }
 
 .ourproduct_left_tag {
-    margin-top: 0.36rem;
-    color: rgba(153, 153, 153, 1);
-    font-size: 0.25rem;
-    text-align: left;
+	margin-top: 0.36rem;
+	color: rgba(153, 153, 153, 1);
+	font-size: 0.25rem;
+	text-align: left;
 }
-.ourproduct button{
+
+.ourproduct button {
 	margin-top: 1.79rem;
 	width: 3.13rem;
 	height: 0.96rem;
@@ -153,24 +166,28 @@
 	display: flex;
 	align-items: center;
 }
-.ourproduct button img{
+
+.ourproduct button img {
 	margin-left: 0.6rem;
 	width: 0.32rem;
 	height: 0.32rem;
 	margin-right: 0.18rem;
 	color: rgba(255, 255, 255, 1);
 }
-.product_img{
+
+.product_img {
 	display: none;
 }
+
 /* 我们的优势 */
-.ouradvantage{
+.ouradvantage {
 	background-image: url(../imgs/product/advance_bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+
 }
-.ouradvantage_content{
+
+.ouradvantage_content {
 	padding: 1.78rem 0;
 	/* padding: 1.785714rem 4.375rem 1.785714rem 4.375rem; */
 	/* background-color: rgba(250, 250, 250, 1); */
@@ -179,27 +196,29 @@
 	flex-direction: column;
 	opacity: 0.9;
 }
+
 .ouradvantage_content .title {
-    color: rgba(16, 16, 16, 1);
-    font-size: 0.571429rem;
-    text-align: center;
-    font-weight: bold;
+	color: rgba(16, 16, 16, 1);
+	font-size: 0.571429rem;
+	text-align: center;
+	font-weight: bold;
 }
 
 .ouradvantage_content .tag {
-    margin-top: 0.357143rem;
-    color: rgba(153, 153, 153, 1);
-    font-size: 0.25rem;
-    text-align: center;
+	margin-top: 0.357143rem;
+	color: rgba(153, 153, 153, 1);
+	font-size: 0.25rem;
+	text-align: center;
 }
+
 .ouradvantage_content .list {
 	width: 100%;
-    margin-top: 1.79rem;
-    display: flex;
+	margin-top: 1.79rem;
+	display: flex;
 	justify-content: space-between;
 }
 
-.ouradvantage_content .list .item{
+.ouradvantage_content .list .item {
 	width: 6.25rem;
 	height: 3.93rem;
 	border-radius: 0.09rem;
@@ -208,36 +227,41 @@
 	flex-direction: column;
 	align-items: center;
 }
-.ouradvantage_content .list .item .item_first{
+
+.ouradvantage_content .list .item .item_first {
 	margin-top: -0.98rem;
-    width: 1.96rem;
-    height: 1.96rem;
-    line-height: 1.96rem;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 1);
+	width: 1.96rem;
+	height: 1.96rem;
+	line-height: 1.96rem;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 1);
 }
-.ouradvantage_content .list .item .item_first .item_first_content{
+
+.ouradvantage_content .list .item .item_first .item_first_content {
 	margin-left: 0.18rem;
 	margin-top: 0.18rem;
-    width: 1.61rem;
-    height: 1.61rem;
-    line-height: 1.61rem;
-    border-radius: 50%;
-    background-color: #FAFAFA;
+	width: 1.61rem;
+	height: 1.61rem;
+	line-height: 1.61rem;
+	border-radius: 50%;
+	background-color: #FAFAFA;
 	text-align: center;
 }
-.item_first .item_first_content img{
-    width: 0.71rem;
-    height: 0.71rem;
+
+.item_first .item_first_content img {
+	width: 0.71rem;
+	height: 0.71rem;
 }
-.ouradvantage_content .list .item .item_title{
+
+.ouradvantage_content .list .item .item_title {
 	margin-top: 0.54rem;
 	color: rgba(51, 51, 51, 1);
 	font-size: 0.36rem;
 	text-align: center;
 	font-weight: bold;
 }
-.ouradvantage_content .list .item .item_des{
+
+.ouradvantage_content .list .item .item_des {
 	margin-top: 0.36rem;
 	color: rgba(153, 153, 153, 1);
 	font-size: 0.29rem;
@@ -245,35 +269,39 @@
 }
 
 /* 我们的价值 */
-.ourvalue{
+.ourvalue {
 	padding: 1.78rem 0;
 	background-color: #FFFFFF;
 }
-.ourvalue .inner{
+
+.ourvalue .inner {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
+
 .ourvalue .title {
-    color: rgba(16, 16, 16, 1);
-    font-size: 0.571429rem;
-    text-align: center;
-    font-weight: bold;
+	color: rgba(16, 16, 16, 1);
+	font-size: 0.571429rem;
+	text-align: center;
+	font-weight: bold;
 }
+
 .ourvalue .tag {
-    margin-top: 0.357143rem;
-    color: rgba(153, 153, 153, 1);
-    font-size: 0.25rem;
-    text-align: center;
+	margin-top: 0.357143rem;
+	color: rgba(153, 153, 153, 1);
+	font-size: 0.25rem;
+	text-align: center;
 }
+
 .ourvalue .list {
 	width: 100%;
-    margin-top: 1.79rem;
-    display: flex;
+	margin-top: 1.79rem;
+	display: flex;
 	justify-content: space-between;
 }
 
-.ourvalue .list .item{
+.ourvalue .list .item {
 	width: 24%;
 	height: 6.11rem;
 	border-radius: 0.09rem;
@@ -282,45 +310,53 @@
 	flex-direction: column;
 	align-items: center;
 }
-.ourvalue .list .item .item_first{
+
+.ourvalue .list .item .item_first {
 	/* background-image: url(../imgs/solution/resolve3.png);
 	background-repeat: no-repeat;
 	background-size: cover; */
 	border-radius: 0.09rem 0.09rem 0 0;
 	width: 100%;
-    height: 2.86rem;
+	height: 2.86rem;
 }
-.ourvalue .list .item:first-child .item_first{
+
+.ourvalue .list .item:first-child .item_first {
 	background: url(../imgs/product/advance/1.png) center center no-repeat;
 	background-size: 100% 100%;
 }
-.ourvalue .list .item:nth-child(2) .item_first{
+
+.ourvalue .list .item:nth-child(2) .item_first {
 	background: url(../imgs/product/advance/2.png) center center no-repeat;
 	background-size: 100% 100%;
 }
-.ourvalue .list .item:nth-child(3) .item_first{
+
+.ourvalue .list .item:nth-child(3) .item_first {
 	background: url(../imgs/product/advance/3.png) center center no-repeat;
 	background-size: 100% 100%;
 }
-.ourvalue .list .item:nth-child(4) .item_first{
+
+.ourvalue .list .item:nth-child(4) .item_first {
 	background: url(../imgs/product/advance/4.png) center center no-repeat;
 	background-size: 100% 100%;
 }
-.ourvalue .list .item .item_first .item_first_content{
+
+.ourvalue .list .item .item_first .item_first_content {
 	margin-top: 1.79rem;
 	width: 100%;
 	height: 1.07rem;
 	line-height: 1.07rem;
-	background: linear-gradient(90.17deg, rgba(255,80,0,1) -0.15%,rgba(255,80,0,0.27) 99.55%);
+	background: linear-gradient(90.17deg, rgba(255, 80, 0, 1) -0.15%, rgba(255, 80, 0, 0.27) 99.55%);
 	text-align: center;
 }
-.item_first_content_text{
+
+.item_first_content_text {
 	color: rgba(255, 255, 255, 1);
 	font-size: 0.36rem;
 	text-align: left;
 	margin-left: 0.45rem;
 }
-.ourvalue .list .item .item_des{
+
+.ourvalue .list .item .item_des {
 	/* margin-top: 0.54rem; */
 	/* width: 100%; */
 	padding: 0.53rem 0.44rem 0;
@@ -329,32 +365,37 @@
 	text-align: justify;
 	line-height: 0.5rem;
 }
+
 /* 以人为本 */
-.getresolve{
+.getresolve {
 	padding: 1.78rem;
 	display: flex;
-	
+
 }
-.getresolve .inner{
+
+.getresolve .inner {
 	flex-direction: column;
 	align-items: center;
 	background-color: #FFFFFF
 }
+
 .getresolve .title {
-    color: rgba(16, 16, 16, 1);
-    font-size: 0.571429rem;
-    text-align: center;
-    font-weight: bold;
+	color: rgba(16, 16, 16, 1);
+	font-size: 0.571429rem;
+	text-align: center;
+	font-weight: bold;
 }
+
 .getresolve .tag {
-    margin-top: 0.357143rem;
-    color: rgba(153, 153, 153, 1);
-    font-size: 0.25rem;
-    text-align: center;
+	margin-top: 0.357143rem;
+	color: rgba(153, 153, 153, 1);
+	font-size: 0.25rem;
+	text-align: center;
 }
-.getresolve button{
+
+.getresolve button {
 	display: block;
-	margin: 1.43rem auto 0; 
+	margin: 1.43rem auto 0;
 	width: 3.8rem;
 	height: 0.96rem;
 	line-height: 0.96rem;
@@ -365,117 +406,127 @@
 	font-size: 0.25rem;
 	border: 0;
 }
+
 @media (max-width : 425px) {
-	.product .banner {
-	    width: 100%;
-	    height: 13.33rem;
-	    background-image: url(../imgs/product/banner.png);
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	    overflow: hidden;
-	    position: relative;
+
+	/* .product .banner {
+		width: 100%;
+		
+		background-image: url(../imgs/product/banner.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		position: relative;
+	} */
+	.product .banner-box {
+		height: 13.33rem;
 	}
-	
+
 	.product_banner_text_one {
 		margin-left: 0;
 		width: 100%;
-	    margin-top: 6rem;
-	    color: rgba(255, 255, 255, 1);
-	    font-size: 1.6rem;
-	    text-align: center;
-	    font-weight: bold;
+		margin-top: 6rem;
+		color: rgba(255, 255, 255, 1);
+		font-size: 1.6rem;
+		text-align: center;
+		font-weight: bold;
 	}
-	
+
 	.product_banner_text_two {
 		display: none;
 	}
-	
+
 	/* 客户的难题 */
 	.product .problem {
-	    padding: 2rem 0;
-	    background-color: #FAFAFA;
-	    display: flex;
-	    align-items: center;
-	    flex-direction: column;
+		padding: 2rem 0;
+		background-color: #FAFAFA;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 	}
-	
+
 	.problem .title {
-	    color: rgba(16, 16, 16, 1);
-	    font-size: 1.2rem;
-	    text-align: center;
-	    font-weight: bold;
+		color: rgba(16, 16, 16, 1);
+		font-size: 1.2rem;
+		text-align: center;
+		font-weight: bold;
 	}
-	
+
 	.problem .tag {
-	    margin-top: 1rem;
-	    color: rgba(153, 153, 153, 1);
-	    font-size: 0.8rem;
-	    text-align: center;
+		margin-top: 1rem;
+		color: rgba(153, 153, 153, 1);
+		font-size: 0.8rem;
+		text-align: center;
 	}
-	
+
 	.problem .list {
 		width: 100%;
-	    margin-top: 2rem;
-	    display: flex;
-	    justify-content: space-between;
-	    flex-wrap: wrap;
+		margin-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
 	}
-	
+
 	.problem .list .item {
 		margin-bottom: 0.33rem;
-	    display: flex;
-	    width: 49%;
-	    border-radius: 0.33rem;
-	    background-repeat: no-repeat;
-	    background-size: cover;
+		display: flex;
+		width: 49%;
+		border-radius: 0.33rem;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
-	
+
 	.problem .list .item .item_content {
-	   /* width: 100%;
+		/* width: 100%;
 	    opacity: 0.9;
 	    border-radius: 0.33rem;
 	    display: flex;
 	    flex-direction: column;
 	    background-color: rgba(250, 250, 250, 1); */
-	    padding: 1rem;
+		padding: 1rem;
 	}
-	
+
 	.problem .list .item_title {
-	    color: var(--color-primary);
-	    font-size: 1.07rem;
-	    text-align: left;
-	    font-weight: bold;
+		color: var(--color-primary);
+		font-size: 1.07rem;
+		text-align: left;
+		font-weight: bold;
 	}
-	
+
 	.problem .list .item_des {
-	    width: 100%;
-	    margin-top: 1rem;
-	    line-height: 1.33rem;
+		width: 100%;
+		margin-top: 1rem;
+		line-height: 1.33rem;
 		color: rgba(102, 102, 102, 1);
 		font-size: 0.87rem;
 		text-align: justify;
 	}
+
 	/* 我们的产品 */
-	.ourproduct{
+	.ourproduct {
 		padding: 2rem 1rem 1.33rem 1rem;
 		background-color: #FFFFFF;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
-	.ourproduct_left{
+
+	.ourproduct_left {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.ourproduct_right{
+
+	.ourproduct_right {
 		display: none;
 	}
-	.ourproduct_right img{
+
+	.ourproduct_right img {
 		width: 100%;
 	}
-	.ourproduct_left_text{
+
+	.ourproduct_left_text {
 		margin-top: 2rem;
 		width: 100%;
 		line-height: 1.6rem;
@@ -483,20 +534,22 @@
 		font-size: 0.87rem;
 		text-align: justify;
 	}
+
 	.ourproduct_left_title {
-	    color: rgba(16, 16, 16, 1);
-	    font-size: 1.2rem;
-	    text-align: left;
-	    font-weight: bold;
+		color: rgba(16, 16, 16, 1);
+		font-size: 1.2rem;
+		text-align: left;
+		font-weight: bold;
 	}
-	
+
 	.ourproduct_left_tag {
-	    margin-top: 1rem;
-	    color: rgba(153, 153, 153, 1);
-	    font-size: 0.8rem;
-	    text-align: left;
+		margin-top: 1rem;
+		color: rgba(153, 153, 153, 1);
+		font-size: 0.8rem;
+		text-align: left;
 	}
-	.ourproduct button{
+
+	.ourproduct button {
 		color: rgba(255, 255, 255, 1);
 		font-size: 0.93rem;
 		border: 0;
@@ -509,53 +562,59 @@
 		background-color: var(--color-primary);
 		text-align: center;
 	}
-	.ourproduct button img{
+
+	.ourproduct button img {
 		margin-left: 8.67rem;
 		width: 1.2rem;
 		height: 1.2rem;
 		margin-right: 0.67rem;
 		color: rgba(255, 255, 255, 1);
 	}
-	.product_img{
+
+	.product_img {
 		display: block;
 		width: 100%;
 		background-color: #FFFFFF;
 	}
+
 	/* 我们的优势 */
-	.ouradvantage{
+	.ouradvantage {
 		background-image: url(../imgs/product/advantage_back.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-	.ouradvantage_content{
+
+	.ouradvantage_content {
 		padding: 2rem 0 0;
 		background-color: rgba(250, 250, 250, 1);
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
+
 	.ouradvantage_content .title {
-	    color: rgba(16, 16, 16, 1);
-	    font-size: 1.2rem;
-	    text-align: center;
-	    font-weight: bold;
+		color: rgba(16, 16, 16, 1);
+		font-size: 1.2rem;
+		text-align: center;
+		font-weight: bold;
 	}
-	
+
 	.ouradvantage_content .tag {
-	    margin-top: 1rem;
-	    color: rgba(153, 153, 153, 1);
-	    font-size: 0.8rem;
-	    text-align: center;
+		margin-top: 1rem;
+		color: rgba(153, 153, 153, 1);
+		font-size: 0.8rem;
+		text-align: center;
 	}
+
 	.ouradvantage_content .list {
 		width: 100%;
-	    margin-top: 3.33rem;
-	    display: flex;
+		margin-top: 3.33rem;
+		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	
-	.ouradvantage_content .list .item{
+
+	.ouradvantage_content .list .item {
 		width: 48%;
 		height: 10rem;
 		border-radius: 0.33rem;
@@ -565,36 +624,41 @@
 		align-items: center;
 		margin-bottom: 4rem;
 	}
-	.ouradvantage_content .list .item .item_first{
+
+	.ouradvantage_content .list .item .item_first {
 		margin-top: -2.67rem;
-	    width: 5.33rem;
-	    height: 5.33rem;
-	    line-height: 5.33rem;
-	    border-radius: 50%;
-	    background-color: rgba(255, 255, 255, 1);
+		width: 5.33rem;
+		height: 5.33rem;
+		line-height: 5.33rem;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 1);
 	}
-	.ouradvantage_content .list .item .item_first .item_first_content{
+
+	.ouradvantage_content .list .item .item_first .item_first_content {
 		margin-left: 0.5rem;
 		margin-top: 0.5rem;
-	    width: 4.33rem;
-	    height: 4.33rem;
-	    line-height: 4.33rem;
-	    border-radius: 50%;
-	    background-color: #FAFAFA;
+		width: 4.33rem;
+		height: 4.33rem;
+		line-height: 4.33rem;
+		border-radius: 50%;
+		background-color: #FAFAFA;
 		text-align: center;
 	}
-	.item_first .item_first_content img{
-	    width: 2rem;
-	    height: 2rem;
+
+	.item_first .item_first_content img {
+		width: 2rem;
+		height: 2rem;
 	}
-	.ouradvantage_content .list .item .item_title{
+
+	.ouradvantage_content .list .item .item_title {
 		margin-top: 1.00rem;
 		color: rgba(51, 51, 51, 1);
 		font-size: 1.07rem;
 		text-align: center;
 		font-weight: bold;
 	}
-	.ouradvantage_content .list .item .item_des{
+
+	.ouradvantage_content .list .item .item_des {
 		width: 90%;
 		margin-top: 1rem;
 		color: rgba(153, 153, 153, 1);
@@ -602,36 +666,39 @@
 		line-height: 1.53rem;
 		text-align: left;
 	}
-	
+
 	/* 我们的价值 */
-	.ourvalue{
+	.ourvalue {
 		padding: 2rem 0;
 		background-color: #FFFFFF;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
+
 	.ourvalue .title {
-	    color: rgba(16, 16, 16, 1);
-	    font-size: 1.2rem;
-	    text-align: center;
-	    font-weight: bold;
+		color: rgba(16, 16, 16, 1);
+		font-size: 1.2rem;
+		text-align: center;
+		font-weight: bold;
 	}
+
 	.ourvalue .tag {
-	    margin-top: 1rem;
-	    color: rgba(153, 153, 153, 1);
-	    font-size: 0.8rem;
-	    text-align: center;
+		margin-top: 1rem;
+		color: rgba(153, 153, 153, 1);
+		font-size: 0.8rem;
+		text-align: center;
 	}
+
 	.ourvalue .list {
 		width: 100%;
-	    margin-top: 1.79rem;
-	    display: flex;
+		margin-top: 1.79rem;
+		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
-	
-	.ourvalue .list .item{
+
+	.ourvalue .list .item {
 		width: 100%;
 		border-radius: 0.33rem 0.33rem 0px 0px;
 		background-color: #FAFAFA;
@@ -641,29 +708,33 @@
 		margin-bottom: 1rem;
 		height: 18.67rem;
 	}
-	.ourvalue .list .item .item_first{
+
+	.ourvalue .list .item .item_first {
 		background-image: url(../imgs/solution/resolve3.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 		border-radius: 0.33rem 0.33rem 0px 0px;
 		width: 100%;
-	    height: 10.67rem;
+		height: 10.67rem;
 	}
-	.ourvalue .list .item .item_first .item_first_content{
+
+	.ourvalue .list .item .item_first .item_first_content {
 		margin-top: 6.93rem;
 		width: 100%;
 		height: 3.73rem;
 		line-height: 3.73rem;
-		background: linear-gradient(90.17deg, rgba(255,80,0,1) -0.15%,rgba(255,80,0,0.27) 99.55%);
+		background: linear-gradient(90.17deg, rgba(255, 80, 0, 1) -0.15%, rgba(255, 80, 0, 0.27) 99.55%);
 		text-align: center;
 	}
-	.item_first_content_text{
+
+	.item_first_content_text {
 		margin-left: 1.33rem;
 		color: rgba(255, 255, 255, 1);
 		font-size: 1.07rem;
 		text-align: left;
 	}
-	.ourvalue .list .item .item_des{
+
+	.ourvalue .list .item .item_des {
 		padding: 1.33rem 1rem 1.87rem 1rem;
 		width: 100%;
 		color: rgba(102, 102, 102, 1);
@@ -671,29 +742,33 @@
 		text-align: justify;
 		line-height: 1.6rem;
 	}
+
 	/* 以人为本 */
-	.getresolve{
+	.getresolve {
 		padding: 2rem 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		background-color: #FFFFFF
 	}
+
 	.getresolve .title {
-	    color: rgba(16, 16, 16, 1);
-	    font-size: 1.2rem;
-	    text-align: center;
-	    font-weight: bold;
+		color: rgba(16, 16, 16, 1);
+		font-size: 1.2rem;
+		text-align: center;
+		font-weight: bold;
 	}
+
 	.getresolve .tag {
-	    margin-top: 1rem;
+		margin-top: 1rem;
 		width: 22.67rem;
-	    color: rgba(153, 153, 153, 1);
-	    font-size: 0.8rem;
+		color: rgba(153, 153, 153, 1);
+		font-size: 0.8rem;
 		line-height: 1.33rem;
-	    text-align: center;
+		text-align: center;
 	}
-	.getresolve button{
+
+	.getresolve button {
 		margin-top: 2.67rem;
 		width: 23rem;
 		height: 3.6rem;
