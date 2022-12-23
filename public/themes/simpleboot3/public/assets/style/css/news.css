@@ -38,7 +38,7 @@
 	margin: 0 auto;
 }
 .news .type li.active{
-	border-bottom: solid 4px #FF5000;
+	border-bottom: solid 4px var(--color-primary);
 }
 .news .type a{
 	color: #222326;
@@ -209,7 +209,7 @@
 		margin: 0 auto;
 	}
 	.news .type li.active{
-		border-bottom: solid 4px #FF5000;
+		border-bottom: solid 4px var(--color-primary);
 	}
 	.news .type a{
 		color: #222326;
