@@ -345,7 +345,7 @@
 	width: 100%;
 	height: 1.07rem;
 	line-height: 1.07rem;
-	background: linear-gradient(90.17deg, rgba(255, 80, 0, 1) -0.15%, rgba(255, 80, 0, 0.27) 99.55%);
+	background: linear-gradient(90.17deg, var(--color-primary) -0.15%, rgba(255, 80, 0, 0.27) 99.55%);
 	text-align: center;
 }
 
@@ -723,7 +723,7 @@
 		width: 100%;
 		height: 3.73rem;
 		line-height: 3.73rem;
-		background: linear-gradient(90.17deg, rgba(255, 80, 0, 1) -0.15%, rgba(255, 80, 0, 0.27) 99.55%);
+		background: linear-gradient(90.17deg, var(--color-primary) -0.15%, rgba(255, 165, 0, 0) 99.55%);
 		text-align: center;
 	}
 
