@@ -1,146 +1,150 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <include file="public@head"/>
+	<include file="public@head" />
 </head>
+
 <body>
-<div id="news" class="news">
-    <div class="banner">
-        <div class="news_banner_text">了解最新的资讯与动态</div>
-    </div>
-    <div class="typelist">
-		<ul class="type">
-			<volist name="typeList" id="vo">
-				<li data-url="{$vo.id}">{$vo.name}</li>
-			</volist>
-		</ul>
-    </div>
-	<div id="newsList">
-		
-	</div>
-	<!-- <ul class="pagination" id="pagination">
+	<div id="news" class="news">
+		<div class="banner">
+			<div class="banner-box">
+				<div class="news_banner_text">了解最新的资讯与动态</div>
+			</div>
+		</div>
+		<div class="typelist">
+			<ul class="type">
+				<volist name="typeList" id="vo">
+					<li data-url="{$vo.id}">{$vo.name}</li>
+				</volist>
+			</ul>
+		</div>
+		<div id="newsList">
+
+		</div>
+		<!-- <ul class="pagination" id="pagination">
 	    
 	</ul> -->
-	<div class="pageLimitbox">
-	    <ul id="pageLimit" class="pagination pagination-lg"></ul>
+		<div class="pageLimitbox">
+			<ul id="pageLimit" class="pagination pagination-lg"></ul>
+		</div>
 	</div>
-</div>
-<include file="public@footer"/>
+	<include file="public@footer" />
 </body>
 <script src="__TMPL__/public/assets/style/js/bootstrap-paginator.js"></script>
 <script type="text/javascript">
-    $(function () {
+	$(function () {
 		var category = null;
 		function timestampToTime(timestamp) {
-		        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
-		        var Y = date.getFullYear() + '-';
-		        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-		        var D = date.getDate() + ' ';
-		        return Y+M+D;
+			var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+			var Y = date.getFullYear() + '-';
+			var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			var D = date.getDate() + ' ';
+			return Y + M + D;
 		}
-        let typeList =  <?php echo $typeList; ?> ;
-		if(typeList.length>0){
-			let firstId= typeList[0].id;
+		let typeList =  <? php echo $typeList; ?> ;
+		if (typeList.length > 0) {
+			let firstId = typeList[0].id;
 			category = firstId;
 			$.ajax({
-			    type: "post",
-			    url: "{:url('App/getNewsList')}" ,
-			    data: {category:firstId},
-			    dataType: "json",
-			    success: function (result) {
-			        console.log(result);//打印服务端返回的数据(调试用)
-			        if (result.code == 1) {	
-			            var arr = result.data.list.data;
-			            if(arr.length!=0){
-			                var html = "";
-			                html += '<div class="list">';
-			                for(var i = 0;i<arr.length;i++){
-			                    html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
-									html += '<img src="' + arr[i].thumbnail +'" alt="">';
-									html += '<div class="item_right">';
-										html += '<div class="title">'+ arr[i].post_title + '</div>'
-										html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
-										html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
-									html += '</div>';
-			                    html += '</div>';
-			                }
-			                html += '</div>';
-			                $("#newsList").html(html);
-			            }else{
+				type: "post",
+				url: "{:url('App/getNewsList')}",
+				data: { category: firstId },
+				dataType: "json",
+				success: function (result) {
+					console.log(result);//打印服务端返回的数据(调试用)
+					if (result.code == 1) {
+						var arr = result.data.list.data;
+						if (arr.length != 0) {
+							var html = "";
+							html += '<div class="list">';
+							for (var i = 0; i < arr.length; i++) {
+								html += '<div class="item" data-id="' + arr[i].id + '" data-cid="' + arr[i].category_id + '">';
+								html += '<img src="' + arr[i].thumbnail + '" alt="">';
+								html += '<div class="item_right">';
+								html += '<div class="title">' + arr[i].post_title + '</div>'
+								html += '<div class="content hidden-xs">' + arr[i].post_content + '</div>';
+								html += '<div class="date visible-xs">' + timestampToTime(arr[i].published_time) + '</div>';
+								html += '</div>';
+								html += '</div>';
+							}
+							html += '</div>';
+							$("#newsList").html(html);
+						} else {
 							$("#newsList").html('');
 						}
-						if(result.data.page!=null){
+						if (result.data.page != null) {
 							$(".pageSpan").html(result.data.page);
-						}else{
+						} else {
 							$(".pageSpan").html('');
 						}
-						initPage(result.data.list.total,result.data.list.current_page)
-			        }
-			    },
-			    error : function() {
-			        alert("该文章未发布！");
-			    }
+						initPage(result.data.list.total, result.data.list.current_page)
+					}
+				},
+				error: function () {
+					alert("该文章未发布！");
+				}
 			})
 		}
 		console.log(typeList);
-        $(".typelist ul li").removeClass("active");
+		$(".typelist ul li").removeClass("active");
 		$(".typelist ul li").eq(0).addClass("active");
-		$(".typelist ul li").on("click",function(){
+		$(".typelist ul li").on("click", function () {
 			$(".typelist ul li").removeClass("active");
 			$(this).addClass("active");
 			category = $(this).attr("data-url");
 			console.log(category);
 			$.ajax({
-			    type: "post",
-			    url: "{:url('App/getNewsList')}" ,
-			    data: {category},
-			    dataType: "json",
-			    success: function (result) {
-			        console.log(result);//打印服务端返回的数据(调试用)
-			        if (result.code == 1) {
-						console.log(result.data);	
-			            var arr = result.data.list.data;
-                        if(arr.length!=0){
-                            var html = "";
-                            html += '<div class="list">';
-                            for(var i = 0;i<arr.length;i++){
-                                html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
-                                html += '<img src="' + arr[i].thumbnail +'" alt="">';
-									html += '<div class="item_right">';
-										html += '<div class="title">'+ arr[i].post_title + '</div>'
-										html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
-										html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
-									html += '</div>';
-                                html += '</div>';
-                            }
-                            html += '</div>';
-                            $("#newsList").html(html);
-							initPage(result.data.list.total,result.data.list.current_page)
-                        }else{
+				type: "post",
+				url: "{:url('App/getNewsList')}",
+				data: { category },
+				dataType: "json",
+				success: function (result) {
+					console.log(result);//打印服务端返回的数据(调试用)
+					if (result.code == 1) {
+						console.log(result.data);
+						var arr = result.data.list.data;
+						if (arr.length != 0) {
+							var html = "";
+							html += '<div class="list">';
+							for (var i = 0; i < arr.length; i++) {
+								html += '<div class="item" data-id="' + arr[i].id + '" data-cid="' + arr[i].category_id + '">';
+								html += '<img src="' + arr[i].thumbnail + '" alt="">';
+								html += '<div class="item_right">';
+								html += '<div class="title">' + arr[i].post_title + '</div>'
+								html += '<div class="content hidden-xs">' + arr[i].post_content + '</div>';
+								html += '<div class="date visible-xs">' + timestampToTime(arr[i].published_time) + '</div>';
+								html += '</div>';
+								html += '</div>';
+							}
+							html += '</div>';
+							$("#newsList").html(html);
+							initPage(result.data.list.total, result.data.list.current_page)
+						} else {
 							$("#newsList").html('');
 						}
-						if(result.data.page!=null){
+						if (result.data.page != null) {
 							$(".pageSpan").html(result.data.page);
-						}else{
+						} else {
 							$(".pageSpan").html('');
 						}
-			        }
-			    },
-			    error : function() {
-			        alert("该文章未发布！");
-			    }
+					}
+				},
+				error: function () {
+					alert("该文章未发布！");
+				}
 			})
 		})
-		$("#newsList").on("click",".item",function(){
+		$("#newsList").on("click", ".item", function () {
 			var id = $(this).attr("data-id");
 			var cid = $(this).attr("data-cid");
 			var location = window.location.href;
 			console.log(location);
-			var newLocation= location.substring(0, location.length-10);
-			window.open(newLocation+'detail.html?id='+id+"&cid="+cid)
+			var newLocation = location.substring(0, location.length - 10);
+			window.open(newLocation + 'detail.html?id=' + id + "&cid=" + cid)
 		})
-		
-		function initPage(pageCount,currentPage){
+
+		function initPage(pageCount, currentPage) {
 			$('#pageLimit').bootstrapPaginator({
 				currentPage: currentPage, //当前页
 				totalPages: (pageCount % 9) == 0 ? (pageCount / 9) : (pageCount / 9) + 1, //总页
@@ -161,52 +165,53 @@
 						case "page":
 							return page;
 					}
-				},onPageClicked: function (event, originalEvent, type, page) {
+				}, onPageClicked: function (event, originalEvent, type, page) {
 					//这个是点击事件 点击分页
-					console.log("请求的是第："+page+"页")
+					console.log("请求的是第：" + page + "页")
 					$.ajax({
-					    type: "post",
-					    url: "{:url('App/getNewsList')}" ,
-					    data: {category:category,page:page},
-					    dataType: "json",
-					    success: function (res) {
+						type: "post",
+						url: "{:url('App/getNewsList')}",
+						data: { category: category, page: page },
+						dataType: "json",
+						success: function (res) {
 							if (res.code == 1) {
-							    var arr = res.data.list.data;
-							    if(arr.length!=0){
-							        var html = "";
-							        html += '<div class="list">';
-							        for(var i = 0;i<arr.length;i++){
-							            html += '<div class="item" data-id="'+ arr[i].id + '" data-cid="'+ arr[i].category_id + '">';
-											html += '<img src="' + arr[i].thumbnail +'" alt="">';
-											html += '<div class="item_right">';
-												html += '<div class="title">'+ arr[i].post_title + '</div>'
-												html += '<div class="content hidden-xs">'+ arr[i].post_content + '</div>';
-												html += '<div class="date visible-xs">'+ timestampToTime(arr[i].published_time) + '</div>';
-											html += '</div>';
-							            html += '</div>';
-							        }
-							        html += '</div>';
-							        $("#newsList").html(html);
-							    }else{
+								var arr = res.data.list.data;
+								if (arr.length != 0) {
+									var html = "";
+									html += '<div class="list">';
+									for (var i = 0; i < arr.length; i++) {
+										html += '<div class="item" data-id="' + arr[i].id + '" data-cid="' + arr[i].category_id + '">';
+										html += '<img src="' + arr[i].thumbnail + '" alt="">';
+										html += '<div class="item_right">';
+										html += '<div class="title">' + arr[i].post_title + '</div>'
+										html += '<div class="content hidden-xs">' + arr[i].post_content + '</div>';
+										html += '<div class="date visible-xs">' + timestampToTime(arr[i].published_time) + '</div>';
+										html += '</div>';
+										html += '</div>';
+									}
+									html += '</div>';
+									$("#newsList").html(html);
+								} else {
 									$("#newsList").html('');
 								}
-								if(res.data.page!=null){
+								if (res.data.page != null) {
 									$(".pageSpan").html(res.data.page);
-								}else{
+								} else {
 									$(".pageSpan").html('');
 								}
-								initPage(res.data.list.total,res.data.list.current_page)
+								initPage(res.data.list.total, res.data.list.current_page)
 							}
 						},
-						error : function() {
-						    alert("该文章未发布！");
+						error: function () {
+							alert("该文章未发布！");
 						}
 					})
 				}
 			})
 		}
-		
-    })
+
+	})
 </script>
 </body>
+
 </html>
