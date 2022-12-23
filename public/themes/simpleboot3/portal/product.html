@@ -79,12 +79,24 @@
 					<button><a href="{:cmf_url('portal/Form/index')}"><img
 								src="__TMPL__/public/assets/style/imgs/product/ourproduct-yuyue.png" alt="">预约咨询</a></button>
 				</div>
+				
 				<div class="ourproduct_right">
-					<img src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt="">
+					<notempty name="$subCategoryIds">
+						<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
+							categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+							<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+						</portal:articles>
+					</notempty>
 				</div>
 			</div>
 		</div>
-		<img class="product_img" src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt="">
+		<notempty name="$subCategoryIds">
+			<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories"
+				categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+				<img class="product_img" src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+			</portal:articles>
+		</notempty>
+		<!-- <img class="product_img" src="__TMPL__/public/assets/style/imgs/product/ourproduct.png" alt=""> -->
 		</notempty>
 		<notempty name="$subCategories[2]">
 		<!-- 我们的优势 -->
