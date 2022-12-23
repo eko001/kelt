@@ -12,7 +12,7 @@
 
 .product .banner-box {
 	width: 100%;
-	height: 8.928571rem;
+	height: 12.5rem;
 	background: linear-gradient(177.97deg, rgba(255, 165, 0, 1) 30.5%, rgba(255, 80, 0, 0.1) 115.11%);
 	position: relative;
 	display: flex;
@@ -20,7 +20,7 @@
 }
 
 .product_banner_text_one {
-	margin-top: 3.928571rem;
+	margin-top: 4.6343rem;
 	margin-left: 4.375rem;
 	color: rgba(255, 255, 255, 1);
 	font-size: 0.857143rem;
