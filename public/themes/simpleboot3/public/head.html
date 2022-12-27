@@ -75,83 +75,21 @@
                                         <div class="menu-dropdown-content-2 flex-box"
                                             style="height:100%">
                                             <ul class="nav-item-title">
-                                                <li class="title-active">华劳人力</li>
-                                                <li>中政外包</li>
-                                                <li>中洁清洁</li>
-                                                <li>金伞保险</li>
-                                                <li>中劳劳务</li>
-                                                <li>中朗安服</li>
-                                                <li>和谐调解</li>
-                                                <!-- <li>刷活招聘平台</li> -->
+												<portal:subCategories categoryId="30" item="vo">
+													<li>{$vo.name}</li>
+												</portal:subCategories>
                                             </ul>
-                                            <ul class="nav-item-text"
-                                                style="height:100%;border-left: solid 1px #e6e6e6;">
-                                                <li class="nav-item-text-list text-active">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="31" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="38" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="41" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="47" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="52" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="55" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="61" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li>
-                                                <!-- <li class="nav-item-text-list">
-                                                    <ul class="nav-item-text-item flex">
-                                                        <portal:subCategories categoryId="64" item="vo">
-                                                            <li><a href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
-                                                                    title="{$vo.name}">{$vo.name}</a></li>
-                                                        </portal:subCategories>
-                                                    </ul>
-                                                </li> -->
+                                            <ul class="nav-item-text" style="height:100%;border-left: solid 1px #e6e6e6;">
+												<portal:subCategories categoryId="30" item="vo">
+													<li class="nav-item-text-list text-active">
+													    <ul class="nav-item-text-item flex">
+													        <portal:subCategories categoryId="$vo.id" item="item">
+													            <li><a href="{:cmf_url('portal/List/index',array('id'=>$item.id))}"
+													                    title="{$item.name}">{$item.name}</a></li>
+													        </portal:subCategories>
+													    </ul>
+													</li>
+												</portal:subCategories>
                                             </ul>
                                         </div>
                                     </div>
@@ -312,7 +250,9 @@
             $('.header-box li').removeClass('active');
             $(this).addClass('active');
         });
-
+		$('.nav-item-title li').eq(0).addClass('title-active');
+		$('.nav-item-text .nav-item-text-list').removeClass('text-active');
+		$('.nav-item-text .nav-item-text-list').eq(0).addClass('text-active');
         $('.nav-item-title li').mouseover(function () {
             $('.nav-item-title li').removeClass('title-active');
             $(this).addClass('title-active');

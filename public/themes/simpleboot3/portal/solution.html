@@ -43,6 +43,11 @@
                             <div class="content">
                                 <div class="content_left">
                                     <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
+									<div class="content_left_changjing">
+										<div>适用场景</div>
+										<div>生产制造型企业</div>
+										<div>生产制造型企业</div>
+									</div>
                                 </div>
                                 <div class="content_right">
                                     <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
@@ -95,11 +100,12 @@
                 <div class="inner">
                     <div class="substance_list">
                         <notempty name="$subCategoryIds">
-                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="6"
+                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
                                 relation="categories" categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
                                 <div class="item">
-                                    <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+                                    <!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
                                     <div class="content">{$vo.post_title}</div>
+									<div class="text">{$vo.post_content}</div>
                                 </div>
                                 <php>
                                     $index++;
@@ -112,102 +118,32 @@
             </div>
         </notempty>
         <!-- 我们的优势 -->
+		<notempty name="$subCategories[3]">
         <div class="solution-advantage-box">
             <div class="solution_advantage">
-                <div class="title">我们的优势</div>
-                <div class="tag">持续不断为客户提供具有价值的产品和服务</div>
+                <div class="title">{$subCategories[3]['name']}</div>
+                <div class="tag">{$subCategories[3]['description']}</div>
                 <div class="inner">
                     <div class="list">
-                        <div class="content">
-                            <div class="content_left">
-                                15
-                            </div>
-                            <div class="content_right">
-                                <div class="content_right_top">
-                                    年
-                                </div>
-                                <div class="content_right_bottom">
-                                    深耕人力资源服务业
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="content_left">
-                                83
-                            </div>
-                            <div class="content_right">
-                                <div class="content_right_top">
-                                    家
-                                </div>
-                                <div class="content_right_bottom">
-                                    服务超千人企业和上市公司83家
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="content_left">
-                                3000
-                            </div>
-                            <div class="content_right">
-                                <div class="content_right_top">
-                                    家
-                                </div>
-                                <div class="content_right_bottom">
-                                    服务客户3000余家
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="content_left">
-                                170
-                            </div>
-                            <div class="content_right">
-                                <div class="content_right_top">
-                                    +
-                                </div>
-                                <div class="content_right_bottom">
-                                    全国170+家直营分/子公司
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item_top">
-                                15年
-                            </div>
-                            <div class="item_des">
-                                深耕人力资源服务业
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item_top">
-                                83家
-                            </div>
-                            <div class="item_des">
-                                服务超千人企业
-                                和上市公司83家
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item_top">
-                                3000家
-                            </div>
-                            <div class="item_des">
-                                服务客户3000余家
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item_top">
-                                170+
-                            </div>
-                            <div class="item_des">
-                                全国170+直营分/子公司
-                            </div>
-                        </div>
+						<notempty name="$subCategoryIds">
+						    <portal:articles item="vo" where="$where" order="post.create_time DESC" page="5"
+						        relation="categories" categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
+						        <div class="item">
+						            <div class="content">{$vo.post_title}</div>
+									<div class="text">{$vo.post_content}</div>
+						        </div>
+						        <php>
+						            $index++;
+						        </php>
+						    </portal:articles>
+						
+						</notempty>
+                        
                     </div>
                 </div>
             </div>
         </div>
-
+ </notempty>
         <!-- 解决方案 -->
         <div class="resolve">
             <div class="inner">

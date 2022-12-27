@@ -78,7 +78,15 @@
 .plan .content .content_left {
 	width: 42%;
 }
-
+.plan .content .content_left .content_left_changjing{
+	margin-top: 1rem;
+	padding-left: 0.18rem;
+	padding-right: 0.18rem;
+	color: rgba(46, 46, 46, 1);
+	font-size: 0.25rem;
+	text-align: justify;
+	line-height: 0.535714rem;
+}
 .plan .content .content_right {
 	width: calc(50% - 5px);
 }
@@ -184,33 +192,44 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+	justify-content: space-between;
 }
 
 .substance_list .item {
-	width: calc(33.33% - 7px);
+	width: calc(25% - 10px);
 	height: 3.214286rem;
-	display: flex;
-	align-items: center;
+	/* display: flex;
+	align-items: center; */
 	margin-right: 0.17rem;
 	margin-top: 0.17rem;
 	background: #FAFAFA;
-	text-align: center;
 	border-radius: 0.089286rem;
-	justify-content: center;
+	/* justify-content: center;
+	flex-wrap: wrap; */
 }
 
-.substance_list .item:nth-child(3n+3) {
+/* .substance_list .item:nth-child(3n+3) {
 	margin-right: 0;
-}
+} */
 
 .substance_list .item img {
 	/* margin-left: 2.142857rem; */
 	width: 1.071429rem;
 	height: 1.071429rem;
 }
-
+.substance_list .item .content{
+	padding-top: 0.62rem;
+	margin-bottom: 0.53rem;
+	text-align: center;
+}
+.substance_list .item .text{
+	color: #999999;
+	font-size: 0.25rem;
+	line-height: 0.53rem;
+	padding: 0 0.35rem;
+}
 .substance .content {
-	margin-left: 0.357143rem;
+	/* margin-left: 0.357143rem; */
 	color: rgba(51, 51, 51, 1);
 	font-size: 0.357143rem;
 	text-align: center;
@@ -262,9 +281,19 @@
 }
 
 .solution_advantage .list .item {
-	display: none;
+	width: calc(20% - 10px);
+	margin-right: 0.17rem;
 }
-
+.solution_advantage .list .item .content{
+	color: var(--color-primary);
+	font-size: 0.35rem;
+	margin-bottom: 0.53rem;
+}
+.solution_advantage .list .item .text{
+	color: #333333;
+	font-size: 0.25rem;
+	line-height: 0.53rem;
+}
 .list .content .content_left {
 	color: var(--color-primary);
 	font-size: 0.857143rem;
@@ -507,7 +536,13 @@
 		text-align: justify;
 		line-height: 1.6rem;
 	}
-
+	.plan .content .content_left .content_left_changjing{
+		width: 100%;
+		color: rgba(46, 46, 46, 1);
+		font-size: 0.87rem;
+		text-align: justify;
+		line-height: 1.6rem;
+	}
 	.plan .content .content_right img {
 		margin-top: 1rem;
 		width: 23rem;
@@ -618,7 +653,6 @@
 	.substance_list .item {
 		width: 100%;
 		height: 6.67rem;
-		display: flex;
 		align-items: center;
 		margin: 0 0 0.67rem 0;
 		background: #FAFAFA;
