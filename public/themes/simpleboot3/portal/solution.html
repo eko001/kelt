@@ -38,16 +38,15 @@
                         $index = 1;
                     </php>
                     <notempty name="$subCategoryIds">
-                        <portal:articles item="vo" where="$where" order="post.create_time DESC" page="1"
-                            relation="categories" categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
+                        <portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories" categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
                             <div class="content">
                                 <div class="content_left">
                                     <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
-									<div class="content_left_changjing">
-										<div>适用场景</div>
-										<div>生产制造型企业</div>
-										<div>生产制造型企业</div>
-									</div>
+                                    <div class="content_left_changjing">
+                                        <div>适用场景</div>
+                                        <div>生产制造型企业</div>
+                                        <div>生产制造型企业</div>
+                                    </div>
                                 </div>
                                 <div class="content_right">
                                     <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
@@ -71,8 +70,7 @@
                 <div class="inner">
                     <div class="target_list">
                         <notempty name="$subCategoryIds">
-                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
-                                relation="categories" categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
+                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories" categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
                                 <div class="item">
                                     <div class="item_target_item_left">
                                         <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
@@ -100,12 +98,11 @@
                 <div class="inner">
                     <div class="substance_list">
                         <notempty name="$subCategoryIds">
-                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
-                                relation="categories" categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
+                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories" categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
                                 <div class="item">
                                     <!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
                                     <div class="content">{$vo.post_title}</div>
-									<div class="text">{$vo.post_content}</div>
+                                    <div class="text">{$vo.post_content}</div>
                                 </div>
                                 <php>
                                     $index++;
@@ -117,33 +114,40 @@
                 </div>
             </div>
         </notempty>
-        <!-- 我们的优势 -->
-		<notempty name="$subCategories[3]">
-        <div class="solution-advantage-box">
-            <div class="solution_advantage">
-                <div class="title">{$subCategories[3]['name']}</div>
-                <div class="tag">{$subCategories[3]['description']}</div>
-                <div class="inner">
-                    <div class="list">
-						<notempty name="$subCategoryIds">
-						    <portal:articles item="vo" where="$where" order="post.create_time DESC" page="5"
-						        relation="categories" categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
-						        <div class="item">
-						            <div class="content">{$vo.post_title}</div>
-									<div class="text">{$vo.post_content}</div>
-						        </div>
-						        <php>
-						            $index++;
-						        </php>
-						    </portal:articles>
-						
-						</notempty>
-                        
+        <!-- 华劳集团的优势 -->
+        <!-- page="5" 改成了6 -->
+        <notempty name="$subCategories[3]">
+            <div class="solution-advantage-box">
+                <div class="solution_advantage">
+                    <div class="title">{$subCategories[3]['name']}</div>
+                    <div class="tag">{$subCategories[3]['description']}</div>
+                    <div class="inner solution-flex">
+                        <div class="list">
+                            <notempty name="$subCategoryIds">
+                                <portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories" categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
+                                    <div class="item">
+                                        <div class="content">{$vo.post_title}</div>
+                                        <div class="text">{$vo.post_content}</div>
+                                    </div>
+                                    <php>
+                                        $index++;
+                                    </php>
+                                </portal:articles>
+
+                            </notempty>
+
+                        </div>
+
+                        <div class="list2">
+                            <div class="list2_title">注册资金1.1亿元</div>
+                            <div class="list2_title">3000+家客户服务经验</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
- </notempty>
+        </notempty>
+
+
         <!-- 解决方案 -->
         <div class="resolve">
             <div class="inner">
@@ -153,20 +157,17 @@
                     <button>获取定制解决方案</button>
                 </div>
                 <div class="resolve_right">
-                    <div class="resolve_right_item active"
-                        style="background-image: url(__TMPL__/public/assets/style/imgs/solution/1.png);">
+                    <div class="resolve_right_item active" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/1.png);">
                         <div class="resolve_right_content">
                             <div class="text">全流程技术支持</div>
                         </div>
                     </div>
-                    <div class="resolve_right_item"
-                        style="background-image: url(__TMPL__/public/assets/style/imgs/solution/2.png);">
+                    <div class="resolve_right_item" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/2.png);">
                         <div class="resolve_right_content">
                             <div class="text">全方案咨询</div>
                         </div>
                     </div>
-                    <div class="resolve_right_item"
-                        style="background-image: url(__TMPL__/public/assets/style/imgs/solution/3.png);">
+                    <div class="resolve_right_item" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/3.png);">
                         <div class="resolve_right_content">
                             <div class="text">全地域服务</div>
                         </div>
@@ -210,3 +211,19 @@
 </script>
 
 </html>
+<script>
+    // 华劳集团的优势，手机端，最后一个占一行
+    var item = $(".solution-advantage-box .solution_advantage .inner .list > .item").length
+    if (item > 0 && (item % 2) != 0) {
+        $(".solution-advantage-box .solution_advantage .inner .list .item:last").css({ 'flex': '1' })
+    }
+
+
+
+    // 华劳集团的优势，右边黄色块
+    $(".solution-advantage-box .solution_advantage .inner .list .item .text").each(function () {
+        if ($(this).text().length == 0) {
+            // console.log($(this).prev().text())
+        }
+    });
+</script>
