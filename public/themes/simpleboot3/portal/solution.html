@@ -1,248 +1,271 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <include file="public@head" />
-</head>
+	<head>
+		<include file="public@head" />
+	</head>
 
-<body>
-    <div id="solution" class="solution">
-        <!-- 头部图片 -->
-        <div class="banner">
-            <div class="banner-box">
-                <div class="solution_banner_text_one">{$category.name}</div>
-                <div class="solution_banner_text_two">{$category.description}</div>
-            </div>
-        </div>
-        <php>
-            $category_id=$category['id'];
-            $subCategories =\app\portal\service\ApiService::subCategories($category_id);
+	<body>
+		<div id="solution" class="solution">
+			<!-- 头部图片 -->
+			<div class="banner">
+				<div class="banner-box">
+					<div class="solution_banner_text_one">{$category.name}</div>
+					<div class="solution_banner_text_two">{$category.description}</div>
+				</div>
+			</div>
+			<php>
+				$category_id=$category['id'];
+				$subCategories =\app\portal\service\ApiService::subCategories($category_id);
 
-            $subCategoryIds=[];
-            foreach($subCategories as $mCategory){
-            array_push($subCategoryIds,$mCategory['id']);
-            }
+				$subCategoryIds=[];
+				foreach($subCategories as $mCategory){
+				array_push($subCategoryIds,$mCategory['id']);
+				}
 
-            $firstid = $subCategoryIds[0];
-            $subForFirst = \app\portal\service\ApiService::subCategories($firstid);
-            if($subForFirst && count($subForFirst)>0){
-            $firstChildId = $subForFirst[0]['id'];
-            }
+				$firstid = $subCategoryIds[0];
+				$subForFirst = \app\portal\service\ApiService::subCategories($firstid);
+				if($subForFirst && count($subForFirst)>0){
+				$firstChildId = $subForFirst[0]['id'];
+				}
 
-            $where =function ($query){
-            $query->where('post.create_time','>=',0);
-            };
+				$where =function ($query){
+				$query->where('post.create_time','>=',0);
+				};
 
-        </php>
-        <!-- 方案定位 -->
-        <notempty name="$subCategories[0]">
-            <div class="plan">
-                <div class="title">{$subCategories[0]['name']}</div>
-                <div class="tag">{$subCategories[0]['description']}</div>
-                <div class="inner">
-                    <php>
-                        $index = 1;
-                    </php>
-                    <notempty name="$subCategoryIds">
-                        <portal:articles item="vo" where="$where" order="post.create_time DESC" page="1" relation="categories" categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
-                            <div class="content">
-                                <div class="content_left">
-                                    <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
-                                    <div class="content_left_changjing">
-                                        <div>适用场景</div>
-                                        <notempty name="$firstChildId">
-                                            <portal:articles item="v" order="post.create_time DESC" page="3" categoryIds="$firstChildId" returnVarName="articles_data">
-                                                <div>{$v.post_title}</div>
-                                            </portal:articles>
-                                        </notempty>
-                                    </div>
-                                </div>
-                                <div class="content_right">
-                                    <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-                                </div>
-                            </div>
-                            <php>
-                                $index++;
-                            </php>
-                        </portal:articles>
+			</php>
+			<!-- 方案定位 -->
+			<notempty name="$subCategories[0]">
+				<div class="plan">
+					<div class="title">{$subCategories[0]['name']}</div>
+					<div class="tag">{$subCategories[0]['description']}</div>
+					<div class="inner">
+						<php>
+							$index = 1;
+						</php>
+						<notempty name="$subCategoryIds">
+							<portal:articles item="vo" where="$where" order="post.create_time DESC" page="1"
+								relation="categories" categoryIds="$subCategoryIds[0]" returnVarName="articles_data">
+								<div class="content">
+									<div class="content_left">
+										<div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
+										<div class="content_left_changjing">
+											<div>适用场景</div>
+											<notempty name="$firstChildId">
+												<portal:articles item="v" order="post.create_time DESC" page="3"
+													categoryIds="$firstChildId" returnVarName="articles_data">
+													<div>{$v.post_content}</div>
+												</portal:articles>
+											</notempty>
+										</div>
+									</div>
+									<div class="content_right">
+										<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+									</div>
+								</div>
+								<php>
+									$index++;
+								</php>
+							</portal:articles>
 
-                    </notempty>
+						</notempty>
 
-                </div>
-            </div>
-        </notempty>
-        <notempty name="$subCategories[1]">
-            <!-- 服务目标 -->
-            <div class="target">
-                <div class="title">{$subCategories[1]['name']}</div>
-                <div class="tag">{$subCategories[1]['description']}</div>
-                <div class="inner">
-                    <div class="target_list">
-                        <notempty name="$subCategoryIds">
-                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories" categoryIds="$subCategoryIds[1]" returnVarName="articles_data">
-                                <div class="item">
-                                    <div class="item_target_item_left">
-                                        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-                                    </div>
-                                    <div class="content">
-                                        <div class="content_top">{$vo.post_title}</div>
-                                        <div class="content_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
-                                    </div>
-                                </div>
-                                <php>
-                                    $index++;
-                                </php>
-                            </portal:articles>
+					</div>
+				</div>
+			</notempty>
+			<notempty name="$subCategories[1]">
+				<!-- 服务目标 -->
+				<div class="target">
+					<div class="title">{$subCategories[1]['name']}</div>
+					<div class="tag">{$subCategories[1]['description']}</div>
+					<div class="inner">
+						<div class="target_list">
+							<notempty name="$subCategoryIds">
+								<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+									relation="categories" categoryIds="$subCategoryIds[1]"
+									returnVarName="articles_data">
+									<div class="item">
+										<div class="item_target_item_left">
+											<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+										</div>
+										<div class="content">
+											<div class="content_top">{$vo.post_title}</div>
+											<div class="content_des">{$vo.post_content|mb_substr=0,80,'utf-8'}</div>
+										</div>
+									</div>
+									<php>
+										$index++;
+									</php>
+								</portal:articles>
 
-                        </notempty>
-                    </div>
-                </div>
-            </div>
-        </notempty>
-        <notempty name="$subCategories[2]">
-            <!-- 服务内容 -->
-            <div class="substance">
-                <div class="title">{$subCategories[2]['name']}</div>
-                <div class="tag">{$subCategories[2]['description']}</div>
-                <div class="inner">
-                    <div class="substance_list">
-                        <notempty name="$subCategoryIds">
-                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="4" relation="categories" categoryIds="$subCategoryIds[2]" returnVarName="articles_data">
-                                <div class="item">
-                                    <!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
-                                    <div class="content">{$vo.post_title}</div>
-                                    <div class="text">{$vo.post_content}</div>
-                                </div>
-                                <php>
-                                    $index++;
-                                </php>
-                            </portal:articles>
+							</notempty>
+						</div>
+					</div>
+				</div>
+			</notempty>
+			<notempty name="$subCategories[2]">
+				<!-- 服务内容 -->
+				<div class="substance">
+					<div class="title">{$subCategories[2]['name']}</div>
+					<div class="tag">{$subCategories[2]['description']}</div>
+					<div class="inner">
+						<div class="substance_list">
+							<notempty name="$subCategoryIds">
+								<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+									relation="categories" categoryIds="$subCategoryIds[2]"
+									returnVarName="articles_data">
+									<div class="item">
+										<!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
+										<div class="content">{$vo.post_title}</div>
+										<div class="text">{$vo.post_content}</div>
+									</div>
+									<php>
+										$index++;
+									</php>
+								</portal:articles>
 
-                        </notempty>
-                    </div>
-                </div>
-            </div>
-        </notempty>
-        <!-- 华劳集团的优势 -->
-        <!-- page="5" 改成了6 -->
-        <notempty name="$subCategories[3]">
-            <div class="solution-advantage-box">
-                <div class="solution_advantage">
-                    <div class="title">{$subCategories[3]['name']}</div>
-                    <div class="tag">{$subCategories[3]['description']}</div>
-                    <div class="inner solution-flex">
-                        <div class="list">
-                            <notempty name="$subCategoryIds">
-                                <portal:articles item="vo" where="$where" order="post.create_time DESC" page="6" relation="categories" categoryIds="$subCategoryIds[3]" returnVarName="articles_data">
-                                    <div class="item">
-                                        <div class="content">{$vo.post_title}</div>
-                                        <div class="text">{$vo.post_content}</div>
-                                    </div>
-                                    <php>
-                                        $index++;
-                                    </php>
-                                </portal:articles>
+							</notempty>
+						</div>
+					</div>
+				</div>
+			</notempty>
+			<!-- 华劳集团的优势 -->
+			<!-- page="5" 改成了6 -->
+			<notempty name="$subCategories[3]">
+				<div class="solution-advantage-box">
+					<div class="solution_advantage">
+						<div class="title">{$subCategories[3]['name']}</div>
+						<div class="tag">{$subCategories[3]['description']}</div>
+						<div class="inner solution-flex">
+							<div class="list">
+								<notempty name="$subCategoryIds">
+									<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6"
+										relation="categories" categoryIds="$subCategoryIds[3]"
+										returnVarName="articles_data">
+										<div class="item">
+											<div class="content">{$vo.post_title}</div>
+											<div class="text">{$vo.post_content}</div>
+										</div>
+										<php>
+											$index++;
+										</php>
+									</portal:articles>
 
-                            </notempty>
+								</notempty>
 
-                        </div>
+							</div>
 
-                        <div class="list2">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </notempty>
-
-
-        <!-- 解决方案 -->
-        <div class="resolve">
-            <div class="inner">
-                <div class="resolve_left">
-                    <div class="resolve_left_title">{$category.name}</div>
-                    <div class="resolve_left_tag">高效便捷的服务，快速推进合作实施</div>
-                    <button>获取定制解决方案</button>
-                </div>
-                <div class="resolve_right">
-                    <div class="resolve_right_item active" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/1.png);">
-                        <div class="resolve_right_content">
-                            <div class="text">全流程技术支持</div>
-                        </div>
-                    </div>
-                    <div class="resolve_right_item" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/2.png);">
-                        <div class="resolve_right_content">
-                            <div class="text">全方案咨询</div>
-                        </div>
-                    </div>
-                    <div class="resolve_right_item" style="background-image: url(__TMPL__/public/assets/style/imgs/solution/3.png);">
-                        <div class="resolve_right_content">
-                            <div class="text">全地域服务</div>
-                        </div>
-                    </div>
-                </div>
-                <button class="resolve_btn"><a href="{:cmf_url('portal/Form/index')}">获取定制解决方案</a></button>
-            </div>
-        </div>
-        <!-- 客户信赖 -->
-        <div class="index-customer">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>1600+家企业的信赖</p>
-                </div>
-                <div class="inner-small-title text-center">深耕人力资源服务业，为企业提供更优质的服务</div>
-                <include file="public@customers" />
-                <div class="more"><a href="{:cmf_url('portal/Customer/index')}">查看所有客户案例</a></div>
-            </div>
-        </div>
-    </div>
+							<div class="list2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</notempty>
 
 
-    <include file="public@footer" />
-</body>
-<script type="text/javascript">
-    $(function () {
-        $(".solution-product-item li").mouseover(function () {
-            $(".solution-product-item li").removeClass("active");
-            $(this).addClass("active");
-        });
-        $(".resolve .resolve_right .resolve_right_item").mouseover(function () {
-            $(".resolve .resolve_right .resolve_right_item").removeClass('active');
-            $(this).addClass("active");
-        });
-        $(".resolve .resolve_right .resolve_right_item").mouseout(function () {
-            $(".resolve .resolve_right .resolve_right_item").removeClass('active');
-            $(".resolve .resolve_right .resolve_right_item").eq(0).addClass("active");
-        });
+			<!-- 解决方案 -->
+			<div class="resolve">
+				<div class="inner">
+					<div class="resolve_left">
+						<div class="resolve_left_title">{$category.name}</div>
+						<div class="resolve_left_tag">高效便捷的服务，快速推进合作实施</div>
+						<button>获取定制解决方案</button>
+					</div>
+					<div class="resolve_right">
+						<div class="resolve_right_item active"
+							style="background-image: url(__TMPL__/public/assets/style/imgs/solution/1.png);">
+							<div class="resolve_right_content">
+								<div class="text">全流程技术支持</div>
+							</div>
+						</div>
+						<div class="resolve_right_item"
+							style="background-image: url(__TMPL__/public/assets/style/imgs/solution/2.png);">
+							<div class="resolve_right_content">
+								<div class="text">全方案咨询</div>
+							</div>
+						</div>
+						<div class="resolve_right_item"
+							style="background-image: url(__TMPL__/public/assets/style/imgs/solution/3.png);">
+							<div class="resolve_right_content">
+								<div class="text">全地域服务</div>
+							</div>
+						</div>
+					</div>
+					<button class="resolve_btn"><a href="{:cmf_url('portal/Form/index')}">获取定制解决方案</a></button>
+				</div>
+			</div>
+			<!-- 客户信赖 -->
+			<div class="index-customer">
+				<div class="inner">
+					<div class="inner-bigger-title text-center">
+						<p>1600+家企业的信赖</p>
+					</div>
+					<div class="inner-small-title text-center">深耕人力资源服务业，为企业提供更优质的服务</div>
+					<include file="public@customers" />
+					<div class="more"><a href="{:cmf_url('portal/Customer/index')}">查看所有客户案例</a></div>
+				</div>
+			</div>
+		</div>
 
-    })
-</script>
+
+		<include file="public@footer" />
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$(".solution-product-item li").mouseover(function() {
+				$(".solution-product-item li").removeClass("active");
+				$(this).addClass("active");
+			});
+			$(".resolve .resolve_right .resolve_right_item").mouseover(function() {
+				$(".resolve .resolve_right .resolve_right_item").removeClass('active');
+				$(this).addClass("active");
+			});
+			$(".resolve .resolve_right .resolve_right_item").mouseout(function() {
+				$(".resolve .resolve_right .resolve_right_item").removeClass('active');
+				$(".resolve .resolve_right .resolve_right_item").eq(0).addClass("active");
+			});
+
+		})
+	</script>
 
 </html>
 <script>
-    // 华劳集团的优势，手机端，最后一个占一行
-    var item = $(".solution-advantage-box .solution_advantage .inner .list > .item").length
-    if (item > 0 && (item % 2) != 0) {
-        $(".solution-advantage-box .solution_advantage .inner .list .item:last").css({ 'flex': '1' })
-    }
+	// 华劳集团的优势，手机端，最后一个占一行
+	var item = $(".solution-advantage-box .solution_advantage .inner .list > .item").length
+	if (item > 0 && (item % 2) != 0) {
+		$(".solution-advantage-box .solution_advantage .inner .list .item:last").css({
+			'flex': '1'
+		})
+	}
 
 
 
-    // 华劳集团的优势，右边黄色块
-    $(".solution-advantage-box .solution_advantage .inner .list .item .text").each(function () {
-        if ($(this).text().length == 0) {
-            console.log($(this).prev().text())
-            $(".solution-advantage-box .solution_advantage .inner .list2").css({ 'display': 'flex' })
-            $(".solution-advantage-box .solution_advantage .inner .list2").append("<div class='list2_title'>" + $(this).prev().text() + "</div>")
-            $(this).prev().remove()
+	// 华劳集团的优势，右边黄色块
+	$(".solution-advantage-box .solution_advantage .inner .list .item .text").each(function() {
+		if ($(this).text().length == 0) {
+			console.log($(this).prev().text())
+			$(".solution-advantage-box .solution_advantage .inner .list2").css({
+				'display': 'flex'
+			})
+			$(".solution-advantage-box .solution_advantage .inner .list2").append("<div class='list2_title'>" + $(
+				this).prev().text() + "</div>")
+			$(this).prev().remove()
 
-            $(function () {
-                if (screen.width < 425) {
-                    $(".solution-advantage-box .solution_advantage .inner .list").css({ 'justify-content': 'space-between' })
-                } else if (screen.width > 425) {
-                    $(".solution-advantage-box .solution_advantage .inner .list .item").css({ 'width': '8rem', 'margin-right': '0.3rem' })
-                    $(".solution-advantage-box .solution_advantage .inner .list").css({ 'justify-content': 'flex-start' })
-                }
-            })
-        }
-    });
+			$(function() {
+				if (screen.width < 425) {
+					$(".solution-advantage-box .solution_advantage .inner .list").css({
+						'justify-content': 'space-between'
+					})
+				} else if (screen.width > 425) {
+					$(".solution-advantage-box .solution_advantage .inner .list .item").css({
+						'width': '8rem',
+						'margin-right': '0.3rem'
+					})
+					$(".solution-advantage-box .solution_advantage .inner .list").css({
+						'justify-content': 'flex-start'
+					})
+				}
+			})
+		}
+	});
 </script>
