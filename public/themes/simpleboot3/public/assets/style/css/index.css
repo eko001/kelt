@@ -374,7 +374,7 @@ body {
 .index-solution .index-solution-box .index-solution-box-right .flex-box div {
     width: calc(33.33% - 0.17rem);
     height: 1.78rem;
-    border: solid 1px var(--color-primary);
+    /* border: solid 1px var(--color-primary); */
     margin-top: 0.35rem;
     background: #FFFFFF;
 }
