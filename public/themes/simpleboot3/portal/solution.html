@@ -23,6 +23,12 @@
             array_push($subCategoryIds,$mCategory['id']);
             }
 
+            $firstid = $subCategoryIds[0];
+            $subForFirst = \app\portal\service\ApiService::subCategories($firstid);
+            if($subForFirst && count($subForFirst)>0){
+                $firstChildId = $subForFirst[0]['id'];
+            }
+
             $where =function ($query){
             $query->where('post.create_time','>=',0);
             };
@@ -44,8 +50,11 @@
                                     <div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
                                     <div class="content_left_changjing">
                                         <div>适用场景</div>
-                                        <div>生产制造型企业</div>
-                                        <div>生产制造型企业</div>
+                                        <notempty name="$firstChildId">
+                                        <portal:articles item="v" order="post.create_time DESC" page="3"  categoryIds="$firstChildId" returnVarName="articles_data">
+                                        <div>{$v.post_title}</div>
+                                        </portal:articles>
+                                        </notempty>
                                     </div>
                                 </div>
                                 <div class="content_right">
