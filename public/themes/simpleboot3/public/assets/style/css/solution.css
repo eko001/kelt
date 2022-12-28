@@ -249,6 +249,7 @@
 
 .solution-advantage-box .solution_advantage .solution-flex {
     display: flex;
+    align-items: center;
 }
 
 .solution-advantage-box .solution_advantage .solution-flex .list {
@@ -318,6 +319,7 @@
 .solution_advantage .list .item .content {
     color: var(--color-primary);
     font-size: 0.35rem;
+    font-weight: 800;
     margin-bottom: 0.53rem;
 }
 
