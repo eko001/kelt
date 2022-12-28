@@ -528,13 +528,15 @@ a:visited {
 }
 
 .footer .foot-top .foot-top-left {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
 }
-
+.footer .foot-top .foot-top-left .item{
+	max-width: 6.42rem;
+}
 .footer .foot-top .foot-top-left .item:not(:last-child) {
-    margin-right: 1.78rem;
+	/*margin-right: 1rem;*/
 }
 
 .footer .foot-top .foot-top-left .item .title {

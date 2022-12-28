@@ -11,7 +11,7 @@
 			<div class="banner">
 				<div class="banner-box">
 					<div class="solution_banner_text_one">{$category.name}</div>
-					<div class="solution_banner_text_two">{$category.description}</div>
+					<!-- <div class="solution_banner_text_two">{$category.description}</div> -->
 				</div>
 			</div>
 			<php>
@@ -22,7 +22,13 @@
 				foreach($subCategories as $mCategory){
 				array_push($subCategoryIds,$mCategory['id']);
 				}
-
+				$num = count($subCategoryIds);
+				$nums = "true";
+				if($num>3){
+					$nums = "true";
+				}else{
+					$nums = "";
+				}
 				$firstid = $subCategoryIds[0];
 				$subForFirst = \app\portal\service\ApiService::subCategories($firstid);
 				if($subForFirst && count($subForFirst)>0){
@@ -49,15 +55,17 @@
 								<div class="content">
 									<div class="content_left">
 										<div class="content_left_text">{$vo.post_content|mb_substr=0,800,'utf-8'}</div>
+										
+										<notempty name="$firstChildId">
 										<div class="content_left_changjing">
 											<div>适用场景</div>
-											<notempty name="$firstChildId">
-												<portal:articles item="v" order="post.create_time DESC" page="3"
+												<portal:articles item="v" order="post.published_time ASC" page="3"
 													categoryIds="$firstChildId" returnVarName="articles_data">
 													<div>{$v.post_content}</div>
 												</portal:articles>
-											</notempty>
+											
 										</div>
+										</notempty>
 									</div>
 									<div class="content_right">
 										<img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
@@ -81,7 +89,7 @@
 					<div class="inner">
 						<div class="target_list">
 							<notempty name="$subCategoryIds">
-								<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
+								<portal:articles item="vo" where="$where" order="post.published_time ASC" page="4"
 									relation="categories" categoryIds="$subCategoryIds[1]"
 									returnVarName="articles_data">
 									<div class="item">
@@ -103,46 +111,20 @@
 					</div>
 				</div>
 			</notempty>
-			<notempty name="$subCategories[2]">
-				<!-- 服务内容 -->
-				<div class="substance">
-					<div class="title">{$subCategories[2]['name']}</div>
-					<div class="tag">{$subCategories[2]['description']}</div>
-					<div class="inner">
-						<div class="substance_list">
-							<notempty name="$subCategoryIds">
-								<portal:articles item="vo" where="$where" order="post.create_time DESC" page="4"
-									relation="categories" categoryIds="$subCategoryIds[2]"
-									returnVarName="articles_data">
-									<div class="item">
-										<!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
-										<div class="content">{$vo.post_title}</div>
-										<div class="text">{$vo.post_content}</div>
-									</div>
-									<php>
-										$index++;
-									</php>
-								</portal:articles>
-
-							</notempty>
-						</div>
-					</div>
-				</div>
-			</notempty>
-			<!-- 华劳集团的优势 -->
-			<!-- page="5" 改成了6 -->
-			<notempty name="$subCategories[3]">
-				<div class="solution-advantage-box">
-					<div class="solution_advantage">
-						<div class="title">{$subCategories[3]['name']}</div>
-						<div class="tag">{$subCategories[3]['description']}</div>
-						<div class="inner solution-flex">
-							<div class="list">
+			<if condition="$num gt 3">
+				<notempty name="$subCategories[2]">
+					<!-- 服务内容 -->
+					<div class="substance">
+						<div class="title">{$subCategories[2]['name']}</div>
+						<div class="tag">{$subCategories[2]['description']}</div>
+						<div class="inner">
+							<div class="substance_list">
 								<notempty name="$subCategoryIds">
-									<portal:articles item="vo" where="$where" order="post.create_time DESC" page="6"
-										relation="categories" categoryIds="$subCategoryIds[3]"
+									<portal:articles item="vo" where="$where" order="post.published_time ASC" page="4"
+										relation="categories" categoryIds="$subCategoryIds[2]"
 										returnVarName="articles_data">
 										<div class="item">
+											<!-- <img src="{:cmf_get_image_url($vo.thumbnail)}" alt=""> -->
 											<div class="content">{$vo.post_title}</div>
 											<div class="text">{$vo.post_content}</div>
 										</div>
@@ -150,19 +132,76 @@
 											$index++;
 										</php>
 									</portal:articles>
-
+				
 								</notempty>
-
-							</div>
-
-							<div class="list2">
 							</div>
 						</div>
 					</div>
-				</div>
-			</notempty>
-
-
+				</notempty>
+				<notempty name="$subCategories[3]">
+					<div class="solution-advantage-box">
+						<div class="solution_advantage">
+							<div class="title">{$subCategories[3]['name']}</div>
+							<div class="tag">{$subCategories[3]['description']}</div>
+							<div class="inner solution-flex">
+								<div class="list">
+									<notempty name="$subCategoryIds">
+										<portal:articles item="vo" where="$where" order="post.published_time ASC" page="6"
+											relation="categories" categoryIds="$subCategoryIds[3]"
+											returnVarName="articles_data">
+											<div class="item">
+												<div class="content">{$vo.post_title}</div>
+												<div class="text">{$vo.post_content}</div>
+											</div>
+											<php>
+												$index++;
+											</php>
+										</portal:articles>
+				
+									</notempty>
+				
+								</div>
+				
+								<div class="list2">
+								</div>
+							</div>
+						</div>
+					</div>
+				</notempty>
+				<else/>
+				<notempty name="$subCategories[2]">
+					<div class="solution-advantage-box">
+						<div class="solution_advantage">
+							<div class="title">{$subCategories[2]['name']}</div>
+							<div class="tag">{$subCategories[2]['description']}</div>
+							<div class="inner solution-flex">
+								<div class="list">
+									<notempty name="$subCategoryIds">
+										<portal:articles item="vo" where="$where" order="post.published_time ASC" page="6"
+											relation="categories" categoryIds="$subCategoryIds[2]"
+											returnVarName="articles_data">
+											<div class="item">
+												<div class="content">{$vo.post_title}</div>
+												<div class="text">{$vo.post_content}</div>
+											</div>
+											<php>
+												$index++;
+											</php>
+										</portal:articles>
+				
+									</notempty>
+				
+								</div>
+				
+								<div class="list2">
+								</div>
+							</div>
+						</div>
+					</div>
+				</notempty>
+			</if>
+			
+			
 			<!-- 解决方案 -->
 			<div class="resolve">
 				<div class="inner">
