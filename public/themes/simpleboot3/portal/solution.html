@@ -139,8 +139,6 @@
                         </div>
 
                         <div class="list2">
-                            <div class="list2_title">注册资金1.1亿元</div>
-                            <div class="list2_title">3000+家客户服务经验</div>
                         </div>
                     </div>
                 </div>
@@ -223,7 +221,10 @@
     // 华劳集团的优势，右边黄色块
     $(".solution-advantage-box .solution_advantage .inner .list .item .text").each(function () {
         if ($(this).text().length == 0) {
-            // console.log($(this).prev().text())
+            console.log($(this).prev().text())
+            $(".solution-advantage-box .solution_advantage .inner .list2").css({ 'display': 'flex' })
+            $(".solution-advantage-box .solution_advantage .inner .list2").append("<div class='list2_title'>" + $(this).prev().text() + "</div>")
+            $(this).prev().remove()
         }
     });
 </script>
