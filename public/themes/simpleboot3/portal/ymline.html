@@ -1,0 +1,541 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>网校系统,在线视频教育系统 - 上海真略</title>
+    <link href="static/css/bootstrap_ykt.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/course.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function nTabs(thisObj, Num) {
+            if (thisObj.className == "active") return;
+            var tabObj = thisObj.parentNode.id;
+            var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+            for (i = 0; i < tabList.length; i++) {
+                if (i == Num) {
+                    thisObj.className = "active";
+                    document.getElementById(tabObj + "_content" + i).style.display = "block";
+                } else {
+                    tabList[i].className = "normal";
+                    document.getElementById(tabObj + "_content" + i).style.display = "none";
+                }
+            }
+        }
+        $(function () {
+            $('.nav > li').click(function () {
+                $(".navbar-collapse").removeClass('in')
+            })
+        })
+    </script>
+    <!--[if lt IE 9]>
+ <script src="/templates/main/js/html5shiv.min.js"></script>
+ <script src="/templates/main/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="psfxd fixed">
+        <div class="container">
+            <nav class="navbar navbar-default header_inner">
+                <a>
+                    <img src="static/picture/logo_ykt.png" class="logo"></a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#teaching">教学</a></li>
+                        <li><a href="#mrketing">营销</a></li>
+                        <li><a href="#manage">管理</a></li>
+                        <li><a href="#app">APP</a></li>
+                        <li><a href="#case">成功案例</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                        <li><a href="index.html" target="_blank"><b style="color:#00ce92">返回官网</b></a></li>
+                    </ul>
+                    <div class="pull-right">
+                        <div class="tel pull-right">
+                            <span class="padding-no">400-804-1114</span>
+                        </div>
+                        <div class="pull-right mrl">
+                            <a class="btn btn-primary" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="fixline"></div>
+    <div class="banner_xt">
+        <div class="container text-center">
+            <div class="col-md-5 banner_txt wow bounceIn">
+                <img src="static/picture/banner_txt.png">
+                <a class="btn btn-default wow rubberBand" href="javascript:;" target="_blank" rel="nofollow">立即咨询</a>
+            </div>
+        </div>
+    </div>
+    <div class="cour_tit wow fadeInDown" id="teaching">
+        <h3>超过12种教学手段，打造<em>互动式课堂</em></h3>
+        <p>让教育机构按需打造个性化的教学模式</p>
+    </div>
+    <div class="teach_devices container">
+        <ul class="wow pulse">
+            <li class="col-md-6">
+                <img src="static/picture/td1.png">
+                <div class="txt">
+                    <h3>直播课</h3>
+                    <p class="line"></p>
+                    <p class="nr">小班课、公开课、私教课多种场景，视频、文档、屏幕共享、白板等多种工具。</p>
+                </div>
+            </li>
+            <li class="col-md-6">
+                <img src="static/picture/td2.png">
+                <div class="txt">
+                    <h3>录播课</h3>
+                    <p class="line"></p>
+                    <p class="nr">视频弹题、倍速播放、10秒回看、动态转码压缩、移动端缓存，视频教学流畅。</p>
+                </div>
+            </li>
+            <li class="col-md-6">
+                <img src="static/picture/td3.png">
+                <div class="txt">
+                    <h3>预约课</h3>
+                    <p class="line"></p>
+                    <p class="nr">一对一在线直播预约，线下课程预约，网校灵活排课，学员一键预约。</p>
+                </div>
+            </li>
+            <li class="col-md-6">
+                <img src="static/picture/td4.png">
+                <div class="txt">
+                    <h3>音频文档</h3>
+                    <p class="line"></p>
+                    <p class="nr">音频、文档、PPT、考试、作业，可扩展的教学活动满足不同场景教学需求。</p>
+                </div>
+            </li>
+        </ul>
+        <div class="text-center"><a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success wow rubberBand">立即咨询</a></div>
+    </div>
+    <div class="easy_operate">
+        <div class="container">
+            <div class="easy_convt col-md-6">
+                <div class="wow fadeInLeftBig">
+                    <h3>操作轻松，使用便捷</h3>
+                    <p>数据化网校管理后台，清晰把控运营状况</p>
+                    <p>可视化图表结合面板式管理后台，让网校的管理轻松高效</p>
+                </div>
+                <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success wow rubberBand">立即咨询</a>
+                <a class="btn btn-primary com wow rubberBand" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+            </div>
+            <div class="manage col-md-6 wow fadeInRightBig">
+                <ul class="col-md-6">
+                    <li class="bod1">
+                        <img src="static/picture/opera1.png">
+                        <h3>课程管理</h3>
+                        <p>课程发布<br>
+                            课程审核<br>
+                            课程推荐</p>
+                    </li>
+                    <li class="bod2">
+                        <img src="static/picture/opera2.png">
+                        <h3>学员管理</h3>
+                        <p>学习时长<br>
+                            学习频次<br>
+                            学习兴趣</p>
+                    </li>
+                </ul>
+                <ul class="col-md-6">
+                    <li class="bod3">
+                        <img src="static/picture/opera3.png">
+                        <h3>教师管理</h3>
+                        <p>课程数<br>
+                            学员数<br>
+                            课程评价</p>
+                    </li>
+                    <li class="bod4">
+                        <img src="static/picture/opera4.png">
+                        <h3>财务管理</h3>
+                        <p>订单管理<br>
+                            财务报表<br>
+                            虚拟币管理</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cour_tit wow fadeInDown" id="mrketing">
+        <h3><em>满足</em>在线教育<em>五大诉求</em>，教学运营全景掌控</h3>
+        <p>满足培训机构网上教学和招生的全部需求</p>
+    </div>
+    <div class="container wow pulse">
+        <ul id="appeal_num">
+            <li class="active item" onclick="nTabs(this,0);">
+                <div class="pic t1"></div>
+                <p>教师授课</p>
+            </li>
+            <li class="normal item" onclick="nTabs(this,1);">
+                <div class="pic t2"></div>
+                <p>学员学习</p>
+            </li>
+            <li class="normal item" onclick="nTabs(this,2);">
+                <div class="pic t3"></div>
+                <p>考试测评</p>
+            </li>
+            <li class="normal item" onclick="nTabs(this,3);">
+                <div class="pic t4"></div>
+                <p>互动讨论</p>
+            </li>
+            <li class="normal item" onclick="nTabs(this,4);">
+                <div class="pic t5"></div>
+                <p>推广营销</p>
+            </li>
+        </ul>
+    </div>
+    <div id="appeal_num_content0" class="sq_contair">
+        <div class="container">
+            <div class="col-md-4 new-pointer wow fadeInLeftBig">
+                <ul>
+                    <li>
+                        <img src="static/picture/sq_ico1.png">直播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico2.png">作业练习</li>
+                    <li>
+                        <img src="static/picture/sq_ico3.png">录播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico4.png">课堂笔记</li>
+                    <li>
+                        <img src="static/picture/sq_ico5.png">约排课</li>
+                    <li>
+                        <img src="static/picture/sq_ico6.png">互动答疑</li>
+                </ul>
+            </div>
+            <div class="col-md-8 new-pic wow fadeInRightBig">
+                <img src="static/picture/new-jssk-pic.png">
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success wow rubberBand">立即咨询</a>
+            <a class="btn btn-primary com wow rubberBand" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+        </div>
+    </div>
+    <div id="appeal_num_content1" class="sq_contair none">
+        <div class="container">
+            <div class="col-md-4 new-pointer">
+                <ul>
+                    <li>
+                        <img src="static/picture/sq_ico1.png">直播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico2.png">作业练习</li>
+                    <li>
+                        <img src="static/picture/sq_ico3.png">录播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico4.png">课堂笔记</li>
+                    <li>
+                        <img src="static/picture/sq_ico5.png">约排课</li>
+                    <li>
+                        <img src="static/picture/sq_ico6.png">互动答疑</li>
+                </ul>
+            </div>
+            <div class="col-md-8 new-pic">
+                <img src="static/picture/new-jssk-pic.png">
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success">立即咨询</a>
+            <a class="btn btn-primary com" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+        </div>
+    </div>
+    <div id="appeal_num_content2" class="sq_contair none">
+        <div class="container">
+            <div class="col-md-4 new-pointer">
+                <ul>
+                    <li>
+                        <img src="static/picture/sq_ico1.png">直播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico2.png">作业练习</li>
+                    <li>
+                        <img src="static/picture/sq_ico3.png">录播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico4.png">课堂笔记</li>
+                    <li>
+                        <img src="static/picture/sq_ico5.png">约排课</li>
+                    <li>
+                        <img src="static/picture/sq_ico6.png">互动答疑</li>
+                </ul>
+            </div>
+            <div class="col-md-8 new-pic">
+                <img src="static/picture/new-jssk-pic.png">
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success">立即咨询</a>
+            <a class="btn btn-primary com" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+        </div>
+    </div>
+    <div id="appeal_num_content3" class="sq_contair none">
+        <div class="container">
+            <div class="col-md-4 new-pointer">
+                <ul>
+                    <li>
+                        <img src="static/picture/sq_ico1.png">直播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico2.png">作业练习</li>
+                    <li>
+                        <img src="static/picture/sq_ico3.png">录播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico4.png">课堂笔记</li>
+                    <li>
+                        <img src="static/picture/sq_ico5.png">约排课</li>
+                    <li>
+                        <img src="static/picture/sq_ico6.png">互动答疑</li>
+                </ul>
+            </div>
+            <div class="col-md-8 new-pic">
+                <img src="static/picture/new-jssk-pic.png">
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success">立即咨询</a>
+            <a class="btn btn-primary com" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+        </div>
+    </div>
+    <div id="appeal_num_content4" class="sq_contair none">
+        <div class="container">
+            <div class="col-md-4 new-pointer">
+                <ul>
+                    <li>
+                        <img src="static/picture/sq_ico1.png">直播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico2.png">作业练习</li>
+                    <li>
+                        <img src="static/picture/sq_ico3.png">录播课</li>
+                    <li>
+                        <img src="static/picture/sq_ico4.png">课堂笔记</li>
+                    <li>
+                        <img src="static/picture/sq_ico5.png">约排课</li>
+                    <li>
+                        <img src="static/picture/sq_ico6.png">互动答疑</li>
+                </ul>
+            </div>
+            <div class="col-md-8 new-pic">
+                <img src="static/picture/new-jssk-pic.png">
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success">立即咨询</a>
+            <a class="btn btn-primary com" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+        </div>
+    </div>
+    <div class="cour_tit wow fadeInDown" id="manage">
+        <h3>多项<em>安全专利技术</em>，让网校安心教学</h3>
+        <p>专业 · 易用 · 安全</p>
+    </div>
+    <div class="container wow pulse">
+        <ul class="multpl_patents">
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_1.png" class="num">
+                    <div class="inf">
+                        <p class="en">Multi-terminal support</p>
+                        <h3>多终端支持</h3>
+                        <h4>支持iPad、PC、iOS、Android、网页、微信等多终端同步教学服务。</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_2.png" class="num">
+                    <div class="inf">
+                        <p class="en">Cloud Storage Data Security</p>
+                        <h3>云端储存 数据安全</h3>
+                        <h4>历史课堂、微课、问答内容云端存储，方便反复查看；防盗版视频格式，确保数据安全。</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_3.png" class="num">
+                    <div class="inf">
+                        <p class="en">Live Classroom 0 Delay</p>
+                        <h3>直播课堂0延迟</h3>
+                        <h4>不卡顿0延迟，为机构打造真正在线互动直播教学。</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_4.png" class="num">
+                    <div class="inf">
+                        <p class="en">Easy to use and fluent interaction</p>
+                        <h3>简单易用 交互流畅</h3>
+                        <h4>拍照+板书+语音互动<br>
+                            声音清晰，板书流畅<br>
+                            高效便捷，节省时间</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_5.png" class="num">
+                    <div class="inf">
+                        <p class="en">modern techniques</p>
+                        <h3>技术先进</h3>
+                        <h4>具备经验丰富的技术团队，用户体验至上，专为教育机构打造。</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="main">
+                    <p class="square"></p>
+                    <img src="static/picture/num_6.png" class="num">
+                    <div class="inf">
+                        <p class="en">Fast and Low Cost Construction</p>
+                        <h3>快速低成本搭建</h3>
+                        <h4>快速低成本搭建机构专属的线上教学服务平台，线下+线上提升教学质量。</h4>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="baclf5" id="app">
+        <div class="cour_tit wow fadeInDown">
+            <h3>独立<em>网校APP</em>，把学校装进口袋</h3>
+            <p>配套网校APP，满足学员碎片化学习需求，帮助教育机构抢占移动端市场。</p>
+        </div>
+        <div class="container online_school">
+            <div class="col-md-4 text-center wow fadeInLeftBig">
+                <img src="static/picture/app_mobile.png"></div>
+            <div class="col-md-7 oslist">
+                <ul class="wow fadeInRightBig">
+                    <li class="col-md-6" style="background: url(static/image/ap1.png) no-repeat left top;">
+                        <h3>在线购买</h3>
+                        <p>网校可在线购买，实现移动端教学与招生</p>
+                    </li>
+                    <li class="col-md-6" style="background: url(static/image/ap2.png) no-repeat left top;">
+                        <h3>移动教学</h3>
+                        <p>直播、录播、考试、问答...满足学员碎片化学习需求</p>
+                    </li>
+                    <li class="col-md-6" style="background: url(static/image/ap3.png) no-repeat left top;">
+                        <h3>微信式沟通</h3>
+                        <p>课程群组，支持语音、图片、文字等多种形式沟通</p>
+                    </li>
+                    <li class="col-md-6" style="background: url(static/image/ap4.png) no-repeat left top;">
+                        <h3>智能缓存节流</h3>
+                        <p>一次缓存，反复观看，为学员和网校双向节省流量</p>
+                    </li>
+                </ul>
+                <div>
+                    <a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success wow rubberBand">立即咨询</a>
+                    <a class="btn btn-primary com wow rubberBand" href="javascript:;" target="_blank" rel="nofollow">申请试用</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cour_tit wow fadeInDown" id="case">
+        <h3>适用于<em>不同教育行业</em>，教育机构在线教育的好伙伴</h3>
+        <p>致力于通过技术和服务创新，帮助教育机构成长，推动在线教育行业发展</p>
+    </div>
+    <div class="container">
+        <ul class="good_partner wow pulse">
+            <li class="col-md-3">
+                <img src="static/picture/jyhy1.png"><div class="txt">金融会计</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy2.png"><div class="txt">政府高校</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy3.png"><div class="txt">留学语言</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy4.png"><div class="txt">医学教育</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy5.png"><div class="txt">在线教育</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy6.png"><div class="txt">司法教育</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy7.png"><div class="txt">艺术教育</div>
+            </li>
+            <li class="col-md-3">
+                <img src="static/picture/jyhy8.png"><div class="txt">企业培训</div>
+            </li>
+        </ul>
+    </div>
+    <div class="baclf5">
+        <div class="cour_tit wow fadeInDown">
+            <h3><em>媒体资讯</em></h3>
+            <p>更多资讯及时了解</p>
+        </div>
+        <div class="container">
+            <ul class="media_infor wow pulse">                
+                    
+            </ul>
+        </div>
+    </div>
+    <div class="cour_tit wow fadeInDown">
+        <h3>教育培训龙头企业的选择</h3>
+        <p>配套网校APP，满足学员碎片化学习需求，帮助教育机构抢占移动端市场。</p>
+    </div>
+    <div class="container coop_partner">
+        <ul class="wow pulse">
+            <li><img src="static/picture/hzhb1.png"></li>
+            <li><img src="static/picture/hzhb2.png"></li>
+            <li><img src="static/picture/hzhb3.png"></li>
+            <li><img src="static/picture/hzhb4.png"></li>
+            <li><img src="static/picture/hzhb5.png"></li>
+            <li><img src="static/picture/hzhb6.png"></li>
+            <li><img src="static/picture/hzhb7.png"></li>
+            <li><img src="static/picture/hzhb8.png"></li>
+            <li><img src="static/picture/hzhb9.png"></li>
+            <li><img src="static/picture/hzhb10.png"></li>
+        </ul>
+    </div>
+    <div class="realization">
+        <h3 class="wow pulse">我们以卓越的功能实现您的未来教育</h3>
+        <div><a href="javascript:;" target="_blank" rel="nofollow" class="btn btn-success wow rubberBand">立即咨询</a></div>
+    </div>
+    <div class="understand_zl">
+        <div class="container">
+            <div class="col-md-6 wow fadeInLeftBig" id="about">
+                <h3>关于我们</h3>
+                <p>上海真略网络科技有限公司成立于2004年4月，注册资本100万。多年来，我们一直坚持利用强大的技术力量和丰富的市场推广经验作为后盾，利用自身丰富的信息资源、畅捷的信息渠道以及强大的推广力量，多层次的电子商务及电子政务服务，已经拥有稳定企业客户7000多家，政府客户400余家，并且和中国地区主要网络服务商建立起一个紧密的合作机制，为广大客户提供优质服务。</p>
+            </div>
+            <div class="col-md-6 contact_r wow fadeInRightBig" id="contact">
+                <h3>联系我们</h3>
+                <div class="col-md-5">
+                    <p>咨询电话：400 622 8891<br>
+                        400-663-9990<br>
+                        投诉电话：18952161000<br>
+                        QQ联系：23573</p>
+                </div>
+                <div class="col-md-7">
+                    <p>总部地址：上海静安区平型关路138号（近民和路） 金赢108创意广场银座18楼<br>
+                        市场合作：zlla@zlla.cn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Copyright_lt">Copyright © 2019 All Rights Reserved 版权所有 ：上海真略网络科技有限公司   <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备15021857号-4</a></div>
+    <script src="static/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+.clearfix:after{content: "";display: block;visibility: hidden;clear:both}
+.fl {float: left;}
+.fr {float: right;}
+body{font-family: "microsoft yahei";}
+em{font-style:normal;}
+/*头部*/
+/*.index_banner{background: none;}
+.mynav {margin-top: 58px;}
+.mynav ul li a {color: #212121;}
+.pub_logo {padding-top: 28px;}
+.pub_header {padding-bottom: 16px;border-bottom: 2px solid #e7e7e7;}
+.target {border-bottom: 7px solid transparent;}*/
+
+/*政府类网站及软件开发*/
+.softDevelopment{background: url(../image/bg_governmentSoft.png)no-repeat center;background-size: cover;height: 482px;
+border-bottom: 4px solid #e8e8de;text-align: center;overflow:hidden;}
+.softDevelopment h2{color: #ff580e;font-size: 39.34px;font-weight: 500;padding-top: 13px;text-shadow: 1px 1px 1px #fff;}
+.softDevelopment h1{color: #ff580e;font-size: 39.34px;;font-weight: 500;padding-top: 70px;text-shadow: 1px 1px 1px #fff;}
+.softDevelopment h4{font-size: 18px;color: #ff580e;font-weight: 500;margin-top: 13px;text-shadow: 1px 1px 1px #fff;}
+.govermentSoft {text-align: center;background-color: #ecf1f5;padding:3%;}
+.govermentSoft h3{font-size: 28.57px;color: #000;font-weight: 500;}
+.govermentSoft p{font-size: 17px;color: #867e7e;margin:3% auto 0;line-height: 22px;}
+.govermentSoft a{font-size: 17px;color: #4180cc;display: inline-block;margin-top:3%;text-decoration: none;border-bottom: solid 2px #a4bee1;-webkit-transition: all 0.35s ;-moz-transition: all 0.35s ;transition: all 0.35s ;}
+.govermentSoft a:hover{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
+/*提供服务*/
+.provideService{margin-top:5%;}
+.provideService h2{font-size: 35px;color: #000;text-align: center;font-weight: 500;}
+.services{margin-top:3%;width: 100%;}
+.services tr{border-top: solid 1px #f0f0f1;}
+.services td{border-right: solid 1px #f0f0f1;width:33.33%;height: 156px;padding-top: 89px;}
+.services tr td:nth-child(3){border-right:none;}
+.services td div.fl{width:calc(100% - 85px);}
+.services td div h3{font-weight: 500;font-size: 23px;color: #6d6d6d;}
+.services td span{margin-right:20px;}
+.services td div p{font-size: 15px;color: #867e7e;line-height: 22px;margin-top: 14px;}
+
+/*我们的优势*/
+.advantage {margin-top: 69px;text-align: center;}
+.advantage h2{font-size: 35px;color: #000;font-weight: 500;text-align: center;}
+.advantage p{font-size: 15px;color: #525252;text-align: center;margin: 28px auto 0;line-height: 22px;max-height: 66px;
+    vertical-align: middle;display: inline-block;}
+.advantages{margin-top: 94px;}
+.advantages ul{font-size: 0;margin-left:2%;}
+.advantages li{list-style: none;width:48%;display: inline-block;margin-left:2%;height: 94px;line-height:94px;border-radius: 10px;margin-bottom: 18px;-webkit-transition: all 0.6s ;-moz-transition: all 0.6s ;transition: all 0.6s ;}
+.advantages li:hover{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
+.advantages li p{font-size: 15px;color: #fff;max-height: 66px;overflow: hidden;margin: 0;}
+.advantages li.li1{background-color: #ff4e4c;}
+.advantages li.li2{background-color: #fc9632;}
+.advantages li.li3{background-color: #ffb554;}
+.advantages li.li4{background-color: #45d5f7;}
+.advantages li.li5{background-color: #ff66a3;}
+.advantages li.li6{background-color: #62b638;}
+
+/*案例展示*/
+.caseShow{background-color: #f5f7f9;margin-top: 66px;padding-top: 86px;padding-bottom: 26px;}
+.caseShow h2{font-size: 35px;color: #000000;font-weight: 500;font-weight: 500;text-align: center;margin-bottom: 55px;}
+.case ul{margin-left: -22px;}
+.case li{list-style: none;position: relative;float:left;margin-bottom: 31px;width:33.33%;height: 446px;padding:0 10px;}
+.case .info{display: inline-block;text-decoration: none;background-color: #fff;box-shadow: 2px 3px 3px #e9eaea;height: 446px;width:100%;}
+.case .info .img{border-bottom: solid 1px #ececec;padding:8px 7px 6px 5px;width:100%;height: 382px;}
+.case .info .img img{width: 100%;height: 100%;}
+.case .info p.tit{font-size: 15px;color: #414141;margin-top: 17px;margin-left: 20.5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 340px;}
+.case li .yinying{position: absolute;background-color: #ef3d4a;top: 0;left:10px;right:10px;z-index: 99;height: 255px;
+padding: 35px 29px 0 28px;opacity: 0;transition:opacity 1s;-moz-transition:opacity 1s; /* Firefox 4 */
+-webkit-transition:opacity 1s; /* Safari and Chrome */-o-transition:opacity 1s; /* Opera */}
+.case li .yinying .title{position: relative;display: inline-block;border-top: solid 2px #ffa7ad;text-decoration: none;padding-top: 27px;}
+.case li .yinying .title i{position: absolute;top: -2px;left: 0;font-size: 0;}
+.case li .yinying .title span{font-size: 15px;color: #fff;background: url(http://www.cnzlapp.com/templates/main/images/icon_case.png)no-repeat left center;padding-left: 25px;display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.case li .yinying .title p{font-size: 14px;color: #fec5c9;padding-left: 25px;line-height: 22px;margin-top: 13px;height: 88px;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;word-break: break-all;}
+.case li .yinying .more{background: url(http://www.cnzlapp.com/templates/main/images/icon_case.png)no-repeat left center;padding-left: 25px;color: #fff;font-size: 15px;
+text-decoration: none;display: inline-block;margin-top: 55px;display: inline-block;width: 285px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.case li:hover .yinying{opacity: 1;/*transition: all 0.4s;*/transition:opacity 1s;-moz-transition:opacity 1s; /* Firefox 4 */
+-webkit-transition:opacity 1s; /* Safari and Chrome */-o-transition:opacity 1s; /* Opera */}
+
+/*最新网站案例*/
+.newCase{text-align: center;margin-top: 61px;}
+.newCase p{font-size:24px;color: #353535;position: relative;border-bottom: solid 1px #cbcbcb;padding-bottom: 27px;}
+.newCase p span{color: #ef3d4a;font-weight: 700;}
+.newCase p i{position: absolute;display: inline-block;width: 137px;height: 3px;background-color: #f94b4b;bottom: -1px;left: 529px;}
+.newCase .news ul{padding: 0 0 0 48px;margin-top: 43px;}
+.newCase .news li{color: #6e6e6e;font-size:15px;padding-left: 7.5px;margin-bottom: 18px;width: 280.5px;text-align: left;line-height: 14px;}
+.newCase .news li a{text-decoration: none;font-size: 14px;color: #363636;display: inline-block;width: 250px;text-align: left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.newCase .news li a:hover{color: #0894EC;}
+.newCase .news li:nth-child(4n) a{width: 220px;}
+
+/*最新软件案例*/
+.newCase.newSoft{margin-top: 44px;}
+
+@media (max-width: 991px){
+	.softDevelopment h1,.softDevelopment h2{font-size:24px;}
+	.services td{width:100%;display:block;}
+	.services td{padding-top:5%;height:auto;}
+	.advantages{margin-top:5%;}
+	.advantages li{width:100%;margin-left:0;}
+	.caseShow{margin-top:0;padding-top:5%;}
+	.case ul{margin-left:0;}
+	.case li{width:100%;}
+}
