@@ -15,26 +15,33 @@
      <script src="/templates/main/js/html5shiv.min.js"></script>
      <script src="/templates/main/js/respond.min.js"></script>
     <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function g(o) { return document.getElementById(o); }
+        function HoverLi(n) {
+            //如果有N个标签,就将i<=N;
+            for (var i = 1; i <= 4; i++) { g('tb_' + i).className = 'normaltab'; g('tbc_0' + i).className = 'undis'; } g('tbc_0' + n).className = 'dis'; g('tb_' + n).className = 'hovertab';
+        }
+    </script>
 </head>
 <body>
     <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
     <include file="public@head" />
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var navOffset=$("#nav").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >=navOffset){
+                    $(".header_inner").addClass("navbar-fixed-top");
+                }else{
+                    $(".header_inner").removeClass("navbar-fixed-top");
+                }
+            });
 
-<script type="text/javascript">
-$(document).ready(function(){
-	var navOffset=$("#nav").offset().top;
-	$(window).scroll(function(){
-		var scrollPos=$(window).scrollTop();
-		if(scrollPos >=navOffset){
-			$(".header_inner").addClass("navbar-fixed-top");
-		}else{
-			$(".header_inner").removeClass("navbar-fixed-top");
-		}
-	});
+        });
+    </script>
 
-});
-</script>
 
     <script src="__TMPL__/public/assets/static/js/bootstrap.min.js"></script>
     <script src="__TMPL__/public/assets/static/js/swiper.min.js"></script>
