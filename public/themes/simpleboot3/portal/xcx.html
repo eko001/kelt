@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,34 +15,35 @@
  <script src="/templates/main/js/respond.min.js"></script>
 <![endif]-->
     <script language="javascript" type="text/javascript">
-        function g(o) { return document.getElementById(o); }
-        function HoverLi(n) {
+        function g (o) { return document.getElementById(o); }
+        function HoverLi (n) {
             //如果有N个标签,就将i<=N;
             for (var i = 1; i <= 4; i++) { g('tb_' + i).className = 'normaltab'; g('tbc_0' + i).className = 'undis'; } g('tbc_0' + n).className = 'dis'; g('tb_' + n).className = 'hovertab';
         }
     </script>
 </head>
+
 <body>
     <div id="position" class="none">
         <p>当前位置：<a href="index.html">网站首页</a> > <a>微信小程序开发</a></p>
-	</div>
+    </div>
     <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
     <include file="public@head" />
-<script type="text/javascript">
-$(document).ready(function(){
-	var navOffset=$("#nav").offset().top;
-	$(window).scroll(function(){
-		var scrollPos=$(window).scrollTop();
-		if(scrollPos >=navOffset){
-			$(".header_inner").addClass("navbar-fixed-top");
-		}else{
-			$(".header_inner").removeClass("navbar-fixed-top");
-		}
-	});
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var navOffset = $("#nav").offset().top;
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                if (scrollPos >= navOffset) {
+                    $(".header_inner").addClass("navbar-fixed-top");
+                } else {
+                    $(".header_inner").removeClass("navbar-fixed-top");
+                }
+            });
 
-});
-</script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/dh.js"></script>
+        });
+    </script>
+
 
     <div class="xcx_banner">
         <div class="container">
@@ -52,10 +54,10 @@ $(document).ready(function(){
             </div>
         </div>
     </div>
-        <div class="index_tit wow bounceInDown">
-            <h2>小程序·大市场</h2>
-            <p class="p1">开启小程序时代！您的梦想与远见，我们帮您达成！</p>
-        </div>
+    <div class="index_tit wow bounceInDown">
+        <h2>小程序·大市场</h2>
+        <p class="p1">开启小程序时代！您的梦想与远见，我们帮您达成！</p>
+    </div>
     <div class="container">
         <div class="big_market">
             <ul>
@@ -103,7 +105,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg1.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico1.png"><p>电商类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico1.png">
+                            <p>电商类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -118,7 +121,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg2.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico2.png"><p>教育类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico2.png">
+                            <p>教育类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -133,7 +137,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg3.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico3.png"><p>餐饮类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico3.png">
+                            <p>餐饮类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -148,7 +153,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg4.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico4.png"><p>金融类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico4.png">
+                            <p>金融类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -163,7 +169,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg5.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico5.png"><p>服务类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico5.png">
+                            <p>服务类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -178,7 +185,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg6.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico6.png"><p>旅游类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico6.png">
+                            <p>旅游类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -193,7 +201,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg7.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico7.png"><p>社交类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico7.png">
+                            <p>社交类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -208,7 +217,8 @@ $(document).ready(function(){
                     <div class="img">
                         <img src="__TMPL__/public/assets/static/picture/hy_bg8.png" class="bg">
                         <div class="font">
-                            <img src="__TMPL__/public/assets/static/picture/fico8.png"><p>办公类</p>
+                            <img src="__TMPL__/public/assets/static/picture/fico8.png">
+                            <p>办公类</p>
                         </div>
                     </div>
                     <div class="txt">
@@ -219,7 +229,7 @@ $(document).ready(function(){
                 </div>
             </li>
         </ul>
-       <!-- <div class="text-center">
+        <!-- <div class="text-center">
             <a href="" class="btns btn_type wow rubberBand">更多类型</a>
         </div>-->
     </div>
@@ -285,138 +295,189 @@ $(document).ready(function(){
     </div>
     <div class="serv_case container">
         <ul>
-                  
+
             <li class="col-md-3">
                 <div class="case"><a href="show-996.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081801378237.jpg" alt="史志办"><em class="line"></em><p>史志办</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109081801378237.jpg" alt="史志办"><em
+                            class="line"></em>
+                        <p>史志办</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-995.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081754239447.jpg" alt="博汇集团"><em class="line"></em><p>博汇集团</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109081754239447.jpg" alt="博汇集团"><em
+                            class="line"></em>
+                        <p>博汇集团</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-994.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081750181101.jpg" alt="博悦检测"><em class="line"></em><p>博悦检测</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109081750181101.jpg" alt="博悦检测"><em
+                            class="line"></em>
+                        <p>博悦检测</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-992.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021610431999.jpg" alt="红跑车"><em class="line"></em><p>红跑车</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109021610431999.jpg" alt="红跑车"><em
+                            class="line"></em>
+                        <p>红跑车</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-991.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021608223156.jpg" alt="车必净"><em class="line"></em><p>车必净</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109021608223156.jpg" alt="车必净"><em
+                            class="line"></em>
+                        <p>车必净</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-990.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021607124545.jpg" alt="博汇智能装备"><em class="line"></em><p>博汇智能装备</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202109021607124545.jpg" alt="博汇智能装备"><em
+                            class="line"></em>
+                        <p>博汇智能装备</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-927.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181344099021.jpg" alt="慕容APP"><em class="line"></em><p>慕容APP</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202007181344099021.jpg" alt="慕容APP"><em
+                            class="line"></em>
+                        <p>慕容APP</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-926.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181341379744.jpg" alt="展超商城"><em class="line"></em><p>展超商城</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202007181341379744.jpg" alt="展超商城"><em
+                            class="line"></em>
+                        <p>展超商城</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-925.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181339457494.jpg" alt="紫薇会议系统"><em class="line"></em><p>紫薇会议系统</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/202007181339457494.jpg" alt="紫薇会议系统"><em
+                            class="line"></em>
+                        <p>紫薇会议系统</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-632.html">
-                    <img src="__TMPL__/public/assets/static/picture/201903271025242158.png" alt="钢甲天下二手机交易平台"><em class="line"></em><p>钢甲天下二手机交易平台</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/201903271025242158.png" alt="钢甲天下二手机交易平台"><em
+                            class="line"></em>
+                        <p>钢甲天下二手机交易平台</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-509.html">
-                    <img src="__TMPL__/public/assets/static/picture/201903271026071689.png" alt="健身平台app"><em class="line"></em><p>健身平台app</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/201903271026071689.png" alt="健身平台app"><em
+                            class="line"></em>
+                        <p>健身平台app</p>
+                    </a>
                 </div>
             </li>
-              
+
             <li class="col-md-3">
                 <div class="case"><a href="show-847.html">
-                    <img src="__TMPL__/public/assets/static/picture/201906120830377774.png" alt="智慧洗车物联网平台"><em class="line"></em><p>智慧洗车物联网平台</p></a>
+                        <img src="__TMPL__/public/assets/static/picture/201906120830377774.png" alt="智慧洗车物联网平台"><em
+                            class="line"></em>
+                        <p>智慧洗车物联网平台</p>
+                    </a>
                 </div>
             </li>
-            
+
         </ul>
         <div class="text-center">
             <a href="86.html" target="_blank" class="btns btn_type wow rubberBand">查看更多</a>
         </div>
     </div>
     <div class="slider_nav">
-	<ul>
-		<li class="ht">
-			<div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="上海APP开发400电话"><div class="ht2">18952265600</div></div>
-		</li>
-		<!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
-		<li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png" alt="咨询项目经理"></a></li>
-		<li class="wx">
-			<img src="__TMPL__/public/assets/static/picture/silder4.png">
-			<div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="上海APP开发微信公众号"></div>
-		</li>
-	</ul>
-</div>
-<div class="mb_tel">
-	<a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
-</div>
-<link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
-<script type="text/javascript">
-    $(function () {
-        //初始化发表评论表单
-        AjaxInitForm('#feedback_form', '#btnSubmit', 1);
-    });
-</script>
-<div class="demand_contair">
-     <a name="xuqiu"></a><div class="container">
-        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
-          <h3>请填写您的项目需求给我们：</h3>
-            <ul class="demand_list">
-                <li class="input_1">
-                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control" placeholder="您的姓名"></li>
-                <li class="input_1">
-                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control" placeholder="联系电话"></li>
-                <li class="input_2">
-                    <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control" placeholder="详细描述您的需求...">
-                </li>
-                <li class="input_3">
-                    <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control" placeholder="验证码"></li>
-                <li style="margin-top: 2px;">
-                    <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                        <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35" align="absmiddle"></a><span class="Validform_checktip"></span></li>
-                <li>
-                    <button type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-default tjxmxq">提交需求</button></li>
-            </ul>
-        </form>
+        <ul>
+            <li class="ht">
+                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="上海APP开发400电话">
+                    <div class="ht2">18952265600</div>
+                </div>
+            </li>
+            <!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+            <li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png"
+                        alt="咨询项目经理"></a></li>
+            <li class="wx">
+                <img src="__TMPL__/public/assets/static/picture/silder4.png">
+                <div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="上海APP开发微信公众号"></div>
+            </li>
+        </ul>
     </div>
-</div>
-    <include file="public@footer"/>
-	
+    <div class="mb_tel">
+        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+    </div>
+    <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化发表评论表单
+            AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+        });
+    </script>
+    <div class="demand_contair">
+        <a name="xuqiu"></a>
+        <div class="container">
+            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+                <h3>请填写您的项目需求给我们：</h3>
+                <ul class="demand_list">
+                    <li class="input_1">
+                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
+                            placeholder="您的姓名">
+                    </li>
+                    <li class="input_1">
+                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
+                            placeholder="联系电话">
+                    </li>
+                    <li class="input_2">
+                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
+                    </li>
+                    <li class="input_3">
+                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
+                            placeholder="验证码">
+                    </li>
+                    <li style="margin-top: 2px;">
+                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
+                                align="absmiddle"></a><span class="Validform_checktip"></span>
+                    </li>
+                    <li>
+                        <button type="submit" id="btnSubmit" name="btnSubmit"
+                            class="btn btn-default tjxmxq">提交需求</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <include file="public@footer" />
+
     <script src="__TMPL__/public/assets/static/js/bootstrap.min.js"></script>
     <div class="clear"></div>
     <script src="__TMPL__/public/assets/static/js/wow.min.js"></script>
@@ -426,4 +487,5 @@ $(document).ready(function(){
         };
     </script>
 </body>
+
 </html>

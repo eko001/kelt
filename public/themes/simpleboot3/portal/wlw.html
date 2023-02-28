@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,43 +17,45 @@
  <script src="/templates/main/js/respond.min.js"></script>
 <![endif]-->
     <script language="javascript" type="text/javascript">
-        function g(o) { return document.getElementById(o); }
-        function HoverLi(n) {
+        function g (o) { return document.getElementById(o); }
+        function HoverLi (n) {
             //如果有N个标签,就将i<=N;
             for (var i = 1; i <= 4; i++) { g('tb_' + i).className = 'normaltab'; g('tbc_0' + i).className = 'undis'; } g('tbc_0' + n).className = 'dis'; g('tb_' + n).className = 'hovertab';
         }
     </script>
 </head>
+
 <body>
     <div id="position" class="none">
-        <p>当前位置：<a href="index.html">网站首页</a> > <a>物联网与大数据开发</a></p>
-	</div>
+        <p>当前位置：<a href="index.html">网站首页</a> > <a>成品软件</a></p>
+    </div>
     <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
-    <include file="public@head"/>
-<!--<script type="text/javascript">-->
-<!--$(document).ready(function(){-->
-<!--	var navOffset=$("#nav").offset().top;-->
-<!--	$(window).scroll(function(){-->
-<!--		var scrollPos=$(window).scrollTop();-->
-<!--		if(scrollPos >=navOffset){-->
-<!--			$(".header_inner").addClass("navbar-fixed-top");-->
-<!--		}else{-->
-<!--			$(".header_inner").removeClass("navbar-fixed-top");-->
-<!--		}-->
-<!--	});-->
+    <include file="public@head" />
+    <!--<script type="text/javascript">-->
+    <!--$(document).ready(function(){-->
+    <!--	var navOffset=$("#nav").offset().top;-->
+    <!--	$(window).scroll(function(){-->
+    <!--		var scrollPos=$(window).scrollTop();-->
+    <!--		if(scrollPos >=navOffset){-->
+    <!--			$(".header_inner").addClass("navbar-fixed-top");-->
+    <!--		}else{-->
+    <!--			$(".header_inner").removeClass("navbar-fixed-top");-->
+    <!--		}-->
+    <!--	});-->
 
-<!--});-->
-<!--</script>-->
+    <!--});-->
+    <!--</script>-->
 
 
     <div class="wlw_banner">
         <div class="container">
             <div class="col-md-5 wow bounceInLeft text">
                 <h1>物联有感 智享生活</h1>
-                <p>构建万物互联  驱动数字未来</p>
+                <p>构建万物互联 驱动数字未来</p>
             </div>
             <div class="col-md-7 wow bounceInRight pic">
-                <img src="__TMPL__/public/assets/static/picture/wlw.png"></div>
+                <img src="__TMPL__/public/assets/static/picture/wlw.png">
+            </div>
         </div>
     </div>
     <div class="features">
@@ -139,28 +142,36 @@
             </div>
             <ul class="wow pulse">
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan1.png"><p>车联网</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan1.png">
+                    <p>车联网</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan2.png"><p>智慧家居</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan2.png">
+                    <p>智慧家居</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan3.png"><p>行业终端</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan3.png">
+                    <p>行业终端</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan4.png"><p>智能穿戴</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan4.png">
+                    <p>智能穿戴</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan5.png"><p>智慧医疗</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan5.png">
+                    <p>智慧医疗</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan6.png"><p>智慧交通</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan6.png">
+                    <p>智慧交通</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan7.png"><p>智慧校园</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan7.png">
+                    <p>智慧校园</p>
                 </li>
                 <li class="col-md-3">
-                    <img src="__TMPL__/public/assets/static/picture/plan8.png"><p>智慧园区</p>
+                    <img src="__TMPL__/public/assets/static/picture/plan8.png">
+                    <p>智慧园区</p>
                 </li>
             </ul>
         </div>
@@ -179,59 +190,76 @@
         };
     </script>
     <div class="slider_nav">
-	<ul>
-		<li class="ht">
-			<div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="上海APP开发400电话"><div class="ht2">18952265600</div></div>
-		</li>
-		<!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
-		<li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png" alt="咨询项目经理"></a></li>
-		<li class="wx">
-			<img src="__TMPL__/public/assets/static/picture/silder4.png">
-			<div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="上海APP开发微信公众号"></div>
-		</li>
-	</ul>
-</div>
-<div class="mb_tel">
-	<a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
-</div>
-<link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
-<script type="text/javascript">
-    $(function () {
-        //初始化发表评论表单
-        AjaxInitForm('#feedback_form', '#btnSubmit', 1);
-    });
-</script>
-<div class="demand_contair">
-     <a name="xuqiu"></a><div class="container">
-        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
-          <h3>请填写您的项目需求给我们：</h3>
-            <ul class="demand_list">
-                <li class="input_1">
-                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control" placeholder="您的姓名"></li>
-                <li class="input_1">
-                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control" placeholder="联系电话"></li>
-                <li class="input_2">
-                    <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control" placeholder="详细描述您的需求...">
-                </li>
-                <li class="input_3">
-                    <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control" placeholder="验证码"></li>
-                <li style="margin-top: 2px;">
-                    <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                        <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35" align="absmiddle"></a><span class="Validform_checktip"></span></li>
-                <li>
-                    <button type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-default tjxmxq">提交需求</button></li>
-            </ul>
-        </form>
+        <ul>
+            <li class="ht">
+                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="上海APP开发400电话">
+                    <div class="ht2">18952265600</div>
+                </div>
+            </li>
+            <!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+            <li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png"
+                        alt="咨询项目经理"></a></li>
+            <li class="wx">
+                <img src="__TMPL__/public/assets/static/picture/silder4.png">
+                <div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="上海APP开发微信公众号"></div>
+            </li>
+        </ul>
     </div>
-</div>
-    <include file="public@footer"/>
-	
-    <script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8be54612433c604c0b4a06a117cdd627' type='text/javascript'%3E%3C/script%3E")) </script>
+    <div class="mb_tel">
+        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+    </div>
+    <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化发表评论表单
+            AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+        });
+    </script>
+    <div class="demand_contair">
+        <a name="xuqiu"></a>
+        <div class="container">
+            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+                <h3>请填写您的项目需求给我们：</h3>
+                <ul class="demand_list">
+                    <li class="input_1">
+                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
+                            placeholder="您的姓名">
+                    </li>
+                    <li class="input_1">
+                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
+                            placeholder="联系电话">
+                    </li>
+                    <li class="input_2">
+                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
+                    </li>
+                    <li class="input_3">
+                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
+                            placeholder="验证码">
+                    </li>
+                    <li style="margin-top: 2px;">
+                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
+                                align="absmiddle"></a><span class="Validform_checktip"></span>
+                    </li>
+                    <li>
+                        <button type="submit" id="btnSubmit" name="btnSubmit"
+                            class="btn btn-default tjxmxq">提交需求</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <include file="public@footer" />
+
+    <script
+        type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8be54612433c604c0b4a06a117cdd627' type='text/javascript'%3E%3C/script%3E")) </script>
 </body>
+
 </html>
