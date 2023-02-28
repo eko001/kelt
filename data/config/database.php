@@ -24,24 +24,24 @@ return [
             // 数据库类型
   /*          'type'              => env('DATABASE_TYPE', 'mysql'),
             // 服务器地址
-            'hostname'          => env('DATABASE_HOSTNAME', '127.0.0.1'),
+            'hostname'          => env('DATABASE_HOSTNAME', '43.154.125.245'),
             // 数据库名
-            'database'          => env('DATABASE_DATABASE', 'hualaogroup'),
-            // 用户名
-            'username'          => env('DATABASE_USERNAME', 'hualaogroup'),
-            // 密码
-            'password'          => env('DATABASE_PASSWORD', 'PXezJHsG3BhPnFZF'),
-            // 端口
-            'hostport'          => env('DATABASE_HOSTPORT', '3306'),*/
-            'type'              => env('DATABASE_TYPE', 'mysql'),
-            // 服务器地址
-            'hostname'          => env('DATABASE_HOSTNAME', '47.94.160.9'),
-            // 数据库名
-            'database'          => env('DATABASE_DATABASE', 'hualaogroup'),
+            'database'          => env('DATABASE_DATABASE', 'yifan'),
             // 用户名
             'username'          => env('DATABASE_USERNAME', 'root'),
             // 密码
-            'password'          => env('DATABASE_PASSWORD', 'hualao2021'),
+            'password'          => env('DATABASE_PASSWORD', 'yifan@2022'),
+            // 端口
+            'hostport'          => env('DATABASE_HOSTPORT', '6603'),*/
+            'type'              => env('DATABASE_TYPE', 'mysql'),
+            // 服务器地址
+            'hostname'          => env('DATABASE_HOSTNAME', '43.154.125.245'),
+            // 数据库名
+            'database'          => env('DATABASE_DATABASE', 'yifan'),
+            // 用户名
+            'username'          => env('DATABASE_USERNAME', 'root'),
+            // 密码
+            'password'          => env('DATABASE_PASSWORD', 'yifan@2022'),
             // 端口
             'hostport'          => env('DATABASE_HOSTPORT', '6603'),
             // 数据库连接参数

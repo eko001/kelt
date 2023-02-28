@@ -1,132 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>{$category.name} {$category.seo_title} {$site_info.site_name|default=''}</title>
-    <meta name="keywords" content="{$category.seo_keywords},{$site_info.site_seo_keywords|default=''}"/>
-    <meta name="description" content="{$category.seo_description},{$site_info.site_seo_description|default=''}">
-    <include file="public@head"/>
-    <hook name="before_head_end"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <title>微信小程序资讯 - 第1页 - 上海真略</title>
+	<meta name="keywords" content="微信小程序资讯">
+	<meta name="description" content="">
+    <!--[if lt IE 9]>
+ <script src="/templates/main/js/html5shiv.min.js"></script>
+ <script src="/templates/main/js/respond.min.js"></script>
+<![endif]-->
 </head>
-<body class="body-white">
-<include file="public@nav"/>
-<div class="container">
-    <php>$demo_time=2;</php>
-    <h2>{$category.name}</h2>
-    <div class="row">
-        <div class="col-md-9">
-            <div class="">
-                <php>
-                    $where= function($query){
-                        $query->where('post.create_time','>=',0);
-                    };
-                    $page=[
-                        'list_rows'=>10,
-                        'next'=>'下一页',
-                        'prev'=>'上一页'
-                    ];
-                </php>
-                <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
-                                 relation="categories"
-                                 categoryIds="$category.id"
-                                 returnVarName="articles_data">
-                    <div class="list-boxes">
-                        <h2><a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">{$vo.post_title}</a>
-                        </h2>
-                        <p>{$vo.post_excerpt}</p>
-                        <div>
-                            <div class="pull-left">
-                                <div class="list-actions">
-                                    <a href="javascript:;"><i class="fa fa-eye"></i><span>{$vo.post_hits}</span></a>
-                                    <a href="{:url('portal/Article/doLike',array('id'=>$vo['id']))}"
-                                       class="js-count-btn"><i class="fa fa-thumbs-up"></i><span class="count">{$vo.post_like}</span></a>
-                                    <a href="{:url('user/Favorite/add',array('id'=>$vo['id'],'cid'=>$category['id']))}"
-                                       class="js-favorite-btn"
-                                       data-id="{$vo.id}"
-                                       data-table="portal_post"
-                                       data-title="{:base64_encode($vo.post_title)}"
-                                       data-url="{:cmf_url_encode('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"
-                                    >
-                                        <i class="fa fa-star-o"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <a class="btn btn-warning btn-sm pull-right"
-                               href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">查看更多</a>
-                        </div>
-                    </div>
-                </portal:articles>
-
-            </div>
-            <ul class="pagination">
-                <page/>
-            </ul>
-        </div>
-        <div class="col-md-3">
-
-            <widget name="hottest_articles">
-                <div class="tc-box">
-                    <div class="headtitle">
-                        <h2>{$widget.title}</h2>
-                    </div>
-                    <div class="ranking">
-                        <php>
-                            $hot_articles=[];
-                        </php>
-                        <ul class="list-unstyled">
-                            <portal:articles limit="5" order="post.post_hits DESC"
-                                             categoryIds="$widget.vars.hottest_articles_category_id">
-                                <php>$top=$key<3?"top3":"";</php>
-                                <li class="{$top}">
-                                    <i>{$key+1}</i>
-                                    <a title="{$vo.post_title}"
-                                       href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">
-                                        {$vo.post_title}
-                                    </a>
-                                </li>
-                            </portal:articles>
-                        </ul>
-                    </div>
-                </div>
-            </widget>
-
-
-            <widget name="last_articles">
-                <div class="tc-box">
-                    <div class="headtitle">
-                        <h2>{$widget.title}</h2>
-                    </div>
-                    <div class="posts">
-                        <portal:articles limit="5" order="post.published_time DESC"
-                                         categoryIds="$widget.vars.last_articles_category_id">
-                            <dl class="dl-horizontal">
-                                <dt>
-                                    <a class="img-wraper"
-                                       href="{:cmf_url('portal/Article/index',array('id'=>$vo.id))}">
-                                        <if condition="empty($vo.more.thumbnail)">
-                                            <img src="__TMPL__/public/assets/images/default_tupian4.png"
-                                                 class="img-responsive" alt="{$vo.post_title}"/>
-                                            <else/>
-                                            <img src="{:cmf_get_image_url($vo.more.thumbnail)}"
-                                                 class="img-responsive" alt="{$vo.post_title}"/>
-                                        </if>
-                                    </a>
-                                </dt>
-                                <dd>
-                                    <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id']))}">{$vo.post_title}</a>
-                                </dd>
-                            </dl>
-                        </portal:articles>
-                    </div>
-                </div>
-            </widget>
-
+<body>
+    <div id="position" class="none">
+        <p>当前位置：<a href="index.html">网站首页</a> > <a>开发资讯</a></p>
+	</div>
+    <script type="text/javascript" src="static/js/jquery-1.11.2.min.js"></script>   
+<div class="topbar">
+    <div class="container">
+        <p class="pull_left fiften">十五年核心团队 · 值得信赖</p>
+        <div class="pull_right tpr">
+            <p class="dh"><i>APP定制开发咨询热线：</i><em>1895226560</em><i> / </i><em></em></p>
         </div>
     </div>
-
-    <include file="public@footer"/>
 </div>
+<nav class="navbar navbar-default header_inner">
+    <div class="container" id="nav">
+        <h3 class="logo"><a href="index.html">app开发公司,上海app开发,app定制开发</a></h3>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="menus">
+                <li><a href="index.html"><span>网站首页</span></a></li>
+                <li><a href="app.html"><span>APP开发</span></a></li>
+                <li><a href="xcx.html"><span>微信小程序开发</span></a></li>
+                <li><a href="wlw.html"><span>物联网与大数据开发</span></a></li>
+                <li><a href="dxwhtd.html" rel="nofollow" target="_blank"><span>大象探店优选</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>产品与解决方案</span><em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="waste_disposal.html" rel="nofollow" target="_blank">垃圾处理项目</a>
+                        <a href="znjsxt.html" rel="nofollow" target="_blank">智能健身系统</a>
+                    
+						<a href="znwyxt.html" rel="nofollow" target="_blank">智能物业系统</a>
+                        <a href="swdcxt.html" rel="nofollow" target="_blank">政务督办系统</a>
+                        <a href="dyxcx.html" rel="nofollow" target="_blank">抖音小程序</a>
+                    <a href="javascript:;" rel="nofollow" target="_blank">火课在线教育系统</a>
+                        
+                    </ul>
+                </li>
+                <li><a href="86.html"><span>成功案例</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>开发资讯</span> <em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="71.html">APP业界资讯</a>
+                        <a href="69.html">iOS APP开发资讯</a>
+                        <a href="70.html">Android APP开发资讯</a>
+                        <a href="100.html">小程序开发常见问题</a>
+                        <a href="99.html">微信小程序开发业界资讯</a>
+                        <a href="72.html">APP开发常见问题</a>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>关于我们</span> <em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="gsjj.html" rel="nofollow">关于真略</a>
+                        <a href="contact.html" rel="nofollow">联系我们</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script type="text/javascript">
+$(document).ready(function(){
+	var navOffset=$("#nav").offset().top;
+	$(window).scroll(function(){
+		var scrollPos=$(window).scrollTop();
+		if(scrollPos >=navOffset){
+			$(".header_inner").addClass("navbar-fixed-top");
+		}else{
+			$(".header_inner").removeClass("navbar-fixed-top");
+		}
+	});
 
-<include file="public@scripts"/>
-<hook name="before_body_end"/>
+});
+</script>
+<script type="text/javascript" src="static/js/dh.js"></script>
+
+    <img src="static/picture/news_banner.jpg" width="100%">
+    <div class="newsout">
+        <div class="container newsoutjl">
+            <div class="news_location">
+                <p>当前位置：<a href="index.html">网站首页</a>&nbsp;&gt;&nbsp;<a href="">微信小程序资讯</a></p>
+            </div>
+            <div class="col-md-3 phoneyc phoneyr">
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        资讯栏目</div>
+            
+                    <div class="newscblm-b"><a href="71.html">APP业界资讯</a></div>
+            
+                    <div class="newscblm-b"><a href="69.html">iOS APP开发资讯</a></div>
+            
+                    <div class="newscblm-b"><a href="70.html">Android APP开发资讯</a></div>
+            
+                    <div class="newscblm-b"><a href="72.html">APP开发常见问题</a></div>
+            
+                    <div class="newscblm-b"><a href="100.html">小程序开发常见问题</a></div>
+            
+                    <div class="newscblm-b"><a href="99.html">微信小程序开发业界资讯</a></div>
+            
+                </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        最新资讯</div>
+            
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-989.html">ASO（应用商店优化）提示，技巧和策略</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-988.html">如何寻找Android App 开发公司？</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-987.html">影响APP应用开发时间的几点因素</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-986.html">2021年考虑采用哪些APP开发外包模式？</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-985.html">2021年开发Android应用程序时要记住的5件事</a></div>
+               
+                </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        热门新闻</div>
+            
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-756.html">通知：微信小程序审核团队要放假啦</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-739.html">跟世界名牌GUCCI，怎样用微信小程序推广自己的品牌</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-755.html">微信流量入口之附近的小程序</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-757.html">开发小程序需具备的思维方式</a></div>
+               
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-753.html">小程序对于律师行业营销的优势解析</a></div>
+               
+                </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        随机资讯</div>
+             
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-290.html">浅析APP开发的几大类型</a></div>
+                    
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-567.html">上海app定制公司分析酒店app开发方案</a></div>
+                    
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-676.html">杂志社转型的情况下开发杂志app需要做些什么？</a></div>
+                    
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-710.html">早教app开发出来有没有发展市场？</a></div>
+                    
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-170.html">特色美食APP开发的发展前景</a></div>
+                    
+                </div>
+                <div class="newscblpic"></div>
+            </div>
+            <div class="col-md-9 newalscon">                
+             
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>21</span><br>2019-02</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-779.html">
+                                <div class="newsname-l">某电器小程序的功能解决方案</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=779&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">某电器小程序功能说明 模块名称功能描述登录微信授权登录线上活动报名1、通过直接打开微信小程序或者扫描（识别）二维码进入到活动页2、活动券领取：用户先填写个人的姓名、电话、所在城市（下拉选择）、预购家电选择等必填资料，然后点击领取，系统提示领取成功3、短信通知：…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-02-21</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=779&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>17</span><br>2019-01</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-757.html">
+                                <div class="newsname-l">开发小程序需具备的思维方式</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=757&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">自从小程序上线至今，我们基本上每天都能看到某小程序成为爆款产品，或者某小程序获得百万千万元的融资的新闻报道。这表明，小程序的开发是一种不可逆转的大趋势，值得企业重视。然而，很多客户往往对自己的产品开发充满很多期待，往往寄希望于开发一个小程序就能立马走红，获…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-01-17</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=757&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>16</span><br>2019-01</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-756.html">
+                                <div class="newsname-l">通知：微信小程序审核团队要放假啦</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=756&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">春节临近，很多机构都提前进入节假模式，上海真略也接到很多用户为配合节前的营销，想趁着春节上线属于自己的小程序的咨询。不过我们发现很多用户对小程序不是很了解，以为不需要审核，只要找家公司设计开发一下就能直接使用了。最近微信支付宝，都公布了小程序假期审核调整的…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-01-16</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=756&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>16</span><br>2019-01</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-755.html">
+                                <div class="newsname-l">微信流量入口之附近的小程序</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=755&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">说到小程序的价值,这可以说是目前移动互联的重中之重了！用户只要打开聊天软件：点击发现→附近的小程序，就能看到定位在当时所处位置周围5km的注册的功能各异小程序，这个功能对有线下店面的公司来说是一大神级功能。对于零售企业来说：如果客户是有购物需求的，通过搜索店家…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-01-16</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=755&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>15</span><br>2019-01</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-753.html">
+                                <div class="newsname-l">小程序对于律师行业营销的优势解析</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=753&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">如今，移动互联使用人数剧增，微信功不可没。对于律师行业来说，微信的价值在于：（1）庞大：极其庞大的用户群体（2）习惯：已经成为一种生活方式（3）传播：分享朋友圈、口碑迅速传播（4）精准：多样化信息推送、快速直达首先，微信于律师行业经营的好处：1、建立更强的关系建…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-01-15</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=753&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="newslist">
+                    <div class="newstimecon phoneyc">
+                        <div class="newalscontime"><span>13</span><br>2019-01</div>
+                    </div>
+                    <div class="newsjianjie">
+                        <div class="newsname">
+                            <a href="show-751.html">
+                                <div class="newsname-l">小程序对于传统教育行业有哪些利好？</div>
+                            </a>
+                            <div class="newsname-r phoneyc">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=751&click=1"></script>次</div>
+                        </div>
+                        <div class="newscontent">小程序发展时间不长，但由于嵌入在微信这个巨大的流量入口中，重要程度自然不言而喻了。今天真略小编跟大家说说，小程序对于传统教育行业有哪些利好？一、营销方面有一定的品牌效应。与时俱进，有了小程序，感觉有实力，家长会在教学差不多的情况下，最后选择了这里学习。5公里…</div>
+                        <div class="phonetime">
+                            <div class="phonetime-l">2019-01-13</div>
+                            <div class="phonetime-r">浏览<script type="text/javascript" src="http://www.cnzlapp.com/tools/submit_ajax.ashx?action=view_article_click&id=751&click=1"></script>次</div>
+                        </div>
+                    </div>
+                </div>
+              
+                <nav aria-label="Page navigation" class="text-center my_pagination">
+                    <span>共46记录</span><span class="disabled">«上一页</span><span class="current">1</span><a href="javascript:;">2</a><a href="javascript:;">3</a><a href="javascript:;">4</a><span>...</span><a href="javascript:;">8</a><a href="javascript:;">下一页»</a>
+                </nav>
+            </div>
+        </div>
+    </div>   
+    <div class="slider_nav">
+	<ul>
+		<li class="ht">
+			<div class="ht1"><img src="static/picture/silder1.png" alt="上海APP开发400电话"><div class="ht2">18952265600</div></div>
+		</li>
+		<!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+		<li><a href="index.html#xuqiu" rel="nofollow"><img src="static/picture/silder3.png" alt="咨询项目经理"></a></li>
+		<li class="wx">
+			<img src="static/picture/silder4.png">
+			<div class="code"><img src="static/picture/code1.png" alt="上海APP开发微信公众号"></div>
+		</li>
+	</ul>
+</div>
+<div class="mb_tel">
+	<a href="tel:400-663-9990"><img src="static/picture/silder1.png"></a>
+</div>
+<link rel="stylesheet" href="static/css/validate.css">
+<link type="text/css" rel="stylesheet" href="static/css/pagination.css">
+<link type="text/css" rel="stylesheet" href="static/css/ui-dialog.css">
+<script type="text/javascript" src="static/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="static/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/dialog-plus-min.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //初始化发表评论表单
+        AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+    });
+</script>
+<div class="demand_contair">
+     <a name="xuqiu"></a><div class="container">
+        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+          <h3>请填写您的项目需求给我们：</h3>
+            <ul class="demand_list">
+                <li class="input_1">
+                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control" placeholder="您的姓名"></li>
+                <li class="input_1">
+                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control" placeholder="联系电话"></li>
+                <li class="input_2">
+                    <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control" placeholder="详细描述您的需求...">
+                </li>
+                <li class="input_3">
+                    <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control" placeholder="验证码"></li>
+                <li style="margin-top: 2px;">
+                    <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                        <img src="static/picture/verify_code.ashx" width="80" height="35" align="absmiddle"></a><span class="Validform_checktip"></span></li>
+                <li>
+                    <button type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-default tjxmxq">提交需求</button></li>
+            </ul>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footer_top">
+        <div class="container">
+            <div class="branch_office">
+                <ul class="fl col-md-8">
+                    <li>
+                        <img src="static/picture/foot1.png" alt="上海总公司">
+						<div class="info">
+                        <h3>上海总公司</h3>
+                        <p>办公地址：上海静安区平型关路金赢108创意广场银座18楼</p>
+                        <p>
+                            咨询电话：18952265600<br>
+             
+                        </p>
+                            </div>
+                    </li>
+                    <li>
+                        <img src="static/picture/foot3.png" alt="徐州分公司">
+                        <h3>徐州分公司</h3>
+                        <p>办公地址：江苏省徐州市鼓楼区中山北路226号鼓楼广场C座19F</p>
+                        <p>
+                            咨询电话：0516-85645808<br>
+                    
+                        </p>
+                    </li>
+                    <li>
+                        <img src="static/picture/foot2.png" alt="南通分公司">
+                        <h3>南通分公司</h3>
+                        <p>办公地址：江苏省南通市崇川区崇川路58号</p>
+                        <p>
+                              咨询电话：18952265600<br>
+                    
+                        </p>
+                    </li>
+                </ul>
+				<div class="tel" class="col-md-4">
+                    <p>客服电话</p>
+                    <h3>18952265600</h3>
+                    <p>投诉及24小时值班电话</p>
+                    <h3>18952161000</h3>
+                    <ul>
+                        <li>
+                            <img src="static/picture/foot_ico1.png" class="t1"><img src="static/picture/code1.png" class="t2" alt="上海真略微信公众号二维码"></li>
+                     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container copright">Copyright &copy; 2019 All Rights Reserved  版权所有 ：上海真略网络科技有限公司   <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备15021857号-4</a></div>
+        <div class="container copright">上海真略作为<a href="index.html">APP开发</a>领先品牌，多年来已为上百家上海企业提供高品质的移动应用解决方案及服务。欢迎来电咨询！<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256883526'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256883526%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></div>
+    </div>
+    <div class="clear"></div>
+</footer>
+
+	
+		 	<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="javascript:;" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="static/picture/batubiao.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31010602004925号</p></a>
+		 	</div>
+	
+    <script src="static/js/bootstrap.min.js"></script>
+    <div class="clear"></div>
+    <script src="static/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        };
+    </script>
 </body>
 </html>

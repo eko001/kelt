@@ -1,1148 +1,715 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
-    <!-- <title>首页 {$site_info.site_name|default=''}</title>
-    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
-    <meta name="description" content="{$site_info.site_seo_description|default=''}">-->
-    <include file="public@head" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/swiper.css" rel="stylesheet" type="text/css" media="all">
+    <title>上海app开发_app定制开发_app开发公司 - 上海真略</title>
+    <meta name="keywords" content="上海app开发,上海app制作,app定制开发,app开发公司">
+    <meta name="description" content="上海真略app开发公司(400-663-9990)致力于IOS、android APP开发手机APP应用软件,为客户提供一站式手机APP开发解决方案的上海app外包开发商.上海app制作开发就选上海真略!">
+    <link rel="canonical" href="">
+    <!--[if lt IE 9]>
+     <script src="/templates/main/js/html5shiv.min.js"></script>
+     <script src="/templates/main/js/respond.min.js"></script>
+    <![endif]-->
 </head>
-
 <body>
-    <div class="index">
-        <div class="index-banner index-banner-top">
-            <div class="index-banner-box">
-                <div class="title">15年深耕人力资源服务业</div>
-                <div class="text">服务上市公司29家和超千人企业83家</div>
-            </div>
+    <script type="text/javascript" src="static/js/jquery-1.11.2.min.js"></script>    
+<div class="topbar">
+    <div class="container">
+        <p class="pull_left fiften">十五年核心团队 · 值得信赖</p>
+        <div class="pull_right tpr">
+            <p class="dh"><i>APP定制开发咨询热线：</i><em>1895226560</em><i> / </i><em></em></p>
         </div>
-        <div class="index-number">
-            <div class="inner">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <div class="item">
-                            <div class="title">2007年</div>
-                            <div class="text">集团始创于2007年</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <div class="item">
-                            <div class="title">110000000</div>
-                            <div class="text">注册资本1.1亿</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <div class="item">
-                            <div class="title">21+</div>
-                            <div class="text">业务范围覆盖21个省份</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <div class="item">
-                            <div class="title">500000+</div>
-                            <div class="text">安置就业50余万人</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="index-product">
-            <div class="inner">
-                <div class="flex">
-                    <div class="index-product-item index-product-item-bigger">
-                        <div class="index-product-item-innerbox">
-                            <div class="title">我们的<span class="col">产品服务</span></div>
-                            <div class="text">持续不断为客户提供具有价值的产品和服务</div>
-                        </div>
-                    </div>
-                    <volist name="productList" id="vo">
-                        <div class="index-product-item">
-                            <div class="index-product-item-innerbox2">
-                                <div class="flex-box">
-                                    <div class="img"></div>
-                                    <div class="title">{$vo.name}</div>
-                                </div>
-                                <div class="text">{$vo.description}</div>
-                            </div>
-                        </div>
-                    </volist>
-                </div>
-            </div>
-
-        </div>
-        <div class="index-solution">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>一站式人力资源整体<span class="col">解决方案</span></p>
-                </div>
-                <div class="inner-small-title text-center">持续不断为客户提供具有价值的产品和服务</div>
-                <div class="index-solution-box">
-                    <div class="flex-box">
-                        <div class="index-solution-box-left">
-                            <ul>
-                                <portal:subCategories categoryId="68" item="vo">
-                                    <li>
-                                        <div class="icon"></div>
-                                        <div class="content">
-                                            <div class="title">{$vo.name}</div>
-                                            <div class="text">{$vo.description}</div>
-                                        </div>
-                                    </li>
-                                </portal:subCategories>
-                                <!-- <li class="active">
-                                    <div class="icon"></div>
-                                    <div class="content">
-                                        <div class="title">政务编外派遣服务解决方案</div>
-                                        <div class="text">提高行政效率、降低行政成本、规避劳务风险、更省心、更便捷</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon"></div>
-                                    <div class="content">
-                                        <div class="title">建筑工程、机电安装劳务分包解决方案</div>
-                                        <div class="text">提高行政效率、降低行政成本、规避劳务风险、更省心、更便捷</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon"></div>
-                                    <div class="content">
-                                        <div class="title">国企和上市物业公司保洁外包服务解决方案</div>
-                                        <div class="text">提高行政效率、降低行政成本、规避劳务风险、更省心、更便捷</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon"></div>
-                                    <div class="content">
-                                        <div class="title">员工工伤和意外伤害全面保障方案</div>
-                                        <div class="text">提高行政效率、降低行政成本、规避劳务风险、更省心、更便捷</div>
-                                    </div>
-                                </li> -->
-                            </ul>
-                        </div>
-                        <div class="index-solution-box-right">
-                            <ul>
-                                <li class="active">
-                                    <div class="text">
-                                        华劳集团拥有15年规模用工企业服务经验，累计服务企业客户3000+家，服务满意度高达99.8%，累计服务上岗员工50余万人。
-                                    </div>
-                                    <div class="text">华劳集团拥有近百名丰富经验的招聘团队、新媒体运营团队、大量优质招聘渠道供应商、原生“华劳网”蓝领招聘APP和“刷活”灵活用工平台，具有极强的招聘交付能力。
-                                    </div>
-                                    <div class="company-name">合作客户</div>
-                                    <div class="flex-box">
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/1.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/2.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/3.png" /></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
-                                    </div>
-                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
-                                    </div>
-                                    <div class="company-name">合作客户</div>
-                                    <div class="flex-box">
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/4.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/5.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/6.png" /></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        一站式解决企业全国员工人事办理难题，全国170+直营分/子公司，可满足全国范围内员工人事办理服务。助力企业轻资产运营，为企业减负，优化企业管理中的人员、固定资产投入等成本。
-                                    </div>
-                                    <div class="text">1000+名优质服务团队24小时为您服务，线上智慧业务办理系统一键直达，更直观高效。强大的资金保障，专业化、平台化的一站式薪资发放体系更直观、资金往来更有保障。
-                                    </div>
-                                    <div class="company-name">合作客户</div>
-                                    <div class="flex-box">
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/7.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/8.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/9.png" /></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        华劳集团始终以客户为中心，为客户提供极具价值的产品和服务为理念，凭借15年业务专长，专注于企业规范用工模式的探索与研发，为客户提供一站式人力资源综合解决方案。
-                                    </div>
-                                    <div class="text">华劳集团目前服务客户累计已达3000余家，安置就业人员50余万人，为促进就业，构建和谐社会，建立新型劳动关系作出巨大贡献。
-                                    </div>
-                                    <div class="company-name">合作客户</div>
-                                    <div class="flex-box">
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/36.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/55.png" /></div>
-                                        <div><img src="__TMPL__/public/assets/style/imgs/index/customer/60.png" /></div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="index-solution-box-left-bottom">
-                        <div class="flex-around">
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/zhongzheng.svg" />
-                                </div>
-                                <div class="text">中政外包</div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/hualao.svg" />
-                                </div>
-                                <div class="text">华劳人力</div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/jinsan.svg" />
-                                </div>
-                                <div class="text">金伞保险</div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/zhonglao.svg" />
-                                </div>
-                                <div class="text">中劳劳务</div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/zhongjie.svg" />
-                                </div>
-                                <div class="text">中洁清洁</div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/md-add.svg" class="md-add" />
-                                <div class="img-logo">
-                                    <img src="__TMPL__/public/assets/style/imgs/index/logos/zhonglang.svg" />
-                                </div>
-                                <div class="text">中朗安服</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="index-history">
-            <div class="index-history-box">
-                <div class="inner">
-                    <div class="inner-bigger-title text-center">
-                        <p>发展历程</p>
-                    </div>
-                    <div class="inner-small-title text-center">持续不断为客户提供具有价值的产品和服务</div>
-                    <div class="flex-around hidden-xs">
-                        <div class="index-history-box-left">
-                            <div class="text">
-                                华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。
-                            </div>
-                            <div class="time-line">
-                                <ul class="history-box">
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2022</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-30 华劳集团荣获“山东省儒商研究会优秀会员单位”荣誉称号！</div>
-                                    </li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">12-28 华劳集团总经理李永欣同志荣获“德州市人力资源服务领军人才”荣誉称号！</div>
-									</li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">12-20 热烈庆祝华劳人力资源有限公司全国分公司总数达40家！</div>
-									</li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-16 华劳集团总经理李永欣同志荣获“德州市人力资源服务领军人才”称号！</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-13 华劳集团挺进人力资源行业“民营TOP50强”！</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-15 华劳人力资源有限公司洛阳分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-11 海南中好物业服务有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-11 德州中好物业服务有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">10-24 安徽百企人力资源服务有限公司大观分公司成立</div>
-                                    </li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">10-15 刷活灵活用工平台正式上线！</div>
-									</li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">10-14 华劳集团三体系认证审核通过</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">10-09 华劳人力资源有限公司沧州分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-30 华劳人力资源有限公司甘肃分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-19 华劳人力资源有限公司桂林分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-15 华劳人力资源有限公司黑龙江分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-05 华劳人力资源有限公司湖北分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>09-01 华劳人力资源有限公司宁波分公司 成立</div>
-                                            <div>09-01 正式启用薪太软SaaS产品服务</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-31 华劳人力资源有限公司绵阳分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-30 华劳人力资源有限公司天津分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>08-29 华劳人力资源有限公司河北分公司 成立</div>
-                                            <div>08-29 华劳人力资源有限公司河南分公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-27 华劳人力资源有限公司山西分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>08-26 华劳人力资源有限公司江西分公司 成立</div>
-                                            <div>08-26 华劳人力资源有限公司四川分公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-25 华劳人力资源有限公司湖南分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>08-24 华劳人力资源有限公司济南分公司 成立</div>
-                                            <div>08-24 华劳人力资源有限公司安徽分公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-23 华劳人力资源有限公司云南分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-20 蓝领线上职介所“华劳网APP”上线！</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-15 华劳人力资源有限公司广东分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-12 华劳人力资源有限公司深圳分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-08 华劳人力资源有限公司上海分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-04 华劳人力资源有限公司广西分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-02 华劳人力资源有限公司江苏分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>07-29 华劳人力资源有限公司辽宁分公司 成立</div>
-                                            <div>07-29 华劳人力资源有限公司青岛分公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-27 华劳人力资源有限公司海南分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-26 华劳人力资源有限公司三亚分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-25 华劳人力资源有限公司浙江分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>07-21 华劳人力资源有限公司新疆分公司 成立</div>
-                                            <div>07-21 华劳人力资源有限公司重庆分公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-19 华劳人力资源有限公司福建分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-18 华劳人力资源有限公司陕西分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>07-15 华劳人力资源有限公司内蒙古分公司 成立</div>
-                                            <div>07-15 华劳人力资源有限公司北京分公司 成立</div>
-                                            <div>07-15 华劳人力资源有限公司大连分公司 成立</div>
-                                            <div>07-15 华劳人力资源有限公司官网上线</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-14 华劳人力资源有限公司贵州分公司 成立</div>
-                                    </li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">06-28 安徽华劳人力资源服务有限公司嘉兴分公司成立</div>
-									</li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">06-21 安徽百企人力资源服务有限公司安庆分公司成立</div>
-									</li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">06-07 山东百业服务外包有限公司德州分公司成立</div>
-									</li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-08 雇员工伤保护伞“雇工伞”产品上线</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-30 华劳集团总经理李永欣刊登为“儒商杂志封面人物”！</div>
-                                    </li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">02-17 安徽华劳人力资源服务有限公司成立</div>
-									</li>
-									<li>
-									    <div class="circular"></div>
-									    <div class="name">01-14 安徽百企人力资源服务有限公司成立</div>
-									</li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2021</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-17 上海华劳科技有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-26 中朗（北京）国际保安服务有限公司投资控股</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-18 山东华企科技服务有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-26 华劳（北京）人力资源服务有限公司投资控股</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2020</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-01 北京灵活科技有限公司 投资</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-11 华劳人力资源有限公司 (厦门) 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-26 灵动未来（天津）信息技术有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-07 德州北方电子商务有限公司 更名为 山东企保网络科技有限公司</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2019</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-04 山东华劳人力资源有限公司菏泽分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-21 中洁清洁服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-16 德州华劳职业培训学校有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-13 山东华劳保险代理有限公司 更名为 山东金伞保险代理有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-29 山东华劳人力资源有限公司天津分公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2018</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>08-08 山东百业服务外包有限公司 成立</div>
-                                            <div>08-08 山东中劳劳务分包有限公司 成立</div>
-                                            <div>08-08 德州千业酒店管理有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-09 德州百业劳务服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">01-19 山东华劳人力资源有限公司 迁址 省府济南</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2017</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-15 华劳股份有限公司 更名为 华劳集团股份有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-30 山东华劳人力资源有限公司重庆分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-09 广州华劳人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-13 德州万泉保险代理有限责任公司 更名为 山东华劳保险代理有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-08 德州万泉保险代理有限责任公司 全资收购</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-05 山东华劳人力资源有限公司郑州分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-07 山东华劳人力资源有限公司台安分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-02 山东华劳人力资源有限公司新乡分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-25 山东华劳人力资源有限公司焦作分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-09 山东华劳人力资源有限公司潍坊分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-08 山东华劳人力资源有限公司安徽分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-07 山东华劳人力资源有限公司济源分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-31 山东华劳人力资源有限公司淮安分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-08 德州天衢人力资源服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-05 山东华劳人力资源有限公司吉林省分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>04-10 山东华劳人力资源有限公司徐州分公司 成立</div>
-                                            <div>04-10 深圳金伞保险经纪有限公司 成立</div>
-                                            <div>04-10 深圳总裁驿站美容连锁有限公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-05 山东华劳人力资源有限公司滨州分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">03-23 华劳股份有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">03-16 四川华劳人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">01-25 山东中政服务外包有限公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2016</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-22 山东华劳人力资源有限公司青岛分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-19 山东华劳人力资源有限公司河北分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-18 华劳（天津）人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-15 山东华劳人力资源有限公司禹城分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-10 山东华劳人力资源有限公司沂水分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-27 山东华劳人力资源有限公司临沂分公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2015</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-02 德州市华劳人力资源有限公司 更名为 山东华劳人力资源有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-23 德州北方电子商务有限公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2014</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-01 华劳就业网人才市场招聘 门店开业</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2007</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-14 德州市华劳人力资源有限公司 成立</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="index-history-box-right">
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" />
-                            </div>
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/2.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden-lg hidden-md hidden-sm">
-                    <div class="flex-around">
-                        <div class="index-history-box-left">
-                            <div class="text">
-                                华劳集团股份有限公司创始于2007年，是中国人力资源服务行业的先行者，旗下运营主体有华劳人力资源、金伞保险代理、中政服务外包、中劳建筑劳务分包、中洁清洁、中朗安服六大事业集群，是一家致力于人力资源全产业链管理与开发的综合性商业服务集团。
-                            </div>
-                            <div class="time-line">
-                                <ul class="history-box">
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2021</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-17 &nbsp上海华劳科技有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-26 &nbsp中朗（北京）国际保安服务有限公司投资控股</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-18 &nbsp山东华企科技服务有限公司成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-26 &nbsp华劳（北京）人力资源服务有限公司投资控股</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2020</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-01 &nbsp北京灵活科技有限公司 投资</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-11 &nbsp华劳人力资源有限公司 (厦门) 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-26 &nbsp灵动未来（天津）信息技术有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-07 &nbsp德州北方电子商务有限公司 更名为 山东企保网络科技有限公司</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2019</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-04 &nbsp山东华劳人力资源有限公司菏泽分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-21 &nbsp中洁清洁服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-16 &nbsp德州华劳职业培训学校有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-13 &nbsp山东华劳保险代理有限公司 更名为 山东金伞保险代理有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-29 &nbsp山东华劳人力资源有限公司天津分公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2018</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>08-08 &nbsp山东百业服务外包有限公司 成立</div>
-                                            <div>08-08 山东中劳劳务分包有限公司 成立</div>
-                                            <div>08-08 德州千业酒店管理有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-09 &nbsp德州百业劳务服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">01-19 &nbsp山东华劳人力资源有限公司 迁址 省府济南</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2017</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-15 &nbsp华劳股份有限公司 更名为 华劳集团股份有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-30 &nbsp山东华劳人力资源有限公司重庆分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-09 &nbsp广州华劳人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-13 &nbsp德州万泉保险代理有限责任公司 更名为 山东华劳保险代理有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-08 &nbsp德州万泉保险代理有限责任公司 全资收购</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-05 &nbsp山东华劳人力资源有限公司郑州分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-07 &nbsp山东华劳人力资源有限公司台安分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-02 &nbsp山东华劳人力资源有限公司新乡分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">07-25 &nbsp山东华劳人力资源有限公司焦作分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-09 &nbsp山东华劳人力资源有限公司潍坊分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-08 &nbsp山东华劳人力资源有限公司安徽分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">06-07 &nbsp山东华劳人力资源有限公司济源分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-31 &nbsp山东华劳人力资源有限公司淮安分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-08 &nbsp德州天衢人力资源服务有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-05 &nbsp山东华劳人力资源有限公司吉林省分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">
-                                            <div>04-10 &nbsp山东华劳人力资源有限公司徐州分公司 成立</div>
-                                            <div>04-10 深圳金伞保险经纪有限公司 成立</div>
-                                            <div>04-10 深圳总裁驿站美容连锁有限公司 成立</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-05 &nbsp山东华劳人力资源有限公司滨州分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">03-23 &nbsp华劳股份有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">03-16 &nbsp四川华劳人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">01-25 &nbsp山东中政服务外包有限公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2016</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-22 &nbsp山东华劳人力资源有限公司青岛分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">12-19 &nbsp山东华劳人力资源有限公司河北分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">09-18 &nbsp华劳（天津）人力资源有限公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">08-15 &nbsp山东华劳人力资源有限公司禹城分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-10 &nbsp山东华劳人力资源有限公司沂水分公司 成立</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">04-27 &nbsp山东华劳人力资源有限公司临沂分公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2015</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-02 &nbsp德州市华劳人力资源有限公司 更名为 山东华劳人力资源有限公司</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-23 &nbsp德州北方电子商务有限公司 成立</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2014</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">05-01 &nbsp华劳就业网人才市场招聘 门店开业</div>
-                                    </li>
-                                    <li class="active">
-                                        <div class="circular"></div>
-                                        <div class="name">2007</div>
-                                    </li>
-                                    <li>
-                                        <div class="circular"></div>
-                                        <div class="name">11-14 &nbsp德州市华劳人力资源有限公司 成立</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="index-history-box-right">
-                            <div class="history-img"><img src="__TMPL__/public/assets/style/imgs/index/history/1.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="index-advantage">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>我们的优势</p>
-                </div>
-                <div class="inner-small-title text-center">持续不断为客户提供具有价值的产品和服务</div>
-            </div>
-            <div class="index-advantage-box">
-                <div class="inner">
-                    <div class="index-advantage-box-top">
-                        <div class="item">
-                            <img src="__TMPL__/public/assets/style/imgs/index/advance/1.svg" />
-                            <div>有经验</div>
-                        </div>
-                        <div class="item">
-                            <img src="__TMPL__/public/assets/style/imgs/index/advance/2.svg" />
-                            <div>渠道广</div>
-                        </div>
-                        <div class="item">
-                            <img src="__TMPL__/public/assets/style/imgs/index/advance/3.svg" />
-                            <div>资质全</div>
-                        </div>
-                        <div class="item">
-                            <img src="__TMPL__/public/assets/style/imgs/index/advance/4.svg" />
-                            <div>专业高</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="index-advantage-bottom">
-                    <div class="inner">
-                        <div class="index-advantage-bottom-box">
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/advance/number/1.svg" />
-                                <div>服务团队平均工龄五年以上</div>
-                                <div class="icon-img"></div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/advance/number/2.svg" />
-                                <div>拥有百人招聘团队<br />线上线下渠道完善</div>
-                                <div class="icon-img"></div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/advance/number/3.svg" />
-                                <div>人力资源服务资质<br />保险代理资质</div>
-                                <div class="icon-img"></div>
-                            </div>
-                            <div class="item">
-                                <img src="__TMPL__/public/assets/style/imgs/index/advance/number/4.svg" />
-                                <div class="hidden-xs">拥有人力资源高精尖人才50人</div>
-                                <div class="hidden-lg hidden-md hidden-sm">拥有人力资源高精尖人才50<br />人</div>
-                                <div class="icon-img"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="index-advantage-bottom-box2">
-                <div class="item">
-                    <div class="item-text">15年深耕人力资源服务业</div>
-                    <div class="item-circular">
-                        <div class="item-circular-cir"></div>
-                    </div>
-                    <div class="item-gradient"></div>
-                </div>
-                <div class="item">
-                    <div class="item-text">服务超千人企业和上市公司83家</div>
-                    <div class="item-circular">
-                        <div class="item-circular-cir"></div>
-                    </div>
-                    <div class="item-gradient"></div>
-                </div>
-                <div class="item">
-                    <div class="item-text">服务客户3000余家</div>
-                    <div class="item-circular">
-                        <div class="item-circular-cir"></div>
-                    </div>
-                    <div class="item-gradient"></div>
-                </div>
-                <div class="item">
-                    <div class="item-text">全国170+家直营分/子公司</div>
-                    <div class="item-circular">
-                        <div class="item-circular-cir"></div>
-                    </div>
-                    <div class="item-gradient"></div>
-                </div>
-            </div>
-            <!-- <div class="hidden-lg hidden-md hidden-sm">
-                <img src="__TMPL__/public/assets/style/imgs/index/advance-phone-bg2.png" style="width: 100%;" />
-            </div> -->
-        </div>
-        <div class="index-news">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>华劳动态</p>
-                </div>
-                <div class="inner-small-title text-center">华劳集团公司新闻、人力资源行业动态</div>
-                <div class="index-news-box">
-                    <portal:articles item="vo" order="post.create_time DESC" page="4" categoryIds="23" returnVarName="articles_data">
-                        <notempty name="$vo.thumbnail">
-                            <notempty name="$vo.post_content">
-                                <div class="item">
-
-                                    <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">
-                                        <div class="title-bigger" style="background: url({:cmf_get_image_url($vo.thumbnail)}) center center no-repeat;background-size: 100% 100%;">
-                                            <div class="inner-box">
-                                                <div class="content">{$vo.post_title}</div>
-                                            </div>
-                                        </div>
-                                        <div class="title">{$vo.post_title}</div>
-                                        <div class="time">{:date('Y/m/d',$vo.published_time)}</div>
-                                        <div class="text hidden-xs">
-                                            {$vo.post_content|htmlspecialchars_decode}</div>
-                                        <div class="more-btn"> <a href="{:cmf_url('portal/News/detail',array('id'=>$vo['id'],'cid'=>$vo['categories'][0]['id']))}">›
-                                        </div>
-                                    </a>
-
-                                </div>
-                            </notempty>
-                        </notempty>
-
-                    </portal:articles>
-                </div>
-                <div class="more hidden-xs"><a href="{:cmf_url('portal/News/index')}" style="display: block;">更多新闻</a>
-                </div>
-            </div>
-        </div>
-        <div class="index-customer">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>1600+家企业的信赖</p>
-                </div>
-                <div class="inner-small-title text-center">深耕人力资源服务业，为企业提供更优质的服务</div>
-                <include file="public@customers" />
-                <div class="more"><a href="{:cmf_url('portal/Customer/index')}">查看所有客户案例</a></div>
-            </div>
-        </div>
-        <div class="index-bottom">
-            <div class="inner">
-                <div class="inner-bigger-title text-center">
-                    <p>以人为本，创造价值，多方共赢，长期发展</p>
-                </div>
-                <div class="text-center" style="color: #999;">全国170+家直营分/子公司，量身定制，满足多个行业广泛业务需求</div>
-                <div class="solution-btn"><a href="{:cmf_url('portal/Form/index')}">获取定制解决方案</a></div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-        <include file="public@footer" />
-
     </div>
-</body>
+</div>
+<nav class="navbar navbar-default header_inner">
+    <div class="container" id="nav">
+        <h1 class="logo"><a href="">app开发公司,上海app开发,app定制开发</a></h1>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="menus">
+                <li class="active"><a href=""><span>网站首页</span></a></li>
+                <li><a href="app.html"><span>APP开发</span></a></li>
+                <li><a href="xcx.html"><span>微信小程序开发</span></a></li>
+                <li><a href="wlw.html"><span>物联网与大数据开发</span></a></li>
+                <li><a href="dxwhtd.html" rel="nofollow" target="_blank"><span>大象探店优选</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>产品与解决方案<em class="caret"></em></span></a>
+                    <ul class="dropdown-menu">
+                        <a href="waste_disposal.html" rel="nofollow" target="_blank">垃圾处理项目</a>
+                        <a href="znjsxt.html" rel="nofollow" target="_blank">智能健身系统</a>
+                      
+						<a href="znwyxt.html" rel="nofollow" target="_blank">智能物业系统</a>
+                        <a href="swdcxt.html" rel="nofollow" target="_blank">政务督办系统</a>
+                        <a href="dyxcx.html" rel="nofollow" target="_blank">抖音小程序</a>
+    <a href="javascript:;" rel="nofollow" target="_blank">火课在线教育系统</a>
+                    </ul>
+                </li>
+                <li><a href="86.html"><span>成功案例</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>开发资讯 <em class="caret"></em></span></a>
+                    <ul class="dropdown-menu">
+                        <a href="71.html">APP业界资讯</a>
+                        <a href="69.html">iOS APP开发资讯</a>
+                        <a href="70.html">Android APP开发资讯</a>
+                        <a href="100.html">小程序开发常见问题</a>
+                        <a href="99.html">微信小程序开发业界资讯</a>
+                        <a href="72.html">APP开发常见问题</a>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>关于我们 <em class="caret"></em></span></a>
+                    <ul class="dropdown-menu">
+                        <a href="gsjj.html" rel="nofollow">关于真略</a>
+                        <a href="contact.html" rel="nofollow">联系我们</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <script type="text/javascript">
-    $(function () {
-        $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
-        $(".index-solution .index-solution-box-left li").mouseover(function () {
-            $(".index-solution .index-solution-box-left li").removeClass("active");
-            $(this).addClass("active");
-            var n = $(this).index();
-            $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-            $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(n).addClass("active");
-        })
-        $(".index-solution .index-solution-box-left li").mouseout(function () {
-            $(".index-solution .index-solution-box-left li").removeClass("active");
-            $(".index-solution .index-solution-box-left li").eq(0).addClass("active");
-            $(".index-solution .index-solution-box .index-solution-box-right ul li").removeClass("active");
-            $(".index-solution .index-solution-box .index-solution-box-right ul li").eq(0).addClass("active");
-        })
-        $(".index-news .index-news-box .item").eq(0).addClass("active");
-        $(".index-news .index-news-box .item").mouseover(function () {
-            $(".index-news .index-news-box .item").removeClass("active");
-            $(this).addClass("active");
-        });
-        $(".index-news .index-news-box .item").mouseout(function () {
-            $(".index-news .index-news-box .item").removeClass("active");
-            $(".index-news .index-news-box .item").eq(0).addClass("active");
-        })
-        // 新闻
-        //       $(".index-news .index-news-box .item").mouseover(function () {
-        //           $(".index-news .index-news-box .item .title").css("display", "block");
-        //           $(this).children(".title").css("display", "none");
+$(document).ready(function(){
+	var navOffset=$("#nav").offset().top;
+	$(window).scroll(function(){
+		var scrollPos=$(window).scrollTop();
+		if(scrollPos >=navOffset){
+			$(".header_inner").addClass("navbar-fixed-top");
+		}else{
+			$(".header_inner").removeClass("navbar-fixed-top");
+		}
+	});
 
-        //           $(".index-news .index-news-box .item .title-bigger").css("display", "none");
-        //           $(this).children(".title-bigger").css("display", "block");
-
-        //           $(".index-news .index-news-box .item .time").css("color", "#D1D1D1");
-        //           $(this).children(".time").css({ "font-weight": "600", "color": "#ff5000" });
-
-        //           $(".index-news .index-news-box .item .more-btn").css({ "background": "#FAFAFA","color": "#ff5000" });
-        //           $(this).children(".more-btn").css({ "background": "#FF5000","color": "#fff" });
-        //           // $(this).children(".index-news .index-news-box .item .more-btn a");
-        //       })
-        // $(".index-news .index-news-box .item").mouseout(function(){
-        // 	$(".index-news .index-news-box .item").eq(0).children(".title").css("display", "none");
-        // 	$(".index-news .index-news-box .item").eq(0).children(".title-bigger").css("display", "block");
-        // 	$(".index-news .index-news-box .item").eq(0).children(".time").css({"font-weight": "600", "color": "#ff5000"});
-        // 	$(".index-news .index-news-box .item").eq(0).children(".more-btn").css({"background": "#FF5000","color": "#fff"});
-        // })
-    })
+});
 </script>
 
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/swiper.min.js"></script>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="static/picture/banner01.jpg" alt="上海真略：不只是APP开发，更是理念">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="container">
+        <div class="index_tit wow bounceInDown">
+            <img src="static/picture/tit1.png">
+            <h4>产品定位 + 视觉设计 + 代码实现 + 产品上线</h4>
+            <p class="p1">真略科技是一家立足上海APP定制开发企业<br>
+                上海真略网络科技有限公司，总部位于上海，立足长三角，服务全国，专注产品设计与研发，为客户提供产品定位、视觉设计、程序开发与产品上线的一站式产品设计与研发服务 。15年里，我们已经帮助几千家企业成功创建品牌产品，重塑品牌价值 。</p>
+        </div>
+    </div>
+    <div class="data_box">
+        <div class="container">
+            <ul class="wow pulse">
+                <li class="col-md-3">
+                    <h3>15+</h3>
+                    <p>15年不改初衷<br>
+                        一直专注软件设计与研发</p>
+                </li>
+                <li class="col-md-3">
+                    <h3>100+</h3>
+                    <p>100余位专业人才<br>
+                        为你的产品保驾护航</p>
+                </li>
+                <li class="col-md-3">
+                    <h3>200+</h3>
+                    <p>200多家合作伙伴<br>
+                        共同成长相互促进</p>
+                </li>
+                <li class="col-md-3">
+                    <h3>1000+</h3>
+                    <p>1000多家客户案例<br>
+                        成功助力这些企业快速成长</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="comline"></div>
+    <div class="container">
+        <div class="index_tit wow bounceInDown">
+            <h5>已有<em>819</em> 家企业从真略得到了满意的产品设计研发服务</h5>
+            <h5>几乎<i>覆盖全行业</i> 的APP开发经验</h5>
+        </div>
+    </div>
+    <div class="case_contair">
+        <ul class="wow pulse">
+                  
+            <li class="col-md-3"><a href="show-996.html" target="_blank">
+                <div class="clist">
+                    <h3>史志办</h3>
+                </div>
+                <img src="static/picture/202109081801378237.jpg" alt="史志办">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-995.html" target="_blank">
+                <div class="clist">
+                    <h3>博汇集团</h3>
+                </div>
+                <img src="static/picture/202109081754239447.jpg" alt="博汇集团">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-994.html" target="_blank">
+                <div class="clist">
+                    <h3>博悦检测</h3>
+                </div>
+                <img src="static/picture/202109081750181101.jpg" alt="博悦检测">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-992.html" target="_blank">
+                <div class="clist">
+                    <h3>红跑车</h3>
+                </div>
+                <img src="static/picture/202109021610431999.jpg" alt="红跑车">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-991.html" target="_blank">
+                <div class="clist">
+                    <h3>车必净</h3>
+                </div>
+                <img src="static/picture/202109021608223156.jpg" alt="车必净">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-990.html" target="_blank">
+                <div class="clist">
+                    <h3>博汇智能装备</h3>
+                </div>
+                <img src="static/picture/202109021607124545.jpg" alt="博汇智能装备">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-927.html" target="_blank">
+                <div class="clist">
+                    <h3>慕容APP</h3>
+                </div>
+                <img src="static/picture/202007181344099021.jpg" alt="慕容APP">
+            </a></li>
+              
+            <li class="col-md-3"><a href="show-926.html" target="_blank">
+                <div class="clist">
+                    <h3>展超商城</h3>
+                </div>
+                <img src="static/picture/202007181341379744.jpg" alt="展超商城">
+            </a></li>
+            
+     
+        </ul>
+		<div class="text-center">
+			<a href="86.html" class="btns btn_more wow rubberBand">+ 更多案例</a>
+		</div>
+    </div>
+    <div class="container">
+        <div class="index_tit wow bounceInDown">
+            <h6>我们能帮您打造</h6>
+            <h4 class="p10">迅速提升品牌与销量</h4>
+            <h6>产品设计与研发</h6>
+        </div>
+    </div>
+    <div class="container">
+        <div class="indservice">
+            <ul class="wow bounceInUp">
+                <li class="col-md-4">
+                    <i class="icon1"></i>
+                    <div class="title">APP开发</div>
+                    <div class="line"></div>
+                    <div class="cons">APP全案策划、app定制开发、app转型升级</div>
+                    <div class="more"><a href="app.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+                <li class="col-md-4">
+                    <i class="icon2"></i>
+                    <div class="title">物联网与大数据开发</div>
+                    <div class="line"></div>
+                    <div class="cons">车联网解决方案、工业物联网解决方案、物联网云平台解决方案、支持多用户、跨行业、跨平台、跨设备、无缝接入物联网平台</div>
+                    <div class="more"><a href="wlw.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+                <li class="col-md-4">
+                    <i class="icon3"></i>
+                    <div class="title">H5混合开发</div>
+                    <div class="line"></div>
+                    <div class="cons">H5定制开发、H5场景制作、H5互动游戏开发、H5视频动画、H5品牌推广</div>
+                    <div class="more"><a href="app.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+                <li class="col-md-4">
+                    <i class="icon4"></i>
+                    <div class="title">微信小程序开发</div>
+                    <div class="line"></div>
+                    <div class="cons">微信小程序开发、微信公众平台开发、微信支付、服务号、订阅号、微分销、微商城、微信接口等开发定制。</div>
+                    <div class="more"><a href="xcx.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+                <li class="col-md-4">
+                    <i class="icon5"></i>
+                    <div class="title">AR/VR</div>
+                    <div class="line"></div>
+                    <div class="cons">AR工业解决方案、AR教育解决方案、AR巡检/远程指导解决方案、AR营销解决方案</div>
+                    <div class="more"><a href="arvr.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+                <li class="col-md-4">
+                    <i class="icon6"></i>
+                    <div class="title">视觉设计</div>
+                    <div class="line"></div>
+                    <div class="cons">网站设计、商城整体装修、H5设计、电商视觉营销设计</div>
+                    <div class="more"><a href="app.html" target="_blank" rel="nofollow">详细了解</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+	<div class="plann_principles">
+		<div class="container">
+			<div class="index_tit wow bounceInDown">
+				<h4 class="wl">真略APP全案策划的3大原则</h4>
+				<p class="p2">创意虽重要，原则价更高<br>多年来我们一直坚守，不改初衷</p>
+			</div>
+			<ul class="wow pulse">
+				<li class="col-md-4">
+					<h3>能落地</h3>
+					<p class="p1">一切品牌策略和创意以落地为最终目标，不落地的设计坚决不做。</p>
+					<p class="p2">团队协同作业·透明操作流程·及时对接沟通</p>
+				</li>
+				<li class="col-md-4">
+					<h3>高效率 不拖延工期</h3>
+					<p class="p1">无论多优秀的设计和创意，错过了客户的最佳执行时机就是废纸。</p>
+					<p class="p2">团队协同作业·透明操作流程·及时对接沟通</p>
+				</li>
+				<li class="col-md-4">
+					<h3>重执行 不脱离应用</h3>
+					<p class="p1">创意设计兼顾实用与执行，最大程度发挥创意对市场营销的推动。</p>
+					<p class="p2">团队协同作业·透明操作流程·及时对接沟通</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+    <div class="cando_tent">
+        <div class="container">
+            <div class="index_tit wow bounceInDown">
+                <h2>让我们来见证，设计与开发的完美结合</h2>
+            </div>
+        </div>
+        <div class="cando_box">
+            <div class="container">
+                <div class="swiper-container1">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<li style="background:url(static/image/over_bg6.png) no-repeat center;">
+								<a href="waste_disposal.html" target="_blank" rel="nofollow"><div class="yl-ccxxNrMc"></div>
+								<div class="yl-ccxxNrPos"><img src="static/picture/over6.png" alt="垃圾处理项目"><p>垃圾处理项目</p></div></a>
+							</li>
+						</div>
+						<div class="swiper-slide">
+							<li style="background:url(static/image/over_bg1.png) no-repeat center;">
+								<a href="znjsxt.html" target="_blank" rel="nofollow"><div class="yl-ccxxNrMc"></div>
+								<div class="yl-ccxxNrPos"><img src="static/picture/over1.png" alt="智能健身系统"><p>智能健身系统</p></div></a>
+							</li>
+						</div>
+						<div class="swiper-slide">
+							<li style="background:url(static/image/over_bg2.png) no-repeat center;">
+								<a href="javascript:;" target="_blank"><div class="yl-ccxxNrMc"></div>
+								<div class="yl-ccxxNrPos"><img src="static/picture/over2.png" alt="智能网校系统"><p>智能网校系统</p></div></a>
+							</li>
+						</div>
+					
+						<div class="swiper-slide">
+							<li style="background:url(static/image/over_bg4.png) no-repeat center;">
+								<a href="znwyxt.html" target="_blank" rel="nofollow"><div class="yl-ccxxNrMc"></div>
+								<div class="yl-ccxxNrPos"><img src="static/picture/over4.png" alt="智能物业系统"><p>智能物业系统</p></div></a>
+							</li>
+						</div>
+						<div class="swiper-slide">
+							<li style="background:url(static/image/over_bg5.png) no-repeat center;">
+								<a href="swdcxt.html" target="_blank" rel="nofollow"><div class="yl-ccxxNrMc"></div>
+								<div class="yl-ccxxNrPos"><img src="static/picture/over5.png" alt="政务督办系统"><p>政务督办系统</p></div></a>
+							</li>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btns btn_more wow rubberBand">免费获取解决方案</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="index_tit wow bounceInDown">
+            <h4 class="p10">精准高效的服务，来自标准化的服务流程</h4>
+        </div>
+        <div class="indadv">
+            <dl class="col-md-3">
+                <dt>重沟通</dt>
+                <dd>
+                    <h3>经理1对1沟通</h3>
+                    <p>客户需求梳理</p>
+                    <p>企业内外部调研</p>
+                    <p>产品机会探索</p>
+                    <p>产品策略定位</p>
+                    <p>全程即时沟通</p>
+                </dd>
+            </dl>
+            <dl class="col-md-3">
+                <dt>优执行</dt>
+                <dd>
+                    <h3>优化视觉设计</h3>
+                    <p>交互原型设计</p>
+                    <p>UI设计呈现</p>
+                    <p>设计方案创意说明</p>
+                    <p>确定设计方案</p>
+                </dd>
+            </dl>
+            <dl class="col-md-3">
+                <dt>细服务</dt>
+                <dd>
+                    <h3>精细产品开发测试</h3>
+                    <p>细致前端开发</p>
+                    <p>打磨后台代码</p>
+                    <p>精细产品测试</p>
+                </dd>
+            </dl>
+            <dl class="col-md-3">
+                <dt>得成果</dt>
+                <dd>
+                    <h3>产品落地上线</h3>
+                    <p>产品平台上线</p>
+                    <p>成品验收确认</p>
+                    <p>代码移交</p>
+                    <p>售后跟进</p>
+                </dd>
+            </dl>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="index_news">
+        <div class="container">
+            <div class="col-md-7 wow bounceInLeft">
+                <h3 class="news_tit">APP开发资讯 / <span>APP News</span></h3>
+                <ul class="rtnw">
+                    
+                    <li>
+                        <p class="time">2021.04<span>23</span></p>
+                        <div class="news_r">
+                            <a href="show-989.html">
+                                <h3>ASO（应用商店优化）提示，技巧和策略</h3>
+                            </a>
+                            <p class="desc">为了使您的APP移动应用程序大受欢迎，您需要保持领先并针对iOS和Android商店进行更新，尝试新概念并接受变化。为了使其变得更容易，我们将ASO的最佳实践分享出来。1.制定清晰的ASO策略准备移动应用程序框架和信息体系结构时，请进行研究，了解市场并了解用户。了解针对所需产品…</p>
+                        </div>
+                    </li>
+					
+                    <li>
+                        <p class="time">2021.04<span>13</span></p>
+                        <div class="news_r">
+                            <a href="show-988.html">
+                                <h3>如何寻找Android App 开发公司？</h3>
+                            </a>
+                            <p class="desc">当前，每一项业务都需要移动应用程序。Android是当今企业用于品牌推广和推广的新兴平台之一。这是因为该平台使企业可以轻松地吸引更多的受众。您想寻找一名Android应用程序开发人员来促进您的业务发展吗？一位专业的Android应用程序开发人员可以将您所有的应用程序创意带入现实…</p>
+                        </div>
+                    </li>
+					
+                </ul>
+                <a href="53.html" title="APP开发资讯" class="more">查看更多</a>
+            </div>
+            <div class="col-md-5 wow bounceInRight">
+                <h3 class="news_tit">常见问题 / <span>Questions</span></h3>
+                <ul class="ltnw">
+                
+                    <li>
+                        <div class="wen"><a href="show-982.html">
+                            <h3>App Store的佣金降低了15％</h3>
+                        </a></div>
+                        <p class="da">苹果公司终于将佣金从30％降低到15％，从而终于对年收入不足100万美元的小型开发商，初创企业和其他公司产生了怜悯之心。根据苹果公司在其博客上发布的帖子，如果您是收入低于100万美元的开发人员或企业，您将获得加薪！ 大约有2800万开发人员在使用Apple的商店，但其中93％的…</p>
+                    </li>
+					
+                    <li>
+                        <div class="wen"><a href="show-980.html">
+                            <h3>企业拥有CRM系统的优势</h3>
+                        </a></div>
+                        <p class="da">如果您的企业规模不大，那么收集和存储数据将变得非常容易。这可以在一些文本文件或电子表格中完成。当您拥有的客户数量开始增加并且员工人数不断增加时，事情开始变得棘手。在这种情况下，CRM可能非常有益。CRM代表客户关系管理。这可用于改善您的业务流程的当前位置。那里有…</p>
+                    </li>
+					
+                    <li>
+                        <div class="wen"><a href="show-964.html">
+                            <h3>使用Python编程的十大行业</h3>
+                        </a></div>
+                        <p class="da">随着Python在过去二十年中的发展，用例随着使用和采用的增加而增长。按行业分类，Python最常见的十大用途包括：1保险：利用机器学习创建业务洞察力2零售银行业务：灵活的数据转换和处理3航空航天：在软件系统截止日期之前完成4财务：数据挖掘以识别交叉销售机会5商业服务：对财…</p>
+                    </li>
+					
+                    <a href="72.html" title="APP开发常见问题" class="more">查看更多</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="index_tit wow bounceInDown">
+            <h4 class="p10">合作伙伴</h4>
+        </div>
+    </div>
+    <div class="partner_box container">
+        <ul class="wow pulse">
+                  
+            <li>
+                <img src="static/picture/202007300859585003.png" alt="钢甲天下"></li>
+              
+            <li>
+                <img src="static/picture/202007300857150565.png" alt="HIFIMAN"></li>
+              
+            <li>
+                <img src="static/picture/202007300856474539.png" alt="EC英语角"></li>
+              
+            <li>
+                <img src="static/picture/202007300858530544.png" alt="布劳恩"></li>
+              
+            <li>
+                <img src="static/picture/202007300858396867.png" alt="艾克森"></li>
+              
+            <li>
+                <img src="static/picture/202007300900418506.png" alt="新天药业"></li>
+              
+            <li>
+                <img src="static/picture/202007300902309563.png" alt="辽阳督查室"></li>
+              
+            <li>
+                <img src="static/picture/202007300901504274.png" alt="脚本之家"></li>
+              
+            <li>
+                <img src="static/picture/202007300902181277.png" alt="科诺医疗"></li>
+              
+            <li>
+                <img src="static/picture/202007300904452134.png" alt="徐州国网"></li>
+              
+            <li>
+                <img src="static/picture/202007300904314053.png" alt="徐钢集团"></li>
+              
+            <li>
+                <img src="static/picture/202007300903500609.png" alt="时光梭健身"></li>
+              
+            <li>
+                <img src="static/picture/202007300903362576.png" alt="施维英"></li>
+              
+            <li>
+                <img src="static/picture/202007300903097224.png" alt="普拉达健身"></li>
+              
+            <li>
+                <img src="static/picture/202007300906199055.png" alt="智慧岛投资"></li>
+              
+            <li>
+                <img src="static/picture/202007300906334861.png" alt="紫薇美宝"></li>
+              
+            <li>
+                <img src="static/picture/202007300905371588.png" alt="侑居屋"></li>
+              
+            <li>
+                <img src="static/picture/202007300905228848.png" alt="艺考情报局"></li>
+              
+            <li>
+                <img src="static/picture/202007300905075356.png" alt="讯米课堂"></li>
+              
+            <li>
+                <img src="static/picture/202007300905510948.png" alt="展超医疗"></li>
+              
+            <li>
+                <img src="static/picture/202007300906076599.png" alt="展聚源"></li>
+              
+            <li>
+                <img src="static/picture/202007300904109963.png" alt="雄展教育"></li>
+              
+            <li>
+                <img src="static/picture/202007300903229944.png" alt="其乐宠物"></li>
+              
+            <li>
+                <img src="static/picture/202007300902557385.png" alt="煤联网"></li>
+              
+            <li>
+                <img src="static/picture/202007300902427194.png" alt="蚂蚁货的"></li>
+              
+            <li>
+                <img src="static/picture/202007300902043518.png" alt="聚盟"></li>
+              
+            <li>
+                <img src="static/picture/202007300901193481.png" alt="惠享商城"></li>
+              
+            <li>
+                <img src="static/picture/202007300901027430.png" alt="好拍帮"></li>
+              
+            <li>
+                <img src="static/picture/202007300900249505.png" alt="国润机械"></li>
+              
+            <li>
+                <img src="static/picture/202007300900098317.png" alt="咕咕通"></li>
+            
+        </ul>
+        <div class="text-center">
+            <a href="javascript:;" target="_blank" rel="nofollow" class="btns btn_more wow rubberBand">立即咨询</a>
+        </div>
+    </div>
+    <div class="slider_nav">
+	<ul>
+		<li class="ht">
+			<div class="ht1"><img src="static/picture/silder1.png" alt="上海APP开发400电话"><div class="ht2">18952265600</div></div>
+		</li>
+		<!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+		<li><a href="#xuqiu" rel="nofollow"><img src="static/picture/silder3.png" alt="咨询项目经理"></a></li>
+		<li class="wx">
+			<img src="static/picture/silder4.png">
+			<div class="code"><img src="static/picture/code1.png" alt="上海APP开发微信公众号"></div>
+		</li>
+	</ul>
+</div>
+<div class="mb_tel">
+	<a href="tel:400-663-9990"><img src="static/picture/silder1.png"></a>
+</div>
+<link rel="stylesheet" href="static/css/validate.css">
+<link type="text/css" rel="stylesheet" href="static/css/pagination.css">
+<link type="text/css" rel="stylesheet" href="static/css/ui-dialog.css">
+<script type="text/javascript" src="static/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="static/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/dialog-plus-min.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //初始化发表评论表单
+        AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+    });
+</script>
+<div class="demand_contair">
+     <a name="xuqiu"></a>   <div class="container">
+        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+           <h3>请填写您的项目需求给我们：</h3>
+            <ul class="demand_list">
+                <li class="input_1">
+                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control" placeholder="您的姓名"></li>
+                <li class="input_1">
+                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control" placeholder="联系电话"></li>
+                <li class="input_2">
+                    <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control" placeholder="详细描述您的需求...">
+                </li>
+                <li class="input_3">
+                    <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control" placeholder="验证码"></li>
+                <li style="margin-top: 2px;">
+                    <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                        <img src="static/picture/verify_code.ashx" width="80" height="35" align="absmiddle"></a><span class="Validform_checktip"></span></li>
+                <li>
+                    <button type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-default tjxmxq">提交需求</button></li>
+            </ul>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footer_top">
+        <div class="container">
+            <div class="branch_office">
+                <ul class="fl col-md-8">
+                    <li>
+                        <img src="static/picture/foot1.png" alt="上海总公司">
+						<div class="info">
+                        <h3>上海总公司</h3>
+                        <p>办公地址：上海静安区平型关路金赢108创意广场银座18楼</p>
+                        <p>
+                            咨询电话：18952265600<br>
+                        
+                        </p>
+                            </div>
+                    </li>
+                    <li>
+                        <img src="static/picture/foot3.png" alt="徐州分公司">
+                        <h3>徐州分公司</h3>
+                        <p>办公地址：江苏省徐州市鼓楼区中山北路226号鼓楼广场C座19F</p>
+                        <p>
+                            咨询电话：0516-85645808<br>
+                  
+                        </p>
+                    </li>
+                    <li>
+                        <img src="static/picture/foot2.png" alt="南通分公司">
+                        <h3>南通分公司</h3>
+                        <p>办公地址：江苏省南通市崇川区崇川路58号</p>
+                        <p>
+咨询电话：18952265600<br>
+                    
+                        </p>
+                    </li>
+                </ul>
+				<div class="tel" class="col-md-4">
+                    <p>客服电话</p>
+                    <h3>18952265600</h3>
+                    <p>投诉及24小时值班电话</p>
+                    <h3>18952161000</h3>
+                    <ul>
+                        <li>
+                            <img src="static/picture/foot_ico1.png" class="t1"><img src="static/picture/code1.png" class="t2" alt="上海真略微信公众号二维码"></li>
+                       <!-- <li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank">
+                            <img src="/templates/main/images/foot_ico2.png" alt="点击QQ咨询APP制作事宜"></a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container copright">Copyright &copy; 2019 All Rights Reserved  版权所有 ：上海真略网络科技有限公司   <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备15021857号-4</a></div>
+        <div class="container copright">上海真略作为<a href="">APP开发</a>领先品牌，多年来已为上百家上海企业提供高品质的移动应用解决方案及服务。欢迎来电咨询！<br>友情链接：<a href="" target="_blank">上海app开发</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">手机数据恢复软件</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">徐州网络公司</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">足浴桶</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">打沟机</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">肿瘤热疗</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">二手工程机械</a>&nbsp;&nbsp;<a href="javascript:;" target="_blank">上海健身管理软件</a>&nbsp;&nbsp;<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256883526'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256883526%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></div>
+    </div>
+    <div class="clear"></div>
+</footer>
+
+		 	<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="javascript:;" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="static/picture/batubiao.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31010602004925号</p></a>
+	
+    <script src="static/js/wow.min.js"></script>
+    <div class="clear"></div>
+    <script>
+       var swiper = new Swiper('.swiper-container1', {
+		  slidesPerView: 4,
+		  autoplay: {
+			delay: 6000,
+			disableOnInteraction: false,
+		  },
+		  navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		  },
+		  pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		  },
+		  breakpoints: {
+			991: {
+			  slidesPerView: 1,
+			}
+		  }
+		});
+		
+		var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        };
+    </script>
+</div>	<a href="https://smalltool.github.io/" style="display:none;">快速仿站</a>
+</body>
 </html>

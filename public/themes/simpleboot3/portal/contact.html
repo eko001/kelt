@@ -1,345 +1,300 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<include file="public@head"/>
-	</head>
-	<body>
-		<div class="contact">
-			<div class="index-banner index-banner-top">
-				<div class="index-banner-box">
-					<div class="title">联系我们</div>
-				</div>
-			</div>
-			<div class="contact-part">
-				<div class="inner">
-					<div class="inner-bigger-title text-center">
-						<p>集团及子公司</p>
-					</div>
-					<div class="inner-small-title text-center">六大事业集群</div>
-					<div class="contact-part-box">
-						<div class="contact-part-box-left">
-							<ul>
-								<li class="active" data-lng="116.365035" data-lat="37.434357">
-									<div class="title">华劳集团总部</div>
-									<div class="text">地址：德州市经济技术开发区康博大厦1701室</div>
-									<div class="text">电话：400-8718711、0534-2228711</div>
-									<div class="text">邮箱：hualao@hualaogroup.com</div>
-								</li>
-								<li data-lng="117.146475" data-lat="36.656260">
-									<div class="title">山东中政服务外包有限公司</div>
-									<div class="text">地址：山东省济南市高新区经十路7000号汉峪金融商务中心三区5号楼36层3609房间</div>
-									<div class="text">电话：0534-2668711</div>
-									<div class="text">邮箱：hualaohr@126.com</div>
-								</li>
-								<li  data-lng="116.365035" data-lat="37.434357">
-									<div class="title">山东金伞保险代理股份有限公司</div>
-									<div class="text">地址：山东省德州市经济技术开发区宋官屯街道办事处东风东路1888号康博公馆1号楼A单元18层1803号B室</div>
-									<div class="text">电话：0534-2668711</div>
-									<div class="text">邮箱：baoxian@hualao.cc</div>
-								</li>
-								<li data-lng="117.385823" data-lat="37.775238">
-									<div class="title">山东中劳劳务分包有限公司</div>
-									<div class="text">地址：山东省德州市庆云县光明路985号庆云县有机农业发展中心213-7</div>
-									<div class="text">电话：18561148711</div>
-									<div class="text">邮箱：hualaorenli@126.com</div>
-								</li>
-								<li data-lng="116.666538" data-lat="39.908794">
-									<div class="title">中洁清洁服务有限公司</div>
-									<div class="text">地址：中国北京人力资源产业园（通州园）</div>
-									<div class="text">电话：186 0111 8711</div>
-									<div class="text">邮箱：zhongjie@hualaogroup.com</div>
-								</li>
-								<li data-lng="116.668261" data-lat="39.909045">
-									<div class="title">华劳人力资源有限公司</div>
-									<div class="text">地址：北京市通州区新华东街11号院1号楼2层2005室</div>
-									<div class="text">电话：400-8718711</div>
-									<div class="text">邮箱：hualao@hualaogroup.com</div>
-								</li>
-								<li data-lng="116.463953" data-lat="39.958742">
-									<div class="title">中朗（北京）国际保安服务有限公司</div>
-									<div class="text">地址：北京市朝阳区霄云路32号2号楼7层745室</div>
-									<div class="text">电话：15313151059</div>
-									<div class="text">邮箱：hualao@hualaogroup.com</div>
-								</li>
-							</ul>
-						</div>
-						<div class="contact-part-box-right hidden-xs">
-							<div class="map" id="map"></div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="contact-part contact-part2">
-				<div class="inner">
-					<div class="inner-bigger-title text-center">
-						<p>全国分支机构</p>
-					</div>
-					<div class="inner-small-title text-center">170+家直营分/子公司，覆盖全国各大城市</div>
-					<div class="tabs-part">
-						<div class="tabs-box" id="tabs">
-							<!-- <ul class="tabs">
-								<li class="active">全部</li>
-								<li>东北地区</li>
-								<li>华北地区</li>
-								<li>华中地区</li>
-								<li>华东地区</li>
-								<li>华南地区</li>
-								<li>西北地区</li>
-								<li>西南地区</li>
-							</ul> -->
-						</div>
-						<!-- <div class="search-company">
-							<input class="company" id="company" placeholder="搜索分公司及分支机构" />
-						</div> -->
-					</div>
-					<div class="contact-part-box">
-						<div class="contact-part-box-left" id="companyList">
-							<!-- <ul>
-								<li class="active">
-									<div class="title">华劳集团总部</div>
-									<div class="text">地址：德州市经济技术开发区康博大厦1701室</div>
-									<div class="text">电话：400-8718711、0534-2228711</div>
-									<div class="text">邮箱：hualao@hualaogroup.com</div>
-								</li>
-								<li>
-									<div class="title">山东中政服务外包有限公司</div>
-									<div class="text">地址：山东省济南市高新区经十路7000号汉峪金融商务中心三区5号楼36层3609房间</div>
-									<div class="text">电话：0534-2668711</div>
-									<div class="text">邮箱：hualaohr@126.com</div>
-								</li>
-								<li>
-									<div class="title">山东中政服务外包有限公司</div>
-									<div class="text">地址：山东省济南市高新区经十路7000号汉峪金融商务中心三区5号楼36层3609房间</div>
-									<div class="text">电话：0534-2668711</div>
-									<div class="text">邮箱：hualaohr@126.com</div>
-								</li>
-							</ul> -->
-						</div>
-					<!-- 	<div class="contact-part-box-right  hidden-xs">
-							<div class="map" id="map2"></div>
-						</div> -->
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		
-
-		
-		
-
-		<include file="public@footer"/>
-		<script type="text/javascript">
-		window.onload = function () {
-			let iconImg = "https://shuahuo-oss.oss-cn-beijing.aliyuncs.com/pos.gif";
-			var map = new AMap.Map('map', {
-			  zoom: 18, //初始地图级别
-			  center: [116.365035, 37.434357], //初始地图中心点
-			});
-			let position = [116.365035, 37.434357];
-			var marker = new AMap.Marker({
-			   icon:new AMap.Icon({            
-			   	     image: iconImg,
-			   	     size: new AMap.Size(32, 38),  //图标所处区域大小
-			   	     imageSize: new AMap.Size(32, 38) //图标大小
-			   	 }), 
-			    position: position,
-			    anchor:'bottom-center'
-			});
-			map.add(marker);
-			$(".contact-part-box .contact-part-box-left li").on("click",function(){
-				$(".contact-part-box .contact-part-box-left li").removeClass("active");
-				$(this).addClass("active");
-				if(marker){
-					map.remove(marker)
-				}
-				let lng = $(this).attr('data-lng');
-				let lat = $(this).attr('data-lat');
-				position[0] = lng;
-				position[1] = lat;
-				marker = new AMap.Marker({
-				    icon:new AMap.Icon({
-						 image: iconImg,
-						 size: new AMap.Size(32, 38),  //图标所处区域大小
-						 imageSize: new AMap.Size(32, 38) //图标大小
-					}), 
-				    position: position,
-				    anchor:'bottom-center'
-				});
-				map.setCenter(position); 
-				map.add(marker);
-			})
-			// let position2 = [116.365035, 37.434357];
-			// var marker2 = new AMap.Marker({
-			//     icon:new AMap.Icon({
-			// 		 image: iconImg,
-			// 		 size: new AMap.Size(32, 38),  //图标所处区域大小
-			// 		 imageSize: new AMap.Size(32,38) //图标大小
-			// 	}), 
-			//     position: position,
-			//     anchor:'bottom-center'
-			// });
-			// var mapTwo = new AMap.Map('map2', {
-			//   zoom: 18, //初始地图级别
-			//   center: [116.365035, 37.434357], //初始地图中心点
-			// });
-			
-			// mapTwo.add(marker2);
-			
-			function getTabs(){
-				$.ajax({
-					    type: "get",
-					    url: "{:cmf_url('/api/portal/area/getAreaList')}" ,
-					    data: {},
-					    dataType: "json",
-					    success: function (result) {
-					        console.log(result);//打印服务端返回的数据(调试用)
-					        if (result.code == 1) {
-								console.log(result.data);	
-					            var arr = result.data;
-					            if(arr.length!=0){
-					                var html = '<ul class="tabs">';
-									html += '<li data-id="0" class="active">全部</li>';
-					                for(var i = 0;i<arr.length;i++){
-										html += '<li data-id="'+ arr[i].id +'">' + arr[i].name +'</li>';
-					                }
-									html += '</li>';
-					                $("#tabs").html(html);
-									getAllList();
-					            }else{
-									$("#tabs").html('');
-								}
-					        }
-					    },
-					    error : function() {
-					        
-					    }
-				})
-			}
-			getTabs();
-			function getAllList(){
-				$.ajax({
-					type: "get",
-					url: "{:cmf_url('/api/portal/company/getAllCompany')}" ,
-					data: {},
-					dataType: "json",
-					success: function (result) {
-						console.log(result);//打印服务端返回的数据(调试用)
-						if (result.code == 1) {
-							console.log(result.data);	
-							var arr = result.data;
-							if(arr.length!=0){
-								var html = '<ul class="tabs">';
-								for(var i = 0;i<arr.length;i++){
-									html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
-									html += '<div class="title">'+ arr[i].name +'</div>';
-									html += '<div class="text">地址：'+ arr[i].address +'</div>';
-									html += '<div class="text">电话：'+ arr[i].phone +'</div>';
-									html += '<div class="text">邮箱：'+ arr[i].email +'</div>';
-									html += '</li>';
-								}
-								html += '</li>';
-								$("#companyList").html(html);
-								$("#companyList ul li").eq(0).addClass("active");
-							}else{
-								$("#companyList").html('');
-							}
-						}
-					},
-					error : function() {
-						
-					}
-				})
-			}
-			$("#tabs").on("click","li",function(){
-				$("#tabs li").removeClass("active");
-				$(this).addClass("active");
-				let id = $(this).attr("data-id");
-				if(id === '0'){
-					getAllList()
-				}else{
-					$.ajax({
-						type: "get",
-						url: "{:cmf_url('/api/portal/company/getCompanyById')}" ,
-						data: {id:id},
-						dataType: "json",
-						success: function (result) {
-							console.log(result);//打印服务端返回的数据(调试用)
-							if (result.code == 1) {
-								console.log(result.data);	
-								var arr = result.data;
-								if(arr.length!=0){
-									var html = '<ul class="tabs">';
-									for(var i = 0;i<arr.length;i++){
-										html += '<li data-lng="'+ arr[i].lon +'" data-lat="'+ arr[i].lat +'">';
-										html += '<div class="title">'+ arr[i].name +'</div>';
-										html += '<div class="text">地址：'+ arr[i].address +'</div>';
-										html += '<div class="text">电话：400-871-8711</div>';
-										html += '<div class="text">邮箱：hualao@hualaogroup.com</div>';
-										html += '</li>';
-									}
-									html += '</li>';
-									$("#companyList").html(html);
-									$("#companyList ul li").eq(0).addClass("active");
-									// if(marker2){
-									// 	mapTwo.remove(marker2);
-									// }
-									// let lng =$("#companyList ul li").eq(0).attr("data-lng");
-									// let lat = $("#companyList ul li").eq(0).attr("data-lat");
-									// position2[0] = lng;
-									// position2[1] = lat;
-									// marker2 = new AMap.Marker({
-									//     icon:new AMap.Icon({
-									// 		 image: iconImg,
-									// 		 size: new AMap.Size(32, 38),  //图标所处区域大小
-									// 		 imageSize: new AMap.Size(32, 38) //图标大小
-									// 	}), 
-									//     position: position2,
-									//     anchor:'bottom-center'
-									// });
-									// mapTwo.setCenter(position2); 
-									// mapTwo.add(marker2);
-								}else{
-									$("#companyList").html('');
-									// if(marker2){
-									// 	mapTwo.remove(marker2);
-									// }
-								}
-							}
-						},
-						error : function() {
-							
-						}
-					})
-				}
-			})
-			
-			$("#companyList").on("click","li",function(){
-				$("#companyList ul li").removeClass("active");
-				$(this).addClass("active");
-				// if(marker2){
-				// 	mapTwo.remove(marker2);
-				// }
-				// let lng = $(this).attr("data-lng");
-				// let lat = $(this).attr("data-lat");
-				// position2[0] = lng;
-				// position2[1] = lat;
-				// marker2 = new AMap.Marker({
-				//     icon:new AMap.Icon({
-				// 		 image: iconImg,
-				// 		 size: new AMap.Size(32, 38),  //图标所处区域大小
-				// 		 imageSize: new AMap.Size(32, 38) //图标大小
-				// 	}), 
-				//     position: position2,
-				//     anchor:'bottom-center'
-				// });
-				// mapTwo.setCenter(position2); 
-				// mapTwo.add(marker2);
-			})
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>联系我们 - 上海真略</title>
+    <meta name="keywords" content="联系我们">
+    <meta name="description" content="">
+    <meta name="description" content="">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/app.css" rel="stylesheet">
+    <link href="static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link href="static/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/validate.css">
+    <link type="text/css" rel="stylesheet" href="static/css/pagination.css">
+    <link type="text/css" rel="stylesheet" href="static/css/ui-dialog.css">
+    <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div id="position" class="none">
+        <p>当前位置：<a href="index.html">网站首页</a> > <a>关于我们</a> > <a>联系我们</a></p>
+    </div>
+    <script type="text/javascript" src="static/js/jquery-1.11.2.min.js"></script>   
+<div class="topbar">
+    <div class="container">
+        <p class="pull_left fiften">十五年核心团队 · 值得信赖</p>
+        <div class="pull_right tpr">
+            <p class="dh"><i>APP定制开发咨询热线：</i><em>1895226560</em><i> / </i><em></em></p>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default header_inner">
+    <div class="container" id="nav">
+        <h3 class="logo"><a href="index.html">app开发公司,上海app开发,app定制开发</a></h3>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="menus">
+                <li><a href="index.html"><span>网站首页</span></a></li>
+                <li><a href="app.html"><span>APP开发</span></a></li>
+                <li><a href="xcx.html"><span>微信小程序开发</span></a></li>
+                <li><a href="wlw.html"><span>物联网与大数据开发</span></a></li>
+                <li><a href="dxwhtd.html" rel="nofollow" target="_blank"><span>大象探店优选</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>产品与解决方案</span><em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="waste_disposal.html" rel="nofollow" target="_blank">垃圾处理项目</a>
+                        <a href="znjsxt.html" rel="nofollow" target="_blank">智能健身系统</a>
+                    
+						<a href="znwyxt.html" rel="nofollow" target="_blank">智能物业系统</a>
+                        <a href="swdcxt.html" rel="nofollow" target="_blank">政务督办系统</a>
+                        <a href="dyxcx.html" rel="nofollow" target="_blank">抖音小程序</a>
+                    <a href="javascript:;" rel="nofollow" target="_blank">火课在线教育系统</a>
+                        
+                    </ul>
+                </li>
+                <li><a href="86.html"><span>成功案例</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>开发资讯</span> <em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="71.html">APP业界资讯</a>
+                        <a href="69.html">iOS APP开发资讯</a>
+                        <a href="70.html">Android APP开发资讯</a>
+                        <a href="100.html">小程序开发常见问题</a>
+                        <a href="99.html">微信小程序开发业界资讯</a>
+                        <a href="72.html">APP开发常见问题</a>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>关于我们</span> <em class="caret"></em></a>
+                    <ul class="dropdown-menu">
+                        <a href="gsjj.html" rel="nofollow">关于真略</a>
+                        <a href="" rel="nofollow">联系我们</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script type="text/javascript">
+$(document).ready(function(){
+	var navOffset=$("#nav").offset().top;
+	$(window).scroll(function(){
+		var scrollPos=$(window).scrollTop();
+		if(scrollPos >=navOffset){
+			$(".header_inner").addClass("navbar-fixed-top");
+		}else{
+			$(".header_inner").removeClass("navbar-fixed-top");
 		}
-		</script>
-	</body>
-	
+	});
+
+});
+</script>
+<script type="text/javascript" src="static/js/dh.js"></script>
+
+    <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="static/js/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化发表评论表单
+            AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+        });
+    </script>
+    <div class="comline"></div>
+    <div class="container">
+        <div class="contact_zl">
+            <div class="col-md-6 wow fadeInLeftBig">
+                <h3 class="shzl">上海真略网络科技有限公司</h3>
+                <h2>做产品，找真略<br>
+                    让您的产品赢在起跑线上！</h2>
+                <div class="comline"></div>
+                <p class="add1">地址：上海静安区平型关路金赢108创意广场银座18楼</p>
+                <p class="pd en">Jinying, Pingxianguan Road, Jing 'an District, Shanghai 108 Creative Plaza Ginza 18th Floor</p>
+                <p class="pd zjzx">
+                    咨询热线： <a href="tel:400-663-9990">400-663-9990</a><br>
+                    网址：www.cnzlapp.com
+                </p>
+                <div class="pd ewm">
+                    <img src="static/picture/code1.png"><span>真略公众号</span>
+                </div>
+                <p class="pd zxtel">产品咨询热线：<strong><a href="tel:400-663-9990">400-663-9990</a></strong></p>
+            </div>
+        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <div class="col-md-6 wow fadeInRight">
+                <h2>给我们留言</h2>
+                <p class="need">如果有需求请花几分钟时间在下边表格上填妥需求信息，我们将针 对您的需求与您取得联系~</p>
+                <input type="text" id="txtUserName" name="txtUserName" maxlength="4" placeholder="请输入您的联系姓名" class="text">
+                <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" placeholder="请输入您的联系方式" class="text">
+                <textarea class="text" id="txtContent" name="txtContent" maxlength="50" placeholder="详细描述您的需求..."></textarea>
+                <div class="yzm"><input id="txtCode" name="txtCode" type="text" maxlength="4" class="text" placeholder="验证码"><a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;" class="code">
+                        <img src="static/picture/verify_code.ashx" width="80" height="35" align="absmiddle"></a><span class="Validform_checktip"></span></div>
+                <input type="submit" value="立即提交" id="btnSubmit" name="btnSubmit" class="submit">
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="comline"></div>
+    <div class="container">
+        <ul class="contacts wow bounce">
+            <li class="col-md-3">
+                <div class="main">
+                    <div class="pic">
+                        <img src="static/picture/code1.png">
+                    </div>
+                    <div class="line"></div>
+                    <div class="title">关注微信随时了解动态</div>
+                </div>
+            </li>
+            <li class="col-md-3">
+                <div class="main"><a href="tel:400-663-9990">
+                    <div class="pic">
+                        <img src="static/picture/tel.jpg">
+                    </div>
+                    <div class="line"></div>
+                    <div class="title">产品研发咨询，免费电话</div></a>
+                </div>
+            </li>
+            <li class="col-md-3">
+                <div class="main"><a href="javascript:;" target="_blank">
+                    <div class="pic">
+                        <img src="static/picture/qq.jpg">
+                    </div>
+                    <div class="line"></div>
+                    <div class="title"></div></a>
+                </div>
+            </li>
+            <li class="col-md-3">
+                <div class="main"><a href="86.html" target="_blank">
+                    <div class="pic">
+                        <img src="static/picture/see.png">
+                    </div>
+                    <div class="line"></div>
+                    <div class="title">真略产品案例浏览</div></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="comline"></div>
+    <div class="container">
+        <ul class="zl_advant wow pulse">
+            <li class="col-md-4">
+                <img src="static/picture/zl_td1.png">
+                <div class="txt">
+                    <h3>守信</h3>
+                    <p>透明服务流程与可监督进程管理，保证项目及时交付</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <img src="static/picture/zl_td2.png">
+                <div class="txt">
+                    <h3>团结</h3>
+                    <p>我们的核心团队拥有7—8年专业服务经验，共事多年</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <img src="static/picture/zl_td3.png">
+                <div class="txt">
+                    <h3>高效</h3>
+                    <p>项目负责人一对一专门对接，保证项目高效、完美落地</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="slider_nav">
+        <ul>
+            <li class="ht">
+                <div class="ht1">
+                    <img src="static/picture/silder1.png" alt="上海APP开发400电话"><div class="ht2">400-663-9990</div>
+                </div>
+            </li>
+            <li><a href="javascript:;" target="_blank">
+                <img src="static/picture/silder2.png" alt="QQ在线咨询"></a></li>
+            <li><a href="javascript:;" target="_blank" rel="nofollow">
+                <img src="static/picture/silder3.png" alt="咨询项目经理"></a></li>
+            <li class="wx">
+                <img src="static/picture/silder4.png">
+                <div class="code">
+                    <img src="static/picture/code1.png" alt="上海APP开发微信公众号"></div>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div class="footer_top">
+            <div class="container">
+                <div class="branch_office">
+                    <ul class="fl col-md-8">
+                        <li>
+                            <img src="static/picture/foot1.png" alt="上海总公司">
+                            <div class="info">
+                                <h3>上海总公司</h3>
+                                <p>办公地址：上海静安区平型关路金赢108创意广场银座18楼</p>
+                                <p>
+                                    咨询电话：400-663-9990<br>
+                                    QQ咨询：603233758
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="static/picture/foot3.png" alt="徐州分公司">
+                            <h3>徐州分公司</h3>
+                            <p>办公地址：江苏省徐州市淮海西路120号颖都大厦11F</p>
+                            <p>
+                                咨询电话：0516-85645808<br>
+                                QQ咨询：603233758
+                            </p>
+                        </li>
+                        <li>
+                            <img src="static/picture/foot2.png" alt="南通分公司">
+                            <h3>南通分公司</h3>
+                            <p>办公地址：江苏省南通市崇川区崇川路58号</p>
+                            <p>
+                                QQ咨询：603233758
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="tel" class="col-md-4">
+                        <p>客服电话</p>
+                        <h3>
+                            400-663-9990</h3>
+                        <ul>
+                            <li>
+                                <img src="static/picture/foot_ico1.png" class="t1"><img src="static/picture/code1.png" class="t2" alt="上海真略微信公众号二维码"></li>
+                            <li><a href="javascript:;" target="_blank">
+                                <img src="static/picture/foot_ico2.png" alt="点击QQ咨询APP制作事宜"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container copright">Copyright &copy; 2019 All Rights Reserved  版权所有 ：上海真略网络科技有限公司   <a href="javascript:;" target="_blank" rel="nofollow">沪ICP备15021857号-4</a></div>
+            <div class="container copright">上海真略作为<a href="index.html">APP开发</a>领先品牌，多年来已为上百家上海企业提供高品质的移动应用解决方案及服务。欢迎来电咨询！<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256883526'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256883526%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div>
+        <div class="clear"></div>
+    </footer>
+    <script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8be54612433c604c0b4a06a117cdd627' type='text/javascript'%3E%3C/script%3E")) </script>
+    <script src="static/js/Bmap.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        };
+    </script>
+    <script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8be54612433c604c0b4a06a117cdd627' type='text/javascript'%3E%3C/script%3E")) </script>
+    <script src="static/js/dh.js"></script>
+</body>
 </html>
