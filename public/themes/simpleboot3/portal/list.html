@@ -6,9 +6,9 @@
     <link href="__TMPL__/public/assets/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/main.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <title>微信小程序资讯 - 第1页 - 上海真略</title>
-    <meta name="keywords" content="微信小程序资讯">
-    <meta name="description" content="">
+    <title>{$category.name} {$category.seo_title} {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$category.seo_keywords},{$site_info.site_seo_keywords|default=''}">
+    <meta name="description" content="{$category.seo_description},{$site_info.site_seo_description|default=''}">
     <!--[if lt IE 9]>
     <script src="/templates/main/js/html5shiv.min.js"></script>
     <script src="/templates/main/js/respond.min.js"></script>
