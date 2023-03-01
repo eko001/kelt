@@ -2185,11 +2185,17 @@ width: 100px;height: 100px;line-height: 100px;margin: 0 auto;background-color: #
 
 /*分页修改*/
 .my_pagination{margin: 50px 0 20px 0;}
-.my_pagination span{display: inline-block;padding: 5px 10px;background-color: #ffffff;margin-right: 6px;border: 1px solid #7F7F7F;color: #7F7F7F;}
-.my_pagination span.current{color: #ffffff;background-color: #7F7F7F;}
+/*.my_pagination span{display: inline-block;padding: 5px 10px;background-color: #ffffff;margin-right: 6px;border: 1px solid #7F7F7F;color: #7F7F7F;}*/
+/*.my_pagination span.current{color: #ffffff;background-color: #7F7F7F;}*/
 .my_pagination a{display: inline-block;padding: 5px 10px;background-color: #ffffff;margin-right: 6px;color: #7F7F7F;border: 1px solid #7F7F7F;transition: all 0.6s;margin-bottom: 6px;}
 .my_pagination a:hover{background-color: #7F7F7F;color: #ffffff;transition: all 0.6s;}
-
+.my_pagination li{
+	display: inline-block;
+	background-color: #ffffff;
+	color: #7F7F7F;}
+.my_pagination li.current{color: #ffffff;background-color: #7F7F7F;}
+.my_pagination span{display: inline-block;padding: 5px 10px;background-color: #ffffff;margin-right: 6px;color: #7F7F7F;border: 1px solid #7F7F7F;transition: all 0.6s;margin-bottom: 6px;}
+.my_pagination span:hover{background-color: #7F7F7F;color: #ffffff;transition: all 0.6s;}
 /* 案例展示 */
 .case_bgbox{background:#f4f4f4;}
 .case_bgbox .case_contair{padding-bottom:0;}
