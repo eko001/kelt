@@ -30,7 +30,7 @@ return [
             // 用户名
             'username' => env('DATABASE_USERNAME', 'root'),
             // 密码
-            'password' => env('DATABASE_PASSWORD', '666888'),
+            'password' => env('DATABASE_PASSWORD', 'root'),
             // 端口
             'hostport' => env('DATABASE_HOSTPORT', '3306'),
             /* 'type'              => env('DATABASE_TYPE', 'mysql'),
