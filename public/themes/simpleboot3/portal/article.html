@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,210 +14,223 @@
     <script src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
     <script src="__TMPL__/public/assets/static/js/respond.min.js"></script>
     <![endif]-->
-    <taglib name="app\portal\taglib\Portal"/>
+    <taglib name="app\portal\taglib\Portal" />
 </head>
+
 <body>
-<div id="position" class="none">
-    <p>当前位置：<a href="index.html">网站首页</a> > <a>开发资讯</a></p>
-</div>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
-<include file="public@head"/>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var navOffset = $("#nav").offset().top;
-        $(window).scroll(function () {
-            var scrollPos = $(window).scrollTop();
-            if (scrollPos >= navOffset) {
-                $(".header_inner").addClass("navbar-fixed-top");
-            } else {
-                $(".header_inner").removeClass("navbar-fixed-top");
-            }
+    <div id="position" class="none">
+        <p>当前位置：<a href="index.html">网站首页</a> > <a>开发资讯</a></p>
+    </div>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
+    <include file="public@head" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var navOffset = $("#nav").offset().top;
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                if (scrollPos >= navOffset) {
+                    $(".header_inner").addClass("navbar-fixed-top");
+                } else {
+                    $(".header_inner").removeClass("navbar-fixed-top");
+                }
+            });
+
         });
+    </script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dh.js"></script>
 
-    });
-</script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/dh.js"></script>
-
-<img src="__TMPL__/public/assets/static/picture/news_banner.png" width="100%">
-<div class="newsout">
-    <div class="container wow bounceIn">
-        <div class="news_location">
-            <p>当前位置：<a href="{:cmf_url('portal/Index/index')}">网站首页</a>&nbsp;
-                <portal:breadcrumb cid="category.id" self="true">
-                    &gt; <a href="{:url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a> &gt;
-                </portal:breadcrumb>
-            </p>
-        </div>
-        <div class="col-md-9 newalscon">
-            <div class="newsxqtitle"><h1 class="newsxqtitle">{$article.post_title}</h1></div>
-            <div class="newsxqxtitle">
-                <div><span>来源：{$article.post_source} </span><span>发布时间：{:date('Y-m-d',$article.published_time)}</span><span>浏览{$article.post_hits}次</span>
+    <img src="__TMPL__/public/assets/static/picture/news_banner.png" width="100%">
+    <div class="newsout">
+        <div class="container wow bounceIn">
+            <div class="news_location">
+                <p>当前位置：<a href="{:cmf_url('portal/Index/index')}">网站首页</a>&nbsp;
+                    <portal:breadcrumb cid="category.id" self="true">
+                        &gt; <a href="{:url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a> &gt;
+                    </portal:breadcrumb>
+                </p>
+            </div>
+            <div class="col-md-9 newalscon">
+                <div class="newsxqtitle">
+                    <h1 class="newsxqtitle">{$article.post_title}</h1>
+                </div>
+                <div class="newsxqxtitle">
+                    <div><span>来源：{$article.post_source}
+                        </span><span>发布时间：{:date('Y-m-d',$article.published_time)}</span><span>浏览{$article.post_hits}次</span>
+                    </div>
+                </div>
+                <div class="news_show_content">
+                    {$article.post_content}
+                </div>
+                <div class="newsxqbottom">
+                    <php>
+                        $after_content_hook_param=[
+                        'object_id'=>$article['id'],
+                        'table_name'=>'portal_post',
+                        'object_title'=>$article['post_title'],
+                        'user_id'=>$article['user_id'],
+                        'url'=>cmf_url_encode('portal/Article/index',array('id'=>$article['id'],'cid'=>$category['id'])),
+                        'object'=>$article
+                        ];
+                    </php>
+                    <hook name="after_content" param="after_content_hook_param" />
                 </div>
             </div>
-            <div class="news_show_content">
-                {$article.post_content}
-            </div>
-            <div class="newsxqbottom">
-                <php>
-                    $after_content_hook_param=[
-                    'object_id'=>$article['id'],
-                    'table_name'=>'portal_post',
-                    'object_title'=>$article['post_title'],
-                    'user_id'=>$article['user_id'],
-                    'url'=>cmf_url_encode('portal/Article/index',array('id'=>$article['id'],'cid'=>$category['id'])),
-                    'object'=>$article
-                    ];
-                </php>
-                <hook name="after_content" param="after_content_hook_param"/>
-            </div>
-        </div>
-        <div class="col-md-3 phoneyc phoneyr">
-            <div class="newscblm">
-                <div class="newscblm-t">
-                    <div class="lantiao"></div>
-                    资讯栏目
+            <div class="col-md-3 phoneyc phoneyr">
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        资讯栏目
+                    </div>
+
+                    <div class="newscblm-b"><a href="71.html">APP业界资讯</a></div>
+
+                    <div class="newscblm-b"><a href="69.html">iOS APP开发资讯</a></div>
+
+                    <div class="newscblm-b"><a href="70.html">Android APP开发资讯</a></div>
+
+                    <div class="newscblm-b"><a href="72.html">APP开发常见问题</a></div>
+
+                    <div class="newscblm-b"><a href="100.html">小程序开发常见问题</a></div>
+
+                    <div class="newscblm-b"><a href="99.html">微信小程序开发业界资讯</a></div>
+
                 </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        最新资讯
+                    </div>
 
-                <div class="newscblm-b"><a href="71.html">APP业界资讯</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-989.html">ASO（应用商店优化）提示，技巧和策略</a></div>
 
-                <div class="newscblm-b"><a href="69.html">iOS APP开发资讯</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-988.html">如何寻找Android App 开发公司？</a></div>
 
-                <div class="newscblm-b"><a href="70.html">Android APP开发资讯</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-987.html">影响APP应用开发时间的几点因素</a></div>
 
-                <div class="newscblm-b"><a href="72.html">APP开发常见问题</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-986.html">2021年考虑采用哪些APP开发外包模式？</a></div>
 
-                <div class="newscblm-b"><a href="100.html">小程序开发常见问题</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-985.html">2021年开发Android应用程序时要记住的5件事</a>
+                    </div>
 
-                <div class="newscblm-b"><a href="99.html">微信小程序开发业界资讯</a></div>
-
-            </div>
-            <div class="newscblm">
-                <div class="newscblm-t">
-                    <div class="lantiao"></div>
-                    最新资讯
                 </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        热门新闻
+                    </div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-989.html">ASO（应用商店优化）提示，技巧和策略</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-756.html">通知：微信小程序审核团队要放假啦</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-988.html">如何寻找Android App 开发公司？</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-739.html">跟世界名牌GUCCI，怎样用微信小程序推广自己的品牌</a>
+                    </div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-987.html">影响APP应用开发时间的几点因素</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-755.html">微信流量入口之附近的小程序</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-986.html">2021年考虑采用哪些APP开发外包模式？</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-757.html">开发小程序需具备的思维方式</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-985.html">2021年开发Android应用程序时要记住的5件事</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-753.html">小程序对于律师行业营销的优势解析</a></div>
 
-            </div>
-            <div class="newscblm">
-                <div class="newscblm-t">
-                    <div class="lantiao"></div>
-                    热门新闻
                 </div>
+                <div class="newscblm">
+                    <div class="newscblm-t">
+                        <div class="lantiao"></div>
+                        随机资讯
+                    </div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-756.html">通知：微信小程序审核团队要放假啦</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-290.html">浅析APP开发的几大类型</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-739.html">跟世界名牌GUCCI，怎样用微信小程序推广自己的品牌</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-567.html">山东app定制公司分析酒店app开发方案</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-755.html">微信流量入口之附近的小程序</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-676.html">杂志社转型的情况下开发杂志app需要做些什么？</a>
+                    </div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-757.html">开发小程序需具备的思维方式</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-710.html">早教app开发出来有没有发展市场？</a></div>
 
-                <div class="newscblm-b nobg"><span>● </span><a href="show-753.html">小程序对于律师行业营销的优势解析</a></div>
+                    <div class="newscblm-b nobg"><span>● </span><a href="show-170.html">特色美食APP开发的发展前景</a></div>
 
-            </div>
-            <div class="newscblm">
-                <div class="newscblm-t">
-                    <div class="lantiao"></div>
-                    随机资讯
                 </div>
-
-                <div class="newscblm-b nobg"><span>● </span><a href="show-290.html">浅析APP开发的几大类型</a></div>
-
-                <div class="newscblm-b nobg"><span>● </span><a href="show-567.html">上海app定制公司分析酒店app开发方案</a></div>
-
-                <div class="newscblm-b nobg"><span>● </span><a href="show-676.html">杂志社转型的情况下开发杂志app需要做些什么？</a></div>
-
-                <div class="newscblm-b nobg"><span>● </span><a href="show-710.html">早教app开发出来有没有发展市场？</a></div>
-
-                <div class="newscblm-b nobg"><span>● </span><a href="show-170.html">特色美食APP开发的发展前景</a></div>
-
+                <div class="newscblpic"></div>
             </div>
-            <div class="newscblpic"></div>
         </div>
     </div>
-</div>
-<div class="slider_nav">
-    <ul>
-        <li class="ht">
-            <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="上海APP开发400电话">
-                <div class="ht2">18952265600</div>
-            </div>
-        </li>
-        <!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
-        <li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png"
-                                                           alt="咨询项目经理"></a></li>
-        <li class="wx">
-            <img src="__TMPL__/public/assets/static/picture/silder4.png">
-            <div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="上海APP开发微信公众号"></div>
-        </li>
-    </ul>
-</div>
-<div class="mb_tel">
-    <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
-</div>
-<link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
-<link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
-<script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
-<script type="text/javascript">
-    $(function () {
-        //初始化发表评论表单
-        AjaxInitForm('#feedback_form', '#btnSubmit', 1);
-    });
-</script>
-<div class="demand_contair">
-    <a name="xuqiu"></a>
-    <div class="container">
-        <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
-            <h3>请填写您的项目需求给我们：</h3>
-            <ul class="demand_list">
-                <li class="input_1">
-                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
-                           placeholder="您的姓名"></li>
-                <li class="input_1">
-                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
-                           placeholder="联系电话"></li>
-                <li class="input_2">
-                    <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
-                           placeholder="详细描述您的需求...">
-                </li>
-                <li class="input_3">
-                    <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control" placeholder="验证码">
-                </li>
-                <li style="margin-top: 2px;">
-                    <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                        <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                             align="absmiddle"></a><span class="Validform_checktip"></span></li>
-                <li>
-                    <button type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-default tjxmxq">提交需求</button>
-                </li>
-            </ul>
-        </form>
+    <div class="slider_nav">
+        <ul>
+            <li class="ht">
+                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发400电话">
+                    <div class="ht2">13792208163</div>
+                </div>
+            </li>
+            <!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+            <li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png"
+                        alt="咨询项目经理"></a></li>
+            <li class="wx">
+                <img src="__TMPL__/public/assets/static/picture/silder4.png">
+                <div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="山东APP开发微信公众号"></div>
+            </li>
+        </ul>
     </div>
-</div>
-<include file="public@footer"/>
+    <div class="mb_tel">
+        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+    </div>
+    <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化发表评论表单
+            AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+        });
+    </script>
+    <div class="demand_contair">
+        <a name="xuqiu"></a>
+        <div class="container">
+            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+                <h3>请填写您的项目需求给我们：</h3>
+                <ul class="demand_list">
+                    <li class="input_1">
+                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
+                            placeholder="您的姓名">
+                    </li>
+                    <li class="input_1">
+                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
+                            placeholder="联系电话">
+                    </li>
+                    <li class="input_2">
+                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
+                    </li>
+                    <li class="input_3">
+                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
+                            placeholder="验证码">
+                    </li>
+                    <li style="margin-top: 2px;">
+                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
+                                align="absmiddle"></a><span class="Validform_checktip"></span>
+                    </li>
+                    <li>
+                        <button type="submit" id="btnSubmit" name="btnSubmit"
+                            class="btn btn-default tjxmxq">提交需求</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <include file="public@footer" />
 
-<script src="__TMPL__/public/assets/static/js/bootstrap.min.js"></script>
-<div class="clear"></div>
-<script src="__TMPL__/public/assets/static/js/wow.min.js"></script>
-<script>
-    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
-        new WOW().init();
-    }
-    ;
-</script>
+    <script src="__TMPL__/public/assets/static/js/bootstrap.min.js"></script>
+    <div class="clear"></div>
+    <script src="__TMPL__/public/assets/static/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        }
+        ;
+    </script>
 </body>
+
 </html>
