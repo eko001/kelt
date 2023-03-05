@@ -54,18 +54,11 @@
                         <div class="lantiao"></div>
                         资讯栏目
                     </div>
+                    <portal:subCategories categoryId="22" item="vo">
+                        <div class="newscblm-b"><a
+                                href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></div>
 
-                    <div class="newscblm-b"><a href="71.html">APP业界资讯</a></div>
-
-                    <div class="newscblm-b"><a href="69.html">iOS APP开发资讯</a></div>
-
-                    <div class="newscblm-b"><a href="70.html">Android APP开发资讯</a></div>
-
-                    <div class="newscblm-b"><a href="72.html">APP开发常见问题</a></div>
-
-                    <div class="newscblm-b"><a href="100.html">小程序开发常见问题</a></div>
-
-                    <div class="newscblm-b"><a href="99.html">微信小程序开发业界资讯</a></div>
+                    </portal:subCategories>
 
                 </div>
                 <div class="newscblm">
@@ -73,53 +66,41 @@
                         <div class="lantiao"></div>
                         最新资讯
                     </div>
+                    <portal:articles item="vo" order="post.create_time DESC" page="5" categoryIds="23"
+                        returnVarName="articles_data">
+                        <div class="newscblm-b nobg"><span>● </span><a
+                                href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">{$vo.post_title|mb_substr=0,30,'utf-8'}</a>
+                        </div>
+                    </portal:articles>
 
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-989.html">ASO（应用商店优化）提示，技巧和策略</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-988.html">如何寻找Android App 开发公司？</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-987.html">影响APP应用开发时间的几点因素</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-986.html">2021年考虑采用哪些APP开发外包模式？</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-985.html">2021年开发Android应用程序时要记住的5件事</a>
-                    </div>
 
                 </div>
                 <div class="newscblm">
                     <div class="newscblm-t">
                         <div class="lantiao"></div>
-                        热门新闻
+                        常见问题
                     </div>
 
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-756.html">通知：微信小程序审核团队要放假啦</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-739.html">跟世界名牌GUCCI，怎样用微信小程序推广自己的品牌</a>
-                    </div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-755.html">微信流量入口之附近的小程序</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-757.html">开发小程序需具备的思维方式</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-753.html">小程序对于律师行业营销的优势解析</a></div>
+                    <portal:articles item="vo" order="post.create_time DESC" page="5" categoryIds="26"
+                        returnVarName="articles_data">
+                        <div class="newscblm-b nobg"><span>● </span><a
+                                href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">{$vo.post_title|mb_substr=0,30,'utf-8'}</a>
+                        </div>
+                    </portal:articles>
 
                 </div>
                 <div class="newscblm">
                     <div class="newscblm-t">
                         <div class="lantiao"></div>
-                        随机资讯
+                        成功案例
                     </div>
 
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-290.html">浅析APP开发的几大类型</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-567.html">山东app定制公司分析酒店app开发方案</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-676.html">杂志社转型的情况下开发杂志app需要做些什么？</a>
-                    </div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-710.html">早教app开发出来有没有发展市场？</a></div>
-
-                    <div class="newscblm-b nobg"><span>● </span><a href="show-170.html">特色美食APP开发的发展前景</a></div>
+                    <portal:articles item="vo" order="post.create_time DESC" page="5" categoryIds="28"
+                        returnVarName="articles_data">
+                        <div class="newscblm-b nobg"><span>● </span><a
+                                href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">{$vo.post_title|mb_substr=0,30,'utf-8'}</a>
+                        </div>
+                    </portal:articles>
 
                 </div>
                 <div class="newscblpic"></div>
