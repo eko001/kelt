@@ -20,7 +20,7 @@
 <body>
     <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
     <div id="position" class="none">
-        <p>当前位置：<a href="index.html">网站首页</a> > <a>开发资讯</a></p>
+        <p>当前位置：<a href="{:cmf_url('portal/index/index')}">网站首页</a> > <a>{$category.name}</a></p>
     </div>
 
     <include file="public@head" />
@@ -45,7 +45,8 @@
     <div class="newsout">
         <div class="container newsoutjl">
             <div class="news_location">
-                <p>当前位置：<a href="index.html">网站首页</a>&nbsp;&gt;&nbsp;<a href="">微信小程序资讯</a></p>
+                <p>当前位置：<a href="{:cmf_url('portal/index/index')}">网站首页</a>&nbsp;&gt;&nbsp;<a
+                        href="">{$category.name}</a></p>
             </div>
             <div class="col-md-3 phoneyc phoneyr">
                 <div class="newscblm">
