@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="__TMPL__/public/assets/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="__TMPL__/public/assets/static/css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="__TMPL__/public/assets/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <title>{$category.name} {$category.seo_title} {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$category.seo_keywords},{$site_info.site_seo_keywords|default=''}" />
+    <meta name="description" content="{$category.seo_description},{$site_info.site_seo_description|default=''}">
+    <!--[if lt IE 9]>
+ <script src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
+ <script src="__TMPL__/public/assets/static/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div id="position" class="none">
+        <p>当前位置：<a href="{:cmf_url('portal/index/index')}">网站首页</a> > <a>{$category.name}</a></p>
+    </div>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery-1.11.2.min.js"></script>
+    <include file="public@head" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var navOffset = $("#nav").offset().top;
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                if (scrollPos >= navOffset) {
+                    $(".header_inner").addClass("navbar-fixed-top");
+                } else {
+                    $(".header_inner").removeClass("navbar-fixed-top");
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dh.js"></script>
+
+    <div class="case_bgbox">
+        <div class="container">
+            <div class="index_tit wow bounceInDown">
+                <h5>已有<em>819</em> 家企业从一帆得到了满意的产品设计研发服务</h5>
+                <h5>几乎<i>覆盖全行业</i> 的APP开发经验</h5>
+            </div>
+        </div>
+        <div id="tbc_01" class="dis">
+            <div class="case_contair">
+                <ul class="lshow wow pulse">
+                    <php>
+                        $where= function($query){
+                        $query->where('post.create_time','>=',0);
+                        };
+                        $page=[
+                        'list_rows'=>10,
+                        'next'=>'下一页',
+                        'prev'=>'上一页'
+                        ];
+                    </php>
+                    <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
+                        relation="categories" categoryIds="$category.id" returnVarName="articles_data">
+                        <notempty name="$vo.thumbnail">
+                            <li class="col-md-3"><a
+                                    href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">
+                                    <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}">
+                                    <div class="info">
+                                        <p>APP、小程序开发</p>
+                                        <h3>{$vo.post_title}</h3>
+                                    </div>
+                                </a></li>
+                        </notempty>
+                    </portal:articles>
+
+                </ul>
+                <nav aria-label="Page navigation" class="text-center my_pagination">
+                    <page />
+                </nav>
+            </div>
+
+        </div>
+    </div>
+    <div class="slider_nav">
+        <ul>
+            <li class="ht">
+                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发400电话">
+                    <div class="ht2">13792208163</div>
+                </div>
+            </li>
+            <!--<li><a href="http://wpa.qq.com/msgrd?v=3&uin=603233758&site=qq&menu=yes" target="_blank"><img src="/templates/main/images/silder2.png" alt="QQ在线咨询"/></a></li>-->
+            <li><a href="index.html#xuqiu" rel="nofollow"><img src="__TMPL__/public/assets/static/picture/silder3.png"
+                        alt="咨询项目经理"></a></li>
+            <li class="wx">
+                <img src="__TMPL__/public/assets/static/picture/silder4.png">
+                <div class="code"><img src="__TMPL__/public/assets/static/picture/code1.png" alt="山东APP开发微信公众号"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="mb_tel">
+        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+    </div>
+    <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/ui-dialog.css">
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化发表评论表单
+            AjaxInitForm('#feedback_form', '#btnSubmit', 1);
+        });
+    </script>
+    <div class="demand_contair">
+        <a name="xuqiu"></a>
+        <div class="container">
+            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+                <h3>请填写您的项目需求给我们：</h3>
+                <ul class="demand_list">
+                    <li class="input_1">
+                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
+                            placeholder="您的姓名">
+                    </li>
+                    <li class="input_1">
+                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
+                            placeholder="联系电话">
+                    </li>
+                    <li class="input_2">
+                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
+                    </li>
+                    <li class="input_3">
+                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
+                            placeholder="验证码">
+                    </li>
+                    <li style="margin-top: 2px;">
+                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
+                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
+                                align="absmiddle"></a><span class="Validform_checktip"></span>
+                    </li>
+                    <li>
+                        <button type="submit" id="btnSubmit" name="btnSubmit"
+                            class="btn btn-default tjxmxq">提交需求</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <include file="public@footer" />
+
+    <script src="__TMPL__/public/assets/static/js/bootstrap.min.js"></script>
+    <script src="__TMPL__/public/assets/static/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+            new WOW().init();
+        };
+    </script>
+</body>
+
+</html>
