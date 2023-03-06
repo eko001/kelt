@@ -57,7 +57,7 @@
         <div class="container">
             <ul class="wow pulse">
                 <li class="col-md-3">
-                    <h3>15+</h3>
+                    <h3>12+</h3>
                     <p>12年不改初衷<br>一直专注软件设计与研发</p>
                 </li>
                 <li class="col-md-3">
@@ -90,126 +90,14 @@
     </div>
     <div class="partner_box container">
         <ul class="wow pulse">
-
+            <portal:articles item="vo" order="post.create_time DESC" page="30" categoryIds="27"
+                             returnVarName="articles_data">
+                <notempty name="$vo.thumbnail">
             <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300859585003.png" alt="钢甲天下">
+                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title|mb_substr=0,10,'utf-8'}">
             </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300857150565.png" alt="HIFIMAN">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300856474539.png" alt="EC英语角">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300858530544.png" alt="布劳恩">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300858396867.png" alt="艾克森">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300900418506.png" alt="新天药业">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300902309563.png" alt="辽阳督查室">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300901504274.png" alt="脚本之家">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300902181277.png" alt="科诺医疗">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300904452134.png" alt="徐州国网">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300904314053.png" alt="徐钢集团">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300903500609.png" alt="时光梭健身">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300903362576.png" alt="施维英">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300903097224.png" alt="普拉达健身">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300906199055.png" alt="智慧岛投资">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300906334861.png" alt="紫薇美宝">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300905371588.png" alt="侑居屋">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300905228848.png" alt="艺考情报局">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300905075356.png" alt="讯米课堂">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300905510948.png" alt="展超医疗">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300906076599.png" alt="展聚源">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300904109963.png" alt="雄展教育">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300903229944.png" alt="其乐宠物">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300902557385.png" alt="煤联网">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300902427194.png" alt="蚂蚁货的">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300902043518.png" alt="聚盟">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300901193481.png" alt="惠享商城">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300901027430.png" alt="好拍帮">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300900249505.png" alt="国润机械">
-            </li>
-
-            <li>
-                <img src="__TMPL__/public/assets/static/picture/202007300900098317.png" alt="咕咕通">
-            </li>
+                </notempty>
+            </portal:articles>
 
         </ul>
         <div class="text-center">
@@ -286,7 +174,7 @@
         </ul>
     </div>
     <div class="mb_tel">
-        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+        <a href="tel:13792208163"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
     </div>
     <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
     <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
@@ -304,29 +192,24 @@
     <div class="demand_contair">
         <a name="xuqiu"></a>
         <div class="container">
-            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}">
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
+                        <input type="text" name="post[name]" id='name' maxlength="4" class="form-control"
                             placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
+                        <input type="tel" name="post[phone]" id="phone" maxlength="11" class="form-control"
                             placeholder="联系电话">
                     </li>
+                    <li class="input_1">
+                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
+                               placeholder="联系邮箱">
+                    </li>
                     <li class="input_2">
-                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
+                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
                             placeholder="详细描述您的需求...">
-                    </li>
-                    <li class="input_3">
-                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
-                            placeholder="验证码">
-                    </li>
-                    <li style="margin-top: 2px;">
-                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                                align="absmiddle"></a><span class="Validform_checktip"></span>
                     </li>
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"

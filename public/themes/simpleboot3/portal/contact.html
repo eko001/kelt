@@ -63,33 +63,29 @@
                 <h2>做产品，找一帆<br>
                     让您的产品赢在起跑线上！</h2>
                 <div class="comline"></div>
-                <p class="add1">地址：山东静安区平型关路金赢108创意广场银座18楼</p>
-                <p class="pd en">Jinying, Pingxianguan Road, Jing 'an District, Shanghai 108 Creative Plaza Ginza 18th
-                    Floor</p>
+                <p class="add1">地址：山东省德州市德城区唐人中心</p>
+                <p class="pd en">SHANDONG PROVINCE DEZHOU CITY TANGREN CENTER</p>
                 <p class="pd zjzx">
-                    咨询热线： <a href="tel:400-663-9990">400-663-9990</a><br>
-                    网址：www.cnzlapp.com
+                    咨询热线： <a href="tel:13792208163">13792208163</a><br>
+                    网址：yeefun.com.cn
                 </p>
                 <div class="pd ewm">
-                    <img src="__TMPL__/public/assets/static/picture/code1.png"><span>一帆公众号</span>
+                    <img src="__TMPL__/public/assets/static/picture/code1.png"><span>一帆客服经理</span>
                 </div>
-                <p class="pd zxtel">产品咨询热线：<strong><a href="tel:400-663-9990">400-663-9990</a></strong></p>
+                <p class="pd zxtel">产品咨询热线：<strong><a href="tel:13792208163">13792208163</a></strong></p>
             </div>
-            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}">
                 <div class="col-md-6 wow fadeInRight">
                     <h2>给我们留言</h2>
                     <p class="need">如果有需求请花几分钟时间在下边表格上填妥需求信息，我们将针 对您的需求与您取得联系~</p>
-                    <input type="text" id="txtUserName" name="txtUserName" maxlength="4" placeholder="请输入您的联系姓名"
+                    <input type="text" name="post[name]" id='name' maxlength="4" placeholder="请输入您的联系姓名"
                         class="text">
-                    <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" placeholder="请输入您的联系方式"
+                    <input type="tel" name="post[phone]" id="phone" maxlength="11" placeholder="请输入您的联系电话"
                         class="text">
-                    <textarea class="text" id="txtContent" name="txtContent" maxlength="50"
+                    <input type="email"  name="post[email]" id="email" maxlength="11" placeholder="请输入您的联系邮箱"
+                           class="text">
+                    <textarea class="text" name="post[buisiness]" id="buisiness"  maxlength="50"
                         placeholder="详细描述您的需求..."></textarea>
-                    <div class="yzm"><input id="txtCode" name="txtCode" type="text" maxlength="4" class="text"
-                            placeholder="验证码"><a href="javascript:;"
-                            onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;" class="code">
-                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                                align="absmiddle"></a><span class="Validform_checktip"></span></div>
                     <input type="submit" value="立即提交" id="btnSubmit" name="btnSubmit" class="submit">
                 </div>
             </form>
@@ -108,7 +104,7 @@
                 </div>
             </li>
             <li class="col-md-3">
-                <div class="main"><a href="tel:400-663-9990">
+                <div class="main"><a href="tel:13792208163">
                         <div class="pic">
                             <img src="__TMPL__/public/assets/static/picture/tel.jpg">
                         </div>
@@ -128,7 +124,7 @@
                 </div>
             </li>
             <li class="col-md-3">
-                <div class="main"><a href="86.html" target="_blank">
+                <div class="main"><a href="{:cmf_url('portal/List/index',array('id'=>24))}" target="_blank">
                         <div class="pic">
                             <img src="__TMPL__/public/assets/static/picture/see.png">
                         </div>
@@ -169,8 +165,8 @@
         <ul>
             <li class="ht">
                 <div class="ht1">
-                    <img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发400电话">
-                    <div class="ht2">400-663-9990</div>
+                    <img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发联系电话">
+                    <div class="ht2">13792208163</div>
                 </div>
             </li>
             <li><a href="javascript:;" target="_blank">

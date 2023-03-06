@@ -257,70 +257,19 @@
     </div>
     <div class="case_contair container">
         <ul class="wow pulse">
-
-            <li class="col-md-4"><a href="show-996.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081801378237.jpg" alt="史志办">
-                    <h3 class="h3">史志办</h3>
+            <portal:articles item="vo" order="post.create_time DESC" page="9" categoryIds="24"
+                             returnVarName="articles_data">
+                <notempty name="$vo.thumbnail">
+            <li class="col-md-4"><a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
+                    <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}">
+                    <h3 class="h3">{$vo.post_title}</h3>
                 </a></li>
-
-            <li class="col-md-4"><a href="show-995.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081754239447.jpg" alt="博汇集团">
-                    <h3 class="h3">博汇集团</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-994.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109081750181101.jpg" alt="博悦检测">
-                    <h3 class="h3">博悦检测</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-992.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021610431999.jpg" alt="红跑车">
-                    <h3 class="h3">红跑车</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-991.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021608223156.jpg" alt="车必净">
-                    <h3 class="h3">车必净</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-990.html">
-                    <img src="__TMPL__/public/assets/static/picture/202109021607124545.jpg" alt="博汇智能装备">
-                    <h3 class="h3">博汇智能装备</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-927.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181344099021.jpg" alt="慕容APP">
-                    <h3 class="h3">慕容APP</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-926.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181341379744.jpg" alt="展超商城">
-                    <h3 class="h3">展超商城</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-925.html">
-                    <img src="__TMPL__/public/assets/static/picture/202007181339457494.jpg" alt="紫薇会议系统">
-                    <h3 class="h3">紫薇会议系统</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-632.html">
-                    <img src="__TMPL__/public/assets/static/picture/201903271025242158.png" alt="钢甲天下二手机交易平台">
-                    <h3 class="h3">钢甲天下二手机交易平台</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-509.html">
-                    <img src="__TMPL__/public/assets/static/picture/201903271026071689.png" alt="健身平台app">
-                    <h3 class="h3">健身平台app</h3>
-                </a></li>
-
-            <li class="col-md-4"><a href="show-847.html">
-                    <img src="__TMPL__/public/assets/static/picture/201906120830377774.png" alt="智慧洗车物联网平台">
-                    <h3 class="h3">智慧洗车物联网平台</h3>
-                </a></li>
+                </notempty>
+            </portal:articles>
 
         </ul>
         <div class="text-center">
-            <a href="86.html" rel="nofollow" class="btns btn_more wow rubberBand">查看更多</a>
+            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" rel="nofollow" class="btns btn_more wow rubberBand">查看更多</a>
         </div>
     </div>
     <div class="cando_box">
@@ -332,61 +281,28 @@
         <div class="container">
             <div class="swiper-container1">
                 <div class="swiper-wrapper">
+                    <php>
+                        $index = 1;
+                    </php>
+
+                    <portal:articles item="vo" order="post.create_time DESC" page="6" categoryIds="25"
+                                     returnVarName="articles_data">
                     <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg6.png) no-repeat center;">
-                            <a href="waste_disposal.html" target="_blank" rel="nofollow">
+                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg${index}.png) no-repeat center;">
+                            <a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}" target="_blank" rel="nofollow">
                                 <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over6.png"
-                                        alt="垃圾处理项目">
-                                    <p>垃圾处理项目</p>
+                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over${index}.png"
+                                        alt="{$vo.post_title}">
+                                    <p>{$vo.post_title}</p>
                                 </div>
                             </a>
                         </li>
                     </div>
-                    <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg1.png) no-repeat center;">
-                            <a href="znjsxt.html" target="_blank" rel="nofollow">
-                                <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over1.png"
-                                        alt="智能健身系统">
-                                    <p>智能健身系统</p>
-                                </div>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg2.png) no-repeat center;">
-                            <a href="ymline.html" target="_blank">
-                                <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over2.png"
-                                        alt="智能网校系统">
-                                    <p>智能网校系统</p>
-                                </div>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg3.png) no-repeat center;">
-                            <a href="index1.html" target="_blank" rel="nofollow">
-                                <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over3.png"
-                                        alt="腾云电商系统">
-                                    <p>腾云电商系统</p>
-                                </div>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg4.png) no-repeat center;">
-                            <a href="znwyxt.html" rel="nofollow" target="_blank">
-                                <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over4.png"
-                                        alt="智能物业系统">
-                                    <p>智能物业系统</p>
-                                </div>
-                            </a>
-                        </li>
-                    </div>
+                        <php>
+                            $index++;
+                        </php>
+                    </portal:articles>
+
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -396,286 +312,6 @@
     <div class="yl-indtit wow bounceInDown">再给您一个不得不选我们的理由</div>
     <div class="container wow rubberBand">
         <img src="__TMPL__/public/assets/static/picture/reson.png" width="100%">
-    </div>
-    <div class="worry_box">
-        <div class="yl-indtit wow bounceInDown">看完这些您将更加放心</div>
-        <ul class="container w1200 yl-dwmfx wow bounce">
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201904021037291533.jpg"
-                            data-caption="政务督查督办系统"><img
-                                src="__TMPL__/public/assets/static/picture/201904021037291533.jpg" alt="政务督查督办系统"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">政务督查督办系统</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201904021037021376.jpg"
-                            data-caption="云端企业营销系统软件"><img
-                                src="__TMPL__/public/assets/static/picture/201904021037021376.jpg" alt="云端企业营销系统软件"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">云端企业营销系统软件</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290835141220.jpg"
-                            data-caption="医院门诊病历全无纸化系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290835141220.jpg"
-                                alt="医院门诊病历全无纸化系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院门诊病历全无纸化系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290834555439.jpg"
-                            data-caption="医院电子病历归档系统V1.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290834555439.jpg"
-                                alt="医院电子病历归档系统V1.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院电子病历归档系统V1.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290834424658.jpg"
-                            data-caption="医院等级评审系统V3.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290834424658.jpg"
-                                alt="医院等级评审系统V3.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院等级评审系统V3.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290834029345.jpg"
-                            data-caption="医院单病种质量控制系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290834029345.jpg"
-                                alt="医院单病种质量控制系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院单病种质量控制系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290833485908.jpg"
-                            data-caption="医院病历终末质量控制系统V3.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290833485908.jpg"
-                                alt="医院病历终末质量控制系统V3.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院病历终末质量控制系统V3.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290833352470.jpg"
-                            data-caption="医院病历数字化加工系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290833352470.jpg"
-                                alt="医院病历数字化加工系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院病历数字化加工系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290833207158.jpg"
-                            data-caption="医院病历示踪管理系统V4.5"><img
-                                src="__TMPL__/public/assets/static/picture/201903290833207158.jpg"
-                                alt="医院病历示踪管理系统V4.5"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院病历示踪管理系统V4.5</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290833050751.jpg"
-                            data-caption="医院病案统计管理系统V6.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290833050751.jpg"
-                                alt="医院病案统计管理系统V6.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院病案统计管理系统V6.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290832249814.jpg"
-                            data-caption="医院安全（不良）事件上报管理系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290832249814.jpg"
-                                alt="医院安全（不良）事件上报管理系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医院安全（不良）事件上报管理系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290831550439.jpg"
-                            data-caption="医疗质量监测数据采集系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290831550439.jpg"
-                                alt="医疗质量监测数据采集系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医疗质量监测数据采集系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290831334970.jpg"
-                            data-caption="医疗数字化随访软件V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290831334970.jpg"
-                                alt="医疗数字化随访软件V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医疗数字化随访软件V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290831154970.jpg"
-                            data-caption="医疗决策支撑系统V2.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290831154970.jpg"
-                                alt="医疗决策支撑系统V2.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">医疗决策支撑系统V2.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290830545283.jpg"
-                            data-caption="数据分析平台系统（HBI）V3.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290830545283.jpg"
-                                alt="数据分析平台系统（HBI）V3.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">数据分析平台系统（HBI）V3.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290830366064.jpg"
-                            data-caption="基于DRGs医疗服务考核绩效评价软件V1.2"><img
-                                src="__TMPL__/public/assets/static/picture/201903290830366064.jpg"
-                                alt="基于DRGs医疗服务考核绩效评价软件V1.2"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">基于DRGs医疗服务考核绩效评价软件V1.2</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290830196220.jpg"
-                            data-caption="基于DRGs的区域分析系统V3.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290830196220.jpg"
-                                alt="基于DRGs的区域分析系统V3.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">基于DRGs的区域分析系统V3.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290830052470.jpg"
-                            data-caption="病历无纸化管理系统V1.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290830052470.jpg"
-                                alt="病历无纸化管理系统V1.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">病历无纸化管理系统V1.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290829471064.jpg"
-                            data-caption="ICD结构化诊断V1.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290829471064.jpg"
-                                alt="ICD结构化诊断V1.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">ICD结构化诊断V1.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290829286845.jpg"
-                            data-caption="HQMS监测数据上报软件"><img
-                                src="__TMPL__/public/assets/static/picture/201903290829286845.jpg"
-                                alt="HQMS监测数据上报软件"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">HQMS监测数据上报软件</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290829153095.jpg"
-                            data-caption="ETL数据采集加工软件V1.2"><img
-                                src="__TMPL__/public/assets/static/picture/201903290829153095.jpg"
-                                alt="ETL数据采集加工软件V1.2"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">ETL数据采集加工软件V1.2</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290829027626.jpg"
-                            data-caption="DRGs智慧分组器系统V3.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290829027626.jpg"
-                                alt="DRGs智慧分组器系统V3.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">DRGs智慧分组器系统V3.0</div>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="main">
-                    <div class="yl-dwmfx01 baguetteBoxOne gallery">
-                        <a href="__TMPL__/public/assets/static/picture/201903290828447939.jpg"
-                            data-caption="DRGs上报系统V1.0"><img
-                                src="__TMPL__/public/assets/static/picture/201903290828447939.jpg"
-                                alt="DRGs上报系统V1.0"></a>
-                    </div>
-                    <div class="fon16 oneLine text-center">DRGs上报系统V1.0</div>
-                </div>
-            </li>
-
-        </ul>
     </div>
     <div class="slider_nav">
         <ul>
@@ -694,7 +330,7 @@
         </ul>
     </div>
     <div class="mb_tel">
-        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+        <a href="tel:13792208163"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
     </div>
     <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
     <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
@@ -712,33 +348,29 @@
     <div class="demand_contair">
         <a name="xuqiu"></a>
         <div class="container">
-            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}">
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
-                            placeholder="您的姓名">
+                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
+                               placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
-                            placeholder="联系电话">
+                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
+                               placeholder="联系电话">
+                    </li>
+                    <li class="input_1">
+                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
+                               placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
-                            placeholder="详细描述您的需求...">
+                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                               placeholder="详细描述您的需求...">
                     </li>
-                    <li class="input_3">
-                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
-                            placeholder="验证码">
-                    </li>
-                    <li style="margin-top: 2px;">
-                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                                align="absmiddle"></a><span class="Validform_checktip"></span>
-                    </li>
+
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"
-                            class="btn btn-default tjxmxq">提交需求</button>
+                                class="btn btn-default tjxmxq">提交需求</button>
                     </li>
                 </ul>
             </form>

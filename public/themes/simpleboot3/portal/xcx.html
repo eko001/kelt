@@ -295,124 +295,29 @@
     </div>
     <div class="serv_case container">
         <ul>
-
+            <portal:articles item="vo" order="post.create_time DESC" page="9" categoryIds="24"
+                             returnVarName="articles_data">
+                <notempty name="$vo.thumbnail">
             <li class="col-md-3">
-                <div class="case"><a href="show-996.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109081801378237.jpg" alt="史志办"><em
+                <div class="case"><a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
+                        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}"><em
                             class="line"></em>
-                        <p>史志办</p>
+                        <p>{$vo.post_title}</p>
                     </a>
                 </div>
             </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-995.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109081754239447.jpg" alt="博汇集团"><em
-                            class="line"></em>
-                        <p>博汇集团</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-994.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109081750181101.jpg" alt="博悦检测"><em
-                            class="line"></em>
-                        <p>博悦检测</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-992.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109021610431999.jpg" alt="红跑车"><em
-                            class="line"></em>
-                        <p>红跑车</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-991.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109021608223156.jpg" alt="车必净"><em
-                            class="line"></em>
-                        <p>车必净</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-990.html">
-                        <img src="__TMPL__/public/assets/static/picture/202109021607124545.jpg" alt="博汇智能装备"><em
-                            class="line"></em>
-                        <p>博汇智能装备</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-927.html">
-                        <img src="__TMPL__/public/assets/static/picture/202007181344099021.jpg" alt="慕容APP"><em
-                            class="line"></em>
-                        <p>慕容APP</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-926.html">
-                        <img src="__TMPL__/public/assets/static/picture/202007181341379744.jpg" alt="展超商城"><em
-                            class="line"></em>
-                        <p>展超商城</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-925.html">
-                        <img src="__TMPL__/public/assets/static/picture/202007181339457494.jpg" alt="紫薇会议系统"><em
-                            class="line"></em>
-                        <p>紫薇会议系统</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-632.html">
-                        <img src="__TMPL__/public/assets/static/picture/201903271025242158.png" alt="钢甲天下二手机交易平台"><em
-                            class="line"></em>
-                        <p>钢甲天下二手机交易平台</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-509.html">
-                        <img src="__TMPL__/public/assets/static/picture/201903271026071689.png" alt="健身平台app"><em
-                            class="line"></em>
-                        <p>健身平台app</p>
-                    </a>
-                </div>
-            </li>
-
-            <li class="col-md-3">
-                <div class="case"><a href="show-847.html">
-                        <img src="__TMPL__/public/assets/static/picture/201906120830377774.png" alt="智慧洗车物联网平台"><em
-                            class="line"></em>
-                        <p>智慧洗车物联网平台</p>
-                    </a>
-                </div>
-            </li>
+                </notempty>
+            </portal:articles>
 
         </ul>
         <div class="text-center">
-            <a href="86.html" target="_blank" class="btns btn_type wow rubberBand">查看更多</a>
+            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" target="_blank" class="btns btn_type wow rubberBand">查看更多</a>
         </div>
     </div>
     <div class="slider_nav">
         <ul>
             <li class="ht">
-                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发400电话">
+                <div class="ht1"><img src="__TMPL__/public/assets/static/picture/silder1.png" alt="山东APP开发联系电话">
                     <div class="ht2">13792208163</div>
                 </div>
             </li>
@@ -426,7 +331,7 @@
         </ul>
     </div>
     <div class="mb_tel">
-        <a href="tel:400-663-9990"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
+        <a href="tel:13792208163"><img src="__TMPL__/public/assets/static/picture/silder1.png"></a>
     </div>
     <link rel="stylesheet" href="__TMPL__/public/assets/static/css/validate.css">
     <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/static/css/pagination.css">
@@ -444,33 +349,29 @@
     <div class="demand_contair">
         <a name="xuqiu"></a>
         <div class="container">
-            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}">
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
-                            placeholder="您的姓名">
+                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
+                               placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
-                            placeholder="联系电话">
+                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
+                               placeholder="联系电话">
+                    </li>
+                    <li class="input_1">
+                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
+                               placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
-                            placeholder="详细描述您的需求...">
+                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                               placeholder="详细描述您的需求...">
                     </li>
-                    <li class="input_3">
-                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
-                            placeholder="验证码">
-                    </li>
-                    <li style="margin-top: 2px;">
-                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                                align="absmiddle"></a><span class="Validform_checktip"></span>
-                    </li>
+
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"
-                            class="btn btn-default tjxmxq">提交需求</button>
+                                class="btn btn-default tjxmxq">提交需求</button>
                     </li>
                 </ul>
             </form>
