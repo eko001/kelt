@@ -7,8 +7,8 @@
     <link href="__TMPL__/public/assets/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/main.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <title>山东小程序开发,山东小程序制作,山东小程序定制,山东微信小程序开发 - 德州一帆科技</title>
-    <meta name="Keywords" content="山东小程序开发,山东小程序制作,山东小程序定制,山东微信小程序开发">
+    <title>德州一帆网络科技-微信小程序定制开发_山东小程序开发,山东小程序制作,山东小程序定制,山东微信小程序开发</title>
+    <meta name="Keywords" content="微信小程序定制开发,微信公众号开发,山东小程序开发,山东小程序制作,山东小程序定制,山东微信小程序开发">
     <meta name="Description" content="德州一帆科技是一家集小程序开发,小程序制作,小程序定制,微信小程序开发定制的专业公司,专业为客户打造微信小程序开发一体化解决方案.">
     <!--[if lt IE 9]>
  <script src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
@@ -296,22 +296,24 @@
     <div class="serv_case container">
         <ul>
             <portal:articles item="vo" order="post.create_time DESC" page="9" categoryIds="24"
-                             returnVarName="articles_data">
+                returnVarName="articles_data">
                 <notempty name="$vo.thumbnail">
-            <li class="col-md-3">
-                <div class="case"><a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
-                        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}"><em
-                            class="line"></em>
-                        <p>{$vo.post_title}</p>
-                    </a>
-                </div>
-            </li>
+                    <li class="col-md-3">
+                        <div class="case"><a
+                                href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
+                                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}"><em
+                                    class="line"></em>
+                                <p>{$vo.post_title}</p>
+                            </a>
+                        </div>
+                    </li>
                 </notempty>
             </portal:articles>
 
         </ul>
         <div class="text-center">
-            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" target="_blank" class="btns btn_type wow rubberBand">查看更多</a>
+            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" target="_blank"
+                class="btns btn_type wow rubberBand">查看更多</a>
         </div>
     </div>
     <div class="slider_nav">
@@ -353,25 +355,25 @@
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
-                               placeholder="您的姓名">
+                        <input type="text" name="post[name]" id='name' maxlength="4" class="form-control"
+                            placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
-                               placeholder="联系电话">
+                        <input type="tel" name="post[phone]" id="phone" maxlength="11" class="form-control"
+                            placeholder="联系电话">
                     </li>
                     <li class="input_1">
-                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
-                               placeholder="联系邮箱">
+                        <input type="email" name="post[email]" id="email" maxlength="11" class="form-control"
+                            placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
-                               placeholder="详细描述您的需求...">
+                        <input type="text" name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
                     </li>
 
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"
-                                class="btn btn-default tjxmxq">提交需求</button>
+                            class="btn btn-default tjxmxq">提交需求</button>
                     </li>
                 </ul>
             </form>
