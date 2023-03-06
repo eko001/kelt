@@ -115,33 +115,29 @@
     <div class="demand_contair">
         <a name="xuqiu"></a>
         <div class="container">
-            <form id="feedback_form" name="feedback_form" url="/plugins/feedback/ajax.ashx?action=add&site=main">
+            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}">
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text" id="txtUserName" name="txtUserName" maxlength="4" class="form-control"
-                            placeholder="您的姓名">
+                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
+                               placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="text" id="txtUserTel" name="txtUserTel" maxlength="11" class="form-control"
-                            placeholder="联系电话">
+                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
+                               placeholder="联系电话">
+                    </li>
+                    <li class="input_1">
+                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
+                               placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text" id="txtContent" name="txtContent" maxlength="50" class="form-control"
-                            placeholder="详细描述您的需求...">
+                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                               placeholder="详细描述您的需求...">
                     </li>
-                    <li class="input_3">
-                        <input id="txtCode" name="txtCode" type="text" maxlength="4" class="form-control"
-                            placeholder="验证码">
-                    </li>
-                    <li style="margin-top: 2px;">
-                        <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;">
-                            <img src="__TMPL__/public/assets/static/picture/verify_code.ashx" width="80" height="35"
-                                align="absmiddle"></a><span class="Validform_checktip"></span>
-                    </li>
+
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"
-                            class="btn btn-default tjxmxq">提交需求</button>
+                                class="btn btn-default tjxmxq">提交需求</button>
                     </li>
                 </ul>
             </form>
