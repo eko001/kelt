@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>公司简介 - 德州一帆</title>
-    <meta name="keywords" content="公司简介">
+    <title>公司简介 - 德州一帆网络科技有限公司</title>
+    <meta name="keywords" content="德州app开发,德州app外包,德州小程序定制,微信小程序开发,微信公众号开发">
     <meta name="description"
-        content="德州一帆网络科技有限公司成立于2004年4月，注册资本100万。现有员工100余人，多年来，我们一直坚持利用强大的技术力量和丰富的市场推广经验作为后盾，利用自身丰富的信息资源、畅捷的信息渠道以及强大的推广力量，多层次的电子商务及电子政务服务，已经拥有稳定企业客户7000多…">
+        content="德州一帆网络科技有限公司成立以来，我们一直坚持利用强大的技术力量和丰富的市场推广经验作为后盾，利用自身丰富的信息资源、畅捷的信息渠道以及强大的推广力量，多层次的电子商务及电子政务服务，已经拥有稳定企业客户7000多…">
     <meta name="description" content="">
     <link href="__TMPL__/public/assets/static/css/bootstrap.css" rel="stylesheet">
     <link href="__TMPL__/public/assets/static/css/app.css" rel="stylesheet">
@@ -91,11 +91,11 @@
     <div class="partner_box container">
         <ul class="wow pulse">
             <portal:articles item="vo" order="post.create_time DESC" page="30" categoryIds="27"
-                             returnVarName="articles_data">
+                returnVarName="articles_data">
                 <notempty name="$vo.thumbnail">
-            <li>
-                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title|mb_substr=0,10,'utf-8'}">
-            </li>
+                    <li>
+                        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title|mb_substr=0,10,'utf-8'}">
+                    </li>
                 </notempty>
             </portal:articles>
 
@@ -204,11 +204,11 @@
                             placeholder="联系电话">
                     </li>
                     <li class="input_1">
-                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
-                               placeholder="联系邮箱">
+                        <input type="email" name="post[email]" id="email" maxlength="11" class="form-control"
+                            placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                        <input type="text" name="post[business]" id="buisiness" maxlength="50" class="form-control"
                             placeholder="详细描述您的需求...">
                     </li>
                     <li>
