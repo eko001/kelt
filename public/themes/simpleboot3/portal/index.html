@@ -8,7 +8,7 @@
     <link href="__TMPL__/public/assets/static/css/main.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/swiper.css" rel="stylesheet" type="text/css" media="all">
-    <title>德州一帆-{$site_info.site_name|default=''}</title>
+    <title>德州一帆网络科技-{$site_info.site_name|default=''}</title>
     <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}">
     <meta name="description" content="{$site_info.site_seo_description|default=''}">
     <link rel="canonical" href="">
@@ -130,35 +130,40 @@
                     <div class="title">APP开发</div>
                     <div class="line"></div>
                     <div class="cons">APP全案策划、app定制开发、app转型升级</div>
-                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a></div>
+                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a>
+                    </div>
                 </li>
                 <li class="col-md-4">
                     <i class="icon2"></i>
                     <div class="title">精品软件</div>
                     <div class="line"></div>
                     <div class="cons">仿鱼泡网、仿boss直聘、云遗嘱、教育软件、实时通讯系统</div>
-                    <div class="more"><a href="{:cmf_url('portal/List/index',array('id'=>25))}" target="_blank" rel="nofollow">详细了解</a></div>
+                    <div class="more"><a href="{:cmf_url('portal/List/index',array('id'=>25))}" target="_blank"
+                            rel="nofollow">详细了解</a></div>
                 </li>
                 <li class="col-md-4">
                     <i class="icon3"></i>
                     <div class="title">H5开发</div>
                     <div class="line"></div>
                     <div class="cons">H5定制开发、H5场景制作、H5互动游戏开发、H5视频动画、H5品牌推广</div>
-                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a></div>
+                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a>
+                    </div>
                 </li>
                 <li class="col-md-4">
                     <i class="icon4"></i>
                     <div class="title">微信小程序开发</div>
                     <div class="line"></div>
                     <div class="cons">微信小程序开发、微信公众平台开发、微信支付、服务号、订阅号、微分销、微商城、微信接口等开发定制。</div>
-                    <div class="more"><a href="{:cmf_url('portal/apps/xcx')}" target="_blank" rel="nofollow">详细了解</a></div>
+                    <div class="more"><a href="{:cmf_url('portal/apps/xcx')}" target="_blank" rel="nofollow">详细了解</a>
+                    </div>
                 </li>
                 <li class="col-md-4">
                     <i class="icon5"></i>
                     <div class="title">游戏开发</div>
                     <div class="line"></div>
                     <div class="cons">2d游戏解决方案、3d游戏解决方案</div>
-                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a></div>
+                    <div class="more"><a href="{:cmf_url('portal/apps/index')}" target="_blank" rel="nofollow">详细了解</a>
+                    </div>
                 </li>
                 <li class="col-md-4">
                     <i class="icon6"></i>
@@ -395,19 +400,19 @@
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
+                        <input type="text" name="post[name]" id='name' maxlength="4" class="form-control"
                             placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
+                        <input type="tel" name="post[phone]" id="phone" maxlength="11" class="form-control"
                             placeholder="联系电话">
                     </li>
                     <li class="input_1">
-                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
-                               placeholder="联系邮箱">
+                        <input type="email" name="post[email]" id="email" maxlength="11" class="form-control"
+                            placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                        <input type="text" name="post[business]" id="buisiness" maxlength="50" class="form-control"
                             placeholder="详细描述您的需求...">
                     </li>
 
@@ -424,58 +429,58 @@
     <script src="__TMPL__/public/assets/static/js/wow.min.js"></script>
     <div class="clear"></div>
     <script>
-       /* function isPhone(phone) {
-            return /^1(3\d|4\d|5\d|6\d|7\d|8\d|9\d)\d{8}$/g.test(phone);
-        };
-        //判断用户输入的电子邮箱格式是否正确
-        function checkEmail(email) {
-            var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
-            if (myReg.test(email)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        $("#btnSubmit").on("click", function () {
-            var sName = $("#name").val();
-            var sMobile = $("#phone").val();
-            var semail = $("#email").val();
-            var sbuisiness = $("#buisiness").val();
-            if(!sName){
-            	alert("请填写姓名");
-            	return false;
-            };
-            if (!sMobile) {
-                alert("请填写手机号");
-                return false;
-            } else if (!isPhone(sMobile)) {
-                alert("请填写正确的手机号");
-                return false;
-            };
-            if(!semail || !checkEmail(semail)){
-                alert("请填写正确的邮箱");
-                return false;
-            }
-
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "{:url('Form/addPost')}",
-                data: $('#feedback_form').serialize(),
-                success: function (result) {
-                    console.log(result);//打印服务端返回的数据(调试用)
-                    if (result.code == 1) {
-                        alert("提交成功")
-                        document.getElementById("feedback_form").reset();
-                    };
-                },
-                error: function () {
-                    alert("提交失败");
-                }
-            })
-
-        });*/
+        /* function isPhone(phone) {
+             return /^1(3\d|4\d|5\d|6\d|7\d|8\d|9\d)\d{8}$/g.test(phone);
+         };
+         //判断用户输入的电子邮箱格式是否正确
+         function checkEmail(email) {
+             var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+             if (myReg.test(email)) {
+                 return true;
+             } else {
+                 return false;
+             }
+         }
+ 
+         $("#btnSubmit").on("click", function () {
+             var sName = $("#name").val();
+             var sMobile = $("#phone").val();
+             var semail = $("#email").val();
+             var sbuisiness = $("#buisiness").val();
+             if(!sName){
+                 alert("请填写姓名");
+                 return false;
+             };
+             if (!sMobile) {
+                 alert("请填写手机号");
+                 return false;
+             } else if (!isPhone(sMobile)) {
+                 alert("请填写正确的手机号");
+                 return false;
+             };
+             if(!semail || !checkEmail(semail)){
+                 alert("请填写正确的邮箱");
+                 return false;
+             }
+ 
+             $.ajax({
+                 type: "POST",
+                 dataType: "json",
+                 url: "{:url('Form/addPost')}",
+                 data: $('#feedback_form').serialize(),
+                 success: function (result) {
+                     console.log(result);//打印服务端返回的数据(调试用)
+                     if (result.code == 1) {
+                         alert("提交成功")
+                         document.getElementById("feedback_form").reset();
+                     };
+                 },
+                 error: function () {
+                     alert("提交失败");
+                 }
+             })
+ 
+         });*/
 
         var swiper = new Swiper('.swiper-container1', {
             slidesPerView: 4,

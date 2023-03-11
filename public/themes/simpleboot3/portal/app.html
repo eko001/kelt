@@ -9,10 +9,10 @@
     <link href="__TMPL__/public/assets/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/swiper.css" rel="stylesheet" type="text/css" media="all">
     <link href="__TMPL__/public/assets/static/css/baguettebox.min.css" rel="stylesheet" type="text/css" media="all">
-    <title>山东app开发商_app外包开发_山东app外包公司 - 德州一帆</title>
-    <meta name="keywords" content="山东app开发商_app外包开发_山东app外包公司">
+    <title>德州一帆网络科技-山东app开发商_app外包开发_山东app外包公司 </title>
+    <meta name="keywords" content="im软件开发,app开发,山东app开发商,app外包开发,山东app外包公司">
     <meta name="description"
-        content="德州一帆科技app定制开发商专业开发IOS、android APP软件,为客户提供一站式APP外包开发解决方案,山东app外包公司领头企业,山东app开发制作就选德州一帆科技!">
+        content="德州一帆科技app定制开发商专业开发IOS、android, APP软件,为客户提供一站式APP外包开发解决方案,山东app外包公司领头企业,山东app开发制作就选德州一帆科技!">
     <!--[if lt IE 9]>
  <script src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
  <script src="__TMPL__/public/assets/static/js/respond.min.js"></script>
@@ -247,8 +247,8 @@
         <div class="peoples text-center wow bounce">
             <img src="__TMPL__/public/assets/static/picture/peoples.png">
         </div>
-        <div class="text-center yl-FwConZx"><a class="zxzx yl-zx h40 wow rubberBand" href="tel:13792208163" target="_blank"
-                rel="nofollow">立刻咨询</a></div>
+        <div class="text-center yl-FwConZx"><a class="zxzx yl-zx h40 wow rubberBand" href="tel:13792208163"
+                target="_blank" rel="nofollow">立刻咨询</a></div>
     </div>
     <div class="container">
         <div class="index_tit wow bounceInDown">
@@ -258,18 +258,20 @@
     <div class="case_contair container">
         <ul class="wow pulse">
             <portal:articles item="vo" order="post.create_time DESC" page="9" categoryIds="24"
-                             returnVarName="articles_data">
+                returnVarName="articles_data">
                 <notempty name="$vo.thumbnail">
-            <li class="col-md-4"><a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
-                    <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}">
-                    <h3 class="h3">{$vo.post_title}</h3>
-                </a></li>
+                    <li class="col-md-4"><a
+                            href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}">
+                            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="{$vo.post_title}">
+                            <h3 class="h3">{$vo.post_title}</h3>
+                        </a></li>
                 </notempty>
             </portal:articles>
 
         </ul>
         <div class="text-center">
-            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" rel="nofollow" class="btns btn_more wow rubberBand">查看更多</a>
+            <a href="{:cmf_url('portal/List/index',array('id'=>24))}" rel="nofollow"
+                class="btns btn_more wow rubberBand">查看更多</a>
         </div>
     </div>
     <div class="cando_box">
@@ -286,18 +288,21 @@
                     </php>
 
                     <portal:articles item="vo" order="post.create_time DESC" page="6" categoryIds="25"
-                                     returnVarName="articles_data">
-                    <div class="swiper-slide">
-                        <li style="background:url(__TMPL__/public/assets/static/image/over_bg${index}.png) no-repeat center;">
-                            <a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}" target="_blank" rel="nofollow">
-                                <div class="yl-ccxxNrMc"></div>
-                                <div class="yl-ccxxNrPos"><img src="__TMPL__/public/assets/static/picture/over${index}.png"
-                                        alt="{$vo.post_title}">
-                                    <p>{$vo.post_title}</p>
-                                </div>
-                            </a>
-                        </li>
-                    </div>
+                        returnVarName="articles_data">
+                        <div class="swiper-slide">
+                            <li
+                                style="background:url(__TMPL__/public/assets/static/image/over_bg${index}.png) no-repeat center;">
+                                <a href="{:url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo['categories'][0]['id']))}"
+                                    target="_blank" rel="nofollow">
+                                    <div class="yl-ccxxNrMc"></div>
+                                    <div class="yl-ccxxNrPos"><img
+                                            src="__TMPL__/public/assets/static/picture/over${index}.png"
+                                            alt="{$vo.post_title}">
+                                        <p>{$vo.post_title}</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </div>
                         <php>
                             $index++;
                         </php>
@@ -352,25 +357,25 @@
                 <h3>请填写您的项目需求给我们：</h3>
                 <ul class="demand_list">
                     <li class="input_1">
-                        <input type="text"  name="post[name]" id='name' maxlength="4" class="form-control"
-                               placeholder="您的姓名">
+                        <input type="text" name="post[name]" id='name' maxlength="4" class="form-control"
+                            placeholder="您的姓名">
                     </li>
                     <li class="input_1">
-                        <input type="tel"  name="post[phone]" id="phone" maxlength="11" class="form-control"
-                               placeholder="联系电话">
+                        <input type="tel" name="post[phone]" id="phone" maxlength="11" class="form-control"
+                            placeholder="联系电话">
                     </li>
                     <li class="input_1">
-                        <input type="email"  name="post[email]" id="email" maxlength="11" class="form-control"
-                               placeholder="联系邮箱">
+                        <input type="email" name="post[email]" id="email" maxlength="11" class="form-control"
+                            placeholder="联系邮箱">
                     </li>
                     <li class="input_2">
-                        <input type="text"  name="post[business]" id="buisiness" maxlength="50" class="form-control"
-                               placeholder="详细描述您的需求...">
+                        <input type="text" name="post[business]" id="buisiness" maxlength="50" class="form-control"
+                            placeholder="详细描述您的需求...">
                     </li>
 
                     <li>
                         <button type="submit" id="btnSubmit" name="btnSubmit"
-                                class="btn btn-default tjxmxq">提交需求</button>
+                            class="btn btn-default tjxmxq">提交需求</button>
                     </li>
                 </ul>
             </form>
