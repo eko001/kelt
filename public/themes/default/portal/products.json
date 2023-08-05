@@ -1,0 +1,62 @@
+{
+  "name": "产品服务",
+  "action": "portal/products",
+  "description": "产品服务",
+  "order": 6.0,
+  "more": {
+    "vars": {
+      "varName1": {
+        "title": "分类标签",
+        "value": "",
+        "type": "array",
+        "item": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text"
+          }
+        },
+        "rule": {
+          "require": true
+        }
+      }
+    },
+    "widgets": {
+      "banner": {
+        "title": "Banner",
+        "name": "首页Banner",
+        "display": "1",
+        "vars": {
+          "bannerList": {
+            "title": "Banner图片列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text"
+              },
+              "title2": {
+                "title": "小标题",
+                "value": "",
+                "type": "text"
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

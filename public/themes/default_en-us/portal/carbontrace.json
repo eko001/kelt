@@ -1,0 +1,190 @@
+{
+  "name": "碳追踪",
+  "action": "portal/carbontrace",
+  "description": "碳追踪",
+  "order": 6.0,
+  "more": {
+    "widgets": {
+      "banner": {
+        "title": "Banner",
+        "name": "碳追踪Banner",
+        "display": "1",
+        "vars": {
+          "bannerList": {
+            "title": "Banner图片列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text"
+              },
+              "title2": {
+                "title": "小标题",
+                "value": "",
+                "type": "text"
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module1": {
+        "title": "模块1",
+        "name": "产品生命周期跟踪",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "碳追踪生命周期",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module2": {
+        "title": "模块2",
+        "name": "碳追踪说明",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "碳追踪说明配图",
+            "value": "",
+            "type": "image",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName2": {
+            "title": "碳追踪说明内容",
+            "value": "",
+            "type": "textarea",
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module3": {
+        "title": "模块3",
+        "name": "碳追踪数据库",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "数据库列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "数据库名称",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "数据库描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

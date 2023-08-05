@@ -26,7 +26,7 @@ return [
             // 服务器地址
             'hostname' => env('DATABASE_HOSTNAME', '127.0.0.1'),
             // 数据库名
-            'database' => env('DATABASE_DATABASE', 'yifan'),
+            'database' => env('DATABASE_DATABASE', 'carbon'),
             // 用户名
             'username' => env('DATABASE_USERNAME', 'root'),
             // 密码

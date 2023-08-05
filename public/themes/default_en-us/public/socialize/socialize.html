@@ -1,0 +1,21 @@
+<widget name="setApp">
+  <volist name="$widget.vars.varName1" id="vo1" length="4">
+    <div class="item">
+      <a href="{$vo1.link}" target="_blank"><img src="__ROOT__/upload/{$vo1.icon}" alt=""></a>
+      <img class="qrCode" src="__ROOT__/upload/{$vo1.qrCode}" alt="">
+    </div>
+  </volist>
+</widget>
+
+<script>
+  // 如果页面a标签的href属性值是为空，那么就禁止a标签点击
+  var a = document.querySelectorAll('.item a');
+  for (var i = 0; i < a.length; i++) {
+    if (a[i].href == 'http://carbontracking.com/portal/about.html') {
+      a[i].onclick = function () {
+        return false;
+      }
+    }
+  }
+
+</script>

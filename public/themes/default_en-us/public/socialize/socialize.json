@@ -1,0 +1,46 @@
+{
+  "name": "设置APP图标",
+  "action": "portal/about",
+  "description": "设置APP图标",
+  "order": 19.0,
+  "is_public": "1",
+  "more": {
+    "widgets": {
+      "setApp": {
+        "title": "设置APP图标",
+        "name": "设置APP图标",
+        "display": "1",
+        "vars": {
+          "varName1": {
+            "title": "设置APP图标",
+            "value": "",
+            "type": "array",
+            "item": {
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "qrCode": {
+                "title": "二维码",
+                "value": "",
+                "type": "image"
+              },
+              "link": {
+                "title": "内容",
+                "value": "",
+                "type": "text"
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="public@head/head" />
+<css file="__TMPL__/static/css/carbonTrace.css" />
+
+<body>
+  <!-- header -->
+  <include file="public@header/header" />
+
+  <!-- banner -->
+  <div class="banner banner_box660">
+    <widget name="banner">
+      <div id="sliderBox" class="banner_box banner_box660">
+        <volist name="$widget.vars.bannerList" id="vo">
+          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+            <div class="banner_box_img_title bannerTitleLeft">
+              <div class="banner_box_img_title_big">{$vo.title}</div>
+              <div class="banner_box_img_title_small">{$vo.title2}</div>
+            </div>
+          </div>
+        </volist>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 碳追踪 -->
+  <div class="white" id="carbontraceModel1">
+    <widget name="Module1">
+      <div class="main-center main-title">
+        <div class="big-title">{$widget.vars.title}</div>
+        <div class="small-title">{$widget.vars.title2}</div>
+      </div>
+
+      <div class="carbonTrace main-center">
+        <div class="carbonTrace_box">
+          <volist name="$widget.vars.varName1" id="vo" length="6">
+            <div class="carbonTrace_box_item">
+              <div class="carbonTrace_box_item_img">
+                <img src="__ROOT__/upload/{$vo.icon}" alt="">
+              </div>
+              <div class="carbonTrace_box_item_title">{$vo.title}</div>
+              <div class="carbonTrace_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+
+      </div>
+    </widget>
+  </div>
+
+  <!-- 碳追踪解释 -->
+  <div class="grey" id="carbontraceModel2">
+    <widget name="Module2">
+      <div class="main-center main-title">
+        <div class="big-title">{$widget.vars.title}</div>
+        <div class="small-title">{$widget.vars.title2}</div>
+      </div>
+
+      <div class="main-center interpretation">
+        <div class="interpretation_box">
+          <div class="interpretation_box_img">
+            <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
+          </div>
+          <div class="interpretation_box_desc">{$widget.vars.varName2}</div>
+        </div>
+
+      </div>
+    </widget>
+  </div>
+
+  <!-- 碳追踪数据库 -->
+  <div class="white" id="carbontraceModel3">
+    <widget name="Module3">
+      <div class="main-center main-title">
+        <div class="big-title">{$widget.vars.title}</div>
+        <div class="small-title">{$widget.vars.title2}</div>
+      </div>
+
+      <div class="main-center database">
+        <div class="database_box">
+          <volist name="$widget.vars.varName1" id="vo" length="6">
+            <div class="database_box_item">
+              <div class="database_box_item_title">{$vo.title}</div>
+              <div class="database_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+      </div>
+    </widget>
+  </div>
+
+  <!-- footer -->
+  <include file="public@footer/footer" />
+</body>
+
+</html>
+<script src="__TMPL__/static/js/slide.js"></script>

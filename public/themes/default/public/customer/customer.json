@@ -1,0 +1,60 @@
+{
+  "name": "客户logo列表模块",
+  "action": "portal/index",
+  "description": "客户logo",
+  "is_public": "1",
+  "order": 20.0,
+  "more": {
+    "widgets": {
+      "customer": {
+        "title": "Customer",
+        "name": "客户logo列表",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "logo图片列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

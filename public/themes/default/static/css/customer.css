@@ -1,0 +1,71 @@
+.customer {
+  padding-bottom: 75px;
+  width: 1225px;
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+.customer_img {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.customer_img img {
+  width: 220px;
+  height: 130px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .06);
+}
+
+
+/* 480px 以下的屏幕 */
+@media screen and (max-width: 480px) {
+  .customer {
+    width: calc(100% - 1.5rem);
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .customer_img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .customer_img img {
+    width: calc(50% - 1.5rem);
+    height: 9.7rem;
+    border-radius: 4px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1199px) {
+  .customer {
+    width: calc(100% - 1.5rem);
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .customer_img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .customer_img img {
+    width: calc(25% - 1.5rem);
+    height: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+}

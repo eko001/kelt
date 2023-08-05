@@ -1,0 +1,239 @@
+.slides {
+  width: 1200px;
+  height: 540px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 50px;
+  border-radius: 6px
+}
+
+.list-warehouse {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  position: absolute;
+  left: 0;
+}
+
+.list-warehouse .warehouse-item {
+  width: 1200px;
+  height: 540px;
+  flex-shrink: 0;
+}
+
+.list-warehouse .warehouse-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px
+}
+
+.slides_bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}
+
+.slides_bottom .slides_bottom_item {
+  width: 340px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+  padding: 30px 20px;
+}
+
+.slides_bottom .slides_bottom_item .slides_bottom_item_title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.slides_bottom .slides_bottom_item .slides_bottom_item_desc {
+  font-size: 14px;
+  color: var(--text8-color);
+  line-height: 2;
+  hyphens: auto;
+}
+
+.logistics {
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logistics_item {
+  width: 340px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px 20px;
+  transition: all .3s ease;
+}
+
+.logistics_item:hover {
+  background-color: var(--primary-color);
+  transition: all .3s ease;
+}
+
+.logistics_item:hover .logistics_item_title {
+  color: #fff;
+}
+
+.logistics_item:hover .logistics_item_desc {
+  color: #fff;
+}
+
+.logistics_item_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.logistics_item_desc {
+  font-size: 14px;
+  color: var(--text8-color);
+  line-height: 2;
+  hyphens: auto;
+}
+
+@media screen and (max-width: 1199px) {
+  .slides {
+    width: calc(100vw - 3rem);
+    height: 30rem;
+    margin-bottom: 3rem;
+    position: relative;
+    border-radius: .6rem
+  }
+
+  .list-warehouse {
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+  }
+
+  .list-warehouse .warehouse-item {
+    width: calc(100vw - 3rem);
+    height: 100%;
+  }
+
+  .list-warehouse .warehouse-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .6rem
+  }
+
+  .slides_bottom {
+    width: calc(100vw - 3rem);
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+    margin: 0;
+  }
+
+  .slides_bottom .slides_bottom_item {
+    width: calc(50% - 2.8rem);
+    margin-bottom: 1.5rem;
+    border-radius: .6rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .slides_bottom .slides_bottom_item .slides_bottom_item_title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .slides_bottom .slides_bottom_item .slides_bottom_item_desc {
+    font-size: 1rem;
+  }
+
+  .logistics {
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+    width: calc(100vw - 1.5rem);
+    margin: 0;
+  }
+
+  .logistics_item {
+    min-width: calc(50% - 4rem);
+    flex: 1;
+    margin-bottom: 1.5rem;
+    border-radius: .6rem;
+    padding: 1.5rem 1rem;
+    transition: all .3s ease;
+    margin-right: 1.5rem;
+  }
+
+  .logistics_item:hover {
+    background-color: var(--primary-color);
+    transition: all .3s ease;
+  }
+
+  .logistics_item:hover .logistics_item_title {
+    color: #fff;
+  }
+
+  .logistics_item:hover .logistics_item_desc {
+    color: #fff;
+  }
+
+  .logistics_item_title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .logistics_item_desc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .slides_bottom {
+    width: calc(100vw - 3rem);
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .slides_bottom .slides_bottom_item {
+    width: calc(100% - 2rem);
+  }
+
+  .slides_bottom .slides_bottom_item .slides_bottom_item_title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .slides_bottom .slides_bottom_item .slides_bottom_item_desc {
+    font-size: 1.3rem;
+  }
+
+  .logistics {
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+    width: calc(100vw - 3rem);
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .logistics_item {
+    width: calc(100% - 2rem);
+    flex: 0;
+  }
+
+  .logistics_item_title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .logistics_item_desc {
+    font-size: 1.3rem;
+  }
+}

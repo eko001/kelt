@@ -1,0 +1,162 @@
+{
+  "name": "关于我们",
+  "action": "portal/about",
+  "description": "关于我们",
+  "order": 8.0,
+  "more": {
+    "widgets": {
+      "banner": {
+        "title": "Banner",
+        "name": "关于我们Banner",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module1": {
+        "title": "模块1",
+        "name": "关于",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "desc": {
+            "title": "描述内容",
+            "value": "",
+            "type": "textarea",
+            "rule": {
+              "require": true
+            }
+          },
+          "img": {
+            "title": "图片",
+            "value": "",
+            "type": "image",
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module2": {
+        "title": "模块2",
+        "name": "常见问题",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "常见问题列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module3": {
+        "title": "模块3",
+        "name": "联系我们",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "联系方式",
+            "value": "",
+            "type": "array",
+            "item": {
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "desc": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "内容",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

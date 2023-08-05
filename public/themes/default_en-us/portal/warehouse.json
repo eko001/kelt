@@ -1,0 +1,161 @@
+{
+  "name": "仓储服务",
+  "action": "portal/warehouse",
+  "description": "仓储服务",
+  "order": 7.0,
+  "more": {
+    "widgets": {
+      "banner": {
+        "title": "Banner",
+        "name": "仓储服务Banner",
+        "display": "1",
+        "vars": {
+          "bannerList": {
+            "title": "Banner图片列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text"
+              },
+              "title2": {
+                "title": "小标题",
+                "value": "",
+                "type": "text"
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module1": {
+        "title": "模块1",
+        "name": "仓储服务介绍",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "轮播图",
+            "value": [],
+            "type": "array",
+            "item": {
+              "img": {
+                "title": "图片",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          },
+          "varName2": {
+            "title": "服务介绍",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "Module2": {
+        "title": "模块2",
+        "name": "物流服务",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "varName1": {
+            "title": "物流内容列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

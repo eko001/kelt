@@ -1,0 +1,237 @@
+.platformFeatures_top {
+  background-color: var(--primary-rgba1);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.platformFeatures_top_img {
+  font-size: 0;
+}
+
+.platformFeatures_top_img img {
+  width: 600px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.platformFeatures_top_text {
+  width: 100%;
+  padding: 30px 20px;
+  color: var(--text8-color);
+  font-size: 14px;
+  line-height: 2;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.platformFeatures_bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.platformFeatures_bottom_item {
+  width: 360px;
+}
+
+.platformFeatures_bottom_item_img {
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+
+.platformFeatures_bottom_item_img img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.platformFeatures_bottom_item_title {
+  margin: 30px 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.platformFeatures_bottom_item_text {
+  font-size: 13px;
+  line-height: 2;
+  color: #666;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.ourService {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.ourService_item {
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ourService_item_img {
+  font-size: 0;
+  margin-bottom: 30px;
+}
+
+.ourService_item_img img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.ourService_item_title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(24, 24, 24, .8);
+}
+
+@media screen and (max-width: 1199px) {
+  .platformFeatures_top {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+  }
+
+  .platformFeatures_top {
+    /* background-color: var(--primary-color); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    border-radius: .6rem;
+  }
+
+  .platformFeatures_top_img {
+    font-size: 0;
+    width: 100%;
+  }
+
+  .platformFeatures_top_img img {
+    width: 100%;
+    height: 20rem;
+  }
+
+  .platformFeatures_top_text {
+    width: calc(100% - 3rem);
+    padding: 1.5rem 0;
+    font-size: 1rem;
+  }
+
+  .platformFeatures_bottom {
+    width: calc(100% - 1.5rem);
+    padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .platformFeatures_bottom_item {
+    min-width: 24rem;
+    flex: 1;
+    padding-right: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .platformFeatures_bottom_item_img {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: .5rem;
+  }
+
+  .platformFeatures_bottom_item_img img {
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: contain;
+  }
+
+  .platformFeatures_bottom_item_title {
+    margin: 2rem 0 1rem;
+    font-size: 1.4rem;
+  }
+
+  .platformFeatures_bottom_item_text {
+    font-size: 1rem;
+  }
+
+  .ourService {
+    width: calc(100% - 1.5rem);
+    padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+  }
+
+  .ourService_item {
+    min-width: 16rem;
+    flex: 1;
+    height: 14rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ourService_item_img {
+    margin-bottom: 2rem;
+  }
+
+  .ourService_item_img img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .ourService_item_title {
+    font-size: 1.1rem;
+    width: calc(100% - 1.5rem);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .platformFeatures_top_text {
+    width: calc(100% - 3rem);
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .platformFeatures_bottom_item_title {
+    margin: 2rem 0 1rem;
+    font-size: 1.6rem;
+  }
+
+  .platformFeatures_bottom_item_text {
+    font-size: 1.3rem;
+  }
+
+
+
+  .ourService_item_title {
+    font-size: 1.2rem;
+  }
+}

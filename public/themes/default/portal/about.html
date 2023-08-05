@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="public@head/head" />
+<css file="__TMPL__/static/css/about.css" />
+
+<body>
+  <!-- header -->
+  <include file="public@header/header" />
+
+  <!-- banner -->
+  <div class="aboutBanner">
+    <div class="aboutBanner_box main-center">
+      <widget name="banner">
+        <div class="aboutBanner_box_title">{$widget.vars.title}</div>
+      </widget>
+      <div class="aboutBanner_box_btn">
+        <a href="{:url('/portal/about')}#aboutModel3">Contact us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about_top"></div>
+  <div class="white about-white">
+    <widget name="Module1">
+      <div class="main-center about" id="aboutModel1">
+        <div class="about_left">
+          <div class="about_left_title">{$widget.vars.title}</div>
+          <div class="about_left_desc">{$widget.vars.desc}</div>
+        </div>
+
+        <div class="about_right">
+          <img src="__ROOT__/upload/{$widget.vars.img}" alt="">
+        </div>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 常见问题 -->
+  <div class="grey" id="aboutModel2">
+    <widget name="Module2">
+      <div class="main-center faq">
+        <div class="faq_title">{$widget.vars.title}</div>
+        <div class="faq_box">
+          <volist name="$widget.vars.varName1" id="vo" length="4">
+            <div class="faq_box_item">
+              <div class="faq_box_item_icon">
+                <img src="__ROOT__/upload/{$vo.icon}" alt="">
+              </div>
+              <div class="faq_box_item_title">{$vo.title}</div>
+              <div class="faq_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+        <!-- <div class="faq_btn">
+          <a href="">More</a>
+        </div> -->
+      </div>
+    </widget>
+  </div>
+
+  <!-- 联系我们 -->
+  <div class="white" id="aboutModel3">
+    <widget name="Module3">
+      <div class="main-center contact">
+        <div class="contact_title">{$widget.vars.title}</div>
+        <div class="contact_box">
+          <div class="contact_box_left">
+            <div class="contact_box_left_top">
+              <volist name="$widget.vars.varName1" id="vo" length="4">
+                <div class="contact_box_left_top_item">
+                  <div class="contact_box_left_top_item_icon">
+                    <img src="__ROOT__/upload/{$vo.icon}" alt="">
+                  </div>
+                  <div class="contact_box_left_top_item_right">
+                    <div class="contact_box_left_top_item_right_title">{$vo.title}</div>
+                    <div class="contact_box_left_top_item_right_desc">{$vo.desc}</div>
+                    <div class="contact_box_left_top_item_right_content">{$vo.content}</div>
+                  </div>
+                </div>
+              </volist>
+            </div>
+            <div class="contact_box_left_bottom">
+              <include file="public@socialize/socialize" />
+            </div>
+
+          </div>
+          <div class="contact_box_right">
+            <form action="about/submitForm" method="post" class="contact_box_right_box">
+              <div class="contact_box_right_item">
+                <div class="contact_box_right_item_title">Full Name</div>
+                <input type="text" name="name" id="name" placeholder="Full Name">
+              </div>
+              <div class="contact_box_right_item">
+                <div class="contact_box_right_item_title">Phone number</div>
+                <input type="text" name="phone" id="phone" placeholder="Phone number">
+              </div>
+              <div class="contact_box_right_item width100">
+                <div class="contact_box_right_item_title">Email</div>
+                <input type="text" name="email" id="email" placeholder="Email">
+              </div>
+              <div class="contact_box_right_item width100">
+                <div class="contact_box_right_item_title">Tell me your though</div>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Tell me your though"></textarea>
+              </div>
+              <div class="contact_box_right_btn" id="sendBtn">
+                <input type="submit" value="Send message">
+              </div>
+            </form>
+
+            <!-- 提交成功 -->
+            <div class="popup" id="popupSuccess">
+              <div class="popup_box">
+                <div class="popup_box_title">Thank you for your message</div>
+                <div class="popup_box_desc">We will contact you as soon as possible</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </widget>
+  </div>
+  <!-- footer -->
+  <include file="public@footer/footer" />
+</body>
+
+</html>
+
+<script>
+  // 监听表单提交事件
+  document.querySelector('.contact_box_right_box').addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    // 先验证表单数据是否填写完整
+    if (!event.target.name.value || !event.target.phone.value || !event.target.email.value || !event.target.content.value) {
+      alert('Please fill in the complete information')
+      return
+    }
+
+    // 验证邮箱格式是否正确
+    if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(event.target.email.value)) {
+      alert('Please enter the correct email format')
+      return
+    }
+
+    return
+    // 使用Fetch API或其他方式提交表单数据
+    fetch('about/submitForm', {
+      method: 'POST',
+      body: new FormData(event.target),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          document.getElementById('popupSuccess').style.display = 'block';
+          document.getElementById('sendBtn').style.display = 'none';
+          // 清空表单数据
+          event.target.reset();
+
+        }
+      })
+  })
+</script>

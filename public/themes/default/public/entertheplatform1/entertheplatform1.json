@@ -1,0 +1,118 @@
+{
+  "name": "入驻平台流程",
+  "action": "portal/supplyChain",
+  "description": "入驻平台流程",
+  "order": 15.0,
+  "is_public": "1",
+  "more": {
+    "widgets": {
+      "EnterThePlatform": {
+        "title": "入驻平台流程",
+        "name": "入驻平台",
+        "display": "1",
+        "vars": {
+          "title": {
+            "title": "标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "title2": {
+            "title": "小标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "BuyersTitle": {
+            "title": "买方标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "Buyers": {
+            "title": "买方入驻流程",
+            "value": [],
+            "type": "array",
+            "item": {
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          },
+          "SellerTitle": {
+            "title": "供应商标题",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "Seller": {
+            "title": "供应商入驻流程",
+            "value": [],
+            "type": "array",
+            "item": {
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              },
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

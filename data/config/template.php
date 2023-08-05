@@ -1,3 +1,3 @@
 <?php	return array (
-  'cmf_default_theme' => 'simpleboot3',
+  'cmf_default_theme' => 'default',
 );

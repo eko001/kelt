@@ -1,0 +1,15 @@
+<css file="__TMPL__/static/css/customer.css" />
+
+<widget name="customer">
+  <div class="main-center main-title">
+    <div class="big-title">{$widget.vars.title}</div>
+    <div class="small-title">{$widget.vars.title2}</div>
+  </div>
+  <div class="customer">
+    <div class="customer_img">
+      <volist name="$widget.vars.varName1" id="vo">
+        <img src="__ROOT__/upload/{$vo.icon}" alt="">
+      </volist>
+    </div>
+  </div>
+</widget>

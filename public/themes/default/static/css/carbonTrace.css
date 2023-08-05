@@ -1,0 +1,244 @@
+.carbonTrace {
+  padding-bottom: 100px;
+}
+
+.carbonTrace_box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.carbonTrace_box_item {
+  width: 380px;
+  background-color: #fff;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.carbonTrace_box_item:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.carbonTrace_box_item_img {
+  font-size: 0;
+}
+
+.carbonTrace_box_item_img img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.carbonTrace_box_item_title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.carbonTrace_box_item_desc {
+  /* width: 100%; */
+  font-size: 14px;
+  color: var(--text6-color);
+  line-height: 1.5;
+  /* text-align: justify; */
+  hyphens: auto;
+}
+
+.interpretation {
+  padding-bottom: 100px;
+}
+
+.interpretation_box {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.interpretation_box_img {
+  font-size: 0;
+}
+
+.interpretation_box_img img {
+  width: 600px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interpretation_box_desc {
+  padding: 30px 20px;
+  color: #000;
+  font-size: 14px;
+  line-height: 2;
+  /* text-align: justify; */
+  hyphens: auto;
+}
+
+/* 数据库 */
+.database {
+  padding-bottom: 100px;
+}
+
+.database_box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.database_box_item {
+  width: 380px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+}
+
+.database_box_item_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 30px 20px;
+}
+
+.database_box_item_desc {
+  /* width: calc(); */
+  font-size: 14px;
+  color: var(--text6-color);
+  line-height: 1.5;
+  /* text-align: justify; */
+  hyphens: auto;
+  margin: 30px 20px;
+}
+
+@media screen and (max-width: 1199px) {
+  .carbonTrace {
+    padding-bottom: 3rem;
+  }
+
+  .carbonTrace_box {
+    width: calc(100% - 3rem);
+    padding-left: 1.5rem;
+  }
+
+  .carbonTrace_box_item {
+    width: calc(50% - 1rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .carbonTrace_box_item_img img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .carbonTrace_box_item_title {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .carbonTrace_box_item_desc {
+    font-size: 1rem;
+  }
+
+  /* 数据解释 */
+  .interpretation {
+    padding-bottom: 3rem;
+  }
+
+  .interpretation_box {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+  }
+
+  .interpretation_box_img img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+  }
+
+  .interpretation_box_desc {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* 数据库 */
+  .database {
+    padding-bottom: 3rem;
+  }
+
+  .database_box {
+    width: calc(100% - 3rem);
+    padding-left: 1.5rem;
+  }
+
+  .database_box_item {
+    width: calc(50% - .6rem);
+    margin-bottom: 1.2rem;
+    border-radius: .5rem;
+  }
+
+  .database_box_item_title {
+    font-size: 1.2rem;
+    margin: 1.5rem 1rem;
+  }
+
+  .database_box_item_desc {
+    font-size: 1rem;
+    margin: 1.5rem 1rem;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carbonTrace_box {
+    flex-direction: column;
+  }
+
+  .carbonTrace_box_item {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .carbonTrace_box_item_title {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .carbonTrace_box_item_desc {
+    font-size: 1.3rem;
+  }
+
+  /* 数据解释 */
+
+  .interpretation_box_desc {
+    padding: 1.5rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  /* 数据库 */
+
+  .database_box {
+    flex-direction: column;
+  }
+
+  .database_box_item {
+    width: 100%;
+  }
+
+  .database_box_item_title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .database_box_item_desc {
+    font-size: 1.3rem;
+  }
+}

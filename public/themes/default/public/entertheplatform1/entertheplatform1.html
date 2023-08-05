@@ -1,0 +1,46 @@
+<css file="__TMPL__/static/css/enterThePlatform.css" />
+
+<div class="white">
+  <widget name="EnterThePlatform">
+    <div class="main-center main-title">
+      <div class="big-title">{$widget.vars.title}</div>
+      <div class="small-title">{$widget.vars.title2}</div>
+    </div>
+    <div class="main-center enterThePlatform">
+      <div class="enterThePlatform_box">
+
+        <!-- 买方 -->
+        <div class="enterThePlatform_box_left">
+          <div class="enterThePlatform_box_title">{$widget.vars.BuyersTitle}</div>
+          <volist name="$widget.vars.Buyers" id="vo">
+            <div class="enterThePlatform_box_item">
+              <div class="enterThePlatform_box_item_title">
+                <div class="enterThePlatform_box_item_title_icon">
+                  <img src="__ROOT__/upload/{$vo.icon}" alt="">
+                </div>
+                <div class="enterThePlatform_box_item_title_text">{$vo.title}</div>
+              </div>
+              <div class="enterThePlatform_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+
+        <!-- 供应商 -->
+        <div class="enterThePlatform_box_right">
+          <div class="enterThePlatform_box_title">{$widget.vars.SellerTitle}</div>
+          <volist name="$widget.vars.Seller" id="vo">
+            <div class="enterThePlatform_box_item">
+              <div class="enterThePlatform_box_item_title">
+                <div class="enterThePlatform_box_item_title_icon">
+                  <img src="__ROOT__/upload/{$vo.icon}" alt="">
+                </div>
+                <div class="enterThePlatform_box_item_title_text">{$vo.title}</div>
+              </div>
+              <div class="enterThePlatform_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+      </div>
+    </div>
+  </widget>
+</div>

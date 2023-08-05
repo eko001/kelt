@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="public@head/head" />
+<css file="__TMPL__/static/css/supplyChain.css" />
+
+<body>
+  <!-- header -->
+  <include file="public@header/header" />
+
+  <!-- banner -->
+  <div class="banner banner_box540">
+    <widget name="banner">
+      <div id="sliderBox" class="banner_box banner_box540">
+        <volist name="$widget.vars.bannerList" id="vo">
+          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+            <div class="banner_box_img_title bannerTitleCenter">
+              <div class="banner_box_img_title_big">{$vo.title}</div>
+              <div class="banner_box_img_title_small">{$vo.title2}</div>
+            </div>
+          </div>
+        </volist>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 供应商管理 -->
+  <div class="grey">
+    <widget name="SupplierManagement">
+      <div class="main-center main-title">
+        <div class="big-title">{$widget.vars.title}</div>
+        <div class="small-title">{$widget.vars.title2}</div>
+      </div>
+
+      <div class="main-center supplierManagement">
+        <div class="supplierManagement_left">
+          <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
+        </div>
+        <div class="supplierManagement_right">
+          <volist name="$widget.vars.varName2" id="vo">
+            <div class="supplierManagement_right_item">
+              <div class="supplierManagement_right_item_title">{$vo.title}</div>
+              <div class="supplierManagement_right_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 采购管理 -->
+  <div class="white">
+    <widget name="Purchasingmanagement">
+      <div class="main-center main-title">
+        <div class="big-title">{$widget.vars.title}</div>
+        <div class="small-title">{$widget.vars.title2}</div>
+      </div>
+
+      <div class="main-center purchaseManagement">
+        <div class="purchaseManagement_box">
+          <volist name="$widget.vars.varName1" id="vo">
+            <div class="purchaseManagement_box_item">
+              <div class="purchaseManagement_box_item_title">{$vo.title}</div>
+              <div class="purchaseManagement_box_item_desc">{$vo.content}</div>
+            </div>
+          </volist>
+        </div>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 碳足迹监测 -->
+  <div class="grey">
+    <widget name="CarbonFootprintMonitoring">
+
+      <div class="main-center carbonFootprint">
+        <div class="carbonFootprint_left">
+          <div class="big-title">{$widget.vars.title}</div>
+          <div class="small-title">{$widget.vars.title2}</div>
+        </div>
+
+        <div class="carbonFootprint_right">
+          <volist name="$widget.vars.varName1" id="vo">
+            <div class="carbonFootprint_right_item">
+              <div class="carbonFootprint_right_item_icon">
+                <img src="__ROOT__/upload/{$vo.icon}" alt="">
+              </div>
+              <div class="carbonFootprint_right_item_title">{$vo.title}</div>
+            </div>
+          </volist>
+        </div>
+      </div>
+    </widget>
+  </div>
+
+  <!-- 入驻流程 -->
+  <include file="public@entertheplatform1/entertheplatform1" />
+
+  <!-- footer -->
+  <include file="public@footer/footer" />
+</body>
+
+</html>
+
+<script src="__TMPL__/static/js/slide.js"></script>

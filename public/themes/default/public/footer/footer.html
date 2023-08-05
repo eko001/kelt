@@ -1,0 +1,102 @@
+<footer class="footer" id="footer">
+  <div class="footer_box main-center">
+    <div class="footer_box_top">
+      <div class="footer_box_top_left">
+        <widget name="footer">
+          <div class="footer_box_top_left_logo">
+            <img src="__ROOT__/upload/{$widget.vars.logo}" alt="">
+          </div>
+          <div class="footer_box_top_left_slogan">{$widget.vars.slogan}</div>
+        </widget>
+        <div class="footer_box_top_left_icon">
+          <include file="public@socialize/socialize" />
+        </div>
+      </div>
+
+      <!-- 链接 -->
+      <div class="footer_box_top_link">
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/index')}">
+            <div class="footer_box_top_link_item_title">Home</div>
+          </a>
+          <a href="{:url('/portal/index')}#indexModel1">
+            <div class="footer_box_top_link_item_subitem">Platform Features</div>
+          </a>
+          <a href="{:url('/portal/index')}#indexModel2">
+            <div class="footer_box_top_link_item_subitem">Our Service</div>
+          </a>
+        </div>
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/carbontrace')}">
+            <div class="footer_box_top_link_item_title">Carbon Trace</div>
+          </a>
+          <a href="{:url('/portal/carbontrace')}#carbontraceModel1">
+            <div class="footer_box_top_link_item_subitem">Product Life Cycle Tracing</div>
+          </a>
+          <a href="{:url('/portal/carbontrace')}#carbontraceModel2">
+            <div class="footer_box_top_link_item_subitem">Interpretation</div>
+          </a>
+          <a href="{:url('/portal/carbontrace')}#carbontraceModel3">
+            <div class="footer_box_top_link_item_subitem">Carbon tracking database</div>
+          </a>
+        </div>
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/products')}">
+            <div class="footer_box_top_link_item_title">Products</div>
+          </a>
+          <a href="{:url('/portal/products')}#productsModel1">
+            <div class="footer_box_top_link_item_subitem">Case Study</div>
+          </a>
+        </div>
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/supplychain')}">
+            <div class="footer_box_top_link_item_title">Supply Chain</div>
+          </a>
+          <a href="{:url('/portal/supplychain')}#supplychainModel1">
+            <div class="footer_box_top_link_item_subitem">Supplier Management</div>
+          </a>
+          <a href="{:url('/portal/supplychain')}#supplychainModel2">
+            <div class="footer_box_top_link_item_subitem">Purchasing management</div>
+          </a>
+          <a href="{:url('/portal/supplychain')}#supplychainModel3">
+            <div class="footer_box_top_link_item_subitem">Carbon footprint monitoring</div>
+          </a>
+          <a href="{:url('/portal/supplychain')}#supplychainModel4">
+            <div class="footer_box_top_link_item_subitem">Enter the platform</div>
+          </a>
+        </div>
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/warehouse')}">
+            <div class="footer_box_top_link_item_title">Warehouse</div>
+          </a>
+          <a href="{:url('/portal/warehouse')}#warehouseModel1">
+            <div class="footer_box_top_link_item_subitem">Warehousing services</div>
+          </a>
+          <a href="{:url('/portal/warehouse')}#warehouseModel2">
+            <div class="footer_box_top_link_item_subitem">logistics</div>
+          </a>
+        </div>
+        <div class="footer_box_top_link_item">
+          <a href="{:url('/portal/about')}">
+            <div class="footer_box_top_link_item_title">About</div>
+          </a>
+          <a href="{:url('/portal/about')}#aboutModel1">
+            <div class="footer_box_top_link_item_subitem">About</div>
+          </a>
+          <a href="{:url('/portal/about')}#aboutModel2">
+            <div class="footer_box_top_link_item_subitem">FAQ</div>
+          </a>
+          <a href="{:url('/portal/about')}#aboutModel3">
+            <div class="footer_box_top_link_item_subitem">Contact Us</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer_box_copyright">
+      <widget name="footer">
+        {$widget.vars.copyright}
+      </widget>
+    </div>
+</footer>
+
+<!-- <a href="{:url('/portal/products')}#footer">跳转到Section 1</a> -->

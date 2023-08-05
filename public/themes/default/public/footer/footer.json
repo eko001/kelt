@@ -1,0 +1,42 @@
+{
+  "name": "网站底部导航",
+  "action": "portal/index",
+  "description": "网站底部导航",
+  "order": 11.0,
+  "is_public": "1",
+  "more": {
+    "widgets": {
+      "footer": {
+        "title": "网站底部导航",
+        "name": "网站底部导航",
+        "display": "1",
+        "vars": {
+          "logo": {
+            "title": "网站logo",
+            "value": "",
+            "type": "image",
+            "rule": {
+              "require": true
+            }
+          },
+          "slogan": {
+            "title": "slogan",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "copyright": {
+            "title": "copyright",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
