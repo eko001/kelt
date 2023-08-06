@@ -29,11 +29,9 @@
   <div class="white product">
     <div class="main-center productTag">
       <div class="productTag_content">
-        <div class="productTag_content_item active">分类1</div>
-        <div class="productTag_content_item">分类2</div>
-        <div class="productTag_content_item">分类3</div>
-        <div class="productTag_content_item">分类4</div>
-        <div class="productTag_content_item">分类5</div>
+        <portal:subCategories categoryId="31" item="vo">
+          <div class="productTag_content_item">{$vo.name}</div>
+        </portal:subCategories>
       </div>
     </div>
   </div>
