@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="__TMPL__/static/css/bootstrap.css">
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/products.css" />
+<script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/bootstrap.min.js"></script>
 
 <body>
   <!-- header -->
@@ -25,88 +27,74 @@
     </widget>
   </div>
 
+
+
+
   <!-- 分类标签 -->
   <div class="white product">
     <div class="main-center productTag">
-      <div class="productTag_content">
+      <div class="nav nav-tabs productTag_content" id="myTabs">
+        <php>
+          $index = 1;
+        </php>
         <portal:subCategories categoryId="31" item="vo">
-          <div class="productTag_content_item">{$vo.name}</div>
+          <a href="#tab{$index}" data-toggle="tab" role="tab" aria-controls="tab{$index}">
+            <if condition="$index eq 1">
+              <div class="productTag_content_item active" data-toggle="tab">{$vo.name}</div>
+              <else />
+              <div class="productTag_content_item" data-toggle="tab">{$vo.name}</div>
+            </if>
+
+
+          </a>
+          <php>
+            $index++;
+          </php>
         </portal:subCategories>
       </div>
     </div>
   </div>
 
   <!-- 产品案例列表 -->
-  <div class="white" id="productsModel1">
-    <div class="main-center productList">
-      <div class="productList_box">
-        <a href="{:url('/portal/productsInfo')}">
-          <div class="productList_box_item">
-            <div class="productList_box_item_img">
-              <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
+  <div class=" white" id="productsModel1">
+    <div class="tab-content main-center productList">
+      <php>
+        $index = 1;
+      </php>
+      <portal:subCategories categoryId="31" item="vo">
+        <if condition="$index eq 1">
+          <div class="tab-pane active productList_box" id="tab{$index}">
+            <else />
+            <div class="tab-pane productList_box" id="tab{$index}">
+        </if>
+
+        <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id"
+          returnVarName="articles_data">
+          <a href="{:url('/portal/productsInfo')}">
+            <div class="productList_box_item">
+              {$vo.id}
+              <div class="productList_box_item_img">
+                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+              </div>
+              <div class="productList_box_item_title">{$item.post_title}</div>
+              <div class="productList_box_item_desc">{$item.post_excerpt|mb_substr=0,80,'utf-8'}</div>
+              <div class="productList_box_item_view">
+                <div class="productList_box_item_view_text">view</div>
+                <img src="__TMPL__/static/img/view.png" alt="">
+              </div>
             </div>
-            <div class="productList_box_item_title">标题</div>
-            <div class="productList_box_item_desc">描述描述描述描述描述描述描述描述描述</div>
-            <div class="productList_box_item_view">
-              <div class="productList_box_item_view_text">view</div>
-              <img src="__TMPL__/static/img/view.png" alt="">
-            </div>
-          </div>
-        </a>
-        <a href="{:url('/portal/productsInfo')}">
-          <div class="productList_box_item">
-            <div class="productList_box_item_img">
-              <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
-            </div>
-            <div class="productList_box_item_title">标题</div>
-            <div class="productList_box_item_desc">描述描述描述描述描述描述描述描述描述</div>
-            <div class="productList_box_item_view">
-              <div class="productList_box_item_view_text">view</div>
-              <img src="__TMPL__/static/img/view.png" alt="">
-            </div>
-          </div>
-        </a>
-        <a href="{:url('/portal/productsInfo')}">
-          <div class="productList_box_item">
-            <div class="productList_box_item_img">
-              <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
-            </div>
-            <div class="productList_box_item_title">标题</div>
-            <div class="productList_box_item_desc">描述描述描述描述描述描述描述描述描述</div>
-            <div class="productList_box_item_view">
-              <div class="productList_box_item_view_text">view</div>
-              <img src="__TMPL__/static/img/view.png" alt="">
-            </div>
-          </div>
-        </a>
-        <a href="{:url('/portal/productsInfo')}">
-          <div class="productList_box_item">
-            <div class="productList_box_item_img">
-              <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
-            </div>
-            <div class="productList_box_item_title">标题</div>
-            <div class="productList_box_item_desc">描述描述描述描述描述描述描述描述描述</div>
-            <div class="productList_box_item_view">
-              <div class="productList_box_item_view_text">view</div>
-              <img src="__TMPL__/static/img/view.png" alt="">
-            </div>
-          </div>
-        </a>
-        <a href="{:url('/portal/productsInfo')}">
-          <div class="productList_box_item">
-            <div class="productList_box_item_img">
-              <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
-            </div>
-            <div class="productList_box_item_title">标题</div>
-            <div class="productList_box_item_desc">描述描述描述描述描述描述描述描述描述</div>
-            <div class="productList_box_item_view">
-              <div class="productList_box_item_view_text">view</div>
-              <img src="__TMPL__/static/img/view.png" alt="">
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </portal:articles>
+
     </div>
+    <php>
+      $index++;
+    </php>
+    </portal:subCategories>
+  </div>
+
+
+
   </div>
 
 
@@ -123,6 +111,12 @@
 </html>
 
 <script>
+
+  // $('#myTabs div').click(function (e) {
+  //   e.preventDefault()
+  //   $(this).tab('show')
+  // })
+
   var productTag_content_item = document.getElementsByClassName('productTag_content_item')
   for (var i = 0; i < productTag_content_item.length; i++) {
     productTag_content_item[i].index = i
