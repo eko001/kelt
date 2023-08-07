@@ -9,22 +9,26 @@
 }
 
 .carbonTrace_box_item {
-  width: 380px;
+  width: 340px;
+  padding: 20px;
   background-color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .carbonTrace_box_item:hover {
-  transform: scale(1.02);
+  transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
-.carbonTrace_box_item_img {
+.carbonTrace_box_item_title_img {
   font-size: 0;
+  margin-right: 20px;
 }
 
-.carbonTrace_box_item_img img {
+.carbonTrace_box_item_title_img img {
   width: 60px;
   height: 60px;
   object-fit: contain;
@@ -35,8 +39,9 @@
   font-weight: 700;
   line-height: 1.5;
   color: #000;
-  margin-top: 30px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .carbonTrace_box_item_desc {
@@ -125,11 +130,12 @@
   }
 
   .carbonTrace_box_item {
-    width: calc(50% - 1rem);
+    width: calc(50% - 4rem);
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
-  .carbonTrace_box_item_img img {
+  .carbonTrace_box_item_title_img img {
     width: 4rem;
     height: 4rem;
   }
@@ -202,7 +208,7 @@
   }
 
   .carbonTrace_box_item {
-    width: 100%;
+    width: calc(100% - 3rem);
     margin-bottom: 2rem;
   }
 

@@ -112,6 +112,37 @@
             }
           }
         }
+      },
+      "link": {
+        "title": "跳转链接",
+        "name": "跳转链接",
+        "display": "1",
+        "vars": {
+          "link": {
+            "title": "链接",
+            "value": "",
+            "type": "text",
+            "rule": {
+              "require": true
+            }
+          },
+          "desc": {
+            "title": "描述",
+            "value": "",
+            "type": "textarea",
+            "rule": {
+              "require": true
+            }
+          },
+          "icon": {
+            "title": "图标",
+            "value": "",
+            "type": "image",
+            "rule": {
+              "require": true
+            }
+          }
+        }
       }
     }
   }

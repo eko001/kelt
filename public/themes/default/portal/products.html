@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <link rel="stylesheet" href="__TMPL__/static/css/bootstrap.css">
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/products.css" />
@@ -68,8 +69,7 @@
             <div class="tab-pane productList_box" id="tab{$index}">
         </if>
 
-        <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id"
-          returnVarName="articles_data">
+        <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id" returnVarName="articles_data">
           <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}">
             <div class="productList_box_item">
               <div class="productList_box_item_img">

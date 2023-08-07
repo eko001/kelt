@@ -24,6 +24,7 @@
 }
 
 .supplierManagement_right_item {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +34,15 @@
 }
 
 .supplierManagement_right_item:hover {
-  background-color: var(--primary-rgba1);
+  background-color: var(--primary-color);
+}
+
+.supplierManagement_right_item:hover .supplierManagement_right_item_title {
+  color: #fff;
+}
+
+.supplierManagement_right_item:hover .supplierManagement_right_item_desc {
+  color: #fff;
 }
 
 .supplierManagement_right_item_title {

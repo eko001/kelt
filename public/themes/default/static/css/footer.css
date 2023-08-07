@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background-color: var(--primary-color);
-  padding-top: 100px;
+  padding-top: 50px;
   min-width: 1200px;
 }
 
@@ -29,6 +29,11 @@
   font-size: 14px;
   line-height: 2;
   margin-bottom: auto;
+}
+
+.footer_box_top_left_slogan_bottom {
+  margin-top: 20px;
+  font-weight: 600;
 }
 
 .footer_box_top_left_icon {
@@ -85,7 +90,7 @@
 }
 
 .footer_box_top_link_item {
-  margin-left: 50px;
+  margin-left: 70px;
   margin-bottom: 50px;
 }
 
@@ -109,7 +114,7 @@
 }
 
 .footer_box_copyright {
-  margin-top: 80px;
+  margin-top: 50px;
   font-size: 13px;
   color: rgba(24, 24, 24, .8);
   text-align: center;

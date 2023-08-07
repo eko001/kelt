@@ -1,16 +1,16 @@
 .slides {
   width: 1200px;
-  height: 540px;
+  height: 500px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   border-radius: 6px
 }
 
 .list-warehouse {
   width: 100%;
-  height: 540px;
+  height: 500px;
   display: flex;
   position: absolute;
   left: 0;
@@ -18,7 +18,7 @@
 
 .list-warehouse .warehouse-item {
   width: 1200px;
-  height: 540px;
+  height: 500px;
   flex-shrink: 0;
 }
 
@@ -37,12 +37,26 @@
 }
 
 .slides_bottom .slides_bottom_item {
-  width: 340px;
-  margin-bottom: 30px;
+  width: 550px;
+  margin-bottom: 20px;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+  background-color: var(--primary-rgba1);
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06); */
   padding: 30px 20px;
+}
+
+.slides_bottom .slides_bottom_item:hover {
+  background-color: var(--primary-color);
+  transition: all .3s ease;
+}
+
+.slides_bottom .slides_bottom_item:hover .slides_bottom_item_title {
+  color: #fff;
+}
+
+.slides_bottom .slides_bottom_item:hover .slides_bottom_item_desc {
+  color: #fff;
 }
 
 .slides_bottom .slides_bottom_item .slides_bottom_item_title {

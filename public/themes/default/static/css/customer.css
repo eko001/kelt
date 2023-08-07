@@ -21,6 +21,10 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, .06);
 }
 
+* {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
 
 /* 480px 以下的屏幕 */
 @media screen and (max-width: 480px) {
