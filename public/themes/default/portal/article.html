@@ -26,16 +26,16 @@
     <div class="main-center main-title">
       <div class="main-center main-title">
         <div class="big-title">{$article.post_title}</div>
-        <div class="small-title">PubDate：{:date('Y-m-d',$article.published_time)}</div>
+        <div class="small-title">发布时间：{:date('Y-m-d',$article.published_time)}</div>
       </div>
     </div>
 
     <div class="main-center model1">
       <div class="model1_box">
         <div class="model1_box_img">
-          <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
+          <img src="{:cmf_get_image_url($article.thumbnail)}" alt="">
         </div>
-        <div class="model1_box_text">{$article.post_content}</div>
+        <div class="model1_box_text"> {$article.post_content}</div>
       </div>
     </div>
   </div>

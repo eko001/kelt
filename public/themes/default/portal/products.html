@@ -70,9 +70,8 @@
 
         <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id"
           returnVarName="articles_data">
-          <a href="{:url('/portal/productsInfo')}">
+          <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}">
             <div class="productList_box_item">
-              {$vo.id}
               <div class="productList_box_item_img">
                 <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
               </div>

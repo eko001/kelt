@@ -25,8 +25,8 @@
   <div class="grey">
     <div class="main-center main-title">
       <div class="main-center main-title">
-        <div class="big-title">FAQ</div>
-        <div class="small-title">FAQFAQFAQFAQFAQFAQ</div>
+        <div class="big-title">{$article.post_title}</div>
+        <div class="small-title">发布时间：{:date('Y-m-d',$article.published_time)}</div>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
         <div class="model1_box_img">
           <img src="__TMPL__/static/img/banner/productsBanner.png" alt="">
         </div>
-        <div class="model1_box_text">FAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQFAQ</div>
+        <div class="model1_box_text"> {$article.post_content}</div>
       </div>
     </div>
   </div>
