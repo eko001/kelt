@@ -4,10 +4,10 @@ namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
 
-class SupplyChainController extends HomeBaseController
+class SupplychainController extends HomeBaseController
 {
     public function index()
     {
-        return $this->fetch(':supplyChain');
+        return $this->fetch(':supplychain');
     }
 }

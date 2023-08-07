@@ -4,10 +4,10 @@ namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
 
-class CarbonTraceController extends HomeBaseController
+class CarbontraceController extends HomeBaseController
 {
     public function index()
     {
-        return $this->fetch(':carbonTrace');
+        return $this->fetch(':carbontrace');
     }
 }
