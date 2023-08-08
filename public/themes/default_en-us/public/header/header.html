@@ -76,11 +76,12 @@
   var headerBoxNavItems = document.querySelectorAll('.header_box_nav_item')
   headerBoxNavItems.forEach(function (item) {
     var a = item.querySelector('a')
-    if (a.getAttribute('href') === path) {
-      item.classList.add('active')
-    }
-    // 如果path包含productsInfo，那么products也要高亮
-    if (path.indexOf('productsInfo') !== -1 && a.getAttribute('href') === '/portal/products.html') {
+
+    const pathString = path
+    const thirdDotIndex = pathString.indexOf('.', pathString.indexOf('.') + 1)
+    const result = pathString.slice(0, thirdDotIndex)
+
+    if (a.getAttribute('href').indexOf(result) !== -1) {
       item.classList.add('active')
     }
   })
