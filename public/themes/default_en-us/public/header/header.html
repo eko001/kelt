@@ -72,6 +72,7 @@
 </header>
 
 <script>
+  // http://carbontracking.com/?_design_theme=default_en-us
   var path = window.location.pathname
   var headerBoxNavItems = document.querySelectorAll('.header_box_nav_item')
   headerBoxNavItems.forEach(function (item) {
@@ -80,6 +81,7 @@
     const pathString = path
     const thirdDotIndex = pathString.indexOf('.', pathString.indexOf('.') + 1)
     const result = pathString.slice(0, thirdDotIndex)
+    console.log(thirdDotIndex)
 
     if (a.getAttribute('href').indexOf(result) !== -1) {
       item.classList.add('active')

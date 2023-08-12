@@ -5,11 +5,11 @@
 <css file="__TMPL__/static/css/about.css" />
 
 <body>
-<link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
-<script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="__TMPL__/static/js/jquery.form.min.js"></script>
-<script type="text/javascript" src="__TMPL__/static/js/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript" src="__TMPL__/static/js/dialog-plus-min.js"></script>
+  <link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
+  <script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/static/js/jquery.form.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/static/js/Validform_v5.3.2_min.js"></script>
+  <script type="text/javascript" src="__TMPL__/static/js/dialog-plus-min.js"></script>
   <!-- header -->
   <include file="public@header/header" />
 
@@ -20,7 +20,7 @@
         <div class="aboutBanner_box_title">{$widget.vars.title}</div>
       </widget>
       <div class="aboutBanner_box_btn">
-        <a href="">Contact us</a>
+        <a href="">Get in touch today</a>
       </div>
     </div>
   </div>
@@ -41,31 +41,8 @@
     </widget>
   </div>
 
-  <!-- 常见问题 -->
-  <div class="grey">
-    <widget name="Module2">
-      <div class="main-center faq">
-        <div class="faq_title">{$widget.vars.title}</div>
-        <div class="faq_box">
-          <volist name="$widget.vars.varName1" id="vo" length="4">
-            <div class="faq_box_item">
-              <div class="faq_box_item_icon">
-                <img src="__ROOT__/upload/{$vo.icon}" alt="">
-              </div>
-              <div class="faq_box_item_title">{$vo.title}</div>
-              <div class="faq_box_item_desc">{$vo.content}</div>
-            </div>
-          </volist>
-        </div>
-        <!-- <div class="faq_btn">
-          <a href="">More</a>
-        </div> -->
-      </div>
-    </widget>
-  </div>
-
   <!-- 联系我们 -->
-  <div class="white">
+  <div class="grey">
     <widget name="Module3">
       <div class="main-center contact">
         <div class="contact_title">{$widget.vars.title}</div>
@@ -136,6 +113,7 @@
     AjaxInitForm('#feedback_form', '#btnSubmit', 1);
   });
 </script>
+
 </html>
 
 <script>

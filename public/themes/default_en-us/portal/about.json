@@ -51,55 +51,6 @@
           }
         }
       },
-      "Module2": {
-        "title": "模块2",
-        "name": "常见问题",
-        "display": "1",
-        "vars": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "varName1": {
-            "title": "常见问题列表",
-            "value": [],
-            "type": "array",
-            "item": {
-              "icon": {
-                "title": "图标",
-                "value": "",
-                "type": "image",
-                "rule": {
-                  "require": true
-                }
-              },
-              "title": {
-                "title": "标题",
-                "value": "",
-                "type": "text",
-                "rule": {
-                  "require": true
-                }
-              },
-              "content": {
-                "title": "描述",
-                "value": "",
-                "type": "textarea",
-                "rule": {
-                  "require": true
-                }
-              }
-            },
-            "rule": {
-              "require": true
-            }
-          }
-        }
-      },
       "Module3": {
         "title": "模块3",
         "name": "联系我们",

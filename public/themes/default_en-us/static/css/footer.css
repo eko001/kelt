@@ -90,7 +90,8 @@
 }
 
 .footer_box_top_link_item {
-  margin-left: 70px;
+  width: 180px;
+  margin-left: 50px;
   margin-bottom: 50px;
 }
 
@@ -109,6 +110,7 @@
 
 .footer_box_top_link_item_subitem {
   font-size: 14px;
+  line-height: 2;
   color: rgba(24, 24, 24, 0.6);
   margin-top: 20px;
 }
@@ -174,11 +176,12 @@
   /* 链接 */
   .footer_box_top_link {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 50%);
     margin-top: 3rem;
   }
 
   .footer_box_top_link_item {
+    width: 100%;
     margin-left: 0px;
     margin-bottom: 2rem;
   }

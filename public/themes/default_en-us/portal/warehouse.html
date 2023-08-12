@@ -55,26 +55,6 @@
     </widget>
   </div>
 
-  <!-- 物流 -->
-  <div class="grey">
-    <widget name="Module2">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
-      </div>
-
-      <div class="main-center logistics">
-        <volist name="$widget.vars.varName1" id="vo">
-          <div class="logistics_item">
-            <div class="logistics_item_title">{$vo.title}</div>
-            <div class="logistics_item_desc">{$vo.content}
-            </div>
-          </div>
-        </volist>
-      </div>
-    </widget>
-  </div>
-
   <!-- footer -->
   <include file="public@footer/footer" />
 </body>
