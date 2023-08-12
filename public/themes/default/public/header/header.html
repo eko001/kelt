@@ -73,16 +73,20 @@
 <script>
   var path = window.location.pathname
   var headerBoxNavItems = document.querySelectorAll('.header_box_nav_item')
+
   headerBoxNavItems.forEach(function (item) {
     var a = item.querySelector('a')
     if (a.getAttribute('href') === path) {
       item.classList.add('active')
     }
-    // 如果path包含productsInfo，那么products也要高亮
-    if (path.indexOf('productsInfo') !== -1 && a.getAttribute('href') === '/portal/products.html') {
-      item.classList.add('active')
-    }
   })
+
+  if (path == '/') {
+    headerBoxNavItems.forEach(function (item) {
+      item.classList.remove('active')
+    })
+    headerBoxNavItems[0].classList.add('active')
+  }
 
   // 手机端导航
   var headerBoxPhoneBtnMenu = document.getElementsByClassName('header_box_phone_btn_menu')[0]

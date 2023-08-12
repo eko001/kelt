@@ -81,12 +81,17 @@
     const pathString = path
     const thirdDotIndex = pathString.indexOf('.', pathString.indexOf('.') + 1)
     const result = pathString.slice(0, thirdDotIndex)
-    console.log(thirdDotIndex)
 
     if (a.getAttribute('href').indexOf(result) !== -1) {
       item.classList.add('active')
     }
   })
+  if (path == '/') {
+    headerBoxNavItems.forEach(function (item) {
+      item.classList.remove('active')
+    })
+    headerBoxNavItems[0].classList.add('active')
+  }
 
   // 手机端导航
   var headerBoxPhoneBtnMenu = document.getElementsByClassName('header_box_phone_btn_menu')[0]
