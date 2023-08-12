@@ -6,18 +6,22 @@
   "more": {
     "vars": {
       "varName1": {
-        "title": "分类标签",
-        "value": "",
-        "type": "array",
-        "item": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text"
-          }
+        "title": "测试",
+        "value": "1",
+        "type": "select",
+        "options": {
+          "1": "All",
+          "2": "Plastic",
+          "3": "Metal",
+          "4": "Paper",
+          "5": "Wood",
+          "6": "Glass"
         },
         "rule": {
           "require": true
+        },
+        "message": {
+          "require": "不能为空"
         }
       }
     },
