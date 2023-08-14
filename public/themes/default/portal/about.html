@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/about.css" />
@@ -20,7 +20,7 @@
         <div class="aboutBanner_box_title">{$widget.vars.title}</div>
       </widget>
       <div class="aboutBanner_box_btn">
-        <a href="{:url('/portal/about')}#aboutModel3">Contact us</a>
+        <a href="">Get in touch today</a>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div class="about_top"></div>
   <div class="white about-white">
     <widget name="Module1">
-      <div class="main-center about" id="aboutModel1">
+      <div class="main-center about">
         <div class="about_left">
           <div class="about_left_title">{$widget.vars.title}</div>
           <div class="about_left_desc">{$widget.vars.desc}</div>
@@ -41,31 +41,8 @@
     </widget>
   </div>
 
-  <!-- 常见问题 -->
-  <div class="grey" id="aboutModel2">
-    <widget name="Module2">
-      <div class="main-center faq">
-        <div class="faq_title">{$widget.vars.title}</div>
-        <div class="faq_box">
-          <volist name="$widget.vars.varName1" id="vo" length="4">
-            <div class="faq_box_item">
-              <div class="faq_box_item_icon">
-                <img src="__ROOT__/upload/{$vo.icon}" alt="">
-              </div>
-              <div class="faq_box_item_title">{$vo.title}</div>
-              <div class="faq_box_item_desc">{$vo.content}</div>
-            </div>
-          </volist>
-        </div>
-        <!-- <div class="faq_btn">
-          <a href="">More</a>
-        </div> -->
-      </div>
-    </widget>
-  </div>
-
   <!-- 联系我们 -->
-  <div class="white" id="aboutModel3">
+  <div class="grey">
     <widget name="Module3">
       <div class="main-center contact">
         <div class="contact_title">{$widget.vars.title}</div>

@@ -106,55 +106,6 @@
             }
           }
         }
-      },
-      "Module2": {
-        "title": "模块2",
-        "name": "物流服务",
-        "display": "1",
-        "vars": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "title2": {
-            "title": "小标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "varName1": {
-            "title": "物流内容列表",
-            "value": [],
-            "type": "array",
-            "item": {
-              "title": {
-                "title": "标题",
-                "value": "",
-                "type": "text",
-                "rule": {
-                  "require": true
-                }
-              },
-              "content": {
-                "title": "描述",
-                "value": "",
-                "type": "textarea",
-                "rule": {
-                  "require": true
-                }
-              }
-            },
-            "rule": {
-              "require": true
-            }
-          }
-        }
       }
     }
   }

@@ -40,86 +40,13 @@
           }
         }
       },
-      "SupplierManagement": {
-        "title": "模块1",
-        "name": "供应商管理",
-        "display": "1",
-        "vars": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "title2": {
-            "title": "小标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "varName1": {
-            "title": "供应商管理图片",
-            "value": "",
-            "type": "image",
-            "rule": {
-              "require": true
-            }
-          },
-          "varName2": {
-            "title": "供应商管理内容",
-            "value": [],
-            "type": "array",
-            "item": {
-              "title": {
-                "title": "标题",
-                "value": "",
-                "type": "text",
-                "rule": {
-                  "require": true
-                }
-              },
-              "content": {
-                "title": "描述",
-                "value": "",
-                "type": "textarea",
-                "rule": {
-                  "require": true
-                }
-              }
-            },
-            "rule": {
-              "require": true
-            }
-          }
-        }
-      },
-      "Purchasingmanagement": {
+      "supplychainItem": {
         "title": "模块2",
-        "name": "采购管理",
+        "name": "内容",
         "display": "1",
         "vars": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "title2": {
-            "title": "小标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
           "varName1": {
-            "title": "采购管理内容",
+            "title": "内容",
             "value": [],
             "type": "array",
             "item": {
@@ -135,47 +62,6 @@
                 "title": "描述",
                 "value": "",
                 "type": "textarea",
-                "rule": {
-                  "require": true
-                }
-              }
-            },
-            "rule": {
-              "require": true
-            }
-          }
-        }
-      },
-      "CarbonFootprintMonitoring": {
-        "title": "模块3",
-        "name": "碳足迹监测",
-        "display": "1",
-        "vars": {
-          "title": {
-            "title": "标题",
-            "value": "",
-            "type": "text",
-            "rule": {
-              "require": true
-            }
-          },
-          "title2": {
-            "title": "标题描述",
-            "value": "",
-            "type": "textarea",
-            "rule": {
-              "require": true
-            }
-          },
-          "varName1": {
-            "title": "碳足迹监测内容",
-            "value": [],
-            "type": "array",
-            "item": {
-              "title": {
-                "title": "标题",
-                "value": "",
-                "type": "text",
                 "rule": {
                   "require": true
                 }

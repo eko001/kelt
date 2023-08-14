@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/index.css" />
@@ -26,14 +26,15 @@
   </div>
 
   <!-- 平台特点 -->
-  <div class="white" id="indexModel1">
+  <div class="white">
     <widget name="platformFeatures">
-      <div class="main-center main-title">
+      <!-- 去掉标题 -->
+      <!-- <div class="main-center main-title">
         <div class="main-center main-title">
           <div class="big-title">{$widget.vars.title}</div>
           <div class="small-title">{$widget.vars.title2}</div>
         </div>
-      </div>
+      </div> -->
 
       <div class="main-center platformFeatures">
         <div class="platformFeatures_top">
@@ -59,7 +60,7 @@
   </div>
 
   <!-- 服务 -->
-  <div class="grey" id="indexModel2">
+  <div class="grey">
     <widget name="OurService">
       <div class="main-center main-title">
         <div class="big-title">{$widget.vars.title}</div>

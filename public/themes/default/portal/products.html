@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="en">
 <link rel="stylesheet" href="__TMPL__/static/css/bootstrap.css">
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/products.css" />
@@ -28,9 +27,6 @@
     </widget>
   </div>
 
-
-
-
   <!-- 分类标签 -->
   <div class="white product">
     <div class="main-center productTag">
@@ -45,8 +41,6 @@
               <else />
               <div class="productTag_content_item" data-toggle="tab">{$vo.name}</div>
             </if>
-
-
           </a>
           <php>
             $index++;
@@ -57,7 +51,7 @@
   </div>
 
   <!-- 产品案例列表 -->
-  <div class=" white" id="productsModel1">
+  <div class="white">
     <div class="tab-content main-center productList">
       <php>
         $index = 1;
@@ -70,10 +64,11 @@
         </if>
 
         <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id" returnVarName="articles_data">
-          <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}">
+          <!-- <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}"> -->
+          <a href="#" class="productLink">
             <div class="productList_box_item">
               <div class="productList_box_item_img">
-                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+                <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
               </div>
               <div class="productList_box_item_title">{$item.post_title}</div>
               <div class="productList_box_item_desc">{$item.post_excerpt|mb_substr=0,80,'utf-8'}</div>
@@ -83,6 +78,18 @@
               </div>
             </div>
           </a>
+
+          <!-- 弹窗 -->
+          <div class="popup">
+            <div class="popup_box" id="popup_box">
+              <div class="popup_box_left">
+                <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
+              </div>
+              <div class="popup_box_right">
+                {$item.post_content}
+              </div>
+            </div>
+          </div>
         </portal:articles>
 
     </div>
@@ -94,28 +101,15 @@
 
 
 
-  </div>
-
-
-
-  <!-- 合作客户 -->
-  <div class="grey">
-    <include file="public@customer/customer" />
-  </div>
+  <!-- 入驻流程 -->
+  <include file="public@entertheplatform1/entertheplatform1" />
 
   <!-- footer -->
   <include file="public@footer/footer" />
+
 </body>
 
-</html>
-
 <script>
-
-  // $('#myTabs div').click(function (e) {
-  //   e.preventDefault()
-  //   $(this).tab('show')
-  // })
-
   var productTag_content_item = document.getElementsByClassName('productTag_content_item')
   for (var i = 0; i < productTag_content_item.length; i++) {
     productTag_content_item[i].index = i
@@ -127,4 +121,32 @@
     }
   }
 
+  // 获取所有带有 class="productLink" 的 <a> 标签元素
+  var productLinks = document.querySelectorAll('.productLink')
+
+  productLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault()
+
+      var siblingPopup = link.nextElementSibling
+      siblingPopup.style.display = 'flex'
+
+
+      siblingPopup.addEventListener('click', function (event) {
+        event.preventDefault()
+        siblingPopup.style.display = 'none'
+
+      })
+
+    })
+  })
+
+  const child = document.getElementById('popup_box')
+  child.addEventListener('click', (event) => {
+    event.stopPropagation()
+    // 处理子元素的点击事件
+  })
+
 </script>
+
+</html>

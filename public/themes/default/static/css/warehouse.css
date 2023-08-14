@@ -63,7 +63,7 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .slides_bottom .slides_bottom_item .slides_bottom_item_desc {
