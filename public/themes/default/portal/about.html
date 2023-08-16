@@ -93,8 +93,8 @@
             <!-- 提交成功 -->
             <div class="popup" id="popupSuccess">
               <div class="popup_box">
-                <div class="popup_box_title">Thank you for your message</div>
-                <div class="popup_box_desc">We will contact you as soon as possible</div>
+                <div class="popup_box_title">谢谢您的留言</div>
+                <div class="popup_box_desc">我们会尽快与您联系</div>
               </div>
             </div>
 
@@ -106,12 +106,56 @@
   <!-- footer -->
   <include file="public@footer/footer" />
 </body>
-<script type="text/javascript" src="__TMPL__/static/js/common.js"></script>
+<!-- <script type="text/javascript" src="__TMPL__/static/js/common.js"></script> -->
 <script type="text/javascript">
-  $(function () {
-    //初始化发表评论表单
-    AjaxInitForm('#feedback_form', '#btnSubmit', 1);
-  });
+  function AjaxInitForm(formObj, btnObj) {
+    $(formObj).Validform({
+      callback: function (form) {
+        //AJAX提交表单
+        $(form).ajaxSubmit({
+          beforeSubmit: formRequest,
+          success: formResponse,
+          url: $(formObj).attr("url"),
+          type: "post",
+          dataType: "json",
+          timeout: 60000
+        })
+        return false
+      }
+    })
+
+    //表单提交前
+    function formRequest(formData, jqForm, options) {
+      $(btnObj).prop("disabled", true)
+    }
+
+    //表单提交后
+    function formResponse(data, textStatus) {
+      if (data.msg == "添加成功!") {
+        $("#popupSuccess").css("display", "block")
+        $('#sendBtn').hide()
+        $(formObj).resetForm()
+      }
+    }
+  }
+
+  document.querySelector('.contact_box_right_box').addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    // 先验证表单数据是否填写完整
+    if (!event.target.name.value || !event.target.phone.value || !event.target.email.value || !event.target.buisiness.value) {
+      alert('请填写完整的信息')
+      return
+    }
+
+    // 验证邮箱格式是否正确
+    if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(event.target.email.value)) {
+      alert('请输入正确的电子邮箱')
+      return
+    }
+    AjaxInitForm('#feedback_form', '#sendBtn')
+
+  })
 </script>
 
 </html>
