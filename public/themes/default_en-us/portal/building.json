@@ -1,0 +1,86 @@
+{
+  "name": "建筑设计",
+  "action": "portal/building",
+  "description": "建筑设计",
+  "order": 10.0,
+  "more": {
+    "widgets": {
+      "banner": {
+        "title": "Banner",
+        "name": "建筑设计Banner",
+        "display": "1",
+        "vars": {
+          "bannerList": {
+            "title": "Banner图片列表",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text"
+              },
+              "title2": {
+                "title": "小标题",
+                "value": "",
+                "type": "text"
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      },
+      "supplychainItem": {
+        "title": "模块2",
+        "name": "内容",
+        "display": "1",
+        "vars": {
+          "varName1": {
+            "title": "内容",
+            "value": [],
+            "type": "array",
+            "item": {
+              "title": {
+                "title": "标题",
+                "value": "",
+                "type": "text",
+                "rule": {
+                  "require": true
+                }
+              },
+              "content": {
+                "title": "描述",
+                "value": "",
+                "type": "textarea",
+                "rule": {
+                  "require": true
+                }
+              },
+              "icon": {
+                "title": "图标",
+                "value": "",
+                "type": "image",
+                "rule": {
+                  "require": true
+                }
+              }
+            },
+            "rule": {
+              "require": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

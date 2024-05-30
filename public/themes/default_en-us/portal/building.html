@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<include file="public@head/head" />
+<css file="__TMPL__/static/css/supplyChain.css" />
+
+<body>
+  <!-- header -->
+  <include file="public@header/header" />
+
+  <!-- banner -->
+  <div class="banner banner_box540">
+    <widget name="banner">
+      <div id="sliderBox" class="banner_box banner_box540">
+        <volist name="$widget.vars.bannerList" id="vo">
+          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+            <div class="banner_box_img_title bannerTitleCenter">
+              <div class="banner_box_img_title_big">{$vo.title}</div>
+              <div class="banner_box_img_title_small">{$vo.title2}</div>
+            </div>
+          </div>
+        </volist>
+      </div>
+    </widget>
+  </div>
+
+  <widget name="supplychainItem">
+    <volist name="$widget.vars.varName1" id="vo">
+      <div class="white">
+        <div class="supplychainItem main-center">
+          <div class="supplychainItem_img">
+            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+          </div>
+          <div class="supplychainItem_content">
+            <div class="supplychainItem_content_title">{$vo.title}</div>
+            <div class="supplychainItem_content_desc">{$vo.content}</div>
+          </div>
+        </div>
+      </div>
+    </volist>
+  </widget>
+
+  <!-- footer -->
+  <include file="public@footer/footer" />
+</body>
+
+</html>
+
+<script src="__TMPL__/static/js/slide.js"></script>

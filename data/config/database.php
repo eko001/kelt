@@ -25,26 +25,26 @@ return [
             'type' => env('DATABASE_TYPE', 'mysql'),
             // 服务器地址
             //'hostname' => env('DATABASE_HOSTNAME', '43.154.125.245'),
-            'hostname' => env('DATABASE_HOSTNAME', '127.0.0.1'),
+            // 'hostname' => env('DATABASE_HOSTNAME', '127.0.0.1'),
+            // // 数据库名
+            // 'database' => env('DATABASE_DATABASE', 'carbon'),
+            // // 用户名
+            // 'username' => env('DATABASE_USERNAME', 'root'),
+            // // 密码
+            // 'password' => env('DATABASE_PASSWORD', 'yifan@2022'),
+            // // 端口
+            // 'hostport' => env('DATABASE_HOSTPORT', '6603'),
+            'type' => env('DATABASE_TYPE', 'mysql'),
+            // 服务器地址
+            'hostname' => env('DATABASE_HOSTNAME', '47.104.98.81'),
             // 数据库名
             'database' => env('DATABASE_DATABASE', 'carbon'),
             // 用户名
             'username' => env('DATABASE_USERNAME', 'root'),
             // 密码
-            'password' => env('DATABASE_PASSWORD', 'yifan@2022'),
+            'password' => env('DATABASE_PASSWORD', 'yifan@2024'),
             // 端口
             'hostport' => env('DATABASE_HOSTPORT', '6603'),
-            /* 'type'              => env('DATABASE_TYPE', 'mysql'),
-            // 服务器地址
-            'hostname'          => env('DATABASE_HOSTNAME', '43.154.125.245'),
-            // 数据库名
-            'database'          => env('DATABASE_DATABASE', 'yifan'),
-            // 用户名
-            'username'          => env('DATABASE_USERNAME', 'root'),
-            // 密码
-            'password'          => env('DATABASE_PASSWORD', 'yifan@2022'),
-            // 端口
-            'hostport'          => env('DATABASE_HOSTPORT', '6603'),*/
             // 数据库连接参数
             'params' => [],
             // 数据库编码默认采用utf8
