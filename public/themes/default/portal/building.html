@@ -2,7 +2,13 @@
 <html lang="zh-CN">
 
 <include file="public@head/head" />
+<css file="__TMPL__/static/css/about.css" />
 <css file="__TMPL__/static/css/supplyChain.css" />
+<link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
+<script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/dialog-plus-min.js"></script>
 
 <body>
   <!-- header -->
@@ -12,38 +18,200 @@
   <div class="banner banner_box540">
     <widget name="banner">
       <div id="sliderBox" class="banner_box banner_box540">
-        <volist name="$widget.vars.bannerList" id="vo">
-          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
-            <div class="banner_box_img_title bannerTitleCenter">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
-            </div>
+
+        <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+          <img src="__STATIC__/images/baa.png" alt="">
+          <div class="banner_box_img_title bannerTitleCenter">
+            <div class="banner_box_img_title_big">建筑设计建造</div>
+            <div class="banner_box_img_title_small">Elye distribution specialises in long temm pallet storage, working
+              out of a 25,000m2
+
+              standalonefacility in scariff, co. clare.We store products for companies and government bodies
+
+              in ireland and we source, import andstore products from around the world.</div>
           </div>
-        </volist>
+        </div>
+
       </div>
     </widget>
   </div>
 
-  <widget name="supplychainItem">
-    <volist name="$widget.vars.varName1" id="vo">
-      <div class="white">
-        <div class="supplychainItem main-center">
-          <div class="supplychainItem_img">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+
+
+  <div class="white">
+    <div class="supplychainItem main-center">
+      <div class="supplychainItem_img">
+        <img src="__STATIC__/images/a1.png" alt="">
+      </div>
+      <div class="supplychainItem_content">
+        <div class="supplychainItem_content_title">Strategic Partnerships</div>
+        <div class="supplychainItem_content_desc">We collaborate with trusted suppliers who share our commitment to
+          excellence and ethics.</div>
+      </div>
+    </div>
+  </div>
+  <div class="white">
+    <div class="supplychainItem main-center">
+      <div class="supplychainItem_img">
+        <img src="__STATIC__/images/a1.png" alt="">
+      </div>
+      <div class="supplychainItem_content">
+        <div class="supplychainItem_content_title">Strategic Partnerships</div>
+        <div class="supplychainItem_content_desc">We collaborate with trusted suppliers who share our commitment to
+          excellence and ethics.</div>
+      </div>
+    </div>
+  </div>
+  <div class="white">
+    <div class="supplychainItem main-center">
+      <div class="supplychainItem_img">
+        <img src="__STATIC__/images/a1.png" alt="">
+      </div>
+      <div class="supplychainItem_content">
+        <div class="supplychainItem_content_title">Strategic Partnerships</div>
+        <div class="supplychainItem_content_desc">We collaborate with trusted suppliers who share our commitment to
+          excellence and ethics.</div>
+      </div>
+    </div>
+  </div>
+  <div class="white">
+    <div class="supplychainItem main-center">
+      <div class="supplychainItem_img">
+        <img src="__STATIC__/images/a1.png" alt="">
+      </div>
+      <div class="supplychainItem_content">
+        <div class="supplychainItem_content_title">Strategic Partnerships</div>
+        <div class="supplychainItem_content_desc">We collaborate with trusted suppliers who share our commitment to
+          excellence and ethics.</div>
+      </div>
+    </div>
+  </div>
+  <!-- 联系我们 -->
+  <div class="white">
+    <div class="main-center contact">
+      <div class="contact_title">联系我们</div>
+      <div class="contact_box">
+        <div class="contact_box_left">
+          <div class="contact_box_left_top">
+
+            <div class="contact_box_left_top_item">
+              <div class="contact_box_left_top_item_icon">
+                <img src="__STATIC__/images/12.png" alt="">
+              </div>
+              <div class="contact_box_left_top_item_right">
+                <div class="contact_box_left_top_item_right_title">Call us on</div>
+                <div class="contact_box_left_top_item_right_desc">Mon -Fri from 8am to 5pm.</div>
+                <div class="contact_box_left_top_item_right_content">+353 1 535 7666</div>
+              </div>
+            </div>
+
+            <div class="contact_box_left_top_item">
+              <div class="contact_box_left_top_item_icon">
+                <img src="__STATIC__/images/13.png" alt="">
+              </div>
+              <div class="contact_box_left_top_item_right">
+                <div class="contact_box_left_top_item_right_title">Or email us on</div>
+                <div class="contact_box_left_top_item_right_desc">Our friendly team is hero to help</div>
+                <div class="contact_box_left_top_item_right_content">info@celtic.com</div>
+              </div>
+            </div>
+
           </div>
-          <div class="supplychainItem_content">
-            <div class="supplychainItem_content_title">{$vo.title}</div>
-            <div class="supplychainItem_content_desc">{$vo.content}</div>
+          <div class="contact_box_left_bottom">
+            <include file="public@socialize/socialize" />
           </div>
+
+        </div>
+        <div class="contact_box_right">
+          <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}" method="post"
+            class="contact_box_right_box">
+            <div class="contact_box_right_item">
+              <div class="contact_box_right_item_title">Full Name</div>
+              <input type="text" name="post[name]" id="name" placeholder="Full Name">
+            </div>
+            <div class="contact_box_right_item">
+              <div class="contact_box_right_item_title">Phone number</div>
+              <input type="text" name="post[phone]" id="phone" placeholder="Phone number">
+            </div>
+            <div class="contact_box_right_item width100">
+              <div class="contact_box_right_item_title">Email</div>
+              <input type="text" name="post[email]" id="email" placeholder="Email">
+            </div>
+            <div class="contact_box_right_item width100">
+              <div class="contact_box_right_item_title">Tell me your though</div>
+              <textarea name="post[buisiness]" id="buisiness" cols="30" rows="10"
+                placeholder="Tell me your though"></textarea>
+            </div>
+            <div class="contact_box_right_btn" id="sendBtn">
+              <input type="submit" value="Send message" id="btnSubmit" name="btnSubmit">
+            </div>
+          </form>
+
+          <!-- 提交成功 -->
+          <div class="popup" id="popupSuccess">
+            <div class="popup_box">
+              <div class="popup_box_title">谢谢您的留言</div>
+              <div class="popup_box_desc">我们会尽快与您联系</div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </volist>
-  </widget>
-
+    </div>
+  </div>
   <!-- footer -->
   <include file="public@footer/footer" />
 </body>
+<script type="text/javascript">
+  function AjaxInitForm (formObj, btnObj) {
+    $(formObj).Validform({
+      callback: function (form) {
+        //AJAX提交表单
+        $(form).ajaxSubmit({
+          beforeSubmit: formRequest,
+          success: formResponse,
+          url: $(formObj).attr("url"),
+          type: "post",
+          dataType: "json",
+          timeout: 60000
+        })
+        return false
+      }
+    })
+
+    //表单提交前
+    function formRequest (formData, jqForm, options) {
+      $(btnObj).prop("disabled", true)
+    }
+
+    //表单提交后
+    function formResponse (data, textStatus) {
+      if (data.msg == "添加成功!") {
+        $("#popupSuccess").css("display", "block")
+        $('#sendBtn').hide()
+        $(formObj).resetForm()
+      }
+    }
+  }
+
+  document.querySelector('.contact_box_right_box').addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    // 先验证表单数据是否填写完整
+    if (!event.target.name.value || !event.target.phone.value || !event.target.email.value || !event.target.buisiness.value) {
+      alert('请填写完整的信息')
+      return
+    }
+
+    // 验证邮箱格式是否正确
+    if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(event.target.email.value)) {
+      alert('请输入正确的电子邮箱')
+      return
+    }
+    AjaxInitForm('#feedback_form', '#sendBtn')
+
+  })
+</script>
 
 </html>
 
