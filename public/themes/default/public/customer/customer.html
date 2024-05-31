@@ -1,15 +1,51 @@
 <css file="__TMPL__/static/css/customer.css" />
 
-<widget name="customer">
+<!--<widget name="customer">
   <div class="main-center main-title">
     <div class="big-title">{$widget.vars.title}</div>
     <div class="small-title">{$widget.vars.title2}</div>
   </div>
-  <div class="customer">
-    <div class="customer_img">
-      <volist name="$widget.vars.varName1" id="vo">
-        <img src="__ROOT__/upload/{$vo.icon}" alt="">
-      </volist>
-    </div>
+  <div id="customerList" class="index-customer-box">
+
   </div>
-</widget>
+</widget>-->
+<div class="main-center main-title big-title">行业领先企业</div>
+<div id="customerList" class="customer">
+  <!-- <portal:articles item="vo" page="12" categoryIds="29" returnVarName="articles_data">
+      <notempty name="$vo.more.thumbnail">
+          <div><img src="{:cmf_get_image_url($vo.more.thumbnail)}" /></div>
+      </notempty>
+  </portal:articles> -->
+</div>
+<script src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $.ajax({
+      type: "post",
+      url: "{:url('PcIndex/getCustomerList')}",
+      data: { category: 45 },
+      dataType: "json",
+      success: function (result) {
+        console.log(result);//打印服务端返回的数据(调试用)
+        if (result.code == 1) {
+          console.log(result.data);
+          var arr = result.data;
+          if (arr.length != 0) {
+            var html = "<div class='customer_img'>";
+            var htmlend = "</div>";
+            for (var i = 0; i < arr.length; i++) {
+              html += '<img src="' + arr[i].thumbnail + '" alt="" >';
+            }
+            html+=htmlend;
+            $("#customerList").html(html);
+          } else {
+            $("#customerList").html('');
+          }
+        }
+      },
+      error: function () {
+
+      }
+    })
+  })
+</script>

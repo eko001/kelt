@@ -57,6 +57,13 @@ li {
   color: #000;
 }
 
+.big-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #000;
+}
+
 .main-title .small-title {
   font-size: 14px;
   color: var(--text8-color);
@@ -107,6 +114,13 @@ li {
     color: #000;
   }
 
+
+  .big-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
   .main-title .small-title {
     font-size: 1.4rem;
     color: var(--text8-color);

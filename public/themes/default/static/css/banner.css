@@ -14,7 +14,9 @@
 .banner_box660 {
   height: 660px;
 }
-
+.banner_box460 {
+  height: 460px;
+}
 .banner_box540 {
   height: 540px;
 }
@@ -90,6 +92,10 @@
 
   .banner_box660 {
     height: 66rem;
+  }
+
+  .banner_box460 {
+    height: 46rem;
   }
 
   .banner_box540 {

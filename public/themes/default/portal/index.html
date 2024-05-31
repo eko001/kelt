@@ -9,22 +9,43 @@
   <include file="public@header/header" />
 
   <!-- banner -->
-  <div class="banner banner_box660">
+  <div class="banner banner_box460">
     <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box660">
-        <volist name="$widget.vars.bannerList" id="vo">
+      <div id="sliderBox" class="banner_box banner_box460">
+        <portal:articles item="vo" order="post.published_time DESC" categoryIds="43">
           <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
             <div class="banner_box_img_title bannerTitleLeft">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
+              <div class="banner_box_img_title_big">{$vo.post_title}</div>
+              <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
             </div>
           </div>
-        </volist>
+        </portal:articles>
       </div>
     </widget>
   </div>
 
+
+
+  <!-- 服务 -->
+  <div class="grey">
+    <widget name="OurService">
+      <div class="main-center main-title">
+        <div class="big-title">我们的服务</div>
+      </div>
+
+      <div class="main-center ourService">
+        <portal:articles item="vo" order="post.published_time DESC" categoryIds="44">
+          <div class="ourService_item">
+            <div class="ourService_item_img">
+              <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+            </div>
+            <div class="ourService_item_title">{$vo.post_title}</div>
+          </div>
+        </portal:articles>
+      </div>
+    </widget>
+  </div>
   <!-- 平台特点 -->
   <div class="white">
     <widget name="platformFeatures">
@@ -37,49 +58,40 @@
       </div> -->
 
       <div class="main-center platformFeatures">
-        <div class="platformFeatures_top">
-          <div class="platformFeatures_top_img">
-            <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
-          </div>
-          <div class="platformFeatures_top_text">{$widget.vars.varName2}</div>
-        </div>
+        <!-- <div class="platformFeatures_top">
+           <div class="platformFeatures_top_img">
+             <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
+           </div>
+           <div class="platformFeatures_top_text">{$widget.vars.varName2}</div>
+         </div>-->
 
         <div class="platformFeatures_bottom">
-          <volist name="$widget.vars.varName3" id="vo" length="3">
-            <div class="platformFeatures_bottom_item">
-              <div class="platformFeatures_bottom_item_img">
-                <img src="__ROOT__/upload/{$vo.icon}" alt="">
-              </div>
-              <div class="platformFeatures_bottom_item_title">{$vo.title}</div>
-              <div class="platformFeatures_bottom_item_text">{$vo.content}</div>
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center1.png" alt="">
             </div>
-          </volist>
+            <div class="platformFeatures_bottom_item_title">全生命周期碳足迹监测</div>
+            <div class="platformFeatures_bottom_item_text">从产品设计、生产到采购和物流，对碳足迹进行全面监测和分析。通过专业的碳足迹计算方法，为客户提供详细的报告和建议，帮助客户最大限度地减少碳足迹，促进可持续发展。</div>
+          </div>
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center2.png" alt="">
+            </div>
+            <div class="platformFeatures_bottom_item_title">一站式采购服务</div>
+            <div class="platformFeatures_bottom_item_text">碳追踪平台提供一站式采购服务，帮助客户在全球范围内寻找和选择最合适的供应商。该平台在供应链管理方面拥有丰富的经验，从供应商管理、采购管理到物流管理，提供高效、专业、可靠的采购服务。</div>
+          </div>
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center3.png" alt="">
+            </div>
+            <div class="platformFeatures_bottom_item_title">可持续发展</div>
+            <div class="platformFeatures_bottom_item_text">致力于减少采购和物流过程中的二氧化碳排放。通过全生命周期碳足迹监测和分析，为客户实现可持续发展目标提供专业的环保建议和解决方案。
+            </div>
+          </div>
         </div>
       </div>
     </widget>
   </div>
-
-  <!-- 服务 -->
-  <div class="grey">
-    <widget name="OurService">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
-      </div>
-
-      <div class="main-center ourService">
-        <volist name="$widget.vars.varName1" id="vo" length="5">
-          <div class="ourService_item">
-            <div class="ourService_item_img">
-              <img src="__ROOT__/upload/{$vo.icon}" alt="">
-            </div>
-            <div class="ourService_item_title">{$vo.title}</div>
-          </div>
-        </volist>
-      </div>
-    </widget>
-  </div>
-
 
   <!-- 合作客户 -->
   <div class="white">
