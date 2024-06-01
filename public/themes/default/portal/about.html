@@ -4,6 +4,7 @@
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/about.css" />
 
+
 <body>
   <link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
   <script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
@@ -27,88 +28,90 @@
 
   <div class="about_top"></div>
   <div class="white about-white">
-    <widget name="Module1">
+    <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="72">
       <div class="main-center about">
         <div class="about_left">
-          <div class="about_left_title">{$widget.vars.title}</div>
-          <div class="about_left_desc">{$widget.vars.desc}</div>
+          <div class="about_left_title">{$vo.post_title}</div>
+          <div class="about_left_desc">{$vo.post_content}</div>
         </div>
 
         <div class="about_right">
-          <img src="__ROOT__/upload/{$widget.vars.img}" alt="">
+          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
         </div>
       </div>
-    </widget>
+    </portal:articles>
   </div>
 
   <!-- 联系我们 -->
   <div class="grey">
-    <widget name="Module3">
-      <div class="main-center contact">
-        <div class="contact_title">{$widget.vars.title}</div>
-        <div class="contact_box">
-          <div class="contact_box_left">
-            <div class="contact_box_left_top">
-              <volist name="$widget.vars.varName1" id="vo" length="4">
-                <div class="contact_box_left_top_item">
-                  <div class="contact_box_left_top_item_icon">
-                    <img src="__ROOT__/upload/{$vo.icon}" alt="">
-                  </div>
-                  <div class="contact_box_left_top_item_right">
-                    <div class="contact_box_left_top_item_right_title">{$vo.title}</div>
-                    <div class="contact_box_left_top_item_right_desc">{$vo.desc}</div>
-                    <div class="contact_box_left_top_item_right_content">{$vo.content}</div>
-                  </div>
+
+    <div class="main-center contact">
+      <div class="contact_title">联系我们</div>
+      <div class="contact_box">
+        <div class="contact_box_left">
+          <div class="contact_box_left_top">
+            <portal:articles item="vo" limit="4" order="post.published_time ASC" categoryIds="69">
+              <div class="contact_box_left_top_item">
+                <div class="contact_box_left_top_item_icon">
+                  <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
                 </div>
-              </volist>
-            </div>
-            <div class="contact_box_left_bottom">
-              <include file="public@socialize/socialize" />
-            </div>
-
+                <div class="contact_box_left_top_item_right">
+                  <div class="contact_box_left_top_item_right_title">{$vo.post_title}</div>
+                  <div class="contact_box_left_top_item_right_desc">{$vo.post_source}</div>
+                  <div class="contact_box_left_top_item_right_content">{$vo.post_excerpt}</div>
+                </div>
+              </div>
+            </portal:articles>
           </div>
-          <div class="contact_box_right">
-            <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}" method="post" class="contact_box_right_box">
-              <div class="contact_box_right_item">
-                <div class="contact_box_right_item_title">Full Name</div>
-                <input type="text" name="post[name]" id="name" placeholder="Full Name">
-              </div>
-              <div class="contact_box_right_item">
-                <div class="contact_box_right_item_title">Phone number</div>
-                <input type="text" name="post[phone]" id="phone" placeholder="Phone number">
-              </div>
-              <div class="contact_box_right_item width100">
-                <div class="contact_box_right_item_title">Email</div>
-                <input type="text" name="post[email]" id="email" placeholder="Email">
-              </div>
-              <div class="contact_box_right_item width100">
-                <div class="contact_box_right_item_title">Tell me your though</div>
-                <textarea name="post[buisiness]" id="buisiness" cols="30" rows="10" placeholder="Tell me your though"></textarea>
-              </div>
-              <div class="contact_box_right_btn" id="sendBtn">
-                <input type="submit" value="Send message" id="btnSubmit" name="btnSubmit">
-              </div>
-            </form>
-
-            <!-- 提交成功 -->
-            <div class="popup" id="popupSuccess">
-              <div class="popup_box">
-                <div class="popup_box_title">谢谢您的留言</div>
-                <div class="popup_box_desc">我们会尽快与您联系</div>
-              </div>
-            </div>
-
+          <div class="contact_box_left_bottom">
+            <include file="public@socialize/socialize" />
           </div>
+
+        </div>
+        <div class="contact_box_right">
+          <form id="feedback_form" name="feedback_form" url="{:url('Form/addPost')}" method="post"
+            class="contact_box_right_box">
+            <div class="contact_box_right_item">
+              <div class="contact_box_right_item_title">Full Name</div>
+              <input type="text" name="post[name]" id="name" placeholder="Full Name">
+            </div>
+            <div class="contact_box_right_item">
+              <div class="contact_box_right_item_title">Phone number</div>
+              <input type="text" name="post[phone]" id="phone" placeholder="Phone number">
+            </div>
+            <div class="contact_box_right_item width100">
+              <div class="contact_box_right_item_title">Email</div>
+              <input type="text" name="post[email]" id="email" placeholder="Email">
+            </div>
+            <div class="contact_box_right_item width100">
+              <div class="contact_box_right_item_title">Tell me your though</div>
+              <textarea name="post[buisiness]" id="buisiness" cols="30" rows="10"
+                placeholder="Tell me your though"></textarea>
+            </div>
+            <div class="contact_box_right_btn" id="sendBtn">
+              <input type="submit" value="Send message" id="btnSubmit" name="btnSubmit">
+            </div>
+          </form>
+
+          <!-- 提交成功 -->
+          <div class="popup" id="popupSuccess">
+            <div class="popup_box">
+              <div class="popup_box_title">谢谢您的留言</div>
+              <div class="popup_box_desc">我们会尽快与您联系</div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </widget>
+    </div>
+
   </div>
   <!-- footer -->
   <include file="public@footer/footer" />
 </body>
 <!-- <script type="text/javascript" src="__TMPL__/static/js/common.js"></script> -->
 <script type="text/javascript">
-  function AjaxInitForm(formObj, btnObj) {
+  function AjaxInitForm (formObj, btnObj) {
     $(formObj).Validform({
       callback: function (form) {
         //AJAX提交表单
@@ -125,12 +128,12 @@
     })
 
     //表单提交前
-    function formRequest(formData, jqForm, options) {
+    function formRequest (formData, jqForm, options) {
       $(btnObj).prop("disabled", true)
     }
 
     //表单提交后
-    function formResponse(data, textStatus) {
+    function formResponse (data, textStatus) {
       if (data.msg == "添加成功!") {
         $("#popupSuccess").css("display", "block")
         $('#sendBtn').hide()
