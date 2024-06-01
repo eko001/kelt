@@ -4,55 +4,65 @@
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/warehouse.css" />
 
+
 <body>
   <!-- header -->
   <include file="public@header/header" />
 
   <!-- banner -->
   <div class="banner banner_box460">
-    <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box460">
-        <volist name="$widget.vars.bannerList" id="vo">
-          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
-            <div class="banner_box_img_title bannerTitleLeft">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
-            </div>
+
+    <div id="sliderBox" class="banner_box banner_box460">
+
+      <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="64">
+        <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+          <div class="banner_box_img_title bannerTitleLeft">
+            <div class="banner_box_img_title_big">{$vo.post_title}</div>
+            <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
           </div>
-        </volist>
-      </div>
-    </widget>
+        </div>
+      </portal:articles>
+
+    </div>
+
   </div>
 
   <!-- 仓库轮播图 -->
   <div class="white" id="warehouseModel1">
-    <widget name="Module1">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
-      </div>
 
-      <div id="slides" class="slides main-center">
-        <div id="warehouseBox1" class="list-warehouse">
-          <volist name="$widget.vars.varName1" id="vo">
-            <div class="warehouse-item warehouseBoxItem1" id="warehouseBoxItem">
-              <img src="__ROOT__/upload/{$vo.img}" alt="">
-            </div>
-          </volist>
-        </div>
-      </div>
+    <div class="main-center main-title">
+      <div class="big-title">Warehouse</div>
+      <php>
+        $ids = ['id'=>63];
+      </php>
 
-      <div class="main-center slides_bottom">
-        <volist name="$widget.vars.varName2" id="vo">
-          <div class="slides_bottom_item">
-            <div class="slides_bottom_item_title">{$vo.title}</div>
-            <div class="slides_bottom_item_desc">{$vo.content}
-            </div>
+
+      <portal:categories ids="$ids" item="vo">
+        <div class="small-title">{$vo.description}</div>
+      </portal:categories>
+    </div>
+
+    <div id="slides" class="slides main-center">
+      <div id="warehouseBox1" class="list-warehouse">
+        <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="112">
+          <div class="warehouse-item warehouseBoxItem1" id="warehouseBoxItem">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
           </div>
-        </volist>
+        </portal:articles>
       </div>
-    </widget>
+    </div>
+
+    <div class="main-center slides_bottom">
+      <portal:articles item="vo" limit="2" order="post.published_time DESC" categoryIds="65">
+        <div class="slides_bottom_item">
+          <!-- <div class="slides_bottom_item_title">{$vo.post_title}</div> -->
+          <div class="slides_bottom_item_desc">{$vo.post_excerpt}
+          </div>
+        </div>
+      </portal:articles>
+    </div>
+
   </div>
 
   <!-- footer -->

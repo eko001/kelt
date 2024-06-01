@@ -124,7 +124,10 @@
 
     <div class="main-center main-title">
       <div class="big-title">碳追踪数据库</div>
-      <portal:categories id="61" item="vo">
+      <php>
+        $ids = ['id'=>61];
+      </php>
+      <portal:categories ids="$ids" item="vo">
         <div class="small-title">{$vo.description}</div>
       </portal:categories>
     </div>
