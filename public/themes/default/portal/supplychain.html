@@ -52,8 +52,8 @@
       <div class="supply_center_left">
         <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
         <div class="supply_center_title ">
-          <div class="supply_center_title_small">{$vo.post_title}</div>
-          <div class="supply_center_title_big">{$vo.post_excerpt}</div>
+          <div class="supply_center_title_small">{$vo.post_excerpt}</div>
+          <div class="supply_center_title_big">{$vo.post_title}</div>
         </div>
       </div>
     </portal:articles>
@@ -71,9 +71,9 @@
         <div class="supply_center_right_bottom">
           <div class="supply_center_right_bottom_des">{$vo.post_title}</div>
           <div class="supply_center_right_bottom_btn">
-            <a href="http://{$vo.post_excerpt}" target="_blank">
+            <a href="http://{$vo.url}" target="_blank">
               <img src="__STATIC__/images/intelnet.png" alt="">
-              {$vo.post_excerpt}
+              {$vo.url}
             </a>
           </div>
         </div>
