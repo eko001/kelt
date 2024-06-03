@@ -60,10 +60,17 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>跳转链接</th>
+                        <td>
+                            <textarea class="form-control" name="post[url]" style="height: 50px;"
+                                      placeholder="请填写跳转链接">{$post.url}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>关键词</th>
                         <td>
                             <input class="form-control" type="text" name="post[post_keywords]"
-                                   value="{$post['post_keywords']}" placeholder="请输入关键字">
+                                   placeholder="请输入关键字">
                             <p class="help-block">多关键词之间用英文逗号隔开</p>
                         </td>
                     </tr>
