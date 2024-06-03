@@ -14,7 +14,20 @@ const animate = function (obj, target, callback) {
   }, 15)
 }
 
-window.onload = function () {
+$(function () {
+  $(".sliderBox").slide({
+    slideContainer: $('.sliderBox .sliderBoxItem'),
+    effect: 'easeOutCirc',//动画类型
+    autoRunTime: 5000,//自动轮播时间
+    slideSpeed: 1000,//速度
+    nav: true,//是否显示左右导航
+    autoRun: true,//是否自动滚动
+    /* prevBtn: $('a.prev'),//左按钮
+     nextBtn: $('a.next')//右按钮*/
+  });
+})
+
+/*window.onload = function () {
 
   // 获取轮播图的盒子
   const box = document.getElementById('sliderBox')
@@ -46,4 +59,4 @@ window.onload = function () {
   var autoSwiper = setInterval(() => {
     swiper()
   }, 5000)
-}
+}*/
