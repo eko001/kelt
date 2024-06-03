@@ -37,11 +37,18 @@ a:focus {
   padding: 0 30px;
   flex-shrink: 0;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .productTag_content .active {
-  background-color: var(--primary-color);
-  color: #fff;
+  /* background-color: var(--primary-color); */
+  color: var(--primary-color);
+  border-bottom: 2px solid;
+  border-bottom-color: var(--primary-color);
 }
 
 .productList {
@@ -155,6 +162,12 @@ a:focus {
     margin-right: 1rem;
     line-height: 3rem;
     padding: 0 2rem;
+  }
+
+  .productTag_content_item .img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
   }
 
   .productList {

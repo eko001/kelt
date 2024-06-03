@@ -11,20 +11,20 @@
   <include file="public@header/header" />
 
   <!-- banner -->
-  <div class="banner banner_box660">
-    <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box660">
-        <volist name="$widget.vars.bannerList" id="vo">
-          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
-            <div class="banner_box_img_title bannerTitleLeft bannerTextBlack">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
-            </div>
+  <div class="banner banner_box460">
+
+    <div id="sliderBox" class="banner_box banner_box460">
+      <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="83">
+        <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+          <div class="banner_box_img_title bannerTitleCenter">
+            <div class="banner_box_img_title_big">{$vo.post_title}</div>
+            <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
           </div>
-        </volist>
-      </div>
-    </widget>
+        </div>
+      </portal:articles>
+    </div>
+
   </div>
 
   <!-- 分类标签 -->
@@ -37,9 +37,23 @@
         <portal:subCategories categoryId="35" item="vo">
           <a href="#tab{$index}" data-toggle="tab" role="tab" aria-controls="tab{$index}">
             <if condition="$index eq 1">
-              <div class="productTag_content_item active" data-toggle="tab">{$vo.name}</div>
+              <div class="productTag_content_item active" data-toggle="tab">
+                <div>
+                  <img src="{:cmf_get_image_url($vo.more.thumbnail)}" />
+                </div>
+                <div>
+                  {$vo.name}
+                </div>
+              </div>
               <else />
-              <div class="productTag_content_item" data-toggle="tab">{$vo.name}</div>
+              <div class="productTag_content_item" data-toggle="tab">
+                <div>
+                  <img src="{:cmf_get_image_url($vo.more.thumbnail)}" />
+                </div>
+                <div>
+                  {$vo.name}
+                </div>
+              </div>
             </if>
           </a>
           <php>
@@ -63,9 +77,10 @@
             <div class="tab-pane productList_box" id="tab{$index}">
         </if>
 
-        <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id" returnVarName="articles_data">
+        <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id"
+          returnVarName="articles_data">
           <!-- <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}"> -->
-          <a href="#" class="productLink">
+          <a href="{$item.url}" class="productLink">
             <div class="productList_box_item">
               <div class="productList_box_item_img">
                 <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
@@ -122,30 +137,30 @@
   }
 
   // 获取所有带有 class="productLink" 的 <a> 标签元素
-  var productLinks = document.querySelectorAll('.productLink')
+  // var productLinks = document.querySelectorAll('.productLink')
 
-  productLinks.forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault()
+  // productLinks.forEach(function (link) {
+  //   link.addEventListener('click', function (event) {
+  //     event.preventDefault()
 
-      var siblingPopup = link.nextElementSibling
-      siblingPopup.style.display = 'flex'
+  //     var siblingPopup = link.nextElementSibling
+  //     siblingPopup.style.display = 'flex'
 
 
-      siblingPopup.addEventListener('click', function (event) {
-        event.preventDefault()
-        siblingPopup.style.display = 'none'
+  //     siblingPopup.addEventListener('click', function (event) {
+  //       event.preventDefault()
+  //       siblingPopup.style.display = 'none'
 
-      })
+  //     })
 
-    })
-  })
+  //   })
+  // })
 
-  const child = document.getElementById('popup_box')
-  child.addEventListener('click', (event) => {
-    event.stopPropagation()
-    // 处理子元素的点击事件
-  })
+  // const child = document.getElementById('popup_box')
+  // child.addEventListener('click', (event) => {
+  //   event.stopPropagation()
+  //   // 处理子元素的点击事件
+  // })
 
 </script>
 
