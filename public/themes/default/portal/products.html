@@ -80,7 +80,7 @@
         <portal:articles item="item" order="post.create_time DESC" page="8" categoryIds="$vo.id"
           returnVarName="articles_data">
           <!-- <a href="{:url('portal/Article/index',array('id'=>$item.id,'cid'=>$item['categories'][0]['id']))}"> -->
-          <a href="#" class="productLink">
+          <a href="{$item.url}" class="productLink">
             <div class="productList_box_item">
               <div class="productList_box_item_img">
                 <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
@@ -137,30 +137,30 @@
   }
 
   // 获取所有带有 class="productLink" 的 <a> 标签元素
-  var productLinks = document.querySelectorAll('.productLink')
+  // var productLinks = document.querySelectorAll('.productLink')
 
-  productLinks.forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault()
+  // productLinks.forEach(function (link) {
+  //   link.addEventListener('click', function (event) {
+  //     event.preventDefault()
 
-      var siblingPopup = link.nextElementSibling
-      siblingPopup.style.display = 'flex'
+  //     var siblingPopup = link.nextElementSibling
+  //     siblingPopup.style.display = 'flex'
 
 
-      siblingPopup.addEventListener('click', function (event) {
-        event.preventDefault()
-        siblingPopup.style.display = 'none'
+  //     siblingPopup.addEventListener('click', function (event) {
+  //       event.preventDefault()
+  //       siblingPopup.style.display = 'none'
 
-      })
+  //     })
 
-    })
-  })
+  //   })
+  // })
 
-  const child = document.getElementById('popup_box')
-  child.addEventListener('click', (event) => {
-    event.stopPropagation()
-    // 处理子元素的点击事件
-  })
+  // const child = document.getElementById('popup_box')
+  // child.addEventListener('click', (event) => {
+  //   event.stopPropagation()
+  //   // 处理子元素的点击事件
+  // })
 
 </script>
 

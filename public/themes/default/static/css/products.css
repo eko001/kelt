@@ -47,7 +47,7 @@ a:focus {
 .productTag_content .active {
   /* background-color: var(--primary-color); */
   color: var(--primary-color);
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
   border-bottom-color: var(--primary-color);
 }
 
