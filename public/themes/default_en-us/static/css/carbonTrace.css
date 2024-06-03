@@ -9,13 +9,14 @@
 }
 
 .carbonTrace_box_item {
-  width: 340px;
+  width: 300px;
   padding: 20px;
   background-color: #fff;
   margin-bottom: 30px;
   border-radius: 6px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  height: 190px;
 }
 
 .carbonTrace_box_item:hover {

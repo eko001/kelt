@@ -1,100 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/carbonTrace.css" />
 
 <body>
-  <!-- header -->
-  <include file="public@header/header" />
+<!-- header -->
+<include file="public@header/header" />
 
-  <!-- banner -->
-  <div class="banner banner_box660">
-    <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box660">
-        <volist name="$widget.vars.bannerList" id="vo">
-          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
-            <div class="banner_box_img_title bannerTitleLeft">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
+<!-- banner -->
+<div class="banner banner_box460">
+
+  <div id="sliderBox" class="banner_box banner_box460">
+
+    <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="93">
+      <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+        <div class="banner_box_img_title bannerTitleLeft">
+          <div class="banner_box_img_title_big">{$vo.post_title}</div>
+          <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
+        </div>
+      </div>
+
+    </portal:articles>
+
+
+  </div>
+
+</div>
+
+<!-- 碳追踪 -->
+<div class="white" id="carbontraceModel1">
+
+  <div class="main-center main-title">
+    <div class="big-title">Carbon Tracking Journey</div>
+    <div class="small-title"></div>
+  </div>
+
+  <div class="carbonTrace main-center">
+
+    <div class="carbonTrace_box">
+
+      <php>
+        $index = 0;
+      </php>
+      <portal:articles item="vo" limit="6" order="post.published_time ASC" categoryIds="94">
+        <if condition="$index eq 2">
+          <div
+                  style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-right: 70px; margin-top: 30px;">
+        </if>
+        <if condition="$index neq 2 && $index neq 5">
+          <div style="display: flex; justify-content: center; align-items: center; ">
+        </if>
+        <if condition="$index eq 5">
+          <div style="display: flex; justify-content: center; align-items: center; margin-right: 20px;">
+        </if>
+        <div class="carbonTrace_box_item">
+          <div class="carbonTrace_box_item_title">
+            <div class="carbonTrace_box_item_title_img">
+              <img src="__STATIC__/images/pic{$index}.png" alt="">
             </div>
+            {$vo.post_title}
           </div>
-        </volist>
-      </div>
-    </widget>
-  </div>
-
-  <!-- 碳追踪 -->
-  <div class="white">
-    <widget name="Module1">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
-      </div>
-
-      <div class="carbonTrace main-center">
-        <div class="carbonTrace_box">
-          <volist name="$widget.vars.varName1" id="vo" length="6">
-            <div class="carbonTrace_box_item">
-              <div class="carbonTrace_box_item_title">
-                <div class="carbonTrace_box_item_title_img">
-                  <img src="__ROOT__/upload/{$vo.icon}" alt="">
-                </div>
-                {$vo.title}
-              </div>
-              <div class="carbonTrace_box_item_desc">{$vo.content}</div>
-            </div>
-          </volist>
+          <div class="carbonTrace_box_item_desc">{$vo.post_excerpt|mb_substr=0,220,'utf-8'}</div>
         </div>
-
-      </div>
-    </widget>
-  </div>
-
-  <!-- 碳追踪解释 -->
-  <div class="grey">
-    <widget name="Module2">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
-      </div>
-
-      <div class="main-center interpretation">
-        <div class="interpretation_box">
-          <div class="interpretation_box_img">
-            <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
+        <if condition="$index lt 2">
+          <div>
+            <img src="__STATIC__/images/arrow0.png" alt="">
           </div>
-          <div class="interpretation_box_desc">{$widget.vars.varName2}</div>
-        </div>
+        </if>
+        <if condition="$index eq 2">
+          <div style="margin-top: -20px;">
+            <img src="__STATIC__/images/arrow1.png" alt="">
+          </div>
+        </if>
+        <if condition="$index gt 2 && $index neq 5">
+          <div>
+            <img src="__STATIC__/images/arrow2.png" alt="">
+          </div>
+        </if>
+        <if condition="$index eq 5">
+          <div style="width: 50px;height: 50px;">
 
-      </div>
-    </widget>
+          </div>
+        </if>
+    </div>
+    <php>
+      $index++;
+    </php>
+    </portal:articles>
+
+
+
+
   </div>
 
-  <!-- 碳追踪数据库 -->
-  <div class="white">
-    <widget name="Module3">
-      <div class="main-center main-title">
-        <div class="big-title">{$widget.vars.title}</div>
-        <div class="small-title">{$widget.vars.title2}</div>
+</div>
+
+</div>
+
+<!-- 碳追踪解释 -->
+<!-- <div class="grey" id="carbontraceModel2">
+  <widget name="Module2">
+    <div class="main-center main-title">
+      <div class="big-title">{$widget.vars.title}</div>
+      <div class="small-title">{$widget.vars.title2}</div>
+    </div>
+
+    <div class="main-center interpretation">
+      <div class="interpretation_box">
+        <div class="interpretation_box_img">
+          <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
+        </div>
+        <div class="interpretation_box_desc">{$widget.vars.varName2}</div>
       </div>
 
-      <div class="main-center database">
-        <div class="database_box">
-          <volist name="$widget.vars.varName1" id="vo" length="6">
-            <div class="database_box_item">
-              <div class="database_box_item_title">{$vo.title}</div>
-              <div class="database_box_item_desc">{$vo.content}</div>
-            </div>
-          </volist>
-        </div>
-      </div>
-    </widget>
+    </div>
+  </widget>
+</div> -->
+
+<!-- 碳追踪数据库 -->
+<div class="grey" id="carbontraceModel3">
+
+  <div class="main-center main-title">
+    <div class="big-title">Carbon Tracking Database</div>
+    <php>
+      $ids = ['id'=>95];
+    </php>
+    <portal:categories ids="$ids" item="vo">
+      <div class="small-title">{$vo.description}</div>
+    </portal:categories>
   </div>
 
-  <!-- footer -->
-  <include file="public@footer/footer" />
+  <div class="main-center database">
+    <div class="database_box">
+
+      <portal:articles item="vo" limit="6" order="post.published_time DESC" categoryIds="95">
+        <div class="database_box_item">
+          <div class="database_box_item_title">{$vo.post_title}</div>
+          <div class="database_box_item_desc">{$vo.post_excerpt}</div>
+        </div>
+      </portal:articles>
+
+      </volist>
+    </div>
+  </div>
+
+</div>
+<!-- 入驻流程 -->
+<include file="public@entertheplatform1/entertheplatform1" />
+<!-- footer -->
+<include file="public@footer/footer" />
 </body>
 
 </html>

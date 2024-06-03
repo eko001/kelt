@@ -4,14 +4,16 @@
   <div class="main-center enter">
     <widget name="link">
       <div class="enter_box">
-        <div class="enter_box_desc">{$widget.vars.desc}</div>
+        <portal:articles item="vo" limit="6" order="post.published_time DESC" categoryIds="96">
+        <div class="enter_box_desc">{$vo.post_title}</div>
 
         <div class="enter_box_btn">
-          <a href="http://{$widget.vars.link}" target="_blank">
-            <img src="__ROOT__/upload/{$widget.vars.icon}" alt="">
-            {$widget.vars.link}
+          <a href="http://{$vo.url}" target="_blank">
+            <img src="__STATIC__/images/intelnet.png" alt="">
+            {$vo.url}
           </a>
         </div>
+        </portal:articles>
       </div>
     </widget>
   </div>
