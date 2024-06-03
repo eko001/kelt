@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/supplyChain.css" />
@@ -9,37 +9,77 @@
   <include file="public@header/header" />
 
   <!-- banner -->
-  <div class="banner banner_box540">
+  <div class="banner banner_box460">
     <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box540">
-        <volist name="$widget.vars.bannerList" id="vo">
+      <div id="sliderBox" class="banner_box banner_box460">
+        <portal:articles item="vo" order="post.published_time DESC" categoryIds="86">
           <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
             <div class="banner_box_img_title bannerTitleCenter">
-              <div class="banner_box_img_title_big">{$vo.title}</div>
-              <div class="banner_box_img_title_small">{$vo.title2}</div>
+              <div class="banner_box_img_title_big">{$vo.post_title}</div>
+              <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
             </div>
           </div>
-        </volist>
+        </portal:articles>
       </div>
     </widget>
   </div>
-
-  <widget name="supplychainItem">
-    <volist name="$widget.vars.varName1" id="vo">
-      <div class="white">
-        <div class="supplychainItem main-center">
-          <div class="supplychainItem_img">
-            <img src="__ROOT__/upload/{$vo.icon}" alt="">
+  <!--我们的供应链系统-->
+  <div class="supply">
+    <div class="big-title">Our Supply Chain</div>
+    <div class="supply_content">
+      <portal:articles item="vo" order="post.published_time DESC" categoryIds="87">
+      <div class="supply_content_item">
+        <div class="supply_content_item_left">
+          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+          <div class="supply_line"></div>
+        </div>
+        <div class="supply_content_item_right">
+          <div class="supply_content_item_right_title_big">
+            {$vo.post_title}
           </div>
-          <div class="supplychainItem_content">
-            <div class="supplychainItem_content_title">{$vo.title}</div>
-            <div class="supplychainItem_content_desc">{$vo.content}</div>
+          <div class="supply_content_item_right_title_small">
+            {$vo.post_excerpt}
           </div>
         </div>
       </div>
-    </volist>
-  </widget>
+      </portal:articles>
+    </div>
+  </div>
+
+  <div class="supply_center">
+    <portal:articles item="vo" order="post.published_time DESC" categoryIds="89">
+      <div class="supply_center_left">
+        <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+        <div class="supply_center_title ">
+          <div class="supply_center_title_small">{$vo.post_title}</div>
+          <div class="supply_center_title_big">{$vo.post_excerpt}</div>
+        </div>
+      </div>
+    </portal:articles>
+    <div class="supply_center_right">
+      <portal:articles item="vo" order="post.published_time DESC" categoryIds="90">
+        <div class="supply_center_right_top">
+          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+          <div class="supply_center_des">
+            <div class="supply_center_title_mini">{$vo.post_excerpt}
+            </div>
+          </div>
+        </div>
+      </portal:articles>
+      <portal:articles item="vo" order="post.published_time DESC" categoryIds="91">
+      <div class="supply_center_right_bottom">
+        <div class="supply_center_right_bottom_des">{$vo.post_title}</div>
+        <div class="supply_center_right_bottom_btn">
+          <a href="http://{$vo.post_excerpt}" target="_blank">
+            <img src="__STATIC__/images/intelnet.png" alt="">
+            {$vo.post_excerpt}
+          </a>
+        </div>
+      </div>
+    </portal:articles>
+    </div>
+  </div>
 
   <!-- footer -->
   <include file="public@footer/footer" />
