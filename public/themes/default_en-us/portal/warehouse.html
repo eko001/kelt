@@ -3,7 +3,36 @@
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/warehouse.css" />
+<link rel="stylesheet" href="__STATIC__/css/swiper-bundle.min.css">
+<script src="__STATIC__/js/swiper-bundle.min.js"></script>
+<style>
+  .swiper {
+    width: 1200px;
+    height: 500px;
+  }
 
+  .swiper-slide img {
+    width: 100%;
+    height: 500px;
+  }
+
+  .swiper-button-next {
+    color: #27ae60;
+  }
+
+  .swiper-button-prev {
+    color: #27ae60;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 50px;
+
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #27ae60;
+  }
+</style>
 
 <body>
   <!-- header -->
@@ -44,12 +73,20 @@
     </div>
 
     <div id="slides" class="slides main-center">
-      <div id="warehouseBox1" class="list-warehouse">
-        <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="113">
-          <div class="warehouse-item warehouseBoxItem1" id="warehouseBoxItem">
-            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-          </div>
-        </portal:articles>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="112">
+            <div class="swiper-slide">
+
+              <div class="warehouse-item warehouseBoxItem1" id="warehouseBoxItem">
+                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+              </div>
+
+            </div>
+          </portal:articles>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
       </div>
     </div>
 
@@ -71,5 +108,6 @@
 
 </html>
 
-<script src="__TMPL__/static/js/slide.js"></script>
+<!-- <script src="__TMPL__/static/js/slide.js"></script> -->
 <script src="__TMPL__/static/js/warehouse.js"></script>
+<script src="__STATIC__/js/swiper.js"></script>
