@@ -3,6 +3,36 @@
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/index.css" />
+<link rel="stylesheet" href="__STATIC__/css/swiper-bundle.min.css">
+<script src="__STATIC__/js/swiper-bundle.min.js"></script>
+<style>
+  .swiper {
+    width: 100%;
+    height: 460px;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 460px;
+  }
+
+  .swiper-button-next {
+    color: #27ae60;
+  }
+
+  .swiper-button-prev {
+    color: #27ae60;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 50px;
+
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #27ae60;
+  }
+</style>
 
 <body>
   <!-- header -->
@@ -10,19 +40,36 @@
 
   <!-- banner -->
   <div class="banner banner_box460">
-    <widget name="banner">
-      <div id="sliderBox" class="banner_box banner_box460">
-        <portal:articles item="vo" order="post.published_time DESC" categoryIds="43">
-          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-            <div class="banner_box_img_title bannerTitleLeft">
-              <div class="banner_box_img_title_big">{$vo.post_title}</div>
-              <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
+
+    <div id="sliderBox" class="banner_box banner_box460">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <portal:articles item="vo" order="post.published_time DESC" categoryIds="43">
+            <div class="swiper-slide">
+              <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+                <div class="banner_box_img_title bannerTitleLeft">
+                  <div class="banner_box_img_title_big">{$vo.post_title}</div>
+                  <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </portal:articles>
+          </portal:articles>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
       </div>
-    </widget>
+
+
+    </div>
+
   </div>
 
 
@@ -71,21 +118,24 @@
               <img src="__STATIC__/images/index_center1.png" alt="">
             </div>
             <div class="platformFeatures_bottom_item_title">全生命周期碳足迹监测</div>
-            <div class="platformFeatures_bottom_item_text">从产品设计、生产到采购和物流，对碳足迹进行全面监测和分析。通过专业的碳足迹计算方法，为客户提供详细的报告和建议，帮助客户最大限度地减少碳足迹，促进可持续发展。</div>
+            <div class="platformFeatures_bottom_item_text">
+              从产品设计、生产到采购和物流，对碳足迹进行全面监测和分析。通过专业的碳足迹计算方法，为客户提供详细的报告和建议，帮助客户最大限度地减少碳足迹，促进可持续发展。</div>
           </div>
           <div class="platformFeatures_bottom_item">
             <div class="platformFeatures_bottom_item_img">
               <img src="__STATIC__/images/index_center2.png" alt="">
             </div>
             <div class="platformFeatures_bottom_item_title">一站式采购服务</div>
-            <div class="platformFeatures_bottom_item_text">碳追踪平台提供一站式采购服务，帮助客户在全球范围内寻找和选择最合适的供应商。该平台在供应链管理方面拥有丰富的经验，从供应商管理、采购管理到物流管理，提供高效、专业、可靠的采购服务。</div>
+            <div class="platformFeatures_bottom_item_text">
+              碳追踪平台提供一站式采购服务，帮助客户在全球范围内寻找和选择最合适的供应商。该平台在供应链管理方面拥有丰富的经验，从供应商管理、采购管理到物流管理，提供高效、专业、可靠的采购服务。</div>
           </div>
           <div class="platformFeatures_bottom_item">
             <div class="platformFeatures_bottom_item_img">
               <img src="__STATIC__/images/index_center3.png" alt="">
             </div>
             <div class="platformFeatures_bottom_item_title">可持续发展</div>
-            <div class="platformFeatures_bottom_item_text">致力于减少采购和物流过程中的二氧化碳排放。通过全生命周期碳足迹监测和分析，为客户实现可持续发展目标提供专业的环保建议和解决方案。
+            <div class="platformFeatures_bottom_item_text">
+              致力于减少采购和物流过程中的二氧化碳排放。通过全生命周期碳足迹监测和分析，为客户实现可持续发展目标提供专业的环保建议和解决方案。
             </div>
           </div>
         </div>
@@ -103,5 +153,6 @@
 </body>
 
 </html>
+<script src="__STATIC__/js/swiper.js"></script>
 
-<script src="__TMPL__/static/js/slide.js"></script>
+<!-- <script src="__TMPL__/static/js/slide.js"></script> -->
