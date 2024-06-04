@@ -6,10 +6,15 @@
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
-.header_box_logo {
+.header_box_logo a{
+  display: block;
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: black;
+}
+.header_box_logo a:hover{
+  color: var(--primary-color);
 }
 .header_title{
   margin-left: 10px;
