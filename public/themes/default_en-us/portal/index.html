@@ -3,100 +3,154 @@
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/index.css" />
+<link rel="stylesheet" href="__STATIC__/css/swiper-bundle.min.css">
+<script src="__STATIC__/js/swiper-bundle.min.js"></script>
+<style>
+  .swiper {
+    width: 100%;
+    height: 460px;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 460px;
+  }
+
+  .swiper-button-next {
+    color: #27ae60;
+  }
+
+  .swiper-button-prev {
+    color: #27ae60;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 50px;
+
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #27ae60;
+  }
+</style>
 
 <body>
-<!-- header -->
-<include file="public@header/header" />
+  <!-- header -->
+  <include file="public@header/header" />
 
-<!-- banner -->
-<div class="banner banner_box460">
-  <widget name="banner">
+  <!-- banner -->
+  <div class="banner banner_box460">
+
     <div id="sliderBox" class="banner_box banner_box460">
-      <portal:articles item="vo" order="post.published_time DESC" categoryIds="79">
-        <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
-          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-          <div class="banner_box_img_title bannerTitleLeft">
-            <div class="banner_box_img_title_big">{$vo.post_title}</div>
-            <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
-          </div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <portal:articles item="vo" order="post.published_time DESC" categoryIds="79">
+            <div class="swiper-slide">
+              <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+                <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+                <div class="banner_box_img_title bannerTitleLeft">
+                  <div class="banner_box_img_title_big">{$vo.post_title}</div>
+                  <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
+                </div>
+              </div>
+            </div>
+          </portal:articles>
         </div>
-      </portal:articles>
-    </div>
-  </widget>
-</div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
 
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
-
-<!-- 服务 -->
-<div class="grey">
-  <widget name="OurService">
-    <div class="main-center main-title">
-      <div class="big-title">Our Service</div>
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+      </div>
     </div>
 
-    <div class="main-center ourService">
-      <portal:articles item="vo" order="post.published_time DESC" categoryIds="80">
-        <div class="ourService_item">
-          <div class="ourService_item_img">
-            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+  </div>
+
+
+
+  <!-- 服务 -->
+  <div class="grey">
+    <widget name="OurService">
+      <div class="main-center main-title">
+        <div class="big-title">Our Service</div>
+      </div>
+
+      <div class="main-center ourService">
+        <portal:articles item="vo" order="post.published_time DESC" categoryIds="80">
+          <div class="ourService_item">
+            <div class="ourService_item_img">
+              <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+            </div>
+            <div class="ourService_item_title">{$vo.post_title}</div>
           </div>
-          <div class="ourService_item_title">{$vo.post_title}</div>
-        </div>
-      </portal:articles>
-    </div>
-  </widget>
-</div>
-<!-- 平台特点 -->
-<div class="white">
-  <widget name="platformFeatures">
-    <!-- 去掉标题 -->
+        </portal:articles>
+      </div>
+    </widget>
+  </div>
+  <!-- 平台特点 -->
+  <div class="white">
+    <widget name="platformFeatures">
+      <!-- 去掉标题 -->
 
 
-    <div class="main-center platformFeatures">
-      <!-- <div class="platformFeatures_top">
+      <div class="main-center platformFeatures">
+        <!-- <div class="platformFeatures_top">
          <div class="platformFeatures_top_img">
            <img src="__ROOT__/upload/{$widget.vars.varName1}" alt="">
          </div>
          <div class="platformFeatures_top_text">{$widget.vars.varName2}</div>
        </div>-->
 
-      <div class="platformFeatures_bottom">
-        <div class="platformFeatures_bottom_item">
-          <div class="platformFeatures_bottom_item_img">
-            <img src="__STATIC__/images/index_center1.png" alt="">
+        <div class="platformFeatures_bottom">
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center1.png" alt="">
+            </div>
+            <div class="platformFeatures_bottom_item_title">International Trade Prowess</div>
+            <div class="platformFeatures_bottom_item_text">We don't just trade; we create connections. With a
+              well-established network spanning across continents, we facilitate trade that transcends boundaries,
+              fostering economic growth and partnerships that stand the test of time.</div>
           </div>
-          <div class="platformFeatures_bottom_item_title">International Trade Prowess</div>
-          <div class="platformFeatures_bottom_item_text">We don't just trade; we create connections. With a well-established network spanning across continents, we facilitate trade that transcends boundaries, fostering economic growth and partnerships that stand the test of time.</div>
-        </div>
-        <div class="platformFeatures_bottom_item">
-          <div class="platformFeatures_bottom_item_img">
-            <img src="__STATIC__/images/index_center2.png" alt="">
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center2.png" alt="">
+            </div>
+            <div class="platformFeatures_bottom_item_title">Pioneering Sustainability</div>
+            <div class="platformFeatures_bottom_item_text">We lead the way in environmental responsibility. Our carbon
+              tracking initiative isn't just a concept-it's a reality. Witness how we apply cutting-edge technology to
+              reduce our carbon footprint while optimizing efficiency, setting new standards for sustainable practices.
+            </div>
           </div>
-          <div class="platformFeatures_bottom_item_title">Pioneering Sustainability</div>
-          <div class="platformFeatures_bottom_item_text">We lead the way in environmental responsibility. Our carbon tracking initiative isn't just a concept-it's a reality. Witness how we apply cutting-edge technology to reduce our carbon footprint while optimizing efficiency, setting new standards for sustainable practices.</div>
-        </div>
-        <div class="platformFeatures_bottom_item">
-          <div class="platformFeatures_bottom_item_img">
-            <img src="__STATIC__/images/index_center3.png" alt="">
-          </div>
-          <div class="platformFeatures_bottom_item_title">Warehousing</div>
-          <div class="platformFeatures_bottom_item_text">We also provide secure warehousing capabilities for global brands, to store products and merchandise from around the world supplying Irish retailers nationwide. Located in Scariff, Co. Clare, Ireland and with a total available area of 300,000 sq. ft., the facility provides easy access to stock in a secure premises that includes leading-edge pallet racking systems accommodating 20,000 pallets.
+          <div class="platformFeatures_bottom_item">
+            <div class="platformFeatures_bottom_item_img">
+              <img src="__STATIC__/images/index_center3.png" alt="">
+            </div>
+            <div class="platformFeatures_bottom_item_title">Warehousing</div>
+            <div class="platformFeatures_bottom_item_text">We also provide secure warehousing capabilities for global
+              brands, to store products and merchandise from around the world supplying Irish retailers nationwide.
+              Located in Scariff, Co. Clare, Ireland and with a total available area of 300,000 sq. ft., the facility
+              provides easy access to stock in a secure premises that includes leading-edge pallet racking systems
+              accommodating 20,000 pallets.
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </widget>
-</div>
+    </widget>
+  </div>
 
-<!-- 合作客户 -->
-<div class="white">
-  <include file="public@customer/customer" />
-</div>
+  <!-- 合作客户 -->
+  <div class="white">
+    <include file="public@customer/customer" />
+  </div>
 
-<!-- footer -->
-<include file="public@footer/footer" />
+  <!-- footer -->
+  <include file="public@footer/footer" />
 </body>
 
 </html>
-
-<script src="__TMPL__/static/js/slide.js"></script>
+<script src="__STATIC__/js/swiper.js"></script>
+<!-- <script src="__TMPL__/static/js/slide.js"></script> -->
