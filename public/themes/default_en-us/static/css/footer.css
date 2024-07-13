@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: #98C193;
   padding-top: 50px;
   min-width: 1200px;
 }
@@ -11,12 +11,16 @@
 }
 
 .footer_box_top_left {
+  border-radius: 8px;
+  background-color: #9AC69F;
   display: flex;
   flex-direction: column;
+  padding: 20px 20px;
+  color: #000;
 }
 
 .footer_box_top_left_logo {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .footer_box_top_left_logo img {
