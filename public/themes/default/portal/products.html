@@ -43,7 +43,7 @@
             <if condition="$index eq 1">
               <div class="productTag_content_item active" data-toggle="tab">
                 <div>
-                  <img src="{:cmf_get_image_url($vo.more.thumbnail)}" />
+                  <img style="height: 120px;width: 120px" src="{:cmf_get_image_url($vo.more.thumbnail)}" />
                 </div>
                 <div>
                   {$vo.name}
@@ -52,7 +52,7 @@
               <else />
               <div class="productTag_content_item" data-toggle="tab">
                 <div>
-                  <img src="{:cmf_get_image_url($vo.more.thumbnail)}" />
+                  <img style="height: 120px;width: 120px" src="{:cmf_get_image_url($vo.more.thumbnail)}" />
                 </div>
                 <div>
                   {$vo.name}
@@ -89,17 +89,15 @@
               <div class="productList_box_item_img">
                 <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
               </div>
-              <div class="productList_box_item_title">{$item.post_title}</div>
-              <div class="productList_box_item_desc">{$item.post_excerpt|mb_substr=0,80,'utf-8'}</div>
-              <div class="productList_box_item_view">
-                <div class="productList_box_item_view_text">view</div>
-                <img src="__TMPL__/static/img/view.png" alt="">
+              <div class="productList_box_item_bottom">
+                <div class="productList_box_item_bottom_title">{$item.post_title}</div>
+                <div class="productList_box_item_bottom_detail">查看详情</div>
               </div>
             </div>
           </a>
 
           <!-- 弹窗 -->
-          <div class="popup">
+         <!-- <div class="popup">
             <div class="popup_box" id="popup_box">
               <div class="popup_box_left">
                 <img src="{:cmf_get_image_url($item.thumbnail)}" alt="">
@@ -108,7 +106,7 @@
                 {$item.post_content}
               </div>
             </div>
-          </div>
+          </div>-->
         </portal:articles>
 
     </div>
