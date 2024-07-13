@@ -22,28 +22,28 @@ return [
     'connections' => [
         'mysql' => [
             // 数据库类型
-            'type' => env('DATABASE_TYPE', 'mysql'),
-            // 服务器地址
-            //'hostname' => env('DATABASE_HOSTNAME', '43.154.125.245'),
-            // 'hostname' => env('DATABASE_HOSTNAME', '127.0.0.1'),
-            // // 数据库名
-            // 'database' => env('DATABASE_DATABASE', 'carbon'),
-            // // 用户名
-            // 'username' => env('DATABASE_USERNAME', 'root'),
-            // // 密码
-            // 'password' => env('DATABASE_PASSWORD', 'yifan@2022'),
-            // // 端口
-            // 'hostport' => env('DATABASE_HOSTPORT', '6603'),
+            // 'type' => env('DATABASE_TYPE', 'mysql'),
+            // // 服务器地址
+            // //'hostname' => env('DATABASE_HOSTNAME', '43.154.125.245'),
+            //  'hostname' => env('DATABASE_HOSTNAME', '127.0.0.1'),
+            // // // 数据库名
+            //  'database' => env('DATABASE_DATABASE', 'carbon'),
+            //  // 用户名
+            //  'username' => env('DATABASE_USERNAME', 'root'),
+            //  // 密码
+            //  'password' => env('DATABASE_PASSWORD', 'yifan@2022'),
+            //  // 端口
+            //  'hostport' => env('DATABASE_HOSTPORT', '6603'),
             'type' => env('DATABASE_TYPE', 'mysql'),
             // 服务器地址
             'hostname' => env('DATABASE_HOSTNAME', '47.104.98.81'),
-            // 数据库名
+            //数据库名
             'database' => env('DATABASE_DATABASE', 'carbon'),
-            // 用户名
+            //用户名
             'username' => env('DATABASE_USERNAME', 'root'),
             // 密码
             'password' => env('DATABASE_PASSWORD', 'yifan@2024'),
-            // 端口
+            //端口
             'hostport' => env('DATABASE_HOSTPORT', '6603'),
             // 数据库连接参数
             'params' => [],
