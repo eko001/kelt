@@ -28,21 +28,27 @@
   <div class="supply">
     <div class="big-title">我们的供应链系统</div>
     <div class="supply_content">
+      <php>
+        $index = 0;
+      </php>
       <portal:articles item="vo" order="post.published_time DESC" categoryIds="53">
-      <div class="supply_content_item">
-        <div class="supply_content_item_left">
-          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-          <div class="supply_line"></div>
-        </div>
-        <div class="supply_content_item_right">
-          <div class="supply_content_item_right_title_big">
-            {$vo.post_title}
+        <div class="supply_content_item">
+          <div class="supply_content_item_left">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+            <div class="supply_line"></div>
           </div>
-          <div class="supply_content_item_right_title_small">
-            {$vo.post_excerpt}
+          <div class="supply_content_item_right">
+            <div class="supply_content_item_right_title_big" id="cate_{$index}">
+              {$vo.post_title}
+            </div>
+            <div class="supply_content_item_right_title_small" style="display: none;" id="des_{$index}">
+              {$vo.post_excerpt}
+            </div>
           </div>
         </div>
-      </div>
+        <php>
+          $index++;
+        </php>
       </portal:articles>
     </div>
   </div>
@@ -86,5 +92,18 @@
 </body>
 
 </html>
+<script>
+  $(function () {
+    $('.supply_content_item_right_title_big').click(function () {
+      // 找到当前点击的.supply_content_item_right_title_big的兄弟元素.hidden-content  
+      var $hiddenContent = $(this).siblings('.supply_content_item_right_title_small');
+
+      // 切换.hidden-content的显示状态  
+      $hiddenContent.toggle();
+    });
+
+  })
+
+</script>
 
 <script src="__TMPL__/static/js/slide.js"></script>

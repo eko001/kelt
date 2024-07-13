@@ -1,55 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <include file="public@head/head" />
 <css file="__TMPL__/static/css/about.css" />
-
+<css file="__TMPL__/static/css/building.css" />
+<link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
+<script type="text/javascript" src="__TMPL__/static/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="__TMPL__/static/js/dialog-plus-min.js"></script>
 
 <body>
-  <link type="text/css" rel="stylesheet" href="__TMPL__/static/css/ui-dialog.css">
-  <script type="text/javascript" src="__TMPL__/static/js/jquery.form.min.js"></script>
-  <script type="text/javascript" src="__TMPL__/static/js/Validform_v5.3.2_min.js"></script>
-  <script type="text/javascript" src="__TMPL__/static/js/dialog-plus-min.js"></script>
   <!-- header -->
   <include file="public@header/header" />
 
   <!-- banner -->
-  <div class="aboutBanner">
-    <div class="aboutBanner_box main-center">
-      <widget name="banner">
-        <div class="aboutBanner_box_title">{$widget.vars.title}</div>
-      </widget>
-      <div class="aboutBanner_box_btn">
-        <a href="">Get in touch today</a>
-      </div>
+  <div class="banner banner_box460">
+    <php>
+      $category_id=$category['id'];
+      $subCategories =\app\portal\service\ApiService::subCategories($category_id);
+      $subCategoryIds=[];
+      foreach($subCategories as $mCategory){
+      array_push($subCategoryIds,$mCategory['id']);
+      }
+
+      $where =function ($query){
+      $query->where('post.create_time','>=',0);
+      };
+
+    </php>
+
+
+    <div id="sliderBox" class="banner_box banner_box460">
+      <notempty name="$subCategoryIds">
+        <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="$subCategoryIds[0]">
+          <div id="sliderBoxItem" class="banner_box_img sliderBoxItem">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+            <div class="banner_box_img_title bannerTitleCenter">
+              <div class="banner_box_img_title_big">{$vo.post_title}</div>
+              <div class="banner_box_img_title_small">{$vo.post_excerpt}</div>
+            </div>
+          </div>
+        </portal:articles>
+      </notempty>
+
     </div>
+
   </div>
 
-  <div class="about_top"></div>
-  <div class="white about-white">
-    <portal:articles item="vo" limit="3" order="post.published_time DESC" categoryIds="108">
-      <div class="main-center about">
-        <div class="about_left">
-          <div class="about_left_title">{$vo.post_title}</div>
-          <div class="about_left_desc">{$vo.post_content}</div>
-        </div>
-
-        <div class="about_right">
-          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+  <notempty name="$subCategoryIds">
+    <portal:articles item="vo" limit="4" order="post.published_time DESC" categoryIds="$subCategoryIds[1]">
+      <div class="white">
+        <div class="supplychainItem main-center">
+          <div class="supplychainItem_img">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+          </div>
+          <div class="supplychainItem_content">
+            <div class="supplychainItem_content_title">{$vo.post_title}</div>
+            <div class="supplychainItem_content_desc">{$vo.post_excerpt}</div>
+          </div>
         </div>
       </div>
     </portal:articles>
-  </div>
+  </notempty>
+
 
   <!-- 联系我们 -->
-  <div class="grey">
-
+  <div class="white">
     <div class="main-center contact">
-      <div class="contact_title">联系我们</div>
+      <div class="contact_title">Contact us</div>
       <div class="contact_box">
         <div class="contact_box_left">
           <div class="contact_box_left_top">
-            <portal:articles item="vo" limit="4" order="post.published_time ASC" categoryIds="69">
+            <portal:articles item="vo" limit="4" order="post.published_time ASC" categoryIds="103">
               <div class="contact_box_left_top_item">
                 <div class="contact_box_left_top_item_icon">
                   <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
@@ -61,6 +84,8 @@
                 </div>
               </div>
             </portal:articles>
+
+
           </div>
           <div class="contact_box_left_bottom">
             <include file="public@socialize/socialize" />
@@ -95,20 +120,18 @@
           <!-- 提交成功 -->
           <div class="popup" id="popupSuccess">
             <div class="popup_box">
-              <div class="popup_box_title">谢谢您的留言</div>
-              <div class="popup_box_desc">我们会尽快与您联系</div>
+              <div class="popup_box_title">Thank you for your message</div>
+              <div class="popup_box_desc">We will contact you as soon as possible</div>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-
   </div>
   <!-- footer -->
   <include file="public@footer/footer" />
 </body>
-<!-- <script type="text/javascript" src="__TMPL__/static/js/common.js"></script> -->
 <script type="text/javascript">
   function AjaxInitForm (formObj, btnObj) {
     $(formObj).Validform({
@@ -162,38 +185,4 @@
 
 </html>
 
-<script>
-  // 监听表单提交事件
-  // document.querySelector('.contact_box_right_box').addEventListener('submit', function (event) {
-  //   event.preventDefault()
-  //
-  //   // 先验证表单数据是否填写完整
-  //   if (!event.target.name.value || !event.target.phone.value || !event.target.email.value || !event.target.content.value) {
-  //     alert('Please fill in the complete information')
-  //     return
-  //   }
-  //
-  //   // 验证邮箱格式是否正确
-  //   if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(event.target.email.value)) {
-  //     alert('Please enter the correct email format')
-  //     return
-  //   }
-  //
-  //   return
-  //   // 使用Fetch API或其他方式提交表单数据
-  //   fetch('about/submitForm', {
-  //     method: 'POST',
-  //     body: new FormData(event.target),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       if (data.status === 'success') {
-  //         document.getElementById('popupSuccess').style.display = 'block';
-  //         document.getElementById('sendBtn').style.display = 'none';
-  //         // 清空表单数据
-  //         event.target.reset();
-  //
-  //       }
-  //     })
-  // })
-</script>
+<script src="__TMPL__/static/js/slide.js"></script>

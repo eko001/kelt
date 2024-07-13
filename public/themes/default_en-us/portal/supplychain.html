@@ -29,20 +29,20 @@
     <div class="big-title">Our Supply Chain</div>
     <div class="supply_content">
       <portal:articles item="vo" order="post.published_time DESC" categoryIds="87">
-      <div class="supply_content_item">
-        <div class="supply_content_item_left">
-          <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
-          <div class="supply_line"></div>
-        </div>
-        <div class="supply_content_item_right">
-          <div class="supply_content_item_right_title_big">
-            {$vo.post_title}
+        <div class="supply_content_item">
+          <div class="supply_content_item_left">
+            <img src="{:cmf_get_image_url($vo.thumbnail)}" alt="">
+            <div class="supply_line"></div>
           </div>
-          <div class="supply_content_item_right_title_small">
-            {$vo.post_excerpt}
+          <div class="supply_content_item_right">
+            <div class="supply_content_item_right_title_big">
+              {$vo.post_title}
+            </div>
+            <div class="supply_content_item_right_title_small" style="display: none;">
+              {$vo.post_excerpt}
+            </div>
           </div>
         </div>
-      </div>
       </portal:articles>
     </div>
   </div>
@@ -68,16 +68,16 @@
         </div>
       </portal:articles>
       <portal:articles item="vo" order="post.published_time DESC" categoryIds="91">
-      <div class="supply_center_right_bottom">
-        <div class="supply_center_right_bottom_des">{$vo.post_title}</div>
-        <div class="supply_center_right_bottom_btn">
-          <a href="http://{$vo.url}" target="_blank">
-            <img src="__STATIC__/images/intelnet.png" alt="">
-            {$vo.url}
-          </a>
+        <div class="supply_center_right_bottom">
+          <div class="supply_center_right_bottom_des">{$vo.post_title}</div>
+          <div class="supply_center_right_bottom_btn">
+            <a href="http://{$vo.url}" target="_blank">
+              <img src="__STATIC__/images/intelnet.png" alt="">
+              {$vo.url}
+            </a>
+          </div>
         </div>
-      </div>
-    </portal:articles>
+      </portal:articles>
     </div>
   </div>
 
@@ -86,5 +86,17 @@
 </body>
 
 </html>
+<script>
+  $(function () {
+    $('.supply_content_item_right_title_big').click(function () {
+      // 找到当前点击的.supply_content_item_right_title_big的兄弟元素.hidden-content  
+      var $hiddenContent = $(this).siblings('.supply_content_item_right_title_small');
 
+      // 切换.hidden-content的显示状态  
+      $hiddenContent.toggle();
+    });
+
+  })
+
+</script>
 <script src="__TMPL__/static/js/slide.js"></script>

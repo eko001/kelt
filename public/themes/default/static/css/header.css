@@ -6,32 +6,48 @@
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
-.header_box_logo a{
+
+.header_box_logo a {
   display: block;
   display: flex;
   flex-direction: row;
   align-items: center;
   color: black;
 }
-.header_box_logo a:hover{
+
+.dropdown-menu-item {
+  padding-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 13px;
+}
+
+.dropdown-menu-item a {
+  color: #000;
+}
+
+.header_box_logo a:hover {
   color: var(--primary-color);
 }
-.header_title{
+
+.header_title {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: bold;
 }
-.header_title_big{
+
+.header_title_big {
   font-size: 14px;
 }
-.header_title_small{
+
+.header_title_small {
   margin-top: 10px;
   font-size: 18px;
 }
+
 .header_box {
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,6 +60,7 @@
 .header_box_nav {
   margin-left: auto;
   display: flex;
+  height: 90px;
 }
 
 .header_box_nav_item,
@@ -51,8 +68,8 @@
   padding: 0 20px;
 }
 
-.header_box_nav_item a,
-.header_box_btn a {
+.header_box_nav_item .header_box_nav_item_index,
+.header_box_btn .header_box_nav_item_index {
   line-height: 80px;
   color: #000;
   font-size: 14px;
@@ -60,20 +77,44 @@
   display: inline-block;
 }
 
+.dropdown-menu {
+  top: 90%;
+}
+
 .header_box_nav .active {
   height: 80px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 97%, rgba(34, 195, 45, 1) 97%);
 }
 
-.header_box_nav_item a:hover {
+.header_box_nav_item .header_box_nav_item_index:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 97%, rgba(34, 195, 45, 1) 97%);
 }
 
-.header_box_nav .active a {
+.header_box_nav .active .header_box_nav_item_index {
   color: var(--primary-color);
   font-weight: 600;
 }
 
+.header_box_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header_box_topnav {
+  align-self: flex-end;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.header_box_topnav li a {
+  color: #000;
+  margin-left: 5px;
+}
+
+.header_box_topnav li a:hover {
+  color: skyblue;
+}
 
 .header_box_language {
   font-size: 14px;
@@ -120,19 +161,25 @@
     width: 4rem;
   }
 
-  .header_title{
+  .header_title {
     margin-left: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: bold;
   }
-  .header_title_big{
+
+  .header_title_big {
     font-size: 14px;
   }
-  .header_title_small{
+
+  .header_title_small {
     margin-top: 1rem;
     font-size: 18px;
+  }
+
+  .header_box_btn .header_box_nav_item_index {
+    color: #000;
   }
 
   .header_box_nav,

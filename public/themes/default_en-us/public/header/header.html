@@ -2,7 +2,7 @@
   <div class="header_box main-center">
     <div class="header_box_logo">
       <a href="{:cmf_url('portal/index/index?_design_theme=default_en-us')}">
-        <img src="__STATIC__/images/logo_new.png" alt="" >
+        <img src="__STATIC__/images/logo_new.png" alt="">
         <div class="header_title">
           <div class="header_title_big">Celtic international Limited</div>
           <div class="header_title_small">海南凯尔特</div>
@@ -11,37 +11,114 @@
     </div>
 
     <!-- pc端显示 -->
-    <div class="header_box_nav">
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/index/index?_design_theme=default_en-us')}">Home</a>
+    <div class="header_box_container">
+      <div class="header_box_topnav">
+        <li>
+          <a class="header_box_nav_item_index" href="{:cmf_url('portal/index/index')}">Home</a>
+          <a> | </a>
+          <a href="?_design_theme=default"> 简中 </a> <a> | </a>
+
+          <a class="header_box_nav_item_index" href="http://www.ecocarbontrace.com/" target="_blank">log in</a>
+
+        </li>
+
       </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Products/index?_design_theme=default_en-us')}">Products</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Supplychain/index?_design_theme=default_en-us')}">Supply Chain</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Carbontrace/index?_design_theme=default_en-us')}">Carbon Trace</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Warehouse/index?_design_theme=default_en-us')}">Warehouse</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Building/index?_design_theme=default_en-us')}">Building Design</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/About/index?_design_theme=default_en-us')}">About</a>
+      <div class="header_box_nav">
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Products/index?_design_theme=default_en-us')}"
+              class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">
+              Products</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Products/index')}">Products</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="35" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index"
+              href="{:cmf_url('portal/Supplychain/index?_design_theme=default_en-us')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Supply Chain</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Supplychain/index')}">Supply Chain</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="114" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index"
+              href="{:cmf_url('portal/Carbontrace/index?_design_theme=default_en-us')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Carbon Trace</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Carbontrace/index')}">Carbon Trace</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="114" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Warehouse/index?_design_theme=default_en-us')}"
+              class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">Warehouse</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Warehouse/index')}">Warehouse</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="120" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Building/index?_design_theme=default_en-us')}"
+              class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">Building Design</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Building/index')}">Building Design</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="123" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <a class="header_box_nav_item_index"
+            href="{:cmf_url('portal/About/index?_design_theme=default_en-us')}">About</a>
+        </div>
       </div>
     </div>
-    <div class="header_box_btn">
+    <!-- <div class="header_box_btn">
       <a href="http://www.ecocarbontrace.com/" target="_blank">log In</a>
     </div>
     <div class="header_box_language">
-      <!-- <img src="__TMPL__/static/img/language.png" alt="">-->
+  
       <a href="?_design_theme=default"> <img src="__TMPL__/static/img/language.png" alt=""></a>
-      <!--      <a href="?_design_theme=default">中文</a>|<a href="?_design_theme=default_en-us">En</a>-->
-    </div>
+    
+    </div> -->
 
     <!-- 手机和平板 -->
     <div class="header_box_phone_btn">
@@ -83,6 +160,28 @@
 </header>
 
 <script>
+
+  $(document).ready(function () {
+    $(document).off('click.bs.dropdown.data-api');
+  });
+
+  function dropdownOpen () {
+
+    var $dropdownLi = $('.dropdown');
+
+    $dropdownLi.mouseover(function () {
+      $(this).addClass('open');
+    }).mouseout(function () {
+      $(this).removeClass('open');
+    });
+  }
+  // $(document).ready(function () {
+  //   $(document).off('click.bs.dropdown.data-api');
+  // });
+
+  $(document).ready(function () {
+    dropdownOpen();//调用
+  });
   // http://carbontracking.com/?_design_theme=default_en-us
   var path = window.location.pathname
   var headerBoxNavItems = document.querySelectorAll('.header_box_nav_item')

@@ -47,7 +47,7 @@
         <portal:articles item="vo" limit="6" order="post.published_time ASC" categoryIds="60">
           <if condition="$index eq 2">
             <div
-              style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-right: 70px; margin-top: 30px;">
+              style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-right: 70px; margin-top: 40px;">
           </if>
           <if condition="$index neq 2 && $index neq 5">
             <div style="display: flex; justify-content: center; align-items: center; ">
@@ -62,21 +62,21 @@
               </div>
               {$vo.post_title}
             </div>
-            <div class="carbonTrace_box_item_desc">{$vo.post_excerpt|mb_substr=0,220,'utf-8'}</div>
+            <div class="carbonTrace_box_item_desc">{$vo.post_excerpt|mb_substr=0,100,'utf-8'}</div>
           </div>
           <if condition="$index lt 2">
-            <div>
-              <img src="__STATIC__/images/arrow0.png" alt="">
+            <div style="margin-left: 20px;">
+              <img height="60px" src="__STATIC__/images/arrow0.png" alt="">
             </div>
           </if>
           <if condition="$index eq 2">
             <div style="margin-top: -20px;">
-              <img src="__STATIC__/images/arrow1.png" alt="">
+              <img height="60px" src="__STATIC__/images/arrow1.png" alt="">
             </div>
           </if>
           <if condition="$index gt 2 && $index neq 5">
-            <div>
-              <img src="__STATIC__/images/arrow2.png" alt="">
+            <div style="margin-left: 20px;">
+              <img height="60px" src="__STATIC__/images/arrow2.png" alt="">
             </div>
           </if>
           <if condition="$index eq 5">

@@ -2,7 +2,7 @@
   <div class="header_box main-center">
     <div class="header_box_logo">
       <a href="{:cmf_url('portal/index/index?_design_theme=default')}">
-        <img src="__STATIC__/images/logo_new.png" alt="" >
+        <img src="__STATIC__/images/logo_new.png" alt="">
         <div class="header_title">
           <div class="header_title_big">Celtic international Limited</div>
           <div class="header_title_small">海南凯尔特</div>
@@ -10,36 +10,121 @@
       </a>
     </div>
     <!-- pc端显示 -->
-    <div class="header_box_nav">
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/index/index')}">首页</a>
+
+    <div class="header_box_container">
+      <div class="header_box_topnav">
+        <li>
+          <a class="header_box_nav_item_index" href="{:cmf_url('portal/index/index')}">首页</a>
+          <a> | </a>
+          <a href="?_design_theme=default_en-us"> English </a> <a> | </a>
+
+          <a class="header_box_nav_item_index" href="http://www.ecocarbontrace.com/" target="_blank">登录</a>
+
+        </li>
+
+
+
       </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Products/index')}">产品</a>
+
+      <div class="header_box_nav">
+        <!-- <div class="header_box_nav_item">
+          <a class="header_box_nav_item_index" href="{:cmf_url('portal/index/index')}">首页</a>
+        </div> -->
+        <div class="header_box_nav_item">
+
+          <div class="dropdown">
+
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Products/index')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> 产品</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Products/index')}">产品</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="31" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+
+
+
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Supplychain/index')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">供应链</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Supplychain/index')}">供应链</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="114" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Carbontrace/index')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">碳足迹</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Carbontrace/index')}">碳足迹</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="114" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Warehouse/index')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">仓储</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Warehouse/index')}">仓储</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="120" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <div class="dropdown">
+            <a class="header_box_nav_item_index" href="{:cmf_url('portal/Building/index')}" class="dropdown-toggle"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">建筑设计建造</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li class="dropdown-menu-item"><a href="{:cmf_url('portal/Building/index')}">建筑设计建造</a></li>
+              <li role="separator" class="divider"></li>
+              <portal:subCategories categoryId="123" item="vo">
+                <li class="dropdown-menu-item"><a
+                    href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                <li role="separator" class="divider"></li>
+              </portal:subCategories>
+            </ul>
+          </div>
+        </div>
+        <div class="header_box_nav_item">
+          <a class="header_box_nav_item_index" href="{:cmf_url('portal/About/index')}">关于我们</a>
+        </div>
+        <!-- <div class="header_box_btn">
+          <a class="header_box_nav_item_index" href="http://www.ecocarbontrace.com/" target="_blank">登录</a>
+        </div> -->
       </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Supplychain/index')}">供应链</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Carbontrace/index')}">碳足迹</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Warehouse/index')}">仓储</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/Building/index')}">建筑设计建造</a>
-      </div>
-      <div class="header_box_nav_item">
-        <a href="{:cmf_url('portal/About/index')}">关于我们</a>
-      </div>
+
     </div>
-    <div class="header_box_btn">
-      <a href="http://www.ecocarbontrace.com/" target="_blank">登录</a>
-    </div>
-    <div class="header_box_language">
+
+
+    <!-- <div class="header_box_language">
       <a href="?_design_theme=default_en-us"> <img src="__TMPL__/static/img/language.png" alt=""></a>
-      <!--      <a href="?_design_theme=default">中文</a>|<a href="?_design_theme=default_en-us">En</a>-->
-    </div>
+    
+    </div> -->
 
     <!-- 手机和平板 -->
     <div class="header_box_phone_btn">
@@ -53,6 +138,7 @@
       <a href="{:cmf_url('portal/index/index')}">首页</a>
     </div>
     <div class="header_box_phone_navBox_item">
+
       <a href="{:cmf_url('portal/Products/index')}">产品</a>
     </div>
     <div class="header_box_phone_navBox_item">
@@ -83,6 +169,30 @@
 </header>
 
 <script>
+
+  $(document).ready(function () {
+    $(document).off('click.bs.dropdown.data-api');
+  });
+
+  function dropdownOpen () {
+
+    var $dropdownLi = $('.dropdown');
+
+    $dropdownLi.mouseover(function () {
+      $(this).addClass('open');
+    }).mouseout(function () {
+      $(this).removeClass('open');
+    });
+  }
+  // $(document).ready(function () {
+  //   $(document).off('click.bs.dropdown.data-api');
+  // });
+
+  $(document).ready(function () {
+    dropdownOpen();//调用
+  });
+
+
   var path = window.location.pathname
   var headerBoxNavItems = document.querySelectorAll('.header_box_nav_item')
 
